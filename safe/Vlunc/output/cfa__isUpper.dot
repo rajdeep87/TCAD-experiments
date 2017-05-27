@@ -1,7 +1,0 @@
-digraph isUpper {
-69 [shape="circle" label="N69\n4"]
-70 [shape="circle" label="N70\n3"]
-70 [style="filled,bold" penwidth="1" fillcolor="white" fontname="Courier New" shape="Mrecord" label=<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr><td align="right">70</td><td align="left">_Bool isupper;</td></tr><tr><td align="right">71</td><td align="left">isupper = ~((in &gt;&gt; 5) &amp; 1);</td></tr><tr><td align="right">72</td><td align="left">return isupper;</td></tr></table>>]
-70 -> 68[label=""]
-69 -> 70 [label="Function start dummy edge" fontname="Courier New"]
-}

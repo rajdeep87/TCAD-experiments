@@ -1,5 +1,0 @@
-loop__main__1005:
-(set-info :source |printed by MathSAT|)
-(declare-fun smain$GRANT_O () (_ BitVec 8))
-(declare-fun smain$grant () (_ BitVec 8))
-(assert (let ((.def_612 (= smain$grant (_ bv0 8))))(let ((.def_609 (= smain$GRANT_O (_ bv0 8))))(let ((.def_1999 (and .def_609 .def_612))).def_1999))))

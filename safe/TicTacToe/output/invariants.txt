@@ -1,6 +1,0 @@
-loop__initial__869:
-(set-info :source |printed by MathSAT|)
-(assert true)
-loop__main__899:
-(set-info :source |printed by MathSAT|)
-(assert true)

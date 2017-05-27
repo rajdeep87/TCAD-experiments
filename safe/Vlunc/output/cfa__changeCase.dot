@@ -1,4 +1,0 @@
-digraph changeCase {
-99 [style="filled,bold" penwidth="1" fillcolor="white" fontname="Courier New" shape="Mrecord" label=<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr><td align="right">99</td><td align="left">Function start dummy edge</td></tr><tr><td align="right">100</td><td align="left">unsigned char changecase;</td></tr><tr><td align="right">101</td><td align="left">return changecase;</td></tr></table>>]
-99 -> 98[label=""]
-}

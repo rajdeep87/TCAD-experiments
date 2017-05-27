@@ -1,3 +1,0 @@
-loop__main__1086:
-(set-info :source |printed by MathSAT|)
-(assert true)

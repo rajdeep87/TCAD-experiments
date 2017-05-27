@@ -1,7 +1,0 @@
-digraph decodeLoc2 {
-152 [shape="circle" label="N152\n3"]
-153 [shape="circle" label="N153\n2"]
-153 [style="filled,bold" penwidth="1" fillcolor="white" fontname="Courier New" shape="Mrecord" label=<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr><td align="right">153</td><td align="left">*readLoc2 = (instruction &gt;&gt; 6) &amp; 7;</td></tr><tr><td align="right">154</td><td align="left">default return</td></tr></table>>]
-153 -> 151[label=""]
-152 -> 153 [label="Function start dummy edge" fontname="Courier New"]
-}

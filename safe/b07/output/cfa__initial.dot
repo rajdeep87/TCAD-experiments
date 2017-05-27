@@ -1,7 +1,0 @@
-digraph initial {
-67 [shape="circle" label="N67\n9"]
-68 [shape="circle" label="N68\n8"]
-68 [style="filled,bold" penwidth="1" fillcolor="white" fontname="Courier New" shape="Mrecord" label=<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr><td align="right">68</td><td align="left">sb.stato = S_RESET;</td></tr><tr><td align="right">69</td><td align="left">sb.PUNTI_RETTA = 0;</td></tr><tr><td align="right">70</td><td align="left">sb.cont = 0;</td></tr><tr><td align="right">71</td><td align="left">sb.mar = 0;</td></tr><tr><td align="right">72</td><td align="left">sb.x = 0;</td></tr><tr><td align="right">73</td><td align="left">sb.y = 0;</td></tr><tr><td align="right">74</td><td align="left">sb.t = 0;</td></tr><tr><td align="right">75</td><td align="left">default return</td></tr></table>>]
-68 -> 66[label=""]
-67 -> 68 [label="Function start dummy edge" fontname="Courier New"]
-}

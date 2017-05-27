@@ -1,9 +1,0 @@
-digraph functioncalls {
-rankdir=LR;
-
-main [shape="box", color=blue];
-__assert_fail [shape="box", color=grey];
-four_by_four -> __assert_fail;
-main -> initial_main;
-main -> four_by_four;
-}
