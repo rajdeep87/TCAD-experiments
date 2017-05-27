@@ -1,0 +1,6 @@
+(set-info :source |printed by MathSAT|)
+(declare-fun |b08::ROM_OR| () (_ BitVec 8))
+
+b08:
+(assert (let ((.def_343 ((_ zero_extend 24) |b08::ROM_OR|)))(let ((.def_344 (bvand (_ bv15 32) .def_343)))(let ((.def_345 (= .def_344 (_ bv0 32)))).def_345))))
+

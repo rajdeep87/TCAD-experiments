@@ -142,7 +142,7 @@ int main()
   unsigned char sel1;
   unsigned char sel2;
   _Bool found;
-  //while(1) {
+  while(1) {
     unidec(clk, sel1, sel2, &found);
 
     //#PASS: The trap state lives up to its name.
@@ -150,6 +150,6 @@ int main()
 
     // FAIL
     assert(found==1); 
-  //}
+  }
 }
 

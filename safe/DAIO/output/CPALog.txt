@@ -1,0 +1,46 @@
+2017-05-17 23:12:23:672	INFO	ResourceLimitChecker.fromConfiguration	Using the following resource limits: CPU-time limit of 3600s
+
+2017-05-17 23:12:23:702	INFO	CPAchecker.run	CPAchecker 1.6.1 (Java HotSpot(TM) 64-Bit Server VM 1.8.0_77) started
+
+2017-05-17 23:12:24:743	INFO	PredicateCPA:PredicateCPA.<init>	Using predicate analysis with MathSAT5 version 5.3.11 (103797dbdca7) (May  3 2016 09:27:52, gmp 5.1.3, gcc 4.8.5, 64-bit) and JFactory 1.21.
+
+2017-05-17 23:12:24:785	INFO	PredicateCPA:InvariantsManager.<init>	No invariants are computed
+
+2017-05-17 23:12:24:843	INFO	PredicateCPA:PredicateCPARefiner.<init>	Using refinement for predicate analysis with PredicateAbstractionRefinementStrategy strategy.
+
+2017-05-17 23:12:24:853	WARNING	CPAchecker.printConfigurationWarnings	The following configuration options were specified but are not used:
+ counterexample.checker.config
+ counterexample.checker 
+
+
+2017-05-17 23:12:24:854	INFO	CPAchecker.runAlgorithm	Starting analysis ...
+
+2017-05-18 00:12:22:877	WARNING	ForceTerminationOnShutdown$1.shutdownRequested	Shutdown requested (The CPU-time limit of 3600s has elapsed.), waiting for termination.
+
+2017-05-18 00:12:32:878	WARNING	ForceTerminationOnShutdown.run	Shutdown was requested but CPAchecker is still running after 10s, forcing immediate termination now.
+
+2017-05-18 00:12:32:879	INFO	ForceTerminationOnShutdown.run	For your information: CPAchecker is currently hanging at
+ org.sosy_lab.solver.mathsat5.Mathsat5NativeApi.msat_get_interpolant(Native Method)
+org.sosy_lab.solver.mathsat5.Mathsat5NativeApi.msat_get_interpolant(Mathsat5NativeApi.java:194)
+org.sosy_lab.solver.mathsat5.Mathsat5InterpolatingProver.getInterpolant(Mathsat5InterpolatingProver.java:116)
+org.sosy_lab.cpachecker.util.predicates.smt.InterpolatingProverEnvironmentWithAssumptionsView.getInterpolant(InterpolatingProverEnvironmentWithAssumptionsView.java:96)
+org.sosy_lab.cpachecker.util.predicates.interpolation.strategy.ITPStrategy.getInterpolantFromSublist(ITPStrategy.java:205)
+org.sosy_lab.cpachecker.util.predicates.interpolation.strategy.SequentialInterpolation.getInterpolants(SequentialInterpolation.java:62)
+org.sosy_lab.cpachecker.util.predicates.interpolation.InterpolationManager.getInterpolants(InterpolationManager.java:575)
+org.sosy_lab.cpachecker.util.predicates.interpolation.InterpolationManager.access$1200(InterpolationManager.java:95)
+org.sosy_lab.cpachecker.util.predicates.interpolation.InterpolationManager$Interpolator.buildCounterexampleTrace(InterpolationManager.java:755)
+org.sosy_lab.cpachecker.util.predicates.interpolation.InterpolationManager$Interpolator.access$100(InterpolationManager.java:665)
+org.sosy_lab.cpachecker.util.predicates.interpolation.InterpolationManager.buildCounterexampleTrace0(InterpolationManager.java:323)
+org.sosy_lab.cpachecker.util.predicates.interpolation.InterpolationManager.buildCounterexampleTrace(InterpolationManager.java:237)
+org.sosy_lab.cpachecker.cpa.predicate.PredicateCPARefiner.performInterpolatingRefinement(PredicateCPARefiner.java:327)
+org.sosy_lab.cpachecker.cpa.predicate.PredicateCPARefiner.performRefinementForPath(PredicateCPARefiner.java:279)
+org.sosy_lab.cpachecker.cpa.predicate.PredicateStaticRefiner.performRefinementForPath(PredicateStaticRefiner.java:188)
+org.sosy_lab.cpachecker.cpa.arg.AbstractARGBasedRefiner.performRefinementForPath(AbstractARGBasedRefiner.java:174)
+org.sosy_lab.cpachecker.cpa.arg.AbstractARGBasedRefiner.performRefinement(AbstractARGBasedRefiner.java:128)
+org.sosy_lab.cpachecker.core.algorithm.CEGARAlgorithm.refine(CEGARAlgorithm.java:287)
+org.sosy_lab.cpachecker.core.algorithm.CEGARAlgorithm.run(CEGARAlgorithm.java:236)
+org.sosy_lab.cpachecker.core.CPAchecker.runAlgorithm(CPAchecker.java:409)
+org.sosy_lab.cpachecker.core.CPAchecker.run(CPAchecker.java:300)
+org.sosy_lab.cpachecker.cmdline.CPAMain.main(CPAMain.java:142) 
+
+

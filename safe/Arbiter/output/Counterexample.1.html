@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html ng-app='report'>
+<head>
+    <meta charset="UTF-8">
+    <title>CPAchecker Report for
+cpa.c (Counterexample 1)    </title>
+
+<style type="text/css">
+<!--
+html{
+    position: relative;
+    height: 100%;
+}
+body {
+    padding-top: 50px;
+    height: 100%;
+    min-height: 300px;
+    min-width: 750px;
+    background-color: white;
+}
+.header {
+    position: absolute;
+    top:0;
+    width: 100%;
+    min-width: 750px;
+    height: 50px;
+    background-color: whitesmoke;
+    border-bottom: solid 2px;
+    border-bottom-color: lightgrey;
+    padding: 7px;
+}
+
+.sections{
+    position: relative;
+    height: 100%;
+    padding: 0;
+}
+
+.btn{
+    cursor: pointer;
+}
+#err_table td{
+    cursor: pointer;
+}
+#err_table td:hover{
+    font-weight: bold;
+}
+.edge{
+    cursor: pointer;
+}
+.edge:hover{
+    font-weight: bold;
+    stroke-width: 2;
+}
+.argContent .node{
+    cursor: pointer;
+}
+.argContent .node:hover{
+    font-weight: bold;
+}
+.functionNode{
+    cursor: pointer;
+}
+.functionNode:hover{
+    font-weight: bold;
+    stroke-width: 2;
+}
+.functionNode polygon{
+    fill: transparent;
+}
+
+.header img.logo {
+    float: left;
+    height: 30px;
+    margin-right: 5px;
+}
+.header h1 {
+    display: inline;
+    font-size: 20px;
+}
+.header .generated {
+    float: right;
+    margin-left: 2em;
+    font-size: 80%;
+}
+
+
+#errorpath_section{
+    position:relative;
+    float: left;
+    width: 25%;
+    min-width: 70px;
+    height: inherit;
+    background-color: white;
+    border: solid 4px;
+    border-color: lightgrey;
+    padding: 5px;
+}
+
+#errorpath_section header .input-group{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#middleLine{
+    cursor: col-resize;
+    position: absolute;
+    top:0;
+    right: -8px;
+    height:inherit;
+    width: 8px;
+    z-index: 100;
+    background-color: darkgrey;
+}
+#middleLine:hover{
+    background-color: grey;
+}
+#externalFiles_section{
+    float: right;
+    width: 75%;
+    height: inherit;
+    background-color: white;
+    padding: 5px;
+    border: solid 4px;
+    border-color: lightgrey;
+}
+
+.popover{
+    min-width: 500px;
+    max-height: 500px;
+    white-space: pre-line !important;
+    overflow: auto;
+    background-color: #f5fff8;
+    border: solid 2px;
+    border-color: #00d415;
+    font-family: monospace
+}
+#externalFiles_section .popover{
+    overflow: hidden;
+}
+
+#errorpath_section .fileContent {
+    height: calc(100% - 110px);
+    margin: 5px;
+    overflow: auto;
+}
+#externalFiles_section .fileContent {
+    height: calc(100% - 50px);
+    margin: 5px;
+    overflow: auto;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+td:first-child {
+    background-color: #ccc;
+}
+#err_table td:first-child{
+    border-radius: 6px;
+}
+#err_table td pre {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+#err_table tr:nth-child(odd) td pre.prettyprint {
+    background-color: #f3f3f3;
+}
+.sourceContent td pre {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+.sourceContent tr:nth-child(odd) td pre.prettyprint {
+    background-color: #f3f3f3;
+}
+.markedSourceLine{
+    background-color: #df80ff;
+}
+.markedCFAEdge path{
+    stroke: #df80ff;
+}
+.markedCFAEdge polygon{
+    fill: #df80ff;
+    stroke: #df80ff;
+}
+.markedCFAEdge text{
+    fill: #df80ff;
+}
+
+.markedCFANode text{
+    fill: #df80ff;
+}
+.markedCFANode ellipse{
+    stroke: #df80ff;
+}
+.markedCFANode polygon{
+    stroke: #df80ff;
+}
+
+.markedARGNode polygon{
+    fill: #df80ff;
+}
+.markedTableElement{
+    border: solid 2px;
+    border-color: #00d415;
+}
+.markedValueElement pre{
+    background-color: #83d480 !important;
+}
+.markedDescElement pre{
+    background-color: #71afff !important;
+}
+.markedValueDescElement pre{
+    background: linear-gradient(#83d480, #71afff) !important;
+}
+#searchOptions label{
+    font-weight: normal;
+}
+#matches{
+    display: none;
+}
+.markedValues{
+    background-color: #83d480;
+    border-radius: 25px;
+    margin-bottom: 2px;
+    padding: 2px;
+    padding-left: 8px;
+    max-width: 270px;
+}
+.markedDescriptions{
+    background-color: #71afff;
+    border-radius: 20px;
+    padding: 2px;
+    padding-left: 8px;
+    margin-bottom: 2px;
+    max-width: 270px;
+}
+.cfaContent{
+    margin: 20px;
+    margin-top: 45px;
+    /* This is very important - otherwise right margin is not shown (and nodes cannot be centered) */
+    display: inline-block;
+}
+.argContent{
+    margin: 20px;
+    margin-top: 45px;
+    /* This is very important - otherwise right margin is not shown (and nodes cannot be centered) */
+    display: inline-block;
+}
+.sourceContent{
+    margin-top: 45px;
+}
+.edit-line{
+    position: fixed;
+    background-color: white;
+    padding: 5px;
+}
+.edit-line div{
+    display: inline-block;
+}
+.edit-line label{
+    margin-right: 100px;
+    display: inline-block;
+}
+.edit-line p{
+    display: inline-block;
+}
+#cfa-scalingField{
+    margin-left: 5px;
+    width: 50px;
+    display: inline-block;
+}
+#arg-scalingField{
+    margin-left: 5px;
+    width: 50px;
+    display: inline-block;
+}
+
+div pre{
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+.help_button{
+    padding: 0px;
+    border: 0px;
+    margin:0px;
+    display: inline-block;
+    float: right;
+}
+#externalFiles_section .help_button{
+    margin-left: 10px;
+    float: left;
+}
+	    -->
+	</style>
+	
+	<link rel="stylesheet" type="text/css" href="https://www.sosy-lab.org/lib/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://www.sosy-lab.org/lib/google-code-prettify/2015-12-08-c67d802/prettify.css" integrity="sha384-Idd9oLcdDqxPfUuMARR/TPo7z2VE5qgbFk6j2RHdfzB88HFW5Ecm8qSe0KjhtZ2S" crossorigin="anonymous">
+    
+    <!--the jquery-script is necessary for bootstrap, it has to be added BEFORE the bootstrap-script-->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="https://www.sosy-lab.org/lib/jquery/1.12.0/jquery.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script type="text/javascript" src="https://www.sosy-lab.org/lib/jquery/2.2.0/jquery.min.js" integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk" crossorigin="anonymous"></script>
+    <!--<![endif]-->
+    
+    <script type="text/javascript" src="https://www.sosy-lab.org/lib/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.sosy-lab.org/lib/angularjs/1.5.5/angular.min.js" integrity="sha384-JhiEhwQjPEF1WJVY0yQaYOdN73Ml70AQwr+sq+zhSomAf4Fh0ImVDR8G9Ry0QokZ" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.sosy-lab.org/lib/google-code-prettify/2015-12-08-c67d802/prettify.js" integrity="sha384-uvP0LdNXVGNnAFf48ha9Ze5oJX136a8YERZm6nDnr/jAocGDVsfIj/N6I3h1wSj8" crossorigin="anonymous"></script>
+   
+	
+	<script type="text/javascript">
+/**
+* Created by Magdalena Murr on 06.07.15.
+*/
+//(function(){})() --> this notation makes a function in JS "self-invoking"
+(function() {
+    var app = angular.module('report', []);
+
+    app.controller('ReportController', ['$rootScope', '$scope', function($rootScope, $scope){
+        $scope.logo = "https://cpachecker.sosy-lab.org/logo.svg";
+        $scope.help_externalFiles = "<p><b>CFA</b> (control flow automaton) shows the control flow of the program (one CFA for one function in the source-code)</p>" +
+            "<p>- the errorpath is highlighted in red</p>" +
+            "<p>- click on the function-nodes to jump to CFA of this function</p>" +
+            "<p>- click on edges to jump to the relating line in the source-code</p>" +
+            "<p> ○ normal element   ▢ more normal elements</p>" +
+            "<p> ◇ condition</p>" +
+            "<p> ▭ function</p>" +
+            "<p> ◎ loop head (graph-based)  ⬡ loop head (syntactic)</p> " +
+            "<p><b>ARG</b> shows the errorpath as a graph</p>" +
+            "<p>- the errorpath is highlighted in red</p>" +
+            "<p>- click on nodes to jump to the relating node in the CFA</p>" +
+            "<p>- click on edges to jump to the relating line in the source-code</p>" +
+            "<p><font color=\"green\">■</font> covered state</p>" +
+            "<p><font color=\"orange\">■</font> not yet processed state</p>" +
+            "<p><font color=\"cornflowerblue\">■</font> important state (depending on used analysis)</p>" +
+            "<p><font color=\"red\">■</font> target state</p>";
+        $scope.help_errorpath = "<p>The errorpath leads to the error 'line by line' (Source) or 'edge by edge' (CFA)</p>\n" +
+            "<p><b>-V-</b> Click to show all initialized variables and their values at that point</p>\n" +
+            "<p><b>Edge-Description (Source-Code-View)</b> Click to jump to the relating edge in the CFA / node in the ARG / line in Source (depending on active tab)</p>\n" +
+            "<p><b>Buttons (Prev, Start, Next)</b> Click to navigate through the errorpath and jump to the relating position in the active tab</p>\n" +
+            "<p><b>Search</b>\n - You can search for words or numbers in the edge-descriptions (matches appear blue)\n" +
+            "- You can search for value-assignments (variable names or their value) - it will highlight only where a variable has been initialized or where it has changed its value (matches appear green)</p>";
+        //the tab that is shown
+        $scope.tab = 1;
+
+        $scope.$on("FirstTimeErrorpathElementIsSelected", function(event){
+            $scope.setMarginForGraphs();
+        });
+        $scope.$on("ChangeTab", function(event, tab){
+            $scope.setTab(tab);
+        });
+
+        $scope.setTab = function(tab){
+            $scope.tab = tab;
+        };
+        $scope.tabIsSet = function(tab){
+            return $scope.tab === tab;
+        };
+
+        $scope.setWidth = function(event) {
+            if (mouseDown) {
+                var wholeWidth = document.getElementById("externalFiles_section").offsetWidth + document.getElementById("errorpath_section").offsetWidth;
+                document.getElementById("errorpath_section").style.width = (Math.round(event.clientX/wholeWidth*100) + "%");
+                document.getElementById("externalFiles_section").style.width = (Math.round((wholeWidth - event.clientX)/wholeWidth*100) + "%");
+            }
+        };
+
+        $scope.setMouseUp = function(){
+            mouseDown = false;
+            document.onselectstart = null;
+            document.onmousedown = null;
+            if($rootScope.selected_ErrLine != null) {
+                $scope.setMarginForGraphs();
+            }
+        };
+
+        $scope.setMouseDown = function(){
+            mouseDown = true;
+            //we need this so that no text gets marked when moving middleline
+            document.onselectstart = function(){return false;};
+            document.onmousedown = function(){return false;};
+        };
+
+        $scope.setMarginForGraphs = function(){
+            var width = (Math.round((document.getElementById("externalFiles_section").offsetWidth/ 2)-10) + "px");
+            var height = (Math.round(document.getElementById("externalFiles_section").offsetHeight/ 2) + "px");
+            var cfaContent = document.getElementsByClassName("cfaContent")[0];
+            var argContent = document.getElementsByClassName("argContent")[0];
+            cfaContent.style.marginLeft = (width);
+            cfaContent.style.marginRight = (width);
+            cfaContent.style.marginTop = (height);
+            cfaContent.style.marginBottom = (height);
+            argContent.style.marginLeft = (width);
+            argContent.style.marginRight = (width);
+            argContent.style.marginTop = (height);
+            argContent.style.marginBottom = (height);
+        };
+
+    }]);
+
+
+    app.controller("SearchController", ['$rootScope', '$scope', function($rootScope, $scope){
+        $scope.numOfValueMatches = 0;
+        $scope.numOfDescriptionMatches = 0;
+
+        $scope.checkIfEnter = function($event){
+            if($event.keyCode == 13){
+                $scope.searchFor();
+            }
+        };
+
+        $scope.searchFor = function(){
+            //you have to get the matches-element this way, because display:none does not allow direct search
+            var matchesDiv = document.getElementsByClassName("markedValues")[0].parentNode;
+            if(matchesDiv.style.display != "inline"){
+                matchesDiv.style.display = "inline";
+                document.getElementById("err_table").parentNode.style.height = "calc(100% - 160px)";
+            }
+            $scope.numOfValueMatches = 0;
+            $scope.numOfDescriptionMatches = 0;
+            var allMarkedValueElements = document.getElementsByClassName("markedValueElement");
+            while(allMarkedValueElements.length != 0){
+                allMarkedValueElements[0].classList.remove("markedValueElement");
+            }
+            var allMarkedDescElements = document.getElementsByClassName("markedDescElement");
+            while(allMarkedDescElements.length != 0){
+                allMarkedDescElements[0].classList.remove("markedDescElement");
+            }
+            var allMarkedValueDescElements = document.getElementsByClassName("markedValueDescElement");
+            while(allMarkedValueDescElements.length != 0){
+                allMarkedValueDescElements[0].classList.remove("markedValueDescElement");
+            }
+            var searchedString = document.getElementsByClassName("search-input")[0].value;
+
+            if (searchedString.trim() != "" && !document.getElementById("optionExactMatch").checked) {
+                for (var l = 0; l < $rootScope.errorPathData.length; l++) {
+                    var errorPathElem = $rootScope.errorPathData[l];
+                    if (errorPathElem.val.contains(searchedString) && errorPathElem.desc.contains(searchedString)) {
+                        $scope.numOfValueMatches = $scope.numOfValueMatches + 1;
+                        $scope.numOfDescriptionMatches = $scope.numOfDescriptionMatches + 1;
+                        document.getElementById("errpath-" + l).getElementsByTagName("td")[1].classList.add("markedValueDescElement");
+                    } else if (errorPathElem.val.contains(searchedString)) {
+                        $scope.numOfValueMatches = $scope.numOfValueMatches + 1;
+                        document.getElementById("errpath-" + l).getElementsByTagName("td")[1].classList.add("markedValueElement");
+                    } else if (errorPathElem.desc.contains(searchedString)) {
+                        $scope.numOfDescriptionMatches = $scope.numOfDescriptionMatches + 1;
+                        document.getElementById("errpath-" + l).getElementsByTagName("td")[1].classList.add("markedDescElement");
+                    }
+                }
+            } else if (searchedString.trim() != "" && document.getElementById("optionExactMatch").checked) {
+                for (var l = 0; l < $rootScope.errorPathData.length; l++) {
+                    var errorPathElem = $rootScope.errorPathData[l];
+                    if (searchedString in errorPathElem.newValDict && errorPathElem.desc == searchedString) {
+                        $scope.numOfValueMatches = $scope.numOfValueMatches + 1;
+                        $scope.numOfDescriptionMatches = $scope.numOfDescriptionMatches + 1;
+                        document.getElementById("errpath-" + l).getElementsByTagName("td")[1].classList.add("markedValueDescElement");
+                    } else if (searchedString in errorPathElem.newValDict) {
+                        $scope.numOfValueMatches = $scope.numOfValueMatches + 1;
+                        document.getElementById("errpath-" + l).getElementsByTagName("td")[1].classList.add("markedValueElement");
+                    } else if (errorPathElem.desc == searchedString) {
+                        $scope.numOfDescriptionMatches = $scope.numOfDescriptionMatches + 1;
+                        document.getElementById("errpath-" + l).getElementsByTagName("td")[1].classList.add("markedDescElement");
+                    }
+                }
+            }
+        };
+    }]);
+
+
+    app.controller("ValueAssignmentsController", ['$rootScope', '$scope', function($rootScope, $scope){
+        //gets called when '-V-'button in errorpath is clicked
+        $scope.showValues = function($event){
+            var element = $event.currentTarget;
+            if (element.classList.contains("markedTableElement")) {
+                element.classList.remove("markedTableElement");
+            } else {
+                element.classList.add("markedTableElement");
+            }
+        };
+    }]);
+
+
+    app.controller("ErrorpathController", ['$rootScope', '$scope', function($rootScope, $scope){
+        $rootScope.errorPathData = [];
+        //the line (errorpath) that is selected
+        $rootScope.selected_ErrLine = null;
+
+        $scope.getValues = function(val){
+            var values = {};
+            if(val != "") {
+                var singleStatements = val.split("\n");
+                for (var i = 0; i < singleStatements.length-1; i++) {
+                    values[singleStatements[i].split("==")[0].trim()] = singleStatements[i].split("==")[1].trim().slice(0,-1);
+                }
+            }
+            return values;
+        };
+
+        var indentationlevel = 0;
+        for(var a = 0; a<errorPathData.length; a++) {
+            var errPathElem = errorPathData[a];
+            //do not show start, return and blank edges
+            if (errPathElem.desc.substring(0, "Return edge from".length) != "Return edge from" && errPathElem.desc != "Function start dummy edge" && errPathElem.desc != "") {
+                if (errPathElem.source in fCallEdges) {
+                    errPathElem.target = fCallEdges[errPathElem.source][0];
+                }
+                var newValues = $scope.getValues(errPathElem.val);
+                errPathElem["newValDict"] = newValues;
+                errPathElem["valDict"] = {};
+                errPathElem["valString"] = "";
+                if (a > 0) {
+                    for (key in $rootScope.errorPathData[$rootScope.errorPathData.length - 1].valDict) {
+                        errPathElem.valDict[key] = $rootScope.errorPathData[$rootScope.errorPathData.length - 1].valDict[key];
+                    }
+                }
+                if (newValues != {}) {
+                    for (key in newValues) {
+                        errPathElem.valDict[key] = newValues[key];
+                    }
+                }
+                // if I do it in one of the for-loops before, I get the new values doubled
+                for (key in errPathElem.valDict){
+                    errPathElem.valString = errPathElem.valString + key + ":  " + errPathElem.valDict[key] + "\n";
+                }
+                //add indentation
+                for(var b = 1; b <= indentationlevel; b++) {
+                    errPathElem.desc = "   " + errPathElem.desc;
+                }
+                $rootScope.errorPathData.push(errPathElem);
+            } else if(errPathElem.desc.substring(0, "Return edge from".length) == "Return edge from"){
+                indentationlevel -= 1;
+            } else if(errPathElem.desc == "Function start dummy edge"){
+                indentationlevel += 1;
+            }
+        }
+
+        $scope.clickedErrpathElement = function($event){
+            var lineNumber = $event.currentTarget.parentElement.id;
+            $scope.setLine(lineNumber);
+            $rootScope.$broadcast('clickedErrorpathElement', lineNumber.substring("errpath-".length));
+        };
+
+        $scope.clickedErrpathButton = function($event){
+            var button = $event.currentTarget.innerHTML;
+            var line;
+            if (button == "Prev" && ($rootScope.selected_ErrLine.substring("errpath-".length) == 0 || $rootScope.selected_ErrLine == null)) {
+            } else if (button == "Prev") {
+                line = parseInt($rootScope.selected_ErrLine.substring("errpath-".length)) - 1;
+                $scope.setLine("errpath-" + line);
+                $rootScope.$broadcast("clickedErrorpathButton", line);
+            } else if (button == "Start" || button == "Next" && $rootScope.selected_ErrLine == null) {
+                document.getElementById("err_table").parentNode.scrollTop = 0;
+                $scope.setLine("errpath-" + 0);
+                $rootScope.$broadcast("clickedErrorpathButton", 0);
+            } else if (button == "Next" && ($rootScope.selected_ErrLine.substring("errpath-".length) == $rootScope.errorPathData.length -1)) {
+            } else if (button == "Next") {
+                line = parseInt($rootScope.selected_ErrLine.substring("errpath-".length)) + 1;
+                $scope.setLine("errpath-" + line);
+                $rootScope.$broadcast("clickedErrorpathButton", line);
+            }
+        };
+
+        $scope.setLine = function(id){
+            if ($rootScope.selected_ErrLine != null) {
+                document.getElementById($rootScope.selected_ErrLine).style.outline = "none";
+            } else {
+                //The first time a line is selected
+                $rootScope.$broadcast("FirstTimeErrorpathElementIsSelected");
+            }
+            document.getElementById(id).style.outline = "#df80ff solid 1px";
+            $rootScope.selected_ErrLine = id;
+        };
+    }]);
+
+
+    app.controller('ARGController', ['$rootScope', '$scope', function($rootScope, $scope){
+        $scope.argNodeMarked = false;
+
+        $scope.$on('clickedErrorpathElement', function(event, index){
+            $scope.markARGNode(index);
+        });
+        $scope.$on("clickedErrorpathButton", function(event, index){
+            $scope.markARGNode(index);
+        });
+
+        $scope.clickedARGElement = function($event){
+            var y = $event.currentTarget.id;
+            if (document.getElementById(y).classList.contains("edge")){
+                $rootScope.$broadcast("ChangeTab", 3);
+                var line = document.getElementById(y).getElementsByTagName("text")[0].innerHTML.split(":")[0].substring("Line ".length);
+                $rootScope.$broadcast("clickedARGEdge", line);
+            } else if (document.getElementById(y).classList.contains("node")){
+                var cfaNodeNumber = document.getElementById(y).getElementsByTagName("text")[0].innerHTML.split("N")[1];
+                $rootScope.$broadcast("ChangeTab", 1);
+                $rootScope.$broadcast("clickedARGNode", cfaNodeNumber);
+            }
+        };
+
+        $scope.markARGNode = function(index){
+            var argElement = $rootScope.errorPathData[index].argelem;
+            if($scope.argNodeMarked){
+                document.getElementsByClassName("markedARGNode")[0].classList.remove("markedARGNode");
+            }
+            document.getElementById("arg-" + argElement).classList.add("markedARGNode");
+            $scope.argNodeMarked = true;
+            $scope.scrollToARGElement("arg-" + argElement);
+        };
+
+        $scope.scrollToARGElement = function(id){
+            var element = document.getElementById(id);
+            var argContent = document.getElementsByClassName("argContent")[0];
+            var box = argContent.parentNode.getBoundingClientRect();
+            var xScroll = argContent.parentNode.scrollLeft;
+            var yScroll = argContent.parentNode.scrollTop;
+            var bcr = element.getBoundingClientRect();
+            var xMargin = (argContent.style.marginLeft).split("px")[0];
+            var yMargin = (argContent.style.marginTop).split("px")[0];
+            argContent.parentNode.scrollLeft = bcr.left + xScroll - box.left - xMargin + 20;
+            argContent.parentNode.scrollTop =  bcr.top + yScroll - box.top - yMargin + 20;
+        };
+    }]);
+
+
+    app.controller('CFAController', ["$rootScope", "$scope", function($rootScope, $scope){
+        //available functions (cfa-graphs)
+        $rootScope.functions = functions;
+        //selected cfa-graph (index = -1 means the function does not exist)
+        if (functions.indexOf("main" != -1)) {
+            $rootScope.selectedCFAFunction = functions.indexOf("main");
+        } else {
+            $rootScope.selectedCFAFunction = 0;
+        }
+        $scope.cfaEdgeMarked = false;
+        $scope.cfaNodeMarked = false;
+
+        $scope.$on('clickedErrorpathElement', function(event, nodeNumber){
+            $scope.markCFAedge(nodeNumber);
+        });
+        $scope.$on("clickedErrorpathButton", function(event, nodeNumber){
+            $scope.markCFAedge(nodeNumber);
+        });
+        $scope.$on("clickedARGNode", function(event, nodeNumber){
+            $scope.markCFANode(nodeNumber);
+        });
+
+        $scope.setCFAFunction = function(value){
+            document.getElementsByClassName("cfaContent")[0].parentNode.scrollTop = 0;
+            document.getElementsByClassName("cfaContent")[0].parentNode.scrollLeft = 0;
+            $rootScope.$broadcast("clearCFAZoom");
+            $rootScope.selectedCFAFunction = value;
+        };
+        $scope.cfaFunctionIsSet = function(value){
+            return value === $rootScope.selectedCFAFunction;
+        };
+
+        //Behaviour for Click-Elements in CFA
+        $scope.clickedCFAElement = function($event){
+            var element = $event.currentTarget.id;
+            if (document.getElementById(element).classList.contains("edge")){
+                $rootScope.$broadcast("ChangeTab", 3);
+                var line;
+                var source;
+                if (element.split("->")[1] > 100000 || element.split("->")[0].substring("cfa-".length) > 100000){
+                    source = element.split("->")[0].substring("cfa-".length);
+                    line = cfaInfo["edges"][source + "->" + fCallEdges[source][1]]["line"];
+                } else if (element.split("->")[0].substring("cfa-".length) in combinedNodes){
+                    var textfields = document.getElementById("cfa-" + element.split("->")[0].substring("cfa-".length)).getElementsByTagName("text");
+                    source = textfields[textfields.length - 2].innerHTML;
+                    line = cfaInfo["edges"][source + "->" + element.split("->")[1]]["line"];
+                } else {
+                    line = cfaInfo["edges"][element.substring("cfa-".length)]["line"];
+                }
+                $rootScope.$broadcast("clickedCFAEdge", line);
+            } else if (document.getElementById(element).classList.contains("node") && (element.substring("cfa-".length) > 100000)) {
+                var func = document.getElementById(element).getElementsByTagName("text")[0].innerHTML;
+                $scope.setCFAFunction(functions.indexOf(func));
+            }
+        };
+
+        $scope.markCFAedge = function(index){
+            var source = $rootScope.errorPathData[index].source;
+            var target = $rootScope.errorPathData[index].target;
+            var funcIndex = $rootScope.functions.indexOf(cfaInfo["nodes"][source]["func"]);
+            if(funcIndex != $rootScope.selectedCFAFunction) {
+                $scope.setCFAFunction(funcIndex);
+            }
+            if(!(source in combinedNodes && target in combinedNodes)) {
+                if(source in combinedNodes){
+                    source = combinedNodes[source];
+                }
+                if ($scope.cfaEdgeMarked) {
+                    document.getElementsByClassName("markedCFAEdge")[0].classList.remove("markedCFAEdge");
+                }
+                if ($scope.cfaNodeMarked) {
+                    document.getElementsByClassName("markedCFANode")[0].classList.remove("markedCFANode");
+                    $scope.cfaNodeMarked = false;
+                }
+                document.getElementById("cfa-" + source + "->" + target).classList.add("markedCFAEdge");
+                $scope.scrollToCFAElement("cfa-" + source + "->" + target);
+                $scope.cfaEdgeMarked = true;
+            } else {
+                $scope.markCFANode(combinedNodes[source]);
+            }
+        };
+
+        $scope.markCFANode = function(nodenumber){
+            if($scope.cfaNodeMarked){
+                document.getElementsByClassName("markedCFANode")[0].classList.remove("markedCFANode");
+            }
+            if($scope.cfaEdgeMarked){
+                document.getElementsByClassName("markedCFAEdge")[0].classList.remove("markedCFAEdge");
+                $scope.cfaEdgeMarked = false;
+            }
+            $scope.setCFAFunction($rootScope.functions.indexOf(cfaInfo["nodes"][nodenumber]["func"]));
+            if(!(nodenumber in combinedNodes)) {
+                document.getElementById("cfa-" + nodenumber).classList.add("markedCFANode");
+                $scope.scrollToCFAElement("cfa-" + nodenumber);
+            } else {
+                document.getElementById("cfa-" + combinedNodes[nodenumber]).classList.add("markedCFANode");
+                $scope.scrollToCFAElement("cfa-" + combinedNodes[nodenumber]);
+            }
+            $scope.cfaNodeMarked = true;
+        };
+
+        $scope.scrollToCFAElement = function(id){
+            var element = document.getElementById(id);
+            var box = document.getElementsByClassName("cfaContent")[0].parentNode.getBoundingClientRect();
+            var bcr = element.getBoundingClientRect();
+            var cfaContent = document.getElementsByClassName("cfaContent")[0];
+            var xScroll = cfaContent.parentNode.scrollLeft;
+            var yScroll =  cfaContent.parentNode.scrollTop;
+            var xMargin = (cfaContent.style.marginLeft).split("px")[0];
+            var yMargin = (cfaContent.style.marginTop).split("px")[0];
+            cfaContent.parentNode.scrollLeft = bcr.left + xScroll - box.left - xMargin + 20;
+            cfaContent.parentNode.scrollTop = bcr.top + yScroll - box.top - yMargin + 20;
+        };
+
+    }]);
+
+
+    app.controller('SourceController', ['$rootScope', '$scope', function($rootScope, $scope){
+        //available sourcefiles
+        $scope.sourceFiles = sourceFiles;
+        $scope.selectedSourceFile = 0;
+        $scope.lineMarked = false;
+
+        $scope.$on('clickedErrorpathElement', function(event, lineNumber){
+            $scope.markSource($rootScope.errorPathData[lineNumber].line);
+        });
+        $scope.$on('clickedErrorpathButton', function(event, lineNumber){
+            $scope.markSource($rootScope.errorPathData[lineNumber].line);
+        });
+        $scope.$on('clickedCFAEdge', function(event, line){
+            $scope.markSource(line);
+        });
+        $scope.$on('clickedARGEdge', function(event, line){
+            $scope.markSource(line);
+        });
+
+        $scope.setSourceFile = function(value){
+            $scope.selectedSourceFile = value;
+        };
+        $scope.sourceFileIsSet = function(value){
+            return value === $scope.selectedSourceFile;
+        };
+
+        $scope.markSource = function(line){
+            if ($scope.lineMarked) {
+                document.getElementsByClassName("markedSourceLine")[0].className = "prettyprint";
+            }
+            document.getElementById("source-" + line).getElementsByTagName("pre")[1].className = "markedSourceLine";
+            var element = document.getElementById("source-" + line);
+            var box = document.getElementsByClassName("sourceContent")[0].parentNode.getBoundingClientRect();
+            var bcr = element.getBoundingClientRect();
+            var sourceContent = document.getElementsByClassName("sourceContent")[0];
+            var yScroll =  sourceContent.parentNode.scrollTop;
+            var yMargin = Math.round((document.getElementById("externalFiles_section").offsetHeight/ 2)-50);
+            sourceContent.parentNode.scrollTop = bcr.top + yScroll - box.top - yMargin;
+            $scope.lineMarked = true;
+        };
+    }]);
+
+
+    app.controller('ZoomController', ['$rootScope', '$scope', function($rootScope, $scope){
+        $scope.zoomFactorCFA = 100;
+        $scope.zoomFactorARG = 100;
+
+        $scope.$on("clearCFAZoom", function(){$scope.clearZoomCFA();});
+
+        $scope.setZoom = function(id){
+            if (id.contains("cfa")) {
+                document.getElementById("cfaGraph-" + $rootScope.selectedCFAFunction).transform.baseVal.getItem(0).setScale($scope.zoomFactorCFA / 100, $scope.zoomFactorCFA / 100);
+            } else if (id.contains("arg")){
+                document.getElementById("argGraph-" + $rootScope.functions.length).transform.baseVal.getItem(0).setScale($scope.zoomFactorARG / 100, $scope.zoomFactorARG / 100);
+            }
+        };
+
+        $scope.clearZoomCFA = function(){
+            $scope.zoomFactorCFA = 100;
+            document.getElementById("cfaGraph-" + $rootScope.selectedCFAFunction).transform.baseVal.getItem(0).setScale($scope.zoomFactorCFA/100, $scope.zoomFactorCFA/100);
+        };
+    }]);
+})();
+
+
+var mouseDown = false;
+var functions = ["arbiter","arbiter_initial","client","client_initial","controller","controller_initial","main"];
+var fCallEdges = {"112":[100005,113],"113":[100006,114],"114":[100007,115],"115":[100008,116],"116":[100009,117],"117":[100010,118],"105":[100001,106],"106":[100002,107],"107":[100003,108],"110":[100004,112]};
+var cfaInfo = {"nodes":{"0":{"no":0,"func":"controller_initial"},"1":{"no":1,"func":"controller_initial"},"2":{"no":2,"func":"controller_initial"},"3":{"no":3,"func":"controller_initial"},"4":{"no":4,"func":"controller_initial"},"5":{"no":5,"func":"controller_initial"},"6":{"no":6,"func":"controller"},"7":{"no":7,"func":"controller"},"8":{"no":8,"func":"controller"},"9":{"no":9,"func":"controller"},"10":{"no":10,"func":"controller"},"11":{"no":11,"func":"controller"},"12":{"no":12,"func":"controller"},"13":{"no":13,"func":"controller"},"14":{"no":14,"func":"controller"},"15":{"no":15,"func":"controller"},"16":{"no":16,"func":"controller"},"17":{"no":17,"func":"controller"},"18":{"no":18,"func":"controller"},"19":{"no":19,"func":"controller"},"20":{"no":20,"func":"controller"},"21":{"no":21,"func":"controller"},"22":{"no":22,"func":"controller"},"23":{"no":23,"func":"controller"},"25":{"no":25,"func":"controller"},"26":{"no":26,"func":"controller"},"27":{"no":27,"func":"controller"},"28":{"no":28,"func":"controller"},"29":{"no":29,"func":"controller"},"30":{"no":30,"func":"controller"},"31":{"no":31,"func":"controller"},"32":{"no":32,"func":"controller"},"33":{"no":33,"func":"controller"},"34":{"no":34,"func":"controller"},"35":{"no":35,"func":"controller"},"36":{"no":36,"func":"controller"},"37":{"no":37,"func":"controller"},"38":{"no":38,"func":"arbiter_initial"},"39":{"no":39,"func":"arbiter_initial"},"40":{"no":40,"func":"arbiter_initial"},"41":{"no":41,"func":"arbiter_initial"},"42":{"no":42,"func":"arbiter"},"43":{"no":43,"func":"arbiter"},"44":{"no":44,"func":"arbiter"},"45":{"no":45,"func":"arbiter"},"46":{"no":46,"func":"arbiter"},"47":{"no":47,"func":"arbiter"},"48":{"no":48,"func":"arbiter"},"49":{"no":49,"func":"arbiter"},"50":{"no":50,"func":"arbiter"},"51":{"no":51,"func":"arbiter"},"52":{"no":52,"func":"arbiter"},"53":{"no":53,"func":"arbiter"},"54":{"no":54,"func":"arbiter"},"55":{"no":55,"func":"arbiter"},"56":{"no":56,"func":"arbiter"},"57":{"no":57,"func":"arbiter"},"58":{"no":58,"func":"arbiter"},"59":{"no":59,"func":"arbiter"},"60":{"no":60,"func":"arbiter"},"61":{"no":61,"func":"arbiter"},"62":{"no":62,"func":"client_initial"},"63":{"no":63,"func":"client_initial"},"64":{"no":64,"func":"client_initial"},"65":{"no":65,"func":"client_initial"},"66":{"no":66,"func":"client_initial"},"67":{"no":67,"func":"client"},"68":{"no":68,"func":"client"},"69":{"no":69,"func":"client"},"70":{"no":70,"func":"client"},"71":{"no":71,"func":"client"},"72":{"no":72,"func":"client"},"73":{"no":73,"func":"client"},"74":{"no":74,"func":"client"},"75":{"no":75,"func":"client"},"76":{"no":76,"func":"client"},"77":{"no":77,"func":"client"},"79":{"no":79,"func":"client"},"80":{"no":80,"func":"client"},"81":{"no":81,"func":"client"},"82":{"no":82,"func":"client"},"83":{"no":83,"func":"client"},"84":{"no":84,"func":"client"},"85":{"no":85,"func":"client"},"86":{"no":86,"func":"client"},"87":{"no":87,"func":"client"},"88":{"no":88,"func":"client"},"89":{"no":89,"func":"client"},"90":{"no":90,"func":"client"},"92":{"no":92,"func":"main"},"93":{"no":93,"func":"main"},"94":{"no":94,"func":"main"},"95":{"no":95,"func":"main"},"96":{"no":96,"func":"main"},"97":{"no":97,"func":"main"},"98":{"no":98,"func":"main"},"99":{"no":99,"func":"main"},"100":{"no":100,"func":"main"},"101":{"no":101,"func":"main"},"102":{"no":102,"func":"main"},"103":{"no":103,"func":"main"},"104":{"no":104,"func":"main"},"105":{"no":105,"func":"main"},"106":{"no":106,"func":"main"},"107":{"no":107,"func":"main"},"108":{"no":108,"func":"main"},"109":{"no":109,"func":"main"},"110":{"no":110,"func":"main"},"112":{"no":112,"func":"main"},"113":{"no":113,"func":"main"},"114":{"no":114,"func":"main"},"115":{"no":115,"func":"main"},"116":{"no":116,"func":"main"},"117":{"no":117,"func":"main"},"118":{"no":118,"func":"main"},"119":{"no":119,"func":"main"},"120":{"no":120,"func":"main"},"121":{"no":121,"func":"main"},"122":{"no":122,"func":"main"},"123":{"no":123,"func":"main"},"124":{"no":124,"func":"main"},"125":{"no":125,"func":"main"},"126":{"no":126,"func":"main"},"127":{"no":127,"func":"main"},"128":{"no":128,"func":"main"},"129":{"no":129,"func":"main"},"130":{"no":130,"func":"main"},"131":{"no":131,"func":"main"},"132":{"no":132,"func":"main"},"133":{"no":133,"func":"main"},"134":{"no":134,"func":"main"},"135":{"no":135,"func":"main"},"136":{"no":136,"func":"main"},"137":{"no":137,"func":"main"},"138":{"no":138,"func":"main"},"139":{"no":139,"func":"main"},"140":{"no":140,"func":"main"},"141":{"no":141,"func":"main"},"142":{"no":142,"func":"main"},"143":{"no":143,"func":"main"},"144":{"no":144,"func":"main"},"145":{"no":145,"func":"main"},"146":{"no":146,"func":"main"},"147":{"no":147,"func":"main"},"148":{"no":148,"func":"main"},"149":{"no":149,"func":"main"},"150":{"no":150,"func":"main"},"151":{"no":151,"func":"main"},"152":{"no":152,"func":"main"},"153":{"no":153,"func":"main"},"154":{"no":154,"func":"main"},"155":{"no":155,"func":"main"},"156":{"no":156,"func":"main"},"157":{"no":157,"func":"main"},"158":{"no":158,"func":"main"},"159":{"no":159,"func":"main"},"160":{"no":160,"func":"main"},"161":{"no":161,"func":"main"},"162":{"no":162,"func":"main"},"163":{"no":163,"func":"main"},"164":{"no":164,"func":"main"},"165":{"no":165,"func":"main"},"166":{"no":166,"func":"main"},"167":{"no":167,"func":"main"},"168":{"no":168,"func":"main"},"169":{"no":169,"func":"main"},"170":{"no":170,"func":"main"},"171":{"no":171,"func":"main"},"172":{"no":172,"func":"main"},"173":{"no":173,"func":"main"},"174":{"no":174,"func":"main"},"175":{"no":175,"func":"main"},"176":{"no":176,"func":"main"},"177":{"no":177,"func":"main"},"178":{"no":178,"func":"main"},"179":{"no":179,"func":"main"},"180":{"no":180,"func":"main"},"181":{"no":181,"func":"main"},"182":{"no":182,"func":"main"},"183":{"no":183,"func":"main"},"184":{"no":184,"func":"main"},"185":{"no":185,"func":"main"},"186":{"no":186,"func":"main"},"187":{"no":187,"func":"main"},"188":{"no":188,"func":"main"},"189":{"no":189,"func":"main"},"190":{"no":190,"func":"main"},"191":{"no":191,"func":"main"},"192":{"no":192,"func":"main"},"193":{"no":193,"func":"main"},"194":{"no":194,"func":"main"},"195":{"no":195,"func":"main"},"196":{"no":196,"func":"main"},"197":{"no":197,"func":"main"},"198":{"no":198,"func":"main"},"199":{"no":199,"func":"main"},"200":{"no":200,"func":"main"},"201":{"no":201,"func":"main"},"202":{"no":202,"func":"main"},"203":{"no":203,"func":"main"},"204":{"no":204,"func":"main"},"205":{"no":205,"func":"main"},"206":{"no":206,"func":"main"},"207":{"no":207,"func":"main"},"208":{"no":208,"func":"main"},"209":{"no":209,"func":"main"},"210":{"no":210,"func":"main"},"211":{"no":211,"func":"main"},"212":{"no":212,"func":"main"},"213":{"no":213,"func":"main"},"214":{"no":214,"func":"main"},"215":{"no":215,"func":"main"},"216":{"no":216,"func":"main"},"217":{"no":217,"func":"main"},"218":{"no":218,"func":"main"},"219":{"no":219,"func":"main"},"220":{"no":220,"func":"main"},"221":{"no":221,"func":"main"},"222":{"no":222,"func":"main"},"223":{"no":223,"func":"main"},"224":{"no":224,"func":"main"},"225":{"no":225,"func":"main"},"226":{"no":226,"func":"main"},"227":{"no":227,"func":"main"},"228":{"no":228,"func":"main"},"229":{"no":229,"func":"main"},"230":{"no":230,"func":"main"},"231":{"no":231,"func":"main"},"232":{"no":232,"func":"main"},"233":{"no":233,"func":"main"},"234":{"no":234,"func":"main"},"235":{"no":235,"func":"main"},"236":{"no":236,"func":"main"},"237":{"no":237,"func":"main"},"238":{"no":238,"func":"main"},"239":{"no":239,"func":"main"},"240":{"no":240,"func":"main"},"241":{"no":241,"func":"main"},"242":{"no":242,"func":"main"},"243":{"no":243,"func":"main"},"244":{"no":244,"func":"main"},"245":{"no":245,"func":"main"},"246":{"no":246,"func":"main"},"247":{"no":247,"func":"main"},"248":{"no":248,"func":"main"},"249":{"no":249,"func":"main"},"250":{"no":250,"func":"main"},"251":{"no":251,"func":"main"},"252":{"no":252,"func":"main"},"253":{"no":253,"func":"main"},"254":{"no":254,"func":"main"},"255":{"no":255,"func":"main"},"256":{"no":256,"func":"main"},"257":{"no":257,"func":"main"},"258":{"no":258,"func":"main"},"259":{"no":259,"func":"main"},"260":{"no":260,"func":"main"},"261":{"no":261,"func":"main"},"262":{"no":262,"func":"main"},"263":{"no":263,"func":"main"},"264":{"no":264,"func":"main"},"265":{"no":265,"func":"main"},"266":{"no":266,"func":"main"},"267":{"no":267,"func":"main"},"268":{"no":268,"func":"main"},"269":{"no":269,"func":"main"},"270":{"no":270,"func":"main"},"271":{"no":271,"func":"main"},"272":{"no":272,"func":"main"},"273":{"no":273,"func":"main"},"274":{"no":274,"func":"main"},"275":{"no":275,"func":"main"},"276":{"no":276,"func":"main"},"277":{"no":277,"func":"main"},"278":{"no":278,"func":"main"},"279":{"no":279,"func":"main"},"280":{"no":280,"func":"main"},"281":{"no":281,"func":"main"},"282":{"no":282,"func":"main"},"283":{"no":283,"func":"main"},"284":{"no":284,"func":"main"},"285":{"no":285,"func":"main"},"286":{"no":286,"func":"main"},"287":{"no":287,"func":"main"},"288":{"no":288,"func":"main"},"289":{"no":289,"func":"main"},"290":{"no":290,"func":"main"},"291":{"no":291,"func":"main"},"292":{"no":292,"func":"main"},"293":{"no":293,"func":"main"},"294":{"no":294,"func":"main"},"295":{"no":295,"func":"main"},"296":{"no":296,"func":"main"},"297":{"no":297,"func":"main"},"298":{"no":298,"func":"main"},"299":{"no":299,"func":"main"},"300":{"no":300,"func":"main"},"301":{"no":301,"func":"main"},"302":{"no":302,"func":"main"},"303":{"no":303,"func":"main"},"304":{"no":304,"func":"main"},"305":{"no":305,"func":"main"},"306":{"no":306,"func":"main"},"307":{"no":307,"func":"main"},"308":{"no":308,"func":"main"},"309":{"no":309,"func":"main"},"310":{"no":310,"func":"main"},"311":{"no":311,"func":"main"},"312":{"no":312,"func":"main"},"313":{"no":313,"func":"main"},"314":{"no":314,"func":"main"},"315":{"no":315,"func":"main"},"316":{"no":316,"func":"main"},"317":{"no":317,"func":"main"},"318":{"no":318,"func":"main"},"319":{"no":319,"func":"main"},"320":{"no":320,"func":"main"},"321":{"no":321,"func":"main"},"322":{"no":322,"func":"main"},"323":{"no":323,"func":"main"},"324":{"no":324,"func":"main"},"325":{"no":325,"func":"main"},"326":{"no":326,"func":"main"},"327":{"no":327,"func":"main"},"328":{"no":328,"func":"main"},"329":{"no":329,"func":"main"},"330":{"no":330,"func":"main"},"331":{"no":331,"func":"main"},"332":{"no":332,"func":"main"},"333":{"no":333,"func":"main"},"334":{"no":334,"func":"main"},"335":{"no":335,"func":"main"},"336":{"no":336,"func":"main"},"337":{"no":337,"func":"main"},"338":{"no":338,"func":"main"},"339":{"no":339,"func":"main"},"340":{"no":340,"func":"main"},"341":{"no":341,"func":"main"},"342":{"no":342,"func":"main"},"343":{"no":343,"func":"main"},"344":{"no":344,"func":"main"}},"edges":{"223->224":{"file":"\/usr\/include\/libio.h","line":334,"source":223,"type":"DeclarationEdge","stmt":"void _IO_flockfile(_IO_FILE *);","target":224},"82->83":{"file":"cpa.c","line":977,"source":82,"type":"StatementEdge","stmt":"sclient.state = 2;","target":83},"17->14":{"file":"<none>","line":0,"source":17,"type":"BlankEdge","stmt":"","target":14},"320->321":{"file":"\/usr\/include\/stdio.h","line":836,"source":320,"type":"DeclarationEdge","stmt":"char * ctermid(char *__s);","target":321},"89->71":{"file":"<none>","line":0,"source":89,"type":"BlankEdge","stmt":"","target":71},"336->337":{"file":"cpa.c","line":934,"source":336,"type":"DeclarationEdge","stmt":"struct state_elements_arbiter sarbiter = { };","target":337},"107->108":{"file":"cpa.c","line":1001,"source":107,"type":"CallToReturnEdge","stmt":"arbiter_initial();","target":108},"204->205":{"file":"\/usr\/include\/libio.h","line":218,"source":204,"type":"DeclarationEdge","stmt":"enum __codecvt_result { __codecvt_ok = 0, __codecvt_partial = 1, __codecvt_error = 2, __codecvt_noconv = 3 };","target":205},"279->280":{"file":"\/usr\/include\/stdio.h","line":621,"source":279,"type":"DeclarationEdge","stmt":"int getchar_unlocked();","target":280},"301->302":{"file":"\/usr\/include\/stdio.h","line":749,"source":301,"type":"DeclarationEdge","stmt":"long int ftell(FILE *__stream);","target":302},"185->186":{"file":"\/usr\/include\/bits\/types.h","line":128,"source":185,"type":"DeclarationEdge","stmt":"typedef __off64_t __loff_t;","target":186},"317->318":{"file":"\/usr\/include\/stdio.h","line":822,"source":317,"type":"DeclarationEdge","stmt":"int fileno_unlocked(FILE *__stream);","target":318},"277->278":{"file":"\/usr\/include\/stdio.h","line":617,"source":277,"type":"DeclarationEdge","stmt":"int getchar();","target":278},"145->146":{"file":"\/usr\/include\/bits\/types.h","line":52,"source":145,"type":"DeclarationEdge","stmt":"typedef signed int __int32_t;","target":146},"242->243":{"file":"\/usr\/include\/stdio.h","line":394,"source":242,"type":"DeclarationEdge","stmt":"int renameat(int __oldfd, const char *__old, int __newfd, const char *__new);","target":243},"109->110":{"file":"cpa.c","line":1003,"source":109,"type":"BlankEdge","stmt":"","target":110},"258->259":{"file":"\/usr\/include\/stdio.h","line":482,"source":258,"type":"DeclarationEdge","stmt":"void setlinebuf(FILE *__stream);","target":259},"110->112":{"file":"cpa.c","line":1004,"source":110,"type":"CallToReturnEdge","stmt":"client(clk, &reqA, ackA);","target":112},"128->134":{"file":"cpa.c","line":1018,"source":128,"type":"StatementEdge","stmt":"__assert_fail(\\\"(ackA == 1 && ackB == 1 || ackB == 1 && ackC == 1 || ackC == 1 && ackA ==1)\\\", \\\"cpa.c\\\", 156, \\\"__PRETTY_FUNCTION__\\\");","target":134},"94->95":{"file":"cpa.c","line":992,"source":94,"type":"DeclarationEdge","stmt":"_Bool ackA;","target":95},"183->184":{"file":"\/usr\/include\/bits\/types.h","line":122,"source":183,"type":"DeclarationEdge","stmt":"typedef long int __syscall_slong_t;","target":184},"126->131":{"file":"cpa.c","line":1018,"source":126,"type":"AssumeEdge","stmt":"[ackA == 1]","target":131},"50->47":{"file":"<none>","line":0,"source":50,"type":"BlankEdge","stmt":"","target":47},"126->130":{"file":"cpa.c","line":1018,"source":126,"type":"AssumeEdge","stmt":"[!(ackA == 1)]","target":130},"131->130":{"file":"cpa.c","line":1018,"source":131,"type":"AssumeEdge","stmt":"[!(ackB == 1)]","target":130},"280->281":{"file":"\/usr\/include\/stdio.h","line":623,"source":280,"type":"DeclarationEdge","stmt":"int fgetc_unlocked(FILE *__stream);","target":281},"225->226":{"file":"\/usr\/include\/libio.h","line":336,"source":225,"type":"DeclarationEdge","stmt":"int _IO_ftrylockfile(_IO_FILE *);","target":226},"25->27":{"file":"cpa.c","line":914,"source":25,"type":"StatementEdge","stmt":"scontroller.state = 2;","target":27},"322->323":{"file":"\/usr\/include\/stdio.h","line":842,"source":322,"type":"DeclarationEdge","stmt":"int ftrylockfile(FILE *__stream);","target":323},"70->72":{"file":"cpa.c","line":969,"source":70,"type":"AssumeEdge","stmt":"[(sclient.state) == 0]","target":72},"70->73":{"file":"cpa.c","line":969,"source":70,"type":"AssumeEdge","stmt":"[!((sclient.state) == 0)]","target":73},"298->299":{"file":"\/usr\/include\/stdio.h","line":732,"source":298,"type":"DeclarationEdge","stmt":"size_t fread_unlocked(void *__ptr, size_t __size, size_t __n, FILE *__stream);","target":299},"166->167":{"file":"\/usr\/include\/bits\/types.h","line":85,"source":166,"type":"DeclarationEdge","stmt":"typedef unsigned int __id_t;","target":167},"90->67":{"file":"<none>","line":0,"source":90,"type":"BlankEdge","stmt":"default return","target":67},"263->264":{"file":"\/usr\/include\/stdio.h","line":512,"source":263,"type":"DeclarationEdge","stmt":"int vprintf(const char *__format, __gnuc_va_list __arg);","target":264},"57->59":{"file":"cpa.c","line":952,"source":57,"type":"AssumeEdge","stmt":"[active == 0]","target":59},"237->238":{"file":"\/usr\/include\/stdio.h","line":377,"source":237,"type":"DeclarationEdge","stmt":"extern struct _IO_FILE *stdin;","target":238},"57->58":{"file":"cpa.c","line":952,"source":57,"type":"AssumeEdge","stmt":"[!(active == 0)]","target":58},"334->335":{"file":"cpa.c","line":894,"source":334,"type":"DeclarationEdge","stmt":"void controller(_Bool clk, _Bool req, _Bool *ack, unsigned char sel, _Bool *pass_token, unsigned char id);","target":335},"105->106":{"file":"cpa.c","line":999,"source":105,"type":"CallToReturnEdge","stmt":"client_initial();","target":106},"149->150":{"file":"\/usr\/include\/bits\/types.h","line":64,"source":149,"type":"DeclarationEdge","stmt":"typedef long int __quad_t;","target":150},"202->203":{"file":"\/usr\/include\/libio.h","line":201,"source":202,"type":"DeclarationEdge","stmt":"typedef void _IO_lock_t;","target":203},"168->169":{"file":"\/usr\/include\/bits\/types.h","line":87,"source":168,"type":"DeclarationEdge","stmt":"typedef unsigned int __useconds_t;","target":169},"294->295":{"file":"\/usr\/include\/stdio.h","line":708,"source":294,"type":"DeclarationEdge","stmt":"int puts(const char *__s);","target":295},"162->163":{"file":"\/usr\/include\/bits\/types.h","line":81,"source":162,"type":"DeclarationEdge","stmt":"typedef struct __anon_type___fsid_t __fsid_t;","target":163},"178->179":{"file":"\/usr\/include\/bits\/types.h","line":110,"source":178,"type":"DeclarationEdge","stmt":"typedef unsigned long int __fsblkcnt64_t;","target":179},"230->231":{"file":"\/usr\/include\/libio.h","line":345,"source":230,"type":"DeclarationEdge","stmt":"__off64_t _IO_seekoff(_IO_FILE *, __off64_t , int, int);","target":231},"246->247":{"file":"\/usr\/include\/stdio.h","line":414,"source":246,"type":"DeclarationEdge","stmt":"char * tempnam(const char *__dir, const char *__pfx);","target":247},"21->17":{"file":"<none>","line":0,"source":21,"type":"BlankEdge","stmt":"","target":17},"34->35":{"file":"cpa.c","line":922,"source":34,"type":"StatementEdge","stmt":"scontroller.pass_token = 1;","target":35},"114->115":{"file":"cpa.c","line":1008,"source":114,"type":"CallToReturnEdge","stmt":"controller(clk, reqA, &ackA, sel, &pass_tokenA, A);","target":115},"240->241":{"file":"\/usr\/include\/stdio.h","line":387,"source":240,"type":"DeclarationEdge","stmt":"int remove(const char *__filename);","target":241},"41->38":{"file":"<none>","line":0,"source":41,"type":"BlankEdge","stmt":"default return","target":38},"338->339":{"file":"cpa.c","line":941,"source":338,"type":"DeclarationEdge","stmt":"void arbiter(_Bool clk, unsigned char *sel, _Bool active);","target":339},"5->0":{"file":"<none>","line":0,"source":5,"type":"BlankEdge","stmt":"default return","target":0},"206->207":{"file":"\/usr\/include\/libio.h","line":288,"source":206,"type":"DeclarationEdge","stmt":"typedef struct _IO_FILE _IO_FILE;","target":207},"332->333":{"file":"cpa.c","line":885,"source":332,"type":"DeclarationEdge","stmt":"struct state_elements_controller scontroller = { };","target":333},"171->172":{"file":"\/usr\/include\/bits\/types.h","line":91,"source":171,"type":"DeclarationEdge","stmt":"typedef int __key_t;","target":172},"189->190":{"file":"\/usr\/include\/bits\/types.h","line":136,"source":189,"type":"DeclarationEdge","stmt":"typedef unsigned int __socklen_t;","target":190},"65->66":{"file":"cpa.c","line":964,"source":65,"type":"StatementEdge","stmt":"sclient.req = 0;","target":66},"200->201":{"file":"\/usr\/lib\/gcc\/x86_64-redhat-linux\/6.3.1\/include\/stdarg.h","line":192,"source":200,"type":"DeclarationEdge","stmt":"typedef __builtin_va_list __gnuc_va_list;","target":201},"13->26":{"file":"cpa.c","line":912,"source":13,"type":"AssumeEdge","stmt":"[!((scontroller.state) == 1)]","target":26},"13->25":{"file":"cpa.c","line":912,"source":13,"type":"AssumeEdge","stmt":"[(scontroller.state) == 1]","target":25},"187->188":{"file":"\/usr\/include\/bits\/types.h","line":130,"source":187,"type":"DeclarationEdge","stmt":"typedef char *__caddr_t;","target":188},"181->182":{"file":"\/usr\/include\/bits\/types.h","line":117,"source":181,"type":"DeclarationEdge","stmt":"typedef long int __fsword_t;","target":182},"313->314":{"file":"\/usr\/include\/stdio.h","line":801,"source":313,"type":"DeclarationEdge","stmt":"void perror(const char *__s);","target":314},"98->99":{"file":"cpa.c","line":994,"source":98,"type":"DeclarationEdge","stmt":"_Bool active;","target":99},"119->121":{"file":"cpa.c","line":1014,"source":119,"type":"AssumeEdge","stmt":"[!(pass_tokenA == 0)]","target":121},"270->271":{"file":"\/usr\/include\/stdio.h","line":549,"source":270,"type":"DeclarationEdge","stmt":"int scanf(const char *__format, ...);","target":271},"85->87":{"file":"cpa.c","line":981,"source":85,"type":"AssumeEdge","stmt":"[!(rand_choice == 0)]","target":87},"141->142":{"file":"\/usr\/include\/bits\/types.h","line":48,"source":141,"type":"DeclarationEdge","stmt":"typedef signed char __int8_t;","target":142},"218->219":{"file":"\/usr\/include\/libio.h","line":323,"source":218,"type":"DeclarationEdge","stmt":"int _IO_getc(_IO_FILE *__fp);","target":219},"85->86":{"file":"cpa.c","line":981,"source":85,"type":"AssumeEdge","stmt":"[rand_choice == 0]","target":86},"74->71":{"file":"<none>","line":0,"source":74,"type":"BlankEdge","stmt":"","target":71},"341->342":{"file":"cpa.c","line":961,"source":341,"type":"DeclarationEdge","stmt":"void client_initial();","target":342},"10->13":{"file":"cpa.c","line":900,"source":10,"type":"AssumeEdge","stmt":"[!((scontroller.state) == 0)]","target":13},"10->12":{"file":"cpa.c","line":900,"source":10,"type":"AssumeEdge","stmt":"[(scontroller.state) == 0]","target":12},"30->31":{"file":"cpa.c","line":918,"source":30,"type":"AssumeEdge","stmt":"[!(req == 0)]","target":31},"190->191":{"file":"\/usr\/include\/stdio.h","line":139,"source":190,"type":"DeclarationEdge","stmt":"struct _IO_FILE;","target":191},"267->268":{"file":"\/usr\/include\/stdio.h","line":530,"source":267,"type":"DeclarationEdge","stmt":"int vdprintf(int __fd, const char *__fmt, __gnuc_va_list __arg);","target":268},"30->32":{"file":"cpa.c","line":918,"source":30,"type":"AssumeEdge","stmt":"[req == 0]","target":32},"138->139":{"file":"\/usr\/include\/bits\/types.h","line":43,"source":138,"type":"DeclarationEdge","stmt":"typedef unsigned short int __u_short;","target":139},"319->320":{"file":"\/usr\/include\/stdio.h","line":830,"source":319,"type":"DeclarationEdge","stmt":"int pclose(FILE *__stream);","target":320},"119->123":{"file":"cpa.c","line":1014,"source":119,"type":"AssumeEdge","stmt":"[pass_tokenA == 0]","target":123},"261->262":{"file":"\/usr\/include\/stdio.h","line":499,"source":261,"type":"DeclarationEdge","stmt":"int sprintf(char *__s, const char *__format, ...);","target":262},"9->10":{"file":"cpa.c","line":897,"source":9,"type":"StatementEdge","stmt":"is_selected = (sel & (3 == id)) & 3;","target":10},"282->283":{"file":"\/usr\/include\/stdio.h","line":636,"source":282,"type":"DeclarationEdge","stmt":"int putc(int __c, FILE *__stream);","target":283},"54->45":{"file":"<none>","line":0,"source":54,"type":"BlankEdge","stmt":"","target":45},"26->30":{"file":"cpa.c","line":917,"source":26,"type":"AssumeEdge","stmt":"[(scontroller.state) == 2]","target":30},"150->151":{"file":"\/usr\/include\/bits\/types.h","line":65,"source":150,"type":"DeclarationEdge","stmt":"typedef unsigned long int __u_quad_t;","target":151},"227->228":{"file":"\/usr\/include\/libio.h","line":340,"source":227,"type":"DeclarationEdge","stmt":"int _IO_vfprintf(_IO_FILE *, const char *, __gnuc_va_list );","target":228},"221->222":{"file":"\/usr\/include\/libio.h","line":326,"source":221,"type":"DeclarationEdge","stmt":"int _IO_ferror(_IO_FILE *__fp);","target":222},"239->240":{"file":"\/usr\/include\/stdio.h","line":379,"source":239,"type":"DeclarationEdge","stmt":"extern struct _IO_FILE *stderr;","target":240},"159->160":{"file":"\/usr\/include\/bits\/types.h","line":79,"source":159,"type":"DeclarationEdge","stmt":"typedef long int __off64_t;","target":160},"147->148":{"file":"\/usr\/include\/bits\/types.h","line":55,"source":147,"type":"DeclarationEdge","stmt":"typedef signed long int __int64_t;","target":148},"273->274":{"file":"\/usr\/include\/stdio.h","line":579,"source":273,"type":"DeclarationEdge","stmt":"int vscanf(const char *__format, __gnuc_va_list __arg);","target":274},"326->327":{"file":"\/usr\/include\/assert.h","line":866,"source":326,"type":"DeclarationEdge","stmt":"void __assert(const char *__assertion, const char *__file, int __line);","target":327},"233->234":{"file":"\/usr\/include\/stdio.h","line":354,"source":233,"type":"DeclarationEdge","stmt":"typedef __gnuc_va_list va_list;","target":234},"175->176":{"file":"\/usr\/include\/bits\/types.h","line":105,"source":175,"type":"DeclarationEdge","stmt":"typedef long int __blkcnt_t;","target":176},"330->331":{"file":"cpa.c","line":878,"source":330,"type":"DeclarationEdge","stmt":"int X = 3;","target":331},"101->102":{"file":"cpa.c","line":995,"source":101,"type":"DeclarationEdge","stmt":"_Bool reqC;","target":102},"93->94":{"file":"cpa.c","line":992,"source":93,"type":"DeclarationEdge","stmt":"_Bool clk;","target":94},"214->215":{"file":"\/usr\/include\/libio.h","line":317,"source":214,"type":"DeclarationEdge","stmt":"typedef int __io_close_fn(void *__cookie);","target":215},"18->20":{"file":"cpa.c","line":904,"source":18,"type":"StatementEdge","stmt":"scontroller.state = 1;","target":20},"232->233":{"file":"\/usr\/include\/libio.h","line":348,"source":232,"type":"DeclarationEdge","stmt":"void _IO_free_backup_area(_IO_FILE *);","target":233},"81->71":{"file":"<none>","line":0,"source":81,"type":"BlankEdge","stmt":"","target":71},"100->101":{"file":"cpa.c","line":995,"source":100,"type":"DeclarationEdge","stmt":"_Bool reqB;","target":101},"248->249":{"file":"\/usr\/include\/stdio.h","line":429,"source":248,"type":"DeclarationEdge","stmt":"int fflush(FILE *__stream);","target":249},"289->290":{"file":"\/usr\/include\/stdio.h","line":673,"source":289,"type":"DeclarationEdge","stmt":"char * fgets(char *__s, int __n, FILE *__stream);","target":290},"116->117":{"file":"cpa.c","line":1010,"source":116,"type":"CallToReturnEdge","stmt":"controller(clk, reqC, &ackC, sel, &pass_tokenC, C);","target":117},"213->214":{"file":"\/usr\/include\/libio.h","line":314,"source":213,"type":"DeclarationEdge","stmt":"typedef int __io_seek_fn(void *__cookie, __off64_t *__pos, int __w);","target":214},"99->100":{"file":"cpa.c","line":995,"source":99,"type":"DeclarationEdge","stmt":"_Bool reqA;","target":100},"194->195":{"file":"\/usr\/include\/wchar.h","line":164,"source":194,"type":"DeclarationEdge","stmt":"struct __anon_type___mbstate_t { int __count; union __anon_type_0 __value; };","target":195},"133->128":{"file":"cpa.c","line":1018,"source":133,"type":"AssumeEdge","stmt":"[!(ackA == 1)]","target":128},"133->127":{"file":"cpa.c","line":1018,"source":133,"type":"AssumeEdge","stmt":"[ackA == 1]","target":127},"209->210":{"file":"\/usr\/include\/libio.h","line":294,"source":209,"type":"DeclarationEdge","stmt":"extern struct _IO_FILE_plus _IO_2_1_stdout_;","target":210},"157->158":{"file":"\/usr\/include\/bits\/types.h","line":77,"source":157,"type":"DeclarationEdge","stmt":"typedef unsigned long int __nlink_t;","target":158},"68->69":{"file":"<none>","line":0,"source":68,"type":"BlankEdge","stmt":"Function start dummy edge","target":69},"92->136":{"file":"<none>","line":0,"source":92,"type":"BlankEdge","stmt":"INIT GLOBAL VARS","target":136},"180->181":{"file":"\/usr\/include\/bits\/types.h","line":114,"source":180,"type":"DeclarationEdge","stmt":"typedef unsigned long int __fsfilcnt64_t;","target":181},"309->310":{"file":"\/usr\/include\/stdio.h","line":785,"source":309,"type":"DeclarationEdge","stmt":"int ferror(FILE *__stream);","target":310},"228->229":{"file":"\/usr\/include\/libio.h","line":342,"source":228,"type":"DeclarationEdge","stmt":"__ssize_t _IO_padn(_IO_FILE *, int, __ssize_t );","target":229},"229->230":{"file":"\/usr\/include\/libio.h","line":343,"source":229,"type":"DeclarationEdge","stmt":"size_t _IO_sgetn(_IO_FILE *, void *, size_t );","target":230},"251->252":{"file":"\/usr\/include\/stdio.h","line":446,"source":251,"type":"DeclarationEdge","stmt":"FILE * freopen(const char *__filename, const char *__modes, FILE *__stream);","target":252},"328->329":{"file":"cpa.c","line":876,"source":328,"type":"DeclarationEdge","stmt":"int B = 1;","target":329},"28->11":{"file":"<none>","line":0,"source":28,"type":"BlankEdge","stmt":"","target":11},"36->37":{"file":"cpa.c","line":927,"source":36,"type":"StatementEdge","stmt":"*pass_token = scontroller.pass_token;","target":37},"311->312":{"file":"\/usr\/include\/stdio.h","line":791,"source":311,"type":"DeclarationEdge","stmt":"int feof_unlocked(FILE *__stream);","target":312},"46->49":{"file":"cpa.c","line":944,"source":46,"type":"AssumeEdge","stmt":"[!((sarbiter.state) == A)]","target":49},"195->196":{"file":"\/usr\/include\/wchar.h","line":164,"source":195,"type":"DeclarationEdge","stmt":"typedef struct __anon_type___mbstate_t __mbstate_t;","target":196},"292->293":{"file":"\/usr\/include\/stdio.h","line":691,"source":292,"type":"DeclarationEdge","stmt":"__ssize_t getline(char **__lineptr, size_t *__n, FILE *__stream);","target":293},"266->267":{"file":"\/usr\/include\/stdio.h","line":525,"source":266,"type":"DeclarationEdge","stmt":"int vsnprintf(char *__s, size_t __maxlen, const char *__format, __gnuc_va_list __arg);","target":267},"160->161":{"file":"\/usr\/include\/bits\/types.h","line":80,"source":160,"type":"DeclarationEdge","stmt":"typedef int __pid_t;","target":161},"134->135":{"file":"cpa.c","line":1018,"source":134,"type":"StatementEdge","stmt":"0;","target":135},"14->11":{"file":"<none>","line":0,"source":14,"type":"BlankEdge","stmt":"","target":11},"46->48":{"file":"cpa.c","line":944,"source":46,"type":"AssumeEdge","stmt":"[(sarbiter.state) == A]","target":48},"231->232":{"file":"\/usr\/include\/libio.h","line":346,"source":231,"type":"DeclarationEdge","stmt":"__off64_t _IO_seekpos(_IO_FILE *, __off64_t , int);","target":232},"308->309":{"file":"\/usr\/include\/stdio.h","line":783,"source":308,"type":"DeclarationEdge","stmt":"int feof(FILE *__stream);","target":309},"331->332":{"file":"cpa.c","line":880,"source":331,"type":"DeclarationEdge","stmt":"struct state_elements_controller { _Bool ack; unsigned char state; _Bool pass_token; };","target":332},"71->90":{"file":"cpa.c","line":987,"source":71,"type":"StatementEdge","stmt":"*req = sclient.req;","target":90},"265->266":{"file":"\/usr\/include\/stdio.h","line":521,"source":265,"type":"DeclarationEdge","stmt":"int snprintf(char *__s, size_t __maxlen, const char *__format, ...);","target":266},"53->47":{"file":"<none>","line":0,"source":53,"type":"BlankEdge","stmt":"","target":47},"1->2":{"file":"<none>","line":0,"source":1,"type":"BlankEdge","stmt":"Function start dummy edge","target":2},"199->200":{"file":"\/usr\/include\/_G_config.h","line":183,"source":199,"type":"DeclarationEdge","stmt":"typedef struct __anon_type__G_fpos_t _G_fpos64_t;","target":200},"275->276":{"file":"\/usr\/include\/stdio.h","line":610,"source":275,"type":"DeclarationEdge","stmt":"int fgetc(FILE *__stream);","target":276},"135->109":{"file":"<none>","line":0,"source":135,"type":"BlankEdge","stmt":"","target":109},"47->54":{"file":"cpa.c","line":948,"source":47,"type":"AssumeEdge","stmt":"[!((sarbiter.state) == C)]","target":54},"143->144":{"file":"\/usr\/include\/bits\/types.h","line":50,"source":143,"type":"DeclarationEdge","stmt":"typedef signed short int __int16_t;","target":144},"47->55":{"file":"cpa.c","line":948,"source":47,"type":"AssumeEdge","stmt":"[(sarbiter.state) == C]","target":55},"97->98":{"file":"cpa.c","line":993,"source":97,"type":"DeclarationEdge","stmt":"unsigned char sel;","target":98},"29->11":{"file":"<none>","line":0,"source":29,"type":"BlankEdge","stmt":"","target":11},"69->70":{"file":"cpa.c","line":968,"source":69,"type":"DeclarationEdge","stmt":"_Bool rand_choice = 0;","target":70},"86->71":{"file":"<none>","line":0,"source":86,"type":"BlankEdge","stmt":"","target":71},"148->149":{"file":"\/usr\/include\/bits\/types.h","line":56,"source":148,"type":"DeclarationEdge","stmt":"typedef unsigned long int __uint64_t;","target":149},"274->275":{"file":"\/usr\/include\/stdio.h","line":583,"source":274,"type":"DeclarationEdge","stmt":"int vsscanf(const char *__s, const char *__format, __gnuc_va_list __arg);","target":275},"58->60":{"file":"cpa.c","line":952,"source":58,"type":"StatementEdge","stmt":"__CPAchecker_TMP_0 = sarbiter.state;","target":60},"303->304":{"file":"\/usr\/include\/stdio.h","line":757,"source":303,"type":"DeclarationEdge","stmt":"int fseeko(FILE *__stream, __off_t __off, int __whence);","target":304},"142->143":{"file":"\/usr\/include\/bits\/types.h","line":49,"source":142,"type":"DeclarationEdge","stmt":"typedef unsigned char __uint8_t;","target":143},"158->159":{"file":"\/usr\/include\/bits\/types.h","line":78,"source":158,"type":"DeclarationEdge","stmt":"typedef long int __off_t;","target":159},"284->285":{"file":"\/usr\/include\/stdio.h","line":645,"source":284,"type":"DeclarationEdge","stmt":"int fputc_unlocked(int __c, FILE *__stream);","target":285},"152->153":{"file":"\/usr\/include\/bits\/types.h","line":72,"source":152,"type":"DeclarationEdge","stmt":"typedef unsigned int __uid_t;","target":153},"247->248":{"file":"\/usr\/include\/stdio.h","line":424,"source":247,"type":"DeclarationEdge","stmt":"int fclose(FILE *__stream);","target":248},"20->21":{"file":"cpa.c","line":905,"source":20,"type":"StatementEdge","stmt":"scontroller.pass_token = 0;","target":21},"219->220":{"file":"\/usr\/include\/libio.h","line":324,"source":219,"type":"DeclarationEdge","stmt":"int _IO_putc(int __c, _IO_FILE *__fp);","target":220},"115->116":{"file":"cpa.c","line":1009,"source":115,"type":"CallToReturnEdge","stmt":"controller(clk, reqB, &ackB, sel, &pass_tokenB, B);","target":116},"241->242":{"file":"\/usr\/include\/stdio.h","line":389,"source":241,"type":"DeclarationEdge","stmt":"int rename(const char *__old, const char *__new);","target":242},"318->319":{"file":"\/usr\/include\/stdio.h","line":824,"source":318,"type":"DeclarationEdge","stmt":"FILE * popen(const char *__command, const char *__modes);","target":319},"312->313":{"file":"\/usr\/include\/stdio.h","line":792,"source":312,"type":"DeclarationEdge","stmt":"int ferror_unlocked(FILE *__stream);","target":313},"167->168":{"file":"\/usr\/include\/bits\/types.h","line":86,"source":167,"type":"DeclarationEdge","stmt":"typedef long int __time_t;","target":168},"293->294":{"file":"\/usr\/include\/stdio.h","line":702,"source":293,"type":"DeclarationEdge","stmt":"int fputs(const char *__s, FILE *__stream);","target":294},"161->162":{"file":"\/usr\/include\/bits\/types.h","line":81,"source":161,"type":"DeclarationEdge","stmt":"struct __anon_type___fsid_t { int __val[2]; };","target":162},"238->239":{"file":"\/usr\/include\/stdio.h","line":378,"source":238,"type":"DeclarationEdge","stmt":"extern struct _IO_FILE *stdout;","target":239},"256->257":{"file":"\/usr\/include\/stdio.h","line":471,"source":256,"type":"DeclarationEdge","stmt":"int setvbuf(FILE *__stream, char *__buf, int __modes, size_t __n);","target":257},"75->76":{"file":"cpa.c","line":971,"source":75,"type":"StatementEdge","stmt":"sclient.req = 1;","target":76},"35->11":{"file":"<none>","line":0,"source":35,"type":"BlankEdge","stmt":"","target":11},"250->251":{"file":"\/usr\/include\/stdio.h","line":440,"source":250,"type":"DeclarationEdge","stmt":"FILE * fopen(const char *__filename, const char *__modes);","target":251},"124->125":{"file":"cpa.c","line":1014,"source":124,"type":"StatementEdge","stmt":"active = __CPAchecker_TMP_0;","target":125},"327->328":{"file":"cpa.c","line":875,"source":327,"type":"DeclarationEdge","stmt":"int A = 0;","target":328},"139->140":{"file":"\/usr\/include\/bits\/types.h","line":44,"source":139,"type":"DeclarationEdge","stmt":"typedef unsigned int __u_int;","target":140},"321->322":{"file":"\/usr\/include\/stdio.h","line":838,"source":321,"type":"DeclarationEdge","stmt":"void flockfile(FILE *__stream);","target":322},"64->65":{"file":"cpa.c","line":963,"source":64,"type":"StatementEdge","stmt":"sclient.state = 0;","target":65},"176->177":{"file":"\/usr\/include\/bits\/types.h","line":106,"source":176,"type":"DeclarationEdge","stmt":"typedef long int __blkcnt64_t;","target":177},"170->171":{"file":"\/usr\/include\/bits\/types.h","line":90,"source":170,"type":"DeclarationEdge","stmt":"typedef int __daddr_t;","target":171},"165->166":{"file":"\/usr\/include\/bits\/types.h","line":84,"source":165,"type":"DeclarationEdge","stmt":"typedef unsigned long int __rlim64_t;","target":166},"262->263":{"file":"\/usr\/include\/stdio.h","line":506,"source":262,"type":"DeclarationEdge","stmt":"int vfprintf(FILE *__s, const char *__format, __gnuc_va_list __arg);","target":263},"259->260":{"file":"\/usr\/include\/stdio.h","line":491,"source":259,"type":"DeclarationEdge","stmt":"int fprintf(FILE *__stream, const char *__format, ...);","target":260},"130->132":{"file":"cpa.c","line":1018,"source":130,"type":"AssumeEdge","stmt":"[ackB == 1]","target":132},"278->279":{"file":"\/usr\/include\/stdio.h","line":620,"source":278,"type":"DeclarationEdge","stmt":"int getc_unlocked(FILE *__stream);","target":279},"7->8":{"file":"<none>","line":0,"source":7,"type":"BlankEdge","stmt":"Function start dummy edge","target":8},"127->134":{"file":"cpa.c","line":1018,"source":127,"type":"StatementEdge","stmt":"0;","target":134},"146->147":{"file":"\/usr\/include\/bits\/types.h","line":53,"source":146,"type":"DeclarationEdge","stmt":"typedef unsigned int __uint32_t;","target":147},"243->244":{"file":"\/usr\/include\/stdio.h","line":404,"source":243,"type":"DeclarationEdge","stmt":"FILE * tmpfile();","target":244},"19->22":{"file":"cpa.c","line":908,"source":19,"type":"StatementEdge","stmt":"scontroller.pass_token = 1;","target":22},"340->341":{"file":"cpa.c","line":959,"source":340,"type":"DeclarationEdge","stmt":"struct state_elements_client sclient = { };","target":341},"335->336":{"file":"cpa.c","line":931,"source":335,"type":"DeclarationEdge","stmt":"struct state_elements_arbiter { unsigned char state; };","target":336},"106->107":{"file":"cpa.c","line":1000,"source":106,"type":"CallToReturnEdge","stmt":"controller_initial();","target":107},"27->28":{"file":"cpa.c","line":915,"source":27,"type":"StatementEdge","stmt":"scontroller.ack = 1;","target":28},"203->204":{"file":"\/usr\/include\/libio.h","line":207,"source":203,"type":"DeclarationEdge","stmt":"struct _IO_marker { struct _IO_marker *_next; struct _IO_FILE *_sbuf; int _pos; };","target":204},"300->301":{"file":"\/usr\/include\/stdio.h","line":744,"source":300,"type":"DeclarationEdge","stmt":"int fseek(FILE *__stream, long int __off, int __whence);","target":301},"72->74":{"file":"cpa.c","line":970,"source":72,"type":"AssumeEdge","stmt":"[rand_choice == 0]","target":74},"184->185":{"file":"\/usr\/include\/bits\/types.h","line":124,"source":184,"type":"DeclarationEdge","stmt":"typedef unsigned long int __syscall_ulong_t;","target":185},"72->75":{"file":"cpa.c","line":970,"source":72,"type":"AssumeEdge","stmt":"[!(rand_choice == 0)]","target":75},"316->317":{"file":"\/usr\/include\/stdio.h","line":817,"source":316,"type":"DeclarationEdge","stmt":"int fileno(FILE *__stream);","target":317},"281->282":{"file":"\/usr\/include\/stdio.h","line":635,"source":281,"type":"DeclarationEdge","stmt":"int fputc(int __c, FILE *__stream);","target":282},"40->41":{"file":"cpa.c","line":938,"source":40,"type":"StatementEdge","stmt":"sarbiter.state = A;","target":41},"297->298":{"file":"\/usr\/include\/stdio.h","line":728,"source":297,"type":"DeclarationEdge","stmt":"size_t fwrite(const void *__ptr, size_t __size, size_t __n, FILE *__s);","target":298},"31->11":{"file":"<none>","line":0,"source":31,"type":"BlankEdge","stmt":"","target":11},"15->19":{"file":"cpa.c","line":902,"source":15,"type":"AssumeEdge","stmt":"[req == 0]","target":19},"302->303":{"file":"\/usr\/include\/stdio.h","line":754,"source":302,"type":"DeclarationEdge","stmt":"void rewind(FILE *__stream);","target":303},"15->18":{"file":"cpa.c","line":902,"source":15,"type":"AssumeEdge","stmt":"[!(req == 0)]","target":18},"186->187":{"file":"\/usr\/include\/bits\/types.h","line":129,"source":186,"type":"DeclarationEdge","stmt":"typedef __quad_t *__qaddr_t;","target":187},"129->133":{"file":"cpa.c","line":1018,"source":129,"type":"AssumeEdge","stmt":"[ackC == 1]","target":133},"283->284":{"file":"\/usr\/include\/stdio.h","line":642,"source":283,"type":"DeclarationEdge","stmt":"int putchar(int __c);","target":284},"257->258":{"file":"\/usr\/include\/stdio.h","line":478,"source":257,"type":"DeclarationEdge","stmt":"void setbuffer(FILE *__stream, char *__buf, size_t __size);","target":258},"2->3":{"file":"cpa.c","line":889,"source":2,"type":"StatementEdge","stmt":"scontroller.state = 0;","target":3},"151->152":{"file":"\/usr\/include\/bits\/types.h","line":71,"source":151,"type":"DeclarationEdge","stmt":"typedef unsigned long int __dev_t;","target":152},"37->6":{"file":"<none>","line":0,"source":37,"type":"BlankEdge","stmt":"default return","target":6},"125->126":{"file":"cpa.c","line":1018,"source":125,"type":"DeclarationEdge","stmt":"void __CPAchecker_TMP_2;","target":126},"222->223":{"file":"\/usr\/include\/libio.h","line":328,"source":222,"type":"DeclarationEdge","stmt":"int _IO_peekc_locked(_IO_FILE *__fp);","target":223},"80->84":{"file":"cpa.c","line":979,"source":80,"type":"AssumeEdge","stmt":"[!((sclient.state) == 2)]","target":84},"130->129":{"file":"cpa.c","line":1018,"source":130,"type":"AssumeEdge","stmt":"[!(ackB == 1)]","target":129},"80->85":{"file":"cpa.c","line":979,"source":80,"type":"AssumeEdge","stmt":"[(sclient.state) == 2]","target":85},"314->315":{"file":"\/usr\/include\/bits\/sys_errlist.h","line":810,"source":314,"type":"DeclarationEdge","stmt":"extern int sys_nerr;","target":315},"198->199":{"file":"\/usr\/include\/_G_config.h","line":183,"source":198,"type":"DeclarationEdge","stmt":"struct __anon_type__G_fpos64_t { __off64_t __pos; __mbstate_t __state; };","target":199},"295->296":{"file":"\/usr\/include\/stdio.h","line":715,"source":295,"type":"DeclarationEdge","stmt":"int ungetc(int __c, FILE *__stream);","target":296},"163->164":{"file":"\/usr\/include\/bits\/types.h","line":82,"source":163,"type":"DeclarationEdge","stmt":"typedef long int __clock_t;","target":164},"60->61":{"file":"cpa.c","line":952,"source":60,"type":"StatementEdge","stmt":"*sel = __CPAchecker_TMP_0;","target":61},"260->261":{"file":"\/usr\/include\/stdio.h","line":497,"source":260,"type":"DeclarationEdge","stmt":"int printf(const char *__format, ...);","target":261},"337->338":{"file":"cpa.c","line":936,"source":337,"type":"DeclarationEdge","stmt":"void arbiter_initial();","target":338},"108->109":{"file":"cpa.c","line":1003,"source":108,"type":"BlankEdge","stmt":"while","target":109},"205->206":{"file":"\/usr\/include\/libio.h","line":226,"source":205,"type":"DeclarationEdge","stmt":"struct _IO_FILE { int _flags; char *_IO_read_ptr; char *_IO_read_end; char *_IO_read_base; char *_IO_write_base; char *_IO_write_ptr; char *_IO_write_end; char *_IO_buf_base; char *_IO_buf_end; char *_IO_save_base; char *_IO_backup_base; char *_IO_save_end; struct _IO_marker *_markers; struct _IO_FILE *_chain; int _fileno; int _flags2; __off_t _old_offset; unsigned short _cur_column; signed char _vtable_offset; char _shortbuf[1]; _IO_lock_t *_lock; __off64_t _offset; void *__pad1; void *__pad2; void *__pad3; void *__pad4; size_t __pad5; int _mode; char _unused2[40]; };","target":206},"323->324":{"file":"\/usr\/include\/stdio.h","line":845,"source":323,"type":"DeclarationEdge","stmt":"void funlockfile(FILE *__stream);","target":324},"129->128":{"file":"cpa.c","line":1018,"source":129,"type":"AssumeEdge","stmt":"[!(ackC == 1)]","target":128},"123->121":{"file":"cpa.c","line":1014,"source":123,"type":"AssumeEdge","stmt":"[!(pass_tokenB == 0)]","target":121},"123->120":{"file":"cpa.c","line":1014,"source":123,"type":"AssumeEdge","stmt":"[pass_tokenB == 0]","target":120},"12->16":{"file":"cpa.c","line":901,"source":12,"type":"AssumeEdge","stmt":"[is_selected == 0]","target":16},"12->15":{"file":"cpa.c","line":901,"source":12,"type":"AssumeEdge","stmt":"[!(is_selected == 0)]","target":15},"236->237":{"file":"\/usr\/include\/stdio.h","line":366,"source":236,"type":"DeclarationEdge","stmt":"typedef _G_fpos_t fpos_t;","target":237},"104->105":{"file":"cpa.c","line":996,"source":104,"type":"DeclarationEdge","stmt":"_Bool pass_tokenC;","target":105},"172->173":{"file":"\/usr\/include\/bits\/types.h","line":94,"source":172,"type":"DeclarationEdge","stmt":"typedef int __clockid_t;","target":173},"304->305":{"file":"\/usr\/include\/stdio.h","line":762,"source":304,"type":"DeclarationEdge","stmt":"__off_t ftello(FILE *__stream);","target":305},"285->286":{"file":"\/usr\/include\/stdio.h","line":653,"source":285,"type":"DeclarationEdge","stmt":"int putc_unlocked(int __c, FILE *__stream);","target":286},"43->44":{"file":"<none>","line":0,"source":43,"type":"BlankEdge","stmt":"Function start dummy edge","target":44},"177->178":{"file":"\/usr\/include\/bits\/types.h","line":109,"source":177,"type":"DeclarationEdge","stmt":"typedef unsigned long int __fsblkcnt_t;","target":178},"245->246":{"file":"\/usr\/include\/stdio.h","line":412,"source":245,"type":"DeclarationEdge","stmt":"char * tmpnam_r(char *__s);","target":246},"76->77":{"file":"cpa.c","line":972,"source":76,"type":"StatementEdge","stmt":"sclient.state = 1;","target":77},"113->114":{"file":"cpa.c","line":1006,"source":113,"type":"CallToReturnEdge","stmt":"client(clk, &reqC, ackC);","target":114},"87->88":{"file":"cpa.c","line":982,"source":87,"type":"StatementEdge","stmt":"sclient.req = 0;","target":88},"255->256":{"file":"\/usr\/include\/stdio.h","line":467,"source":255,"type":"DeclarationEdge","stmt":"void setbuf(FILE *__stream, char *__buf);","target":256},"79->82":{"file":"cpa.c","line":976,"source":79,"type":"AssumeEdge","stmt":"[!(ack == 0)]","target":82},"79->81":{"file":"cpa.c","line":976,"source":79,"type":"AssumeEdge","stmt":"[ack == 0]","target":81},"144->145":{"file":"\/usr\/include\/bits\/types.h","line":51,"source":144,"type":"DeclarationEdge","stmt":"typedef unsigned short int __uint16_t;","target":145},"23->14":{"file":"<none>","line":0,"source":23,"type":"BlankEdge","stmt":"","target":14},"215->216":{"file":"\/usr\/include\/libio.h","line":319,"source":215,"type":"DeclarationEdge","stmt":"int __underflow(_IO_FILE *);","target":216},"63->64":{"file":"<none>","line":0,"source":63,"type":"BlankEdge","stmt":"Function start dummy edge","target":64},"212->213":{"file":"\/usr\/include\/libio.h","line":305,"source":212,"type":"DeclarationEdge","stmt":"typedef __ssize_t __io_write_fn(void *__cookie, const char *__buf, size_t __n);","target":213},"59->60":{"file":"cpa.c","line":952,"source":59,"type":"StatementEdge","stmt":"__CPAchecker_TMP_0 = X;","target":60},"196->197":{"file":"\/usr\/include\/_G_config.h","line":178,"source":196,"type":"DeclarationEdge","stmt":"struct __anon_type__G_fpos_t { __off_t __pos; __mbstate_t __state; };","target":197},"52->53":{"file":"cpa.c","line":947,"source":52,"type":"StatementEdge","stmt":"sarbiter.state = C;","target":53},"8->9":{"file":"cpa.c","line":896,"source":8,"type":"DeclarationEdge","stmt":"_Bool is_selected;","target":9},"193->194":{"file":"\/usr\/include\/wchar.h","line":167,"source":193,"type":"DeclarationEdge","stmt":"union __anon_type_0 { unsigned int __wch; char __wchb[4]; };","target":194},"56->45":{"file":"<none>","line":0,"source":56,"type":"BlankEdge","stmt":"","target":45},"39->40":{"file":"<none>","line":0,"source":39,"type":"BlankEdge","stmt":"Function start dummy edge","target":40},"32->33":{"file":"cpa.c","line":920,"source":32,"type":"StatementEdge","stmt":"scontroller.state = 0;","target":33},"264->265":{"file":"\/usr\/include\/stdio.h","line":514,"source":264,"type":"DeclarationEdge","stmt":"int vsprintf(char *__s, const char *__format, __gnuc_va_list __arg);","target":265},"156->157":{"file":"\/usr\/include\/bits\/types.h","line":76,"source":156,"type":"DeclarationEdge","stmt":"typedef unsigned int __mode_t;","target":157},"153->154":{"file":"\/usr\/include\/bits\/types.h","line":73,"source":153,"type":"DeclarationEdge","stmt":"typedef unsigned int __gid_t;","target":154},"224->225":{"file":"\/usr\/include\/libio.h","line":335,"source":224,"type":"DeclarationEdge","stmt":"void _IO_funlockfile(_IO_FILE *);","target":225},"344->93":{"file":"<none>","line":0,"source":344,"type":"BlankEdge","stmt":"Function start dummy edge","target":93},"132->127":{"file":"cpa.c","line":1018,"source":132,"type":"AssumeEdge","stmt":"[ackC == 1]","target":127},"48->50":{"file":"cpa.c","line":945,"source":48,"type":"StatementEdge","stmt":"sarbiter.state = B;","target":50},"132->129":{"file":"cpa.c","line":1018,"source":132,"type":"AssumeEdge","stmt":"[!(ackC == 1)]","target":129},"276->277":{"file":"\/usr\/include\/stdio.h","line":611,"source":276,"type":"DeclarationEdge","stmt":"int getc(FILE *__stream);","target":277},"96->97":{"file":"cpa.c","line":992,"source":96,"type":"DeclarationEdge","stmt":"_Bool ackC;","target":97},"120->121":{"file":"cpa.c","line":1014,"source":120,"type":"AssumeEdge","stmt":"[!(pass_tokenC == 0)]","target":121},"268->269":{"file":"\/usr\/include\/stdio.h","line":533,"source":268,"type":"DeclarationEdge","stmt":"int dprintf(int __fd, const char *__fmt, ...);","target":269},"120->122":{"file":"cpa.c","line":1014,"source":120,"type":"AssumeEdge","stmt":"[pass_tokenC == 0]","target":122},"291->292":{"file":"\/usr\/include\/stdio.h","line":681,"source":291,"type":"DeclarationEdge","stmt":"__ssize_t getdelim(char **__lineptr, size_t *__n, int __delimiter, FILE *__stream);","target":292},"269->270":{"file":"\/usr\/include\/stdio.h","line":543,"source":269,"type":"DeclarationEdge","stmt":"int fscanf(FILE *__stream, const char *__format, ...);","target":270},"136->137":{"file":"\/usr\/lib\/gcc\/x86_64-redhat-linux\/6.3.1\/include\/stddef.h","line":33,"source":136,"type":"DeclarationEdge","stmt":"typedef unsigned long int size_t;","target":137},"3->4":{"file":"cpa.c","line":890,"source":3,"type":"StatementEdge","stmt":"scontroller.ack = 0;","target":4},"307->308":{"file":"\/usr\/include\/stdio.h","line":781,"source":307,"type":"DeclarationEdge","stmt":"void clearerr(FILE *__stream);","target":308},"299->300":{"file":"\/usr\/include\/stdio.h","line":734,"source":299,"type":"DeclarationEdge","stmt":"size_t fwrite_unlocked(const void *__ptr, size_t __size, size_t __n, FILE *__stream);","target":300},"272->273":{"file":"\/usr\/include\/stdio.h","line":571,"source":272,"type":"DeclarationEdge","stmt":"int vfscanf(FILE *__s, const char *__format, __gnuc_va_list __arg);","target":273},"117->118":{"file":"cpa.c","line":1012,"source":117,"type":"CallToReturnEdge","stmt":"arbiter(clk, &sel, active);","target":118},"140->141":{"file":"\/usr\/include\/bits\/types.h","line":45,"source":140,"type":"DeclarationEdge","stmt":"typedef unsigned long int __u_long;","target":141},"288->289":{"file":"\/usr\/include\/stdio.h","line":664,"source":288,"type":"DeclarationEdge","stmt":"int putw(int __w, FILE *__stream);","target":289},"73->79":{"file":"cpa.c","line":975,"source":73,"type":"AssumeEdge","stmt":"[(sclient.state) == 1]","target":79},"11->36":{"file":"cpa.c","line":926,"source":11,"type":"StatementEdge","stmt":"*ack = scontroller.ack;","target":36},"174->175":{"file":"\/usr\/include\/bits\/types.h","line":100,"source":174,"type":"DeclarationEdge","stmt":"typedef long int __blksize_t;","target":175},"306->307":{"file":"\/usr\/include\/stdio.h","line":775,"source":306,"type":"DeclarationEdge","stmt":"int fsetpos(FILE *__stream, fpos_t *__pos);","target":307},"83->81":{"file":"<none>","line":0,"source":83,"type":"BlankEdge","stmt":"","target":81},"271->272":{"file":"\/usr\/include\/stdio.h","line":551,"source":271,"type":"DeclarationEdge","stmt":"int sscanf(const char *__s, const char *__format, ...);","target":272},"287->288":{"file":"\/usr\/include\/stdio.h","line":661,"source":287,"type":"DeclarationEdge","stmt":"int getw(FILE *__stream);","target":288},"155->156":{"file":"\/usr\/include\/bits\/types.h","line":75,"source":155,"type":"DeclarationEdge","stmt":"typedef unsigned long int __ino64_t;","target":156},"26->29":{"file":"cpa.c","line":917,"source":26,"type":"AssumeEdge","stmt":"[!((scontroller.state) == 2)]","target":29},"310->311":{"file":"\/usr\/include\/stdio.h","line":790,"source":310,"type":"DeclarationEdge","stmt":"void clearerr_unlocked(FILE *__stream);","target":311},"252->253":{"file":"\/usr\/include\/stdio.h","line":452,"source":252,"type":"DeclarationEdge","stmt":"FILE * fdopen(int __fd, const char *__modes);","target":253},"286->287":{"file":"\/usr\/include\/stdio.h","line":654,"source":286,"type":"DeclarationEdge","stmt":"int putchar_unlocked(int __c);","target":287},"154->155":{"file":"\/usr\/include\/bits\/types.h","line":74,"source":154,"type":"DeclarationEdge","stmt":"typedef unsigned long int __ino_t;","target":155},"51->47":{"file":"<none>","line":0,"source":51,"type":"BlankEdge","stmt":"","target":47},"45->57":{"file":"cpa.c","line":952,"source":45,"type":"DeclarationEdge","stmt":"int __CPAchecker_TMP_0;","target":57},"254->255":{"file":"\/usr\/include\/stdio.h","line":460,"source":254,"type":"DeclarationEdge","stmt":"FILE * open_memstream(char **__bufloc, size_t *__sizeloc);","target":255},"325->326":{"file":"\/usr\/include\/assert.h","line":859,"source":325,"type":"DeclarationEdge","stmt":"void __assert_perror_fail(int __errnum, const char *__file, unsigned int __line, const char *__function);","target":326},"329->330":{"file":"cpa.c","line":877,"source":329,"type":"DeclarationEdge","stmt":"int C = 2;","target":330},"122->124":{"file":"<none>","line":0,"source":122,"type":"StatementEdge","stmt":"__CPAchecker_TMP_0 = 0;","target":124},"211->212":{"file":"\/usr\/include\/libio.h","line":297,"source":211,"type":"DeclarationEdge","stmt":"typedef __ssize_t __io_read_fn(void *__cookie, char *__buf, size_t __nbytes);","target":212},"192->193":{"file":"\/usr\/include\/stdio.h","line":150,"source":192,"type":"DeclarationEdge","stmt":"typedef struct _IO_FILE __FILE;","target":193},"137->138":{"file":"\/usr\/include\/bits\/types.h","line":42,"source":137,"type":"DeclarationEdge","stmt":"typedef unsigned char __u_char;","target":138},"234->235":{"file":"\/usr\/include\/stdio.h","line":356,"source":234,"type":"DeclarationEdge","stmt":"typedef __off_t off_t;","target":235},"208->209":{"file":"\/usr\/include\/libio.h","line":293,"source":208,"type":"DeclarationEdge","stmt":"extern struct _IO_FILE_plus _IO_2_1_stdin_;","target":209},"305->306":{"file":"\/usr\/include\/stdio.h","line":770,"source":305,"type":"DeclarationEdge","stmt":"int fgetpos(FILE *__stream, fpos_t *__pos);","target":306},"102->103":{"file":"cpa.c","line":996,"source":102,"type":"DeclarationEdge","stmt":"_Bool pass_tokenA;","target":103},"249->250":{"file":"\/usr\/include\/stdio.h","line":432,"source":249,"type":"DeclarationEdge","stmt":"int fflush_unlocked(FILE *__stream);","target":250},"169->170":{"file":"\/usr\/include\/bits\/types.h","line":88,"source":169,"type":"DeclarationEdge","stmt":"typedef long int __suseconds_t;","target":170},"191->192":{"file":"\/usr\/include\/stdio.h","line":143,"source":191,"type":"DeclarationEdge","stmt":"typedef struct _IO_FILE FILE;","target":192},"220->221":{"file":"\/usr\/include\/libio.h","line":325,"source":220,"type":"DeclarationEdge","stmt":"int _IO_feof(_IO_FILE *__fp);","target":221},"55->56":{"file":"cpa.c","line":949,"source":55,"type":"StatementEdge","stmt":"sarbiter.state = A;","target":56},"84->71":{"file":"<none>","line":0,"source":84,"type":"BlankEdge","stmt":"","target":71},"61->42":{"file":"<none>","line":0,"source":61,"type":"BlankEdge","stmt":"default return","target":42},"207->208":{"file":"\/usr\/include\/libio.h","line":291,"source":207,"type":"DeclarationEdge","stmt":"struct _IO_FILE_plus;","target":208},"333->334":{"file":"cpa.c","line":887,"source":333,"type":"DeclarationEdge","stmt":"void controller_initial();","target":334},"201->202":{"file":"\/usr\/include\/libio.h","line":195,"source":201,"type":"DeclarationEdge","stmt":"struct _IO_jump_t;","target":202},"88->89":{"file":"cpa.c","line":983,"source":88,"type":"StatementEdge","stmt":"sclient.state = 0;","target":89},"188->189":{"file":"\/usr\/include\/bits\/types.h","line":133,"source":188,"type":"DeclarationEdge","stmt":"typedef long int __intptr_t;","target":189},"217->218":{"file":"\/usr\/include\/libio.h","line":321,"source":217,"type":"DeclarationEdge","stmt":"int __overflow(_IO_FILE *, int);","target":218},"179->180":{"file":"\/usr\/include\/bits\/types.h","line":113,"source":179,"type":"DeclarationEdge","stmt":"typedef unsigned long int __fsfilcnt_t;","target":180},"343->344":{"file":"cpa.c","line":990,"source":343,"type":"DeclarationEdge","stmt":"void main();","target":344},"182->183":{"file":"\/usr\/include\/bits\/types.h","line":119,"source":182,"type":"DeclarationEdge","stmt":"typedef long int __ssize_t;","target":183},"235->236":{"file":"\/usr\/include\/stdio.h","line":358,"source":235,"type":"DeclarationEdge","stmt":"typedef __ssize_t ssize_t;","target":236},"103->104":{"file":"cpa.c","line":996,"source":103,"type":"DeclarationEdge","stmt":"_Bool pass_tokenB;","target":104},"77->74":{"file":"<none>","line":0,"source":77,"type":"BlankEdge","stmt":"","target":74},"216->217":{"file":"\/usr\/include\/libio.h","line":320,"source":216,"type":"DeclarationEdge","stmt":"int __uflow(_IO_FILE *);","target":217},"66->62":{"file":"<none>","line":0,"source":66,"type":"BlankEdge","stmt":"default return","target":62},"33->34":{"file":"cpa.c","line":921,"source":33,"type":"StatementEdge","stmt":"scontroller.ack = 0;","target":34},"342->343":{"file":"cpa.c","line":966,"source":342,"type":"DeclarationEdge","stmt":"void client(_Bool clk, _Bool *req, _Bool ack);","target":343},"210->211":{"file":"\/usr\/include\/libio.h","line":295,"source":210,"type":"DeclarationEdge","stmt":"extern struct _IO_FILE_plus _IO_2_1_stderr_;","target":211},"44->45":{"file":"cpa.c","line":943,"source":44,"type":"AssumeEdge","stmt":"[active == 0]","target":45},"44->46":{"file":"cpa.c","line":943,"source":44,"type":"AssumeEdge","stmt":"[!(active == 0)]","target":46},"131->127":{"file":"cpa.c","line":1018,"source":131,"type":"AssumeEdge","stmt":"[ackB == 1]","target":127},"197->198":{"file":"\/usr\/include\/_G_config.h","line":178,"source":197,"type":"DeclarationEdge","stmt":"typedef struct __anon_type__G_fpos_t _G_fpos_t;","target":198},"226->227":{"file":"\/usr\/include\/libio.h","line":338,"source":226,"type":"DeclarationEdge","stmt":"int _IO_vfscanf(_IO_FILE *, const char *, __gnuc_va_list , int *);","target":227},"244->245":{"file":"\/usr\/include\/stdio.h","line":406,"source":244,"type":"DeclarationEdge","stmt":"char * tmpnam(char *__s);","target":245},"118->119":{"file":"cpa.c","line":1014,"source":118,"type":"DeclarationEdge","stmt":"int __CPAchecker_TMP_0;","target":119},"112->113":{"file":"cpa.c","line":1005,"source":112,"type":"CallToReturnEdge","stmt":"client(clk, &reqB, ackB);","target":113},"315->316":{"file":"\/usr\/include\/bits\/sys_errlist.h","line":811,"source":315,"type":"DeclarationEdge","stmt":"extern const const char *sys_errlist[];","target":316},"49->51":{"file":"cpa.c","line":946,"source":49,"type":"AssumeEdge","stmt":"[!((sarbiter.state) == B)]","target":51},"49->52":{"file":"cpa.c","line":946,"source":49,"type":"AssumeEdge","stmt":"[(sarbiter.state) == B]","target":52},"4->5":{"file":"cpa.c","line":891,"source":4,"type":"StatementEdge","stmt":"scontroller.pass_token = 1;","target":5},"296->297":{"file":"\/usr\/include\/stdio.h","line":722,"source":296,"type":"DeclarationEdge","stmt":"size_t fread(void *__ptr, size_t __size, size_t __n, FILE *__stream);","target":297},"164->165":{"file":"\/usr\/include\/bits\/types.h","line":83,"source":164,"type":"DeclarationEdge","stmt":"typedef unsigned long int __rlim_t;","target":165},"290->291":{"file":"\/usr\/include\/stdio.h","line":678,"source":290,"type":"DeclarationEdge","stmt":"__ssize_t __getdelim(char **__lineptr, size_t *__n, int __delimiter, FILE *__stream);","target":291},"95->96":{"file":"cpa.c","line":992,"source":95,"type":"DeclarationEdge","stmt":"_Bool ackB;","target":96},"339->340":{"file":"cpa.c","line":955,"source":339,"type":"DeclarationEdge","stmt":"struct state_elements_client { unsigned char state; _Bool req; };","target":340},"253->254":{"file":"\/usr\/include\/stdio.h","line":454,"source":253,"type":"DeclarationEdge","stmt":"FILE * fmemopen(void *__s, size_t __len, const char *__modes);","target":254},"324->325":{"file":"\/usr\/include\/assert.h","line":854,"source":324,"type":"DeclarationEdge","stmt":"void __assert_fail(const char *__assertion, const char *__file, unsigned int __line, const char *__function);","target":325},"121->124":{"file":"<none>","line":0,"source":121,"type":"StatementEdge","stmt":"__CPAchecker_TMP_0 = 1;","target":124},"73->80":{"file":"cpa.c","line":975,"source":73,"type":"AssumeEdge","stmt":"[!((sclient.state) == 1)]","target":80},"16->23":{"file":"cpa.c","line":910,"source":16,"type":"StatementEdge","stmt":"scontroller.pass_token = 0;","target":23},"173->174":{"file":"\/usr\/include\/bits\/types.h","line":97,"source":173,"type":"DeclarationEdge","stmt":"typedef void *__timer_t;","target":174},"22->17":{"file":"<none>","line":0,"source":22,"type":"BlankEdge","stmt":"","target":17}}};
+var errorPathData = [{"val":"","file":"<none>","line":0,"argelem":0,"source":92,"target":136,"desc":"INIT GLOBAL VARS"},{"val":"","file":"\/usr\/lib\/gcc\/x86_64-redhat-linux\/6.3.1\/include\/stddef.h","line":33,"argelem":1,"source":136,"target":137,"desc":"typedef unsigned long int size_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":42,"source":137,"target":138,"desc":"typedef unsigned char __u_char;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":43,"source":138,"target":139,"desc":"typedef unsigned short int __u_short;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":44,"source":139,"target":140,"desc":"typedef unsigned int __u_int;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":45,"source":140,"target":141,"desc":"typedef unsigned long int __u_long;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":48,"source":141,"target":142,"desc":"typedef signed char __int8_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":49,"source":142,"target":143,"desc":"typedef unsigned char __uint8_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":50,"source":143,"target":144,"desc":"typedef signed short int __int16_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":51,"source":144,"target":145,"desc":"typedef unsigned short int __uint16_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":52,"source":145,"target":146,"desc":"typedef signed int __int32_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":53,"source":146,"target":147,"desc":"typedef unsigned int __uint32_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":55,"source":147,"target":148,"desc":"typedef signed long int __int64_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":56,"source":148,"target":149,"desc":"typedef unsigned long int __uint64_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":64,"source":149,"target":150,"desc":"typedef long int __quad_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":65,"source":150,"target":151,"desc":"typedef unsigned long int __u_quad_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":71,"source":151,"target":152,"desc":"typedef unsigned long int __dev_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":72,"source":152,"target":153,"desc":"typedef unsigned int __uid_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":73,"source":153,"target":154,"desc":"typedef unsigned int __gid_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":74,"source":154,"target":155,"desc":"typedef unsigned long int __ino_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":75,"source":155,"target":156,"desc":"typedef unsigned long int __ino64_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":76,"source":156,"target":157,"desc":"typedef unsigned int __mode_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":77,"source":157,"target":158,"desc":"typedef unsigned long int __nlink_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":78,"source":158,"target":159,"desc":"typedef long int __off_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":79,"source":159,"target":160,"desc":"typedef long int __off64_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":80,"source":160,"target":161,"desc":"typedef int __pid_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":81,"source":161,"target":162,"desc":"struct __anon_type___fsid_t {   int __val[2]; } ;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":81,"source":162,"target":163,"desc":"typedef struct __anon_type___fsid_t __fsid_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":82,"source":163,"target":164,"desc":"typedef long int __clock_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":83,"source":164,"target":165,"desc":"typedef unsigned long int __rlim_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":84,"source":165,"target":166,"desc":"typedef unsigned long int __rlim64_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":85,"source":166,"target":167,"desc":"typedef unsigned int __id_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":86,"source":167,"target":168,"desc":"typedef long int __time_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":87,"source":168,"target":169,"desc":"typedef unsigned int __useconds_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":88,"source":169,"target":170,"desc":"typedef long int __suseconds_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":90,"source":170,"target":171,"desc":"typedef int __daddr_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":91,"source":171,"target":172,"desc":"typedef int __key_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":94,"source":172,"target":173,"desc":"typedef int __clockid_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":97,"source":173,"target":174,"desc":"typedef void *__timer_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":100,"source":174,"target":175,"desc":"typedef long int __blksize_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":105,"source":175,"target":176,"desc":"typedef long int __blkcnt_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":106,"source":176,"target":177,"desc":"typedef long int __blkcnt64_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":109,"source":177,"target":178,"desc":"typedef unsigned long int __fsblkcnt_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":110,"source":178,"target":179,"desc":"typedef unsigned long int __fsblkcnt64_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":113,"source":179,"target":180,"desc":"typedef unsigned long int __fsfilcnt_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":114,"source":180,"target":181,"desc":"typedef unsigned long int __fsfilcnt64_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":117,"source":181,"target":182,"desc":"typedef long int __fsword_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":119,"source":182,"target":183,"desc":"typedef long int __ssize_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":122,"source":183,"target":184,"desc":"typedef long int __syscall_slong_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":124,"source":184,"target":185,"desc":"typedef unsigned long int __syscall_ulong_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":128,"source":185,"target":186,"desc":"typedef __off64_t __loff_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":129,"source":186,"target":187,"desc":"typedef __quad_t *__qaddr_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":130,"source":187,"target":188,"desc":"typedef char *__caddr_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":133,"source":188,"target":189,"desc":"typedef long int __intptr_t;"},{"val":"","file":"\/usr\/include\/bits\/types.h","line":136,"source":189,"target":190,"desc":"typedef unsigned int __socklen_t;"},{"val":"","file":"\/usr\/include\/stdio.h","line":139,"source":190,"target":191,"desc":"struct _IO_FILE ;"},{"val":"","file":"\/usr\/include\/stdio.h","line":143,"source":191,"target":192,"desc":"typedef struct _IO_FILE FILE;"},{"val":"","file":"\/usr\/include\/stdio.h","line":150,"source":192,"target":193,"desc":"typedef struct _IO_FILE __FILE;"},{"val":"","file":"\/usr\/include\/wchar.h","line":167,"source":193,"target":194,"desc":"union __anon_type_0 {   unsigned int __wch;   char __wchb[4]; } ;"},{"val":"","file":"\/usr\/include\/wchar.h","line":164,"source":194,"target":195,"desc":"struct __anon_type___mbstate_t {   int __count;   union __anon_type_0 __value; } ;"},{"val":"","file":"\/usr\/include\/wchar.h","line":164,"source":195,"target":196,"desc":"typedef struct __anon_type___mbstate_t __mbstate_t;"},{"val":"","file":"\/usr\/include\/_G_config.h","line":178,"source":196,"target":197,"desc":"struct __anon_type__G_fpos_t {   __off_t __pos;   __mbstate_t __state; } ;"},{"val":"","file":"\/usr\/include\/_G_config.h","line":178,"source":197,"target":198,"desc":"typedef struct __anon_type__G_fpos_t _G_fpos_t;"},{"val":"","file":"\/usr\/include\/_G_config.h","line":183,"source":198,"target":199,"desc":"struct __anon_type__G_fpos64_t {   __off64_t __pos;   __mbstate_t __state; } ;"},{"val":"","file":"\/usr\/include\/_G_config.h","line":183,"source":199,"target":200,"desc":"typedef struct __anon_type__G_fpos_t _G_fpos64_t;"},{"val":"","file":"\/usr\/lib\/gcc\/x86_64-redhat-linux\/6.3.1\/include\/stdarg.h","line":192,"source":200,"target":201,"desc":"typedef __builtin_va_list __gnuc_va_list;"},{"val":"","file":"\/usr\/include\/libio.h","line":195,"source":201,"target":202,"desc":"struct _IO_jump_t ;"},{"val":"","file":"\/usr\/include\/libio.h","line":201,"source":202,"target":203,"desc":"typedef void _IO_lock_t;"},{"val":"","file":"\/usr\/include\/libio.h","line":207,"source":203,"target":204,"desc":"struct _IO_marker {   struct _IO_marker *_next;   struct _IO_FILE *_sbuf;   int _pos; } ;"},{"val":"","file":"\/usr\/include\/libio.h","line":218,"source":204,"target":205,"desc":"enum __codecvt_result {   __codecvt_ok = 0,   __codecvt_partial = 1,   __codecvt_error = 2,   __codecvt_noconv = 3 } ;"},{"val":"","file":"\/usr\/include\/libio.h","line":226,"source":205,"target":206,"desc":"struct _IO_FILE {   int _flags;   char *_IO_read_ptr;   char *_IO_read_end;   char *_IO_read_base;   char *_IO_write_base;   char *_IO_write_ptr;   char *_IO_write_end;   char *_IO_buf_base;   char *_IO_buf_end;   char *_IO_save_base;   char *_IO_backup_base;   char *_IO_save_end;   struct _IO_marker *_markers;   struct _IO_FILE *_chain;   int _fileno;   int _flags2;   __off_t _old_offset;   unsigned short _cur_column;   signed char _vtable_offset;   char _shortbuf[1];   _IO_lock_t *_lock;   __off64_t _offset;   void *__pad1;   void *__pad2;   void *__pad3;   void *__pad4;   size_t __pad5;   int _mode;   char _unused2[40]; } ;"},{"val":"","file":"\/usr\/include\/libio.h","line":288,"source":206,"target":207,"desc":"typedef struct _IO_FILE _IO_FILE;"},{"val":"","file":"\/usr\/include\/libio.h","line":291,"source":207,"target":208,"desc":"struct _IO_FILE_plus ;"},{"val":"","file":"\/usr\/include\/libio.h","line":293,"source":208,"target":209,"desc":"extern struct _IO_FILE_plus _IO_2_1_stdin_;"},{"val":"","file":"\/usr\/include\/libio.h","line":294,"source":209,"target":210,"desc":"extern struct _IO_FILE_plus _IO_2_1_stdout_;"},{"val":"","file":"\/usr\/include\/libio.h","line":295,"source":210,"target":211,"desc":"extern struct _IO_FILE_plus _IO_2_1_stderr_;"},{"val":"","file":"\/usr\/include\/libio.h","line":297,"source":211,"target":212,"desc":"typedef __ssize_t  __io_read_fn(void *__cookie, char *__buf, size_t __nbytes);"},{"val":"","file":"\/usr\/include\/libio.h","line":305,"source":212,"target":213,"desc":"typedef __ssize_t  __io_write_fn(void *__cookie, const char *__buf, size_t __n);"},{"val":"","file":"\/usr\/include\/libio.h","line":314,"source":213,"target":214,"desc":"typedef int __io_seek_fn(void *__cookie, __off64_t *__pos, int __w);"},{"val":"","file":"\/usr\/include\/libio.h","line":317,"source":214,"target":215,"desc":"typedef int __io_close_fn(void *__cookie);"},{"val":"","file":"\/usr\/include\/libio.h","line":319,"source":215,"target":216,"desc":"int __underflow(_IO_FILE *);"},{"val":"","file":"\/usr\/include\/libio.h","line":320,"source":216,"target":217,"desc":"int __uflow(_IO_FILE *);"},{"val":"","file":"\/usr\/include\/libio.h","line":321,"source":217,"target":218,"desc":"int __overflow(_IO_FILE *, int);"},{"val":"","file":"\/usr\/include\/libio.h","line":323,"source":218,"target":219,"desc":"int _IO_getc(_IO_FILE *__fp);"},{"val":"","file":"\/usr\/include\/libio.h","line":324,"source":219,"target":220,"desc":"int _IO_putc(int __c, _IO_FILE *__fp);"},{"val":"","file":"\/usr\/include\/libio.h","line":325,"source":220,"target":221,"desc":"int _IO_feof(_IO_FILE *__fp);"},{"val":"","file":"\/usr\/include\/libio.h","line":326,"source":221,"target":222,"desc":"int _IO_ferror(_IO_FILE *__fp);"},{"val":"","file":"\/usr\/include\/libio.h","line":328,"source":222,"target":223,"desc":"int _IO_peekc_locked(_IO_FILE *__fp);"},{"val":"","file":"\/usr\/include\/libio.h","line":334,"source":223,"target":224,"desc":"void _IO_flockfile(_IO_FILE *);"},{"val":"","file":"\/usr\/include\/libio.h","line":335,"source":224,"target":225,"desc":"void _IO_funlockfile(_IO_FILE *);"},{"val":"","file":"\/usr\/include\/libio.h","line":336,"source":225,"target":226,"desc":"int _IO_ftrylockfile(_IO_FILE *);"},{"val":"","file":"\/usr\/include\/libio.h","line":338,"source":226,"target":227,"desc":"int _IO_vfscanf(_IO_FILE *, const char *, __gnuc_va_list , int *);"},{"val":"","file":"\/usr\/include\/libio.h","line":340,"source":227,"target":228,"desc":"int _IO_vfprintf(_IO_FILE *, const char *, __gnuc_va_list );"},{"val":"","file":"\/usr\/include\/libio.h","line":342,"source":228,"target":229,"desc":"__ssize_t  _IO_padn(_IO_FILE *, int, __ssize_t );"},{"val":"","file":"\/usr\/include\/libio.h","line":343,"source":229,"target":230,"desc":"size_t  _IO_sgetn(_IO_FILE *, void *, size_t );"},{"val":"","file":"\/usr\/include\/libio.h","line":345,"source":230,"target":231,"desc":"__off64_t  _IO_seekoff(_IO_FILE *, __off64_t , int, int);"},{"val":"","file":"\/usr\/include\/libio.h","line":346,"source":231,"target":232,"desc":"__off64_t  _IO_seekpos(_IO_FILE *, __off64_t , int);"},{"val":"","file":"\/usr\/include\/libio.h","line":348,"source":232,"target":233,"desc":"void _IO_free_backup_area(_IO_FILE *);"},{"val":"","file":"\/usr\/include\/stdio.h","line":354,"source":233,"target":234,"desc":"typedef __gnuc_va_list va_list;"},{"val":"","file":"\/usr\/include\/stdio.h","line":356,"source":234,"target":235,"desc":"typedef __off_t off_t;"},{"val":"","file":"\/usr\/include\/stdio.h","line":358,"source":235,"target":236,"desc":"typedef __ssize_t ssize_t;"},{"val":"","file":"\/usr\/include\/stdio.h","line":366,"source":236,"target":237,"desc":"typedef _G_fpos_t fpos_t;"},{"val":"","file":"\/usr\/include\/stdio.h","line":377,"source":237,"target":238,"desc":"extern struct _IO_FILE *stdin;"},{"val":"","file":"\/usr\/include\/stdio.h","line":378,"source":238,"target":239,"desc":"extern struct _IO_FILE *stdout;"},{"val":"","file":"\/usr\/include\/stdio.h","line":379,"source":239,"target":240,"desc":"extern struct _IO_FILE *stderr;"},{"val":"","file":"\/usr\/include\/stdio.h","line":387,"source":240,"target":241,"desc":"int remove(const char *__filename);"},{"val":"","file":"\/usr\/include\/stdio.h","line":389,"source":241,"target":242,"desc":"int rename(const char *__old, const char *__new);"},{"val":"","file":"\/usr\/include\/stdio.h","line":394,"source":242,"target":243,"desc":"int renameat(int __oldfd, const char *__old, int __newfd, const char *__new);"},{"val":"","file":"\/usr\/include\/stdio.h","line":404,"source":243,"target":244,"desc":"FILE * tmpfile();"},{"val":"","file":"\/usr\/include\/stdio.h","line":406,"source":244,"target":245,"desc":"char * tmpnam(char *__s);"},{"val":"","file":"\/usr\/include\/stdio.h","line":412,"source":245,"target":246,"desc":"char * tmpnam_r(char *__s);"},{"val":"","file":"\/usr\/include\/stdio.h","line":414,"source":246,"target":247,"desc":"char * tempnam(const char *__dir, const char *__pfx);"},{"val":"","file":"\/usr\/include\/stdio.h","line":424,"source":247,"target":248,"desc":"int fclose(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":429,"source":248,"target":249,"desc":"int fflush(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":432,"source":249,"target":250,"desc":"int fflush_unlocked(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":440,"source":250,"target":251,"desc":"FILE * fopen(const char *__filename, const char *__modes);"},{"val":"","file":"\/usr\/include\/stdio.h","line":446,"source":251,"target":252,"desc":"FILE * freopen(const char *__filename, const char *__modes, FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":452,"source":252,"target":253,"desc":"FILE * fdopen(int __fd, const char *__modes);"},{"val":"","file":"\/usr\/include\/stdio.h","line":454,"source":253,"target":254,"desc":"FILE * fmemopen(void *__s, size_t __len, const char *__modes);"},{"val":"","file":"\/usr\/include\/stdio.h","line":460,"source":254,"target":255,"desc":"FILE * open_memstream(char **__bufloc, size_t *__sizeloc);"},{"val":"","file":"\/usr\/include\/stdio.h","line":467,"source":255,"target":256,"desc":"void setbuf(FILE *__stream, char *__buf);"},{"val":"","file":"\/usr\/include\/stdio.h","line":471,"source":256,"target":257,"desc":"int setvbuf(FILE *__stream, char *__buf, int __modes, size_t __n);"},{"val":"","file":"\/usr\/include\/stdio.h","line":478,"source":257,"target":258,"desc":"void setbuffer(FILE *__stream, char *__buf, size_t __size);"},{"val":"","file":"\/usr\/include\/stdio.h","line":482,"source":258,"target":259,"desc":"void setlinebuf(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":491,"source":259,"target":260,"desc":"int fprintf(FILE *__stream, const char *__format, ...);"},{"val":"","file":"\/usr\/include\/stdio.h","line":497,"source":260,"target":261,"desc":"int printf(const char *__format, ...);"},{"val":"","file":"\/usr\/include\/stdio.h","line":499,"source":261,"target":262,"desc":"int sprintf(char *__s, const char *__format, ...);"},{"val":"","file":"\/usr\/include\/stdio.h","line":506,"source":262,"target":263,"desc":"int vfprintf(FILE *__s, const char *__format, __gnuc_va_list __arg);"},{"val":"","file":"\/usr\/include\/stdio.h","line":512,"source":263,"target":264,"desc":"int vprintf(const char *__format, __gnuc_va_list __arg);"},{"val":"","file":"\/usr\/include\/stdio.h","line":514,"source":264,"target":265,"desc":"int vsprintf(char *__s, const char *__format, __gnuc_va_list __arg);"},{"val":"","file":"\/usr\/include\/stdio.h","line":521,"source":265,"target":266,"desc":"int snprintf(char *__s, size_t __maxlen, const char *__format, ...);"},{"val":"","file":"\/usr\/include\/stdio.h","line":525,"source":266,"target":267,"desc":"int vsnprintf(char *__s, size_t __maxlen, const char *__format, __gnuc_va_list __arg);"},{"val":"","file":"\/usr\/include\/stdio.h","line":530,"source":267,"target":268,"desc":"int vdprintf(int __fd, const char *__fmt, __gnuc_va_list __arg);"},{"val":"","file":"\/usr\/include\/stdio.h","line":533,"source":268,"target":269,"desc":"int dprintf(int __fd, const char *__fmt, ...);"},{"val":"","file":"\/usr\/include\/stdio.h","line":543,"source":269,"target":270,"desc":"int fscanf(FILE *__stream, const char *__format, ...);"},{"val":"","file":"\/usr\/include\/stdio.h","line":549,"source":270,"target":271,"desc":"int scanf(const char *__format, ...);"},{"val":"","file":"\/usr\/include\/stdio.h","line":551,"source":271,"target":272,"desc":"int sscanf(const char *__s, const char *__format, ...);"},{"val":"","file":"\/usr\/include\/stdio.h","line":571,"source":272,"target":273,"desc":"int vfscanf(FILE *__s, const char *__format, __gnuc_va_list __arg);"},{"val":"","file":"\/usr\/include\/stdio.h","line":579,"source":273,"target":274,"desc":"int vscanf(const char *__format, __gnuc_va_list __arg);"},{"val":"","file":"\/usr\/include\/stdio.h","line":583,"source":274,"target":275,"desc":"int vsscanf(const char *__s, const char *__format, __gnuc_va_list __arg);"},{"val":"","file":"\/usr\/include\/stdio.h","line":610,"source":275,"target":276,"desc":"int fgetc(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":611,"source":276,"target":277,"desc":"int getc(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":617,"source":277,"target":278,"desc":"int getchar();"},{"val":"","file":"\/usr\/include\/stdio.h","line":620,"source":278,"target":279,"desc":"int getc_unlocked(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":621,"source":279,"target":280,"desc":"int getchar_unlocked();"},{"val":"","file":"\/usr\/include\/stdio.h","line":623,"source":280,"target":281,"desc":"int fgetc_unlocked(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":635,"source":281,"target":282,"desc":"int fputc(int __c, FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":636,"source":282,"target":283,"desc":"int putc(int __c, FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":642,"source":283,"target":284,"desc":"int putchar(int __c);"},{"val":"","file":"\/usr\/include\/stdio.h","line":645,"source":284,"target":285,"desc":"int fputc_unlocked(int __c, FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":653,"source":285,"target":286,"desc":"int putc_unlocked(int __c, FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":654,"source":286,"target":287,"desc":"int putchar_unlocked(int __c);"},{"val":"","file":"\/usr\/include\/stdio.h","line":661,"source":287,"target":288,"desc":"int getw(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":664,"source":288,"target":289,"desc":"int putw(int __w, FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":673,"source":289,"target":290,"desc":"char * fgets(char *__s, int __n, FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":678,"source":290,"target":291,"desc":"__ssize_t  __getdelim(char **__lineptr, size_t *__n, int __delimiter, FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":681,"source":291,"target":292,"desc":"__ssize_t  getdelim(char **__lineptr, size_t *__n, int __delimiter, FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":691,"source":292,"target":293,"desc":"__ssize_t  getline(char **__lineptr, size_t *__n, FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":702,"source":293,"target":294,"desc":"int fputs(const char *__s, FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":708,"source":294,"target":295,"desc":"int puts(const char *__s);"},{"val":"","file":"\/usr\/include\/stdio.h","line":715,"source":295,"target":296,"desc":"int ungetc(int __c, FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":722,"source":296,"target":297,"desc":"size_t  fread(void *__ptr, size_t __size, size_t __n, FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":728,"source":297,"target":298,"desc":"size_t  fwrite(const void *__ptr, size_t __size, size_t __n, FILE *__s);"},{"val":"","file":"\/usr\/include\/stdio.h","line":732,"source":298,"target":299,"desc":"size_t  fread_unlocked(void *__ptr, size_t __size, size_t __n, FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":734,"source":299,"target":300,"desc":"size_t  fwrite_unlocked(const void *__ptr, size_t __size, size_t __n, FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":744,"source":300,"target":301,"desc":"int fseek(FILE *__stream, long int __off, int __whence);"},{"val":"","file":"\/usr\/include\/stdio.h","line":749,"source":301,"target":302,"desc":"long int ftell(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":754,"source":302,"target":303,"desc":"void rewind(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":757,"source":303,"target":304,"desc":"int fseeko(FILE *__stream, __off_t __off, int __whence);"},{"val":"","file":"\/usr\/include\/stdio.h","line":762,"source":304,"target":305,"desc":"__off_t  ftello(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":770,"source":305,"target":306,"desc":"int fgetpos(FILE *__stream, fpos_t *__pos);"},{"val":"","file":"\/usr\/include\/stdio.h","line":775,"source":306,"target":307,"desc":"int fsetpos(FILE *__stream, fpos_t *__pos);"},{"val":"","file":"\/usr\/include\/stdio.h","line":781,"source":307,"target":308,"desc":"void clearerr(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":783,"source":308,"target":309,"desc":"int feof(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":785,"source":309,"target":310,"desc":"int ferror(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":790,"source":310,"target":311,"desc":"void clearerr_unlocked(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":791,"source":311,"target":312,"desc":"int feof_unlocked(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":792,"source":312,"target":313,"desc":"int ferror_unlocked(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":801,"source":313,"target":314,"desc":"void perror(const char *__s);"},{"val":"","file":"\/usr\/include\/bits\/sys_errlist.h","line":810,"source":314,"target":315,"desc":"extern int sys_nerr;"},{"val":"","file":"\/usr\/include\/bits\/sys_errlist.h","line":811,"source":315,"target":316,"desc":"extern const const char *sys_errlist[];"},{"val":"","file":"\/usr\/include\/stdio.h","line":817,"source":316,"target":317,"desc":"int fileno(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":822,"source":317,"target":318,"desc":"int fileno_unlocked(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":824,"source":318,"target":319,"desc":"FILE * popen(const char *__command, const char *__modes);"},{"val":"","file":"\/usr\/include\/stdio.h","line":830,"source":319,"target":320,"desc":"int pclose(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":836,"source":320,"target":321,"desc":"char * ctermid(char *__s);"},{"val":"","file":"\/usr\/include\/stdio.h","line":838,"source":321,"target":322,"desc":"void flockfile(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":842,"source":322,"target":323,"desc":"int ftrylockfile(FILE *__stream);"},{"val":"","file":"\/usr\/include\/stdio.h","line":845,"source":323,"target":324,"desc":"void funlockfile(FILE *__stream);"},{"val":"","file":"\/usr\/include\/assert.h","line":854,"source":324,"target":325,"desc":"void __assert_fail(const char *__assertion, const char *__file, unsigned int __line, const char *__function);"},{"val":"","file":"\/usr\/include\/assert.h","line":859,"source":325,"target":326,"desc":"void __assert_perror_fail(int __errnum, const char *__file, unsigned int __line, const char *__function);"},{"val":"","file":"\/usr\/include\/assert.h","line":866,"source":326,"target":327,"desc":"void __assert(const char *__assertion, const char *__file, int __line);"},{"val":"A == 0;\n","file":"cpa.c","line":875,"source":327,"target":328,"desc":"int A = 0;"},{"val":"B == 1;\n","file":"cpa.c","line":876,"source":328,"target":329,"desc":"int B = 1;"},{"val":"C == 2;\n","file":"cpa.c","line":877,"source":329,"target":330,"desc":"int C = 2;"},{"val":"X == 3;\n","file":"cpa.c","line":878,"source":330,"target":331,"desc":"int X = 3;"},{"val":"","file":"cpa.c","line":880,"source":331,"target":332,"desc":"struct state_elements_controller {   _Bool ack;   unsigned char state;   _Bool pass_token; } ;"},{"val":"","file":"cpa.c","line":885,"source":332,"target":333,"desc":"struct state_elements_controller scontroller = {  };"},{"val":"","file":"cpa.c","line":887,"source":333,"target":334,"desc":"void controller_initial();"},{"val":"","file":"cpa.c","line":894,"source":334,"target":335,"desc":"void controller(_Bool clk, _Bool req, _Bool *ack, unsigned char sel, _Bool *pass_token, unsigned char id);"},{"val":"","file":"cpa.c","line":931,"source":335,"target":336,"desc":"struct state_elements_arbiter {   unsigned char state; } ;"},{"val":"","file":"cpa.c","line":934,"source":336,"target":337,"desc":"struct state_elements_arbiter sarbiter = {  };"},{"val":"","file":"cpa.c","line":936,"source":337,"target":338,"desc":"void arbiter_initial();"},{"val":"","file":"cpa.c","line":941,"source":338,"target":339,"desc":"void arbiter(_Bool clk, unsigned char *sel, _Bool active);"},{"val":"","file":"cpa.c","line":955,"source":339,"target":340,"desc":"struct state_elements_client {   unsigned char state;   _Bool req; } ;"},{"val":"","file":"cpa.c","line":959,"source":340,"target":341,"desc":"struct state_elements_client sclient = {  };"},{"val":"","file":"cpa.c","line":961,"source":341,"target":342,"desc":"void client_initial();"},{"val":"","file":"cpa.c","line":966,"source":342,"target":343,"desc":"void client(_Bool clk, _Bool *req, _Bool ack);"},{"val":"","file":"cpa.c","line":990,"source":343,"target":344,"desc":"void main();"},{"val":"","file":"<none>","line":0,"source":344,"target":93,"desc":"Function start dummy edge"},{"val":"","file":"cpa.c","line":992,"source":93,"target":94,"desc":"_Bool clk;"},{"val":"ackA == 1;\n","file":"cpa.c","line":992,"source":94,"target":95,"desc":"_Bool ackA;"},{"val":"ackB == ((_Bool)2);\n","file":"cpa.c","line":992,"source":95,"target":96,"desc":"_Bool ackB;"},{"val":"ackC == ((_Bool)4);\n","file":"cpa.c","line":992,"source":96,"target":97,"desc":"_Bool ackC;"},{"val":"sel == 5U;\n","file":"cpa.c","line":993,"source":97,"target":98,"desc":"unsigned char sel;"},{"val":"active == 0;\n","file":"cpa.c","line":994,"source":98,"target":99,"desc":"_Bool active;"},{"val":"reqA == ((_Bool)11);\n","file":"cpa.c","line":995,"source":99,"target":100,"desc":"_Bool reqA;"},{"val":"reqB == ((_Bool)10);\n","file":"cpa.c","line":995,"source":100,"target":101,"desc":"_Bool reqB;"},{"val":"reqC == ((_Bool)9);\n","file":"cpa.c","line":995,"source":101,"target":102,"desc":"_Bool reqC;"},{"val":"pass_tokenA == ((_Bool)8);\n","file":"cpa.c","line":996,"source":102,"target":103,"desc":"_Bool pass_tokenA;"},{"val":"pass_tokenB == ((_Bool)7);\n","file":"cpa.c","line":996,"source":103,"target":104,"desc":"_Bool pass_tokenB;"},{"val":"ackB == ((_Bool)2);\nA == 0;\nX == 3;\nB == 1;\npass_tokenA == ((_Bool)8);\npass_tokenB == ((_Bool)7);\npass_tokenC == ((_Bool)6);\nackC == ((_Bool)4);\nC == 2;\nactive == 0;\nreqA == ((_Bool)11);\nreqB == ((_Bool)10);\nreqC == ((_Bool)9);\nsel == 5U;\nackA == 1;\n","file":"cpa.c","line":996,"source":104,"target":105,"desc":"_Bool pass_tokenC;"},{"val":"","file":"cpa.c","line":999,"argelem":2,"source":105,"target":63,"desc":"client_initial()"},{"val":"","file":"<none>","line":0,"argelem":3,"source":63,"target":64,"desc":"Function start dummy edge"},{"val":"","file":"cpa.c","line":963,"source":64,"target":65,"desc":"sclient.state = 0;"},{"val":"","file":"cpa.c","line":964,"source":65,"target":66,"desc":"sclient.req = 0;"},{"val":"","file":"<none>","line":0,"argelem":4,"source":66,"target":62,"desc":"default return"},{"val":"","file":"cpa.c","line":999,"argelem":5,"source":62,"target":106,"desc":"Return edge from client_initial to main"},{"val":"","file":"cpa.c","line":1000,"argelem":6,"source":106,"target":1,"desc":"controller_initial()"},{"val":"","file":"<none>","line":0,"argelem":7,"source":1,"target":2,"desc":"Function start dummy edge"},{"val":"","file":"cpa.c","line":889,"source":2,"target":3,"desc":"scontroller.state = 0;"},{"val":"","file":"cpa.c","line":890,"source":3,"target":4,"desc":"scontroller.ack = 0;"},{"val":"","file":"cpa.c","line":891,"source":4,"target":5,"desc":"scontroller.pass_token = 1;"},{"val":"","file":"<none>","line":0,"argelem":8,"source":5,"target":0,"desc":"default return"},{"val":"","file":"cpa.c","line":1000,"argelem":9,"source":0,"target":107,"desc":"Return edge from controller_initial to main"},{"val":"","file":"cpa.c","line":1001,"argelem":10,"source":107,"target":39,"desc":"arbiter_initial()"},{"val":"","file":"<none>","line":0,"argelem":11,"source":39,"target":40,"desc":"Function start dummy edge"},{"val":"","file":"cpa.c","line":938,"source":40,"target":41,"desc":"sarbiter.state = A;"},{"val":"","file":"<none>","line":0,"argelem":12,"source":41,"target":38,"desc":"default return"},{"val":"","file":"cpa.c","line":1001,"argelem":13,"source":38,"target":108,"desc":"Return edge from arbiter_initial to main"},{"val":"","file":"cpa.c","line":1003,"argelem":14,"source":108,"target":109,"desc":"while"},{"val":"","file":"cpa.c","line":1003,"argelem":16,"source":109,"target":110,"desc":""},{"val":"","file":"cpa.c","line":1004,"argelem":17,"source":110,"target":68,"desc":"client(clk, &reqA, ackA)"},{"val":"req == 310640387LL;\n(*req) == ((_Bool)11);\nack == 1;\n","file":"<none>","line":0,"argelem":18,"source":68,"target":69,"desc":"Function start dummy edge"},{"val":"ack == 1;\nreq == 310640387LL;\nrand_choice == 0;\n(*req) == ((_Bool)11);\n","file":"cpa.c","line":968,"source":69,"target":70,"desc":"_Bool rand_choice = 0;"},{"val":"","file":"cpa.c","line":969,"argelem":19,"source":70,"target":72,"desc":"[(sclient.state) == 0]"},{"val":"rand_choice == 0;","file":"cpa.c","line":970,"argelem":20,"source":72,"target":74,"desc":"[rand_choice == 0]"},{"val":"","file":"<none>","line":0,"argelem":45,"source":74,"target":71,"desc":""},{"val":"(*req) == 0;\n","file":"cpa.c","line":987,"argelem":47,"source":71,"target":90,"desc":"*req = sclient.req;"},{"val":"","file":"<none>","line":0,"argelem":48,"source":90,"target":67,"desc":"default return"},{"val":"","file":"cpa.c","line":1004,"argelem":49,"source":67,"target":112,"desc":"Return edge from client to main"},{"val":"","file":"cpa.c","line":1005,"argelem":50,"source":112,"target":68,"desc":"client(clk, &reqB, ackB)"},{"val":"req == 536739335LL;\n(*req) == ((_Bool)10);\nack == ((_Bool)2);\n","file":"<none>","line":0,"argelem":51,"source":68,"target":69,"desc":"Function start dummy edge"},{"val":"req == 536739335LL;\nack == ((_Bool)2);\n(*req) == ((_Bool)10);\nrand_choice == 0;\n","file":"cpa.c","line":968,"source":69,"target":70,"desc":"_Bool rand_choice = 0;"},{"val":"","file":"cpa.c","line":969,"argelem":52,"source":70,"target":72,"desc":"[(sclient.state) == 0]"},{"val":"rand_choice == 0;","file":"cpa.c","line":970,"argelem":53,"source":72,"target":74,"desc":"[rand_choice == 0]"},{"val":"","file":"<none>","line":0,"argelem":78,"source":74,"target":71,"desc":""},{"val":"(*req) == 0;\n","file":"cpa.c","line":987,"argelem":80,"source":71,"target":90,"desc":"*req = sclient.req;"},{"val":"","file":"<none>","line":0,"argelem":81,"source":90,"target":67,"desc":"default return"},{"val":"","file":"cpa.c","line":1005,"argelem":82,"source":67,"target":113,"desc":"Return edge from client to main"},{"val":"","file":"cpa.c","line":1006,"argelem":83,"source":113,"target":68,"desc":"client(clk, &reqC, ackC)"},{"val":"req == 1073741823LL;\n(*req) == ((_Bool)9);\nack == ((_Bool)4);\n","file":"<none>","line":0,"argelem":84,"source":68,"target":69,"desc":"Function start dummy edge"},{"val":"rand_choice == 0;\n(*req) == ((_Bool)9);\nreq == 1073741823LL;\nack == ((_Bool)4);\n","file":"cpa.c","line":968,"source":69,"target":70,"desc":"_Bool rand_choice = 0;"},{"val":"","file":"cpa.c","line":969,"argelem":85,"source":70,"target":72,"desc":"[(sclient.state) == 0]"},{"val":"rand_choice == 0;","file":"cpa.c","line":970,"argelem":86,"source":72,"target":74,"desc":"[rand_choice == 0]"},{"val":"","file":"<none>","line":0,"argelem":111,"source":74,"target":71,"desc":""},{"val":"(*req) == 0;\n","file":"cpa.c","line":987,"argelem":113,"source":71,"target":90,"desc":"*req = sclient.req;"},{"val":"","file":"<none>","line":0,"argelem":114,"source":90,"target":67,"desc":"default return"},{"val":"","file":"cpa.c","line":1006,"argelem":115,"source":67,"target":114,"desc":"Return edge from client to main"},{"val":"","file":"cpa.c","line":1008,"argelem":116,"source":114,"target":7,"desc":"controller(clk, reqA, &ackA, sel, &pass_tokenA, A)"},{"val":"req == 0;\nack == 33619711LL;\n(*ack) == 1;\nsel == 5U;\npass_token == 1107361791LL;\n(*pass_token) == ((_Bool)8);\nid == 0U;\n","file":"<none>","line":0,"argelem":117,"source":7,"target":8,"desc":"Function start dummy edge"},{"val":"req == 0;\nack == 33619711LL;\n(*ack) == 1;\nsel == 5U;\npass_token == 1107361791LL;\n(*pass_token) == ((_Bool)8);\nid == 0U;\n","file":"cpa.c","line":896,"source":8,"target":9,"desc":"_Bool is_selected;"},{"val":"ack == 33619711LL;\nid == 0U;\nreq == 0;\n(*pass_token) == ((_Bool)8);\nis_selected == 0;\n(*ack) == 1;\npass_token == 1107361791LL;\nsel == 5U;\n","file":"cpa.c","line":897,"source":9,"target":10,"desc":"is_selected = (sel & (3 == id)) & 3;"},{"val":"","file":"cpa.c","line":900,"argelem":118,"source":10,"target":12,"desc":"[(scontroller.state) == 0]"},{"val":"is_selected == 0;","file":"cpa.c","line":901,"argelem":119,"source":12,"target":16,"desc":"[is_selected == 0]"},{"val":"","file":"cpa.c","line":910,"argelem":136,"source":16,"target":23,"desc":"scontroller.pass_token = 0;"},{"val":"","file":"<none>","line":0,"argelem":146,"source":23,"target":14,"desc":""},{"val":"","file":"<none>","line":0,"argelem":148,"source":14,"target":11,"desc":""},{"val":"(*ack) == 0;\n","file":"cpa.c","line":926,"argelem":150,"source":11,"target":36,"desc":"*ack = scontroller.ack;"},{"val":"(*pass_token) == 0;\n(*ack) == 0;\n","file":"cpa.c","line":927,"source":36,"target":37,"desc":"*pass_token = scontroller.pass_token;"},{"val":"","file":"<none>","line":0,"argelem":151,"source":37,"target":6,"desc":"default return"},{"val":"","file":"cpa.c","line":1008,"argelem":152,"source":6,"target":115,"desc":"Return edge from controller to main"},{"val":"","file":"cpa.c","line":1009,"argelem":153,"source":115,"target":7,"desc":"controller(clk, reqB, &ackB, sel, &pass_tokenB, B)"},{"val":"req == 0;\nack == 33619713LL;\n(*ack) == ((_Bool)2);\nsel == 5U;\npass_token == 1107427327LL;\n(*pass_token) == ((_Bool)7);\nid == 1U;\n","file":"<none>","line":0,"argelem":154,"source":7,"target":8,"desc":"Function start dummy edge"},{"val":"is_selected == 0;\nreq == 0;\nack == 33619713LL;\n(*ack) == ((_Bool)2);\nsel == 5U;\npass_token == 1107427327LL;\n(*pass_token) == ((_Bool)7);\nid == 1U;\n","file":"cpa.c","line":896,"source":8,"target":9,"desc":"_Bool is_selected;"},{"val":"(*pass_token) == ((_Bool)7);\nid == 1U;\nreq == 0;\nis_selected == 0;\n(*ack) == ((_Bool)2);\nack == 33619713LL;\npass_token == 1107427327LL;\nsel == 5U;\n","file":"cpa.c","line":897,"source":9,"target":10,"desc":"is_selected = (sel & (3 == id)) & 3;"},{"val":"","file":"cpa.c","line":900,"argelem":155,"source":10,"target":12,"desc":"[(scontroller.state) == 0]"},{"val":"is_selected == 0;","file":"cpa.c","line":901,"argelem":156,"source":12,"target":16,"desc":"[is_selected == 0]"},{"val":"","file":"cpa.c","line":910,"argelem":173,"source":16,"target":23,"desc":"scontroller.pass_token = 0;"},{"val":"","file":"<none>","line":0,"argelem":183,"source":23,"target":14,"desc":""},{"val":"","file":"<none>","line":0,"argelem":185,"source":14,"target":11,"desc":""},{"val":"(*ack) == 0;\n","file":"cpa.c","line":926,"argelem":187,"source":11,"target":36,"desc":"*ack = scontroller.ack;"},{"val":"(*pass_token) == 0;\n(*ack) == 0;\n","file":"cpa.c","line":927,"source":36,"target":37,"desc":"*pass_token = scontroller.pass_token;"},{"val":"","file":"<none>","line":0,"argelem":188,"source":37,"target":6,"desc":"default return"},{"val":"","file":"cpa.c","line":1009,"argelem":189,"source":6,"target":116,"desc":"Return edge from controller to main"},{"val":"","file":"cpa.c","line":1010,"argelem":190,"source":116,"target":7,"desc":"controller(clk, reqC, &ackC, sel, &pass_tokenC, C)"},{"val":"req == 0;\nack == 310378495LL;\n(*ack) == ((_Bool)4);\nsel == 5U;\npass_token == 1107427520LL;\n(*pass_token) == ((_Bool)6);\nid == 2U;\n","file":"<none>","line":0,"argelem":191,"source":7,"target":8,"desc":"Function start dummy edge"},{"val":"is_selected == 0;\nreq == 0;\nack == 310378495LL;\n(*ack) == ((_Bool)4);\nsel == 5U;\npass_token == 1107427520LL;\n(*pass_token) == ((_Bool)6);\nid == 2U;\n","file":"cpa.c","line":896,"source":8,"target":9,"desc":"_Bool is_selected;"},{"val":"req == 0;\n(*ack) == ((_Bool)4);\nis_selected == 0;\nid == 2U;\nack == 310378495LL;\n(*pass_token) == ((_Bool)6);\nsel == 5U;\npass_token == 1107427520LL;\n","file":"cpa.c","line":897,"source":9,"target":10,"desc":"is_selected = (sel & (3 == id)) & 3;"},{"val":"","file":"cpa.c","line":900,"argelem":192,"source":10,"target":12,"desc":"[(scontroller.state) == 0]"},{"val":"is_selected == 0;","file":"cpa.c","line":901,"argelem":193,"source":12,"target":16,"desc":"[is_selected == 0]"},{"val":"","file":"cpa.c","line":910,"argelem":210,"source":16,"target":23,"desc":"scontroller.pass_token = 0;"},{"val":"","file":"<none>","line":0,"argelem":220,"source":23,"target":14,"desc":""},{"val":"","file":"<none>","line":0,"argelem":222,"source":14,"target":11,"desc":""},{"val":"(*ack) == 0;\n","file":"cpa.c","line":926,"argelem":224,"source":11,"target":36,"desc":"*ack = scontroller.ack;"},{"val":"(*pass_token) == 0;\n(*ack) == 0;\n","file":"cpa.c","line":927,"source":36,"target":37,"desc":"*pass_token = scontroller.pass_token;"},{"val":"","file":"<none>","line":0,"argelem":225,"source":37,"target":6,"desc":"default return"},{"val":"","file":"cpa.c","line":1010,"argelem":226,"source":6,"target":117,"desc":"Return edge from controller to main"},{"val":"","file":"cpa.c","line":1012,"argelem":227,"source":117,"target":43,"desc":"arbiter(clk, &sel, active)"},{"val":"sel == 310576129LL;\n(*sel) == 5U;\nactive == 0;\n","file":"<none>","line":0,"argelem":228,"source":43,"target":44,"desc":"Function start dummy edge"},{"val":"sel == 310576129LL;\n(*sel) == 5U;\nactive == 0;\nactive == 0;","file":"cpa.c","line":943,"argelem":229,"source":44,"target":45,"desc":"[active == 0]"},{"val":"","file":"cpa.c","line":952,"argelem":249,"source":45,"target":57,"desc":"int __CPAchecker_TMP_0;"},{"val":"active == 0;","file":"cpa.c","line":952,"argelem":250,"source":57,"target":59,"desc":"[active == 0]"},{"val":"__CPAchecker_TMP_0 == 3;\n","file":"cpa.c","line":952,"argelem":251,"source":59,"target":60,"desc":"__CPAchecker_TMP_0 = X;"},{"val":"(*sel) == 3U;\n","file":"cpa.c","line":952,"argelem":255,"source":60,"target":61,"desc":"*sel = __CPAchecker_TMP_0;"},{"val":"","file":"<none>","line":0,"argelem":256,"source":61,"target":42,"desc":"default return"},{"val":"","file":"cpa.c","line":1012,"argelem":257,"source":42,"target":118,"desc":"Return edge from arbiter to main"},{"val":"","file":"cpa.c","line":1014,"argelem":258,"source":118,"target":119,"desc":"int __CPAchecker_TMP_0;"},{"val":"pass_tokenA == 0;","file":"cpa.c","line":1014,"argelem":259,"source":119,"target":123,"desc":"[pass_tokenA == 0]"},{"val":"pass_tokenB == 0;","file":"cpa.c","line":1014,"argelem":260,"source":123,"target":120,"desc":"[pass_tokenB == 0]"},{"val":"pass_tokenC == 0;","file":"cpa.c","line":1014,"argelem":262,"source":120,"target":122,"desc":"[pass_tokenC == 0]"},{"val":"__CPAchecker_TMP_0 == 0;\n","file":"<none>","line":0,"argelem":265,"source":122,"target":124,"desc":"__CPAchecker_TMP_0 = 0;"},{"val":"active == 0;\n","file":"cpa.c","line":1014,"argelem":270,"source":124,"target":125,"desc":"active = __CPAchecker_TMP_0;"},{"val":"active == 0;\n","file":"cpa.c","line":1018,"source":125,"target":126,"desc":"void __CPAchecker_TMP_2;"},{"val":"ackA == 0;","file":"cpa.c","line":1018,"argelem":271,"source":126,"target":130,"desc":"[!(ackA == 1)]"},{"val":"ackB == 0;","file":"cpa.c","line":1018,"argelem":276,"source":130,"target":129,"desc":"[!(ackB == 1)]"},{"val":"ackC == 0;","file":"cpa.c","line":1018,"argelem":282,"source":129,"target":128,"desc":"[!(ackC == 1)]"},{"val":"","file":"cpa.c","line":1018,"argelem":288,"source":128,"target":134,"desc":"__assert_fail(\"(ackA == 1 && ackB == 1 || ackB == 1 && ackC == 1 || ackC == 1 && ackA ==1)\", \"cpa.c\", 156, \"__PRETTY_FUNCTION__\");"}];
+var combinedNodes = {"2":2,"3":2,"4":2,"5":2,"8":8,"9":8,"18":18,"19":19,"20":18,"21":18,"22":19,"27":27,"28":27,"33":33,"34":33,"35":33,"36":36,"37":36,"40":40,"41":40,"55":55,"56":55,"63":63,"64":63,"65":63,"66":63,"75":75,"76":75,"77":75,"82":82,"83":82,"87":87,"88":87,"89":87,"93":136,"94":136,"95":136,"96":136,"97":136,"98":136,"99":136,"100":136,"101":136,"102":136,"103":136,"104":136,"136":136,"137":136,"138":136,"139":136,"140":136,"141":136,"142":136,"143":136,"144":136,"145":136,"146":136,"147":136,"148":136,"149":136,"150":136,"151":136,"152":136,"153":136,"154":136,"155":136,"156":136,"157":136,"158":136,"159":136,"160":136,"161":136,"162":136,"163":136,"164":136,"165":136,"166":136,"167":136,"168":136,"169":136,"170":136,"171":136,"172":136,"173":136,"174":136,"175":136,"176":136,"177":136,"178":136,"179":136,"180":136,"181":136,"182":136,"183":136,"184":136,"185":136,"186":136,"187":136,"188":136,"189":136,"190":136,"191":136,"192":136,"193":136,"194":136,"195":136,"196":136,"197":136,"198":136,"199":136,"200":136,"201":136,"202":136,"203":136,"204":136,"205":136,"206":136,"207":136,"208":136,"209":136,"210":136,"211":136,"212":136,"213":136,"214":136,"215":136,"216":136,"217":136,"218":136,"219":136,"220":136,"221":136,"222":136,"223":136,"224":136,"225":136,"226":136,"227":136,"228":136,"229":136,"230":136,"231":136,"232":136,"233":136,"234":136,"235":136,"236":136,"237":136,"238":136,"239":136,"240":136,"241":136,"242":136,"243":136,"244":136,"245":136,"246":136,"247":136,"248":136,"249":136,"250":136,"251":136,"252":136,"253":136,"254":136,"255":136,"256":136,"257":136,"258":136,"259":136,"260":136,"261":136,"262":136,"263":136,"264":136,"265":136,"266":136,"267":136,"268":136,"269":136,"270":136,"271":136,"272":136,"273":136,"274":136,"275":136,"276":136,"277":136,"278":136,"279":136,"280":136,"281":136,"282":136,"283":136,"284":136,"285":136,"286":136,"287":136,"288":136,"289":136,"290":136,"291":136,"292":136,"293":136,"294":136,"295":136,"296":136,"297":136,"298":136,"299":136,"300":136,"301":136,"302":136,"303":136,"304":136,"305":136,"306":136,"307":136,"308":136,"309":136,"310":136,"311":136,"312":136,"313":136,"314":136,"315":136,"316":136,"317":136,"318":136,"319":136,"320":136,"321":136,"322":136,"323":136,"324":136,"325":136,"326":136,"327":136,"328":136,"329":136,"330":136,"331":136,"332":136,"333":136,"334":136,"335":136,"336":136,"337":136,"338":136,"339":136,"340":136,"341":136,"342":136,"343":136,"344":136};
+var sourceFiles = ["cpa.c"];
+
+$(function () {
+  $('[data-toggle="popover"]').popover({ html : true })
+})
+
+function init(){
+  var svgElements = document.getElementsByTagName("svg");
+  //set IDs for all CFA-SVGs
+  for(var r = 0; r<svgElements.length-1; r++){
+    var graph = svgElements[r].getElementsByTagName("g")[0];
+    graph.id = "cfaGraph-" + r.toString();
+    var nodes = graph.getElementsByClassName("node");
+    for(var s = 0; s < nodes.length; s++){
+      nodes[s].id = "cfa-" + nodes[s].getElementsByTagName("title")[0].innerHTML;
+      if(nodes[s].getElementsByTagName("title")[0].innerHTML > 100000){
+        nodes[s].classList.add("functionNode");
+      }
+    }
+    var edges = graph.getElementsByClassName("edge");
+    for(var t=0; t<edges.length; t++){
+      var edge = edges[t];
+      var fromto = [];
+      if(edge.getElementsByTagName("title")[0].innerHTML.split("&#45;&gt;")[1] != null){
+        fromto = edge.getElementsByTagName("title")[0].innerHTML.split("&#45;&gt;");
+      } else if (edge.getElementsByTagName("title")[0].innerHTML.split("&#45;>")[1] != null) {
+        fromto = edge.getElementsByTagName("title")[0].innerHTML.split("&#45;>");
+      } else if (edge.getElementsByTagName("title")[0].innerHTML.split("-&gt;")[1] != null) {
+        fromto = edge.getElementsByTagName("title")[0].innerHTML.split("-&gt;");
+      } else {
+        fromto = edge.getElementsByTagName("title")[0].innerHTML.split("->");
+      }
+      edge.id = "cfa-" + fromto[0] + "->" + fromto[1];
+    }
+  }
+  //set IDs for the ARG-SVG
+  graph = svgElements[svgElements.length-1].getElementsByTagName("g")[0];
+  graph.id = "argGraph-" + (svgElements.length-1).toString();
+  nodes = graph.getElementsByClassName("node");
+  for(var u = 0; u < nodes.length; u++){
+    nodes[u].id = "arg-" + nodes[u].getElementsByTagName("title")[0].innerHTML;
+  }
+  edges = graph.getElementsByClassName("edge");
+  for(var v=0; v<edges.length; v++){
+    edge = edges[v];
+    fromto = [];
+    if(edge.getElementsByTagName("title")[0].innerHTML.split("&#45;&gt;")[1] != null){
+      fromto = edge.getElementsByTagName("title")[0].innerHTML.split("&#45;&gt;");
+    } else if (edge.getElementsByTagName("title")[0].innerHTML.split("&#45;>")[1] != null) {
+      fromto = edge.getElementsByTagName("title")[0].innerHTML.split("&#45;>");
+    } else if (edge.getElementsByTagName("title")[0].innerHTML.split("-&gt;")[1] != null) {
+      fromto = edge.getElementsByTagName("title")[0].innerHTML.split("-&gt;");
+    } else {
+      fromto = edge.getElementsByTagName("title")[0].innerHTML.split("->");
+    }
+    edge.id = "arg-" + fromto[0] + "->" + fromto[1];
+  }
+
+  //If we do not have an Errorpath
+  if(errorPathData.length == undefined){
+    document.getElementById("errorpath_section").style.display = "none";
+    document.getElementById("externalFiles_section").style.width = "100%";
+  }
+
+  //prepare Errorpath-Data for marking in the cfa
+  var returnedges = {};
+  for(key in fCallEdges){
+    var fcalledge = fCallEdges[key];
+    returnedges[fcalledge[1]] = fcalledge[0];
+  }
+  var errPathDataForCFA = [];
+  for(var w = 0; w < errorPathData.length; w++){
+    var source = errorPathData[w].source;
+    var target = errorPathData[w].target;
+    if(source in combinedNodes && target in combinedNodes){
+    } else if(source in combinedNodes){
+      errPathDataForCFA.push(combinedNodes[source] + "->" + target);
+    } else if (source in fCallEdges){
+      errPathDataForCFA.push(source + "->" + fCallEdges[source][0]);
+    } else if (target in returnedges){
+      errPathDataForCFA.push(returnedges[target] + "->" + target);
+    } else {
+      errPathDataForCFA.push(source + "->" + target);
+    }
+  }
+  for(var x = 0; x < errPathDataForCFA.length; x++){
+    var cfaEdge = document.getElementById("cfa-" + errPathDataForCFA[x]);
+    if (cfaEdge != null) {
+	  var path = cfaEdge.getElementsByTagName("path")[0];
+	  var poly = cfaEdge.getElementsByTagName("polygon")[0];
+	  var text = cfaEdge.getElementsByTagName("text")[0];
+	  path.setAttribute("stroke", "red");
+	  poly.setAttribute("stroke", "red");
+	  poly.setAttribute("fill", "red");
+	  if(text != undefined) {
+	    text.setAttribute("fill", "red");
+	  }
+    }
+  }
+};
+	</script>
+	
+</head>
+
+<body ng-controller="ReportController" onload="prettyPrint(); init()">
+<header class="header">
+
+    <a href="https://cpachecker.sosy-lab.org/"><img class="logo" ng-src="{{logo}}"/></a>
+    <h1>Report for
+cpa.c (Counterexample 1)    </h1>
+
+    <span class="generated">
+Generated on 2017-05-17 22:07:24 by CPAchecker 1.6.1    </span>
+</header>
+
+<div class="sections" ng-mousemove="setWidth($event)" ng-mouseup="setMouseUp()">
+    <section id="errorpath_section" ng-controller="ErrorpathController">
+        <div id="middleLine" ng-mousedown="setMouseDown()"></div>
+        <header ng-controller="SearchController">
+            <div class="btn-group">
+                <button class="btn btn-success" ng-click="clickedErrpathButton($event)">Prev</button>
+                <button class="btn btn-warning" ng-click="clickedErrpathButton($event)">Start</button>
+                <button class="btn btn-success" ng-click="clickedErrpathButton($event)">Next</button>
+            </div>
+            <button data-toggle="popover" data-placement="right" data-trigger="click" data-content="{{help_errorpath}}" class="btn btn-default btn-lg help_button" type="button">
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </button>
+            <div class="input-group input-group-sm">
+                <input type="text" ng-keydown="checkIfEnter($event)" class="form-control search-input" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button ng-click="searchFor()" class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </button>
+                    </span>
+            </div>
+            <div id="searchOptions">
+                <label for="optionExactMatch">
+                    <input id="optionExactMatch" type="checkbox" name="searchOption">
+                    Find only exact matches</label>
+            </div>
+            <div id="matches">
+                <p class="markedValues">Matches in value-assignements (V): {{numOfValueMatches}}</p>
+                <p class="markedDescriptions">Matches in edge-description: {{numOfDescriptionMatches}}</p>
+            </div>
+        </header>
+        <div class="fileContent" ng-controller="ValueAssignmentsController">
+            <table id="err_table">
+                <tr id="errpath-{{$index}}" ng-repeat="line in errorPathData">
+                    <td ng-click="showValues($event)" data-toggle="popover" data-placement="right" data-trigger="click" data-content="{{line.valString}}"><pre>-V-</pre></td>
+                    <td ng-click="clickedErrpathElement($event)"><pre class="prettyprint">{{line.desc}}</pre></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section id="externalFiles_section">
+        <ul class="nav nav-pills">
+            <li ng-class="{active: tabIsSet(1)}">
+                <a href ng-click="setTab(1)">CFA</a>
+            </li>
+            <li ng-class="{active: tabIsSet(2)}">
+                <a href ng-click="setTab(2)">ARG</a>
+            </li>
+            <li ng-class="{active: tabIsSet(3)}">
+                <a href ng-click="setTab(3)">Source</a>
+            </li>
+            <li ng-class="{active: tabIsSet(4)}">
+                <a href ng-click="setTab(4)">Log</a>
+            </li>
+            <li ng-class="{active: tabIsSet(5)}">
+                <a href ng-click="setTab(5)">Statistics</a>
+            </li>
+            <li ng-class="{active: tabIsSet(6)}">
+                <a href ng-click="setTab(6)">Configurations</a>
+            </li>
+            <button data-toggle="popover" data-placement="right" data-trigger="click" data-content="{{help_externalFiles}}" class="btn btn-default btn-lg help_button" type="button">
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </button>
+        </ul>
+        <div class="fileContent" ng-show="tabIsSet(1)" ng-controller="CFAController">
+            <div class="edit-line">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Displayed CFA
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="func in functions"><a ng-click="setCFAFunction($index)">{{func}}</a></li>
+                    </ul>
+                </div>
+                <label>{{functions[selectedCFAFunction]}}</label>
+                <div ng-controller="ZoomController">
+                    <p>Zoom Factor (%)</p>
+                    <input id="cfa-scalingField" type="number" min="0" max="200" ng-model="zoomFactorCFA" ng-change="setZoom('cfa-scalingField')"/>
+                </div>
+            </div>
+            <div class="cfaContent">
+                    <p>Run scripts/report-generator.py to display CFAs.</p><!--CFAFUNCTIONGRAPHS-->
+                </div>
+            </div>
+            <div class="fileContent" ng-show="tabIsSet(2)" ng-controller="ARGController">
+                <div class="edit-line">
+                    <div ng-controller="ZoomController">
+                        <p>Zoom Factor (%)</p>
+                        <input id="arg-scalingField" type="number" min="0" max="200" ng-model="zoomFactorARG" ng-change="setZoom('arg-scalingField')"/>
+                    </div>
+                </div>
+                <div class="argContent">
+                    <p>Run scripts/report-generator.py to display ARG.</p><!--ARGGRAPHS-->
+                </div>
+            </div>
+            <div class="fileContent" ng-show="tabIsSet(3)" ng-controller="SourceController">
+                <div class="edit-line">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Displayed Sourcefile
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="file in sourceFiles"><a ng-click="setSourceFile($index)">{{file}}</a></li>
+                        </ul>
+                    </div>
+                    <label>{{sourceFiles[selectedSourceFile]}}</label>
+                </div>
+<table class="sourceContent" ng-show = "sourceFileIsSet(0)">
+<tr id="source-0"><td><pre>0</pre></td><td><pre class="prettyprint">#include <stdio.h>  </pre></td></tr>
+<tr id="source-1"><td><pre>1</pre></td><td><pre class="prettyprint">#include <assert.h>  </pre></td></tr>
+<tr id="source-2"><td><pre>2</pre></td><td><pre class="prettyprint">#define TRUE 1  </pre></td></tr>
+<tr id="source-3"><td><pre>3</pre></td><td><pre class="prettyprint">#define FALSE 0  </pre></td></tr>
+<tr id="source-4"><td><pre>4</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-5"><td><pre>5</pre></td><td><pre class="prettyprint">#define IDLE 0  </pre></td></tr>
+<tr id="source-6"><td><pre>6</pre></td><td><pre class="prettyprint">#define READY 1  </pre></td></tr>
+<tr id="source-7"><td><pre>7</pre></td><td><pre class="prettyprint">#define BUSY 2  </pre></td></tr>
+<tr id="source-8"><td><pre>8</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-9"><td><pre>9</pre></td><td><pre class="prettyprint">#define NO_REQ 0  </pre></td></tr>
+<tr id="source-10"><td><pre>10</pre></td><td><pre class="prettyprint">#define REQ 1  </pre></td></tr>
+<tr id="source-11"><td><pre>11</pre></td><td><pre class="prettyprint">#define HAVE_TOKEN 2  </pre></td></tr>
+<tr id="source-12"><td><pre>12</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-13"><td><pre>13</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-14"><td><pre>14</pre></td><td><pre class="prettyprint">int A = 0;  </pre></td></tr>
+<tr id="source-15"><td><pre>15</pre></td><td><pre class="prettyprint">int B = 1;  </pre></td></tr>
+<tr id="source-16"><td><pre>16</pre></td><td><pre class="prettyprint">int C = 2;  </pre></td></tr>
+<tr id="source-17"><td><pre>17</pre></td><td><pre class="prettyprint">int X = 3;  </pre></td></tr>
+<tr id="source-18"><td><pre>18</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-19"><td><pre>19</pre></td><td><pre class="prettyprint">struct state_elements_controller{  </pre></td></tr>
+<tr id="source-20"><td><pre>20</pre></td><td><pre class="prettyprint">  _Bool ack;  </pre></td></tr>
+<tr id="source-21"><td><pre>21</pre></td><td><pre class="prettyprint">  unsigned char state;  </pre></td></tr>
+<tr id="source-22"><td><pre>22</pre></td><td><pre class="prettyprint">  _Bool pass_token;  </pre></td></tr>
+<tr id="source-23"><td><pre>23</pre></td><td><pre class="prettyprint">};  </pre></td></tr>
+<tr id="source-24"><td><pre>24</pre></td><td><pre class="prettyprint">struct state_elements_controller  scontroller;  </pre></td></tr>
+<tr id="source-25"><td><pre>25</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-26"><td><pre>26</pre></td><td><pre class="prettyprint">void controller_initial()  </pre></td></tr>
+<tr id="source-27"><td><pre>27</pre></td><td><pre class="prettyprint">{  </pre></td></tr>
+<tr id="source-28"><td><pre>28</pre></td><td><pre class="prettyprint">  scontroller.state = IDLE;  </pre></td></tr>
+<tr id="source-29"><td><pre>29</pre></td><td><pre class="prettyprint">  scontroller.ack = 0;  </pre></td></tr>
+<tr id="source-30"><td><pre>30</pre></td><td><pre class="prettyprint">  scontroller.pass_token = 1;  </pre></td></tr>
+<tr id="source-31"><td><pre>31</pre></td><td><pre class="prettyprint">}  </pre></td></tr>
+<tr id="source-32"><td><pre>32</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-33"><td><pre>33</pre></td><td><pre class="prettyprint">void controller(_Bool clk, _Bool req, _Bool *ack, unsigned char sel, _Bool *pass_token, unsigned char id)  </pre></td></tr>
+<tr id="source-34"><td><pre>34</pre></td><td><pre class="prettyprint">{  </pre></td></tr>
+<tr id="source-35"><td><pre>35</pre></td><td><pre class="prettyprint">  _Bool is_selected;  </pre></td></tr>
+<tr id="source-36"><td><pre>36</pre></td><td><pre class="prettyprint">  is_selected = (sel&0x3 == id&0x3);  </pre></td></tr>
+<tr id="source-37"><td><pre>37</pre></td><td><pre class="prettyprint">    </pre></td></tr>
+<tr id="source-38"><td><pre>38</pre></td><td><pre class="prettyprint">  // clocked block  </pre></td></tr>
+<tr id="source-39"><td><pre>39</pre></td><td><pre class="prettyprint">  if(scontroller.state == IDLE) {  </pre></td></tr>
+<tr id="source-40"><td><pre>40</pre></td><td><pre class="prettyprint">    if(is_selected)  </pre></td></tr>
+<tr id="source-41"><td><pre>41</pre></td><td><pre class="prettyprint">      if(req)  </pre></td></tr>
+<tr id="source-42"><td><pre>42</pre></td><td><pre class="prettyprint">      {  </pre></td></tr>
+<tr id="source-43"><td><pre>43</pre></td><td><pre class="prettyprint">        scontroller.state = READY;  </pre></td></tr>
+<tr id="source-44"><td><pre>44</pre></td><td><pre class="prettyprint">        scontroller.pass_token = FALSE;  </pre></td></tr>
+<tr id="source-45"><td><pre>45</pre></td><td><pre class="prettyprint">      }  </pre></td></tr>
+<tr id="source-46"><td><pre>46</pre></td><td><pre class="prettyprint">      else  </pre></td></tr>
+<tr id="source-47"><td><pre>47</pre></td><td><pre class="prettyprint">        scontroller.pass_token = TRUE;  </pre></td></tr>
+<tr id="source-48"><td><pre>48</pre></td><td><pre class="prettyprint">    else  </pre></td></tr>
+<tr id="source-49"><td><pre>49</pre></td><td><pre class="prettyprint">      scontroller.pass_token = FALSE;  </pre></td></tr>
+<tr id="source-50"><td><pre>50</pre></td><td><pre class="prettyprint">  }  </pre></td></tr>
+<tr id="source-51"><td><pre>51</pre></td><td><pre class="prettyprint">  else if(scontroller.state == READY)  </pre></td></tr>
+<tr id="source-52"><td><pre>52</pre></td><td><pre class="prettyprint">  {  </pre></td></tr>
+<tr id="source-53"><td><pre>53</pre></td><td><pre class="prettyprint">    scontroller.state = BUSY;  </pre></td></tr>
+<tr id="source-54"><td><pre>54</pre></td><td><pre class="prettyprint">    scontroller.ack = TRUE;  </pre></td></tr>
+<tr id="source-55"><td><pre>55</pre></td><td><pre class="prettyprint">  }  </pre></td></tr>
+<tr id="source-56"><td><pre>56</pre></td><td><pre class="prettyprint">  else if(scontroller.state == BUSY) {  </pre></td></tr>
+<tr id="source-57"><td><pre>57</pre></td><td><pre class="prettyprint">    if(!req)  </pre></td></tr>
+<tr id="source-58"><td><pre>58</pre></td><td><pre class="prettyprint">    {  </pre></td></tr>
+<tr id="source-59"><td><pre>59</pre></td><td><pre class="prettyprint">      scontroller.state = IDLE;  </pre></td></tr>
+<tr id="source-60"><td><pre>60</pre></td><td><pre class="prettyprint">      scontroller.ack = FALSE;  </pre></td></tr>
+<tr id="source-61"><td><pre>61</pre></td><td><pre class="prettyprint">      scontroller.pass_token = TRUE;  </pre></td></tr>
+<tr id="source-62"><td><pre>62</pre></td><td><pre class="prettyprint">    }  </pre></td></tr>
+<tr id="source-63"><td><pre>63</pre></td><td><pre class="prettyprint">  }  </pre></td></tr>
+<tr id="source-64"><td><pre>64</pre></td><td><pre class="prettyprint">  // pass the output variable  </pre></td></tr>
+<tr id="source-65"><td><pre>65</pre></td><td><pre class="prettyprint">  *ack = scontroller.ack;  </pre></td></tr>
+<tr id="source-66"><td><pre>66</pre></td><td><pre class="prettyprint">  *pass_token = scontroller.pass_token;  </pre></td></tr>
+<tr id="source-67"><td><pre>67</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-68"><td><pre>68</pre></td><td><pre class="prettyprint">}  </pre></td></tr>
+<tr id="source-69"><td><pre>69</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-70"><td><pre>70</pre></td><td><pre class="prettyprint">struct state_elements_arbiter{  </pre></td></tr>
+<tr id="source-71"><td><pre>71</pre></td><td><pre class="prettyprint">  unsigned char state;  </pre></td></tr>
+<tr id="source-72"><td><pre>72</pre></td><td><pre class="prettyprint">};  </pre></td></tr>
+<tr id="source-73"><td><pre>73</pre></td><td><pre class="prettyprint">struct state_elements_arbiter sarbiter;  </pre></td></tr>
+<tr id="source-74"><td><pre>74</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-75"><td><pre>75</pre></td><td><pre class="prettyprint">void arbiter_initial()  </pre></td></tr>
+<tr id="source-76"><td><pre>76</pre></td><td><pre class="prettyprint">{  </pre></td></tr>
+<tr id="source-77"><td><pre>77</pre></td><td><pre class="prettyprint">  sarbiter.state = A;  </pre></td></tr>
+<tr id="source-78"><td><pre>78</pre></td><td><pre class="prettyprint">}  </pre></td></tr>
+<tr id="source-79"><td><pre>79</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-80"><td><pre>80</pre></td><td><pre class="prettyprint">void arbiter(_Bool clk, unsigned char *sel, _Bool active)  </pre></td></tr>
+<tr id="source-81"><td><pre>81</pre></td><td><pre class="prettyprint">{  </pre></td></tr>
+<tr id="source-82"><td><pre>82</pre></td><td><pre class="prettyprint">  if(active) {  </pre></td></tr>
+<tr id="source-83"><td><pre>83</pre></td><td><pre class="prettyprint">    if(sarbiter.state == A)   </pre></td></tr>
+<tr id="source-84"><td><pre>84</pre></td><td><pre class="prettyprint">      sarbiter.state = B;  </pre></td></tr>
+<tr id="source-85"><td><pre>85</pre></td><td><pre class="prettyprint">    else if(sarbiter.state == B)   </pre></td></tr>
+<tr id="source-86"><td><pre>86</pre></td><td><pre class="prettyprint">      sarbiter.state = C;  </pre></td></tr>
+<tr id="source-87"><td><pre>87</pre></td><td><pre class="prettyprint">    if(sarbiter.state == C)   </pre></td></tr>
+<tr id="source-88"><td><pre>88</pre></td><td><pre class="prettyprint">      sarbiter.state = A;  </pre></td></tr>
+<tr id="source-89"><td><pre>89</pre></td><td><pre class="prettyprint">  }   </pre></td></tr>
+<tr id="source-90"><td><pre>90</pre></td><td><pre class="prettyprint">  // continuous assignment  </pre></td></tr>
+<tr id="source-91"><td><pre>91</pre></td><td><pre class="prettyprint">  *sel = active ? sarbiter.state: X;  </pre></td></tr>
+<tr id="source-92"><td><pre>92</pre></td><td><pre class="prettyprint">}  </pre></td></tr>
+<tr id="source-93"><td><pre>93</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-94"><td><pre>94</pre></td><td><pre class="prettyprint">struct state_elements_client{  </pre></td></tr>
+<tr id="source-95"><td><pre>95</pre></td><td><pre class="prettyprint">  unsigned char state;  </pre></td></tr>
+<tr id="source-96"><td><pre>96</pre></td><td><pre class="prettyprint">  _Bool req;  </pre></td></tr>
+<tr id="source-97"><td><pre>97</pre></td><td><pre class="prettyprint">};  </pre></td></tr>
+<tr id="source-98"><td><pre>98</pre></td><td><pre class="prettyprint">struct state_elements_client sclient;  </pre></td></tr>
+<tr id="source-99"><td><pre>99</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-100"><td><pre>100</pre></td><td><pre class="prettyprint">void client_initial()  </pre></td></tr>
+<tr id="source-101"><td><pre>101</pre></td><td><pre class="prettyprint">{  </pre></td></tr>
+<tr id="source-102"><td><pre>102</pre></td><td><pre class="prettyprint">  sclient.state = NO_REQ;  </pre></td></tr>
+<tr id="source-103"><td><pre>103</pre></td><td><pre class="prettyprint">  sclient.req = 0;  </pre></td></tr>
+<tr id="source-104"><td><pre>104</pre></td><td><pre class="prettyprint">}  </pre></td></tr>
+<tr id="source-105"><td><pre>105</pre></td><td><pre class="prettyprint">void client(_Bool clk, _Bool *req, _Bool ack)  </pre></td></tr>
+<tr id="source-106"><td><pre>106</pre></td><td><pre class="prettyprint">{  </pre></td></tr>
+<tr id="source-107"><td><pre>107</pre></td><td><pre class="prettyprint">  _Bool rand_choice = 0;  </pre></td></tr>
+<tr id="source-108"><td><pre>108</pre></td><td><pre class="prettyprint">  if(sclient.state == NO_REQ) {  </pre></td></tr>
+<tr id="source-109"><td><pre>109</pre></td><td><pre class="prettyprint">    if (rand_choice) {  </pre></td></tr>
+<tr id="source-110"><td><pre>110</pre></td><td><pre class="prettyprint">      sclient.req = 1;  </pre></td></tr>
+<tr id="source-111"><td><pre>111</pre></td><td><pre class="prettyprint">      sclient.state = REQ;  </pre></td></tr>
+<tr id="source-112"><td><pre>112</pre></td><td><pre class="prettyprint">    }  </pre></td></tr>
+<tr id="source-113"><td><pre>113</pre></td><td><pre class="prettyprint">  }  </pre></td></tr>
+<tr id="source-114"><td><pre>114</pre></td><td><pre class="prettyprint">  else if(sclient.state == REQ) {  </pre></td></tr>
+<tr id="source-115"><td><pre>115</pre></td><td><pre class="prettyprint">    if (ack)  </pre></td></tr>
+<tr id="source-116"><td><pre>116</pre></td><td><pre class="prettyprint">      sclient.state = HAVE_TOKEN;  </pre></td></tr>
+<tr id="source-117"><td><pre>117</pre></td><td><pre class="prettyprint">  }  </pre></td></tr>
+<tr id="source-118"><td><pre>118</pre></td><td><pre class="prettyprint">  else if(sclient.state == HAVE_TOKEN)   </pre></td></tr>
+<tr id="source-119"><td><pre>119</pre></td><td><pre class="prettyprint">  {  </pre></td></tr>
+<tr id="source-120"><td><pre>120</pre></td><td><pre class="prettyprint">    if (rand_choice) {  </pre></td></tr>
+<tr id="source-121"><td><pre>121</pre></td><td><pre class="prettyprint">      sclient.req = 0;  </pre></td></tr>
+<tr id="source-122"><td><pre>122</pre></td><td><pre class="prettyprint">      sclient.state = NO_REQ;  </pre></td></tr>
+<tr id="source-123"><td><pre>123</pre></td><td><pre class="prettyprint">    }  </pre></td></tr>
+<tr id="source-124"><td><pre>124</pre></td><td><pre class="prettyprint">  }  </pre></td></tr>
+<tr id="source-125"><td><pre>125</pre></td><td><pre class="prettyprint">  // pass the output variable  </pre></td></tr>
+<tr id="source-126"><td><pre>126</pre></td><td><pre class="prettyprint">  *req = sclient.req;  </pre></td></tr>
+<tr id="source-127"><td><pre>127</pre></td><td><pre class="prettyprint">}  </pre></td></tr>
+<tr id="source-128"><td><pre>128</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-129"><td><pre>129</pre></td><td><pre class="prettyprint">void main()  </pre></td></tr>
+<tr id="source-130"><td><pre>130</pre></td><td><pre class="prettyprint">{  </pre></td></tr>
+<tr id="source-131"><td><pre>131</pre></td><td><pre class="prettyprint">  _Bool clk, ackA, ackB, ackC;  </pre></td></tr>
+<tr id="source-132"><td><pre>132</pre></td><td><pre class="prettyprint">  unsigned char sel;  </pre></td></tr>
+<tr id="source-133"><td><pre>133</pre></td><td><pre class="prettyprint">  _Bool active;  </pre></td></tr>
+<tr id="source-134"><td><pre>134</pre></td><td><pre class="prettyprint">  _Bool reqA, reqB, reqC;  </pre></td></tr>
+<tr id="source-135"><td><pre>135</pre></td><td><pre class="prettyprint">  _Bool pass_tokenA, pass_tokenB, pass_tokenC;  </pre></td></tr>
+<tr id="source-136"><td><pre>136</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-137"><td><pre>137</pre></td><td><pre class="prettyprint">  // initial functions  </pre></td></tr>
+<tr id="source-138"><td><pre>138</pre></td><td><pre class="prettyprint">  client_initial();  </pre></td></tr>
+<tr id="source-139"><td><pre>139</pre></td><td><pre class="prettyprint">  controller_initial();  </pre></td></tr>
+<tr id="source-140"><td><pre>140</pre></td><td><pre class="prettyprint">  arbiter_initial();  </pre></td></tr>
+<tr id="source-141"><td><pre>141</pre></td><td><pre class="prettyprint">    </pre></td></tr>
+<tr id="source-142"><td><pre>142</pre></td><td><pre class="prettyprint">  while(1) {  </pre></td></tr>
+<tr id="source-143"><td><pre>143</pre></td><td><pre class="prettyprint">    client(clk, &reqA, ackA);  </pre></td></tr>
+<tr id="source-144"><td><pre>144</pre></td><td><pre class="prettyprint">    client(clk, &reqB, ackB);  </pre></td></tr>
+<tr id="source-145"><td><pre>145</pre></td><td><pre class="prettyprint">    client(clk, &reqC, ackC);  </pre></td></tr>
+<tr id="source-146"><td><pre>146</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-147"><td><pre>147</pre></td><td><pre class="prettyprint">    controller(clk, reqA, &ackA, sel, &pass_tokenA, A);  </pre></td></tr>
+<tr id="source-148"><td><pre>148</pre></td><td><pre class="prettyprint">    controller(clk, reqB, &ackB, sel, &pass_tokenB, B);  </pre></td></tr>
+<tr id="source-149"><td><pre>149</pre></td><td><pre class="prettyprint">    controller(clk, reqC, &ackC, sel, &pass_tokenC, C);  </pre></td></tr>
+<tr id="source-150"><td><pre>150</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-151"><td><pre>151</pre></td><td><pre class="prettyprint">    arbiter(clk, &sel, active);  </pre></td></tr>
+<tr id="source-152"><td><pre>152</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-153"><td><pre>153</pre></td><td><pre class="prettyprint">    active = pass_tokenA || pass_tokenB || pass_tokenC;  </pre></td></tr>
+<tr id="source-154"><td><pre>154</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-155"><td><pre>155</pre></td><td><pre class="prettyprint">    assert((ackA == 1 && ackB == 1 || ackB == 1 && ackC == 1 || ackC == 1 && ackA ==1));  </pre></td></tr>
+<tr id="source-156"><td><pre>156</pre></td><td><pre class="prettyprint">  }  </pre></td></tr>
+<tr id="source-157"><td><pre>157</pre></td><td><pre class="prettyprint">}  </pre></td></tr>
+</table>
+            </div>
+            <div class="fileContent" ng-show="tabIsSet(4)">
+<pre id="log-0">2017-05-17 22:04:56:208	INFO	ResourceLimitChecker.fromConfiguration	Using the following resource limits: CPU-time limit of 900s</pre>
+<pre id="log-1"></pre>
+<pre id="log-2">2017-05-17 22:04:56:246	INFO	CPAchecker.run	CPAchecker 1.6.1 (Java HotSpot(TM) 64-Bit Server VM 1.8.0_77) started</pre>
+<pre id="log-3"></pre>
+<pre id="log-4">2017-05-17 22:04:57:398	INFO	PredicateCPA:PredicateCPA.<init>	Using predicate analysis with MathSAT5 version 5.3.11 (103797dbdca7) (May  3 2016 09:27:52, gmp 5.1.3, gcc 4.8.5, 64-bit) and JFactory 1.21.</pre>
+<pre id="log-5"></pre>
+<pre id="log-6">2017-05-17 22:04:57:460	INFO	PredicateCPA:InvariantsManager.<init>	No invariants are computed</pre>
+<pre id="log-7"></pre>
+<pre id="log-8">2017-05-17 22:04:57:541	INFO	PredicateCPA:PredicateCPARefiner.<init>	Using refinement for predicate analysis with PredicateAbstractionRefinementStrategy strategy.</pre>
+<pre id="log-9"></pre>
+<pre id="log-10">2017-05-17 22:04:57:552	WARNING	CPAchecker.printConfigurationWarnings	The following configuration options were specified but are not used:</pre>
+<pre id="log-11"> counterexample.checker.config</pre>
+<pre id="log-12"> counterexample.checker </pre>
+<pre id="log-13"></pre>
+<pre id="log-14"></pre>
+<pre id="log-15">2017-05-17 22:04:57:553	INFO	CPAchecker.runAlgorithm	Starting analysis ...</pre>
+<pre id="log-16"></pre>
+            </div>
+            <div class="fileContent"  ng-show="tabIsSet(5)">
+<pre id="statistics-0">PredicateCPA statistics</pre>
+<pre id="statistics-1">-----------------------</pre>
+<pre id="statistics-2">Number of abstractions:            2 (0% of all post computations)</pre>
+<pre id="statistics-3">  Times abstraction was reused:    0</pre>
+<pre id="statistics-4">  Because of function entry/exit:  0 (0%)</pre>
+<pre id="statistics-5">  Because of loop head:            1 (50%)</pre>
+<pre id="statistics-6">  Because of join nodes:           0 (0%)</pre>
+<pre id="statistics-7">  Because of threshold:            0 (0%)</pre>
+<pre id="statistics-8">  Because of target state:         1 (50%)</pre>
+<pre id="statistics-9">  Times precision was empty:       2 (100%)</pre>
+<pre id="statistics-10">  Times precision was {false}:     0 (0%)</pre>
+<pre id="statistics-11">  Times result was cached:         0 (0%)</pre>
+<pre id="statistics-12">  Times cartesian abs was used:    0 (0%)</pre>
+<pre id="statistics-13">  Times boolean abs was used:      0 (0%)</pre>
+<pre id="statistics-14">  Times result was 'false':        0 (0%)</pre>
+<pre id="statistics-15">Number of strengthen sat checks:   0</pre>
+<pre id="statistics-16">Number of coverage checks:         98</pre>
+<pre id="statistics-17">  BDD entailment checks:           0</pre>
+<pre id="statistics-18">Number of SMT sat checks:          0</pre>
+<pre id="statistics-19">  trivial:                         0</pre>
+<pre id="statistics-20">  cached:                          0</pre>
+<pre id="statistics-21"></pre>
+<pre id="statistics-22">Max ABE block size:                       86</pre>
+<pre id="statistics-23">Number of predicates discovered:          0</pre>
+<pre id="statistics-24"></pre>
+<pre id="statistics-25">Number of path formula cache hits:   241 (29%)</pre>
+<pre id="statistics-26"></pre>
+<pre id="statistics-27">Time for post operator:                  0.189s</pre>
+<pre id="statistics-28">  Time for path formula creation:        0.186s</pre>
+<pre id="statistics-29">    Actual computation:                  0.219s</pre>
+<pre id="statistics-30">Time for strengthen operator:            0.002s</pre>
+<pre id="statistics-31">Time for prec operator:                  0.002s</pre>
+<pre id="statistics-32">  Time for abstraction:                  0.000s (Max:     0.000s, Count: 2)</pre>
+<pre id="statistics-33">    Solving time:                        0.000s (Max:     0.000s)</pre>
+<pre id="statistics-34">    Model enumeration time:              0.000s</pre>
+<pre id="statistics-35">    Time for BDD construction:           0.000s (Max:     0.000s)</pre>
+<pre id="statistics-36">Time for merge operator:                 0.016s</pre>
+<pre id="statistics-37">Time for coverage check:                 0.001s</pre>
+<pre id="statistics-38">Total time for SMT solver (w/o itp):     0.000s</pre>
+<pre id="statistics-39"></pre>
+<pre id="statistics-40">Number of BDD nodes:                               202</pre>
+<pre id="statistics-41">Size of BDD node table:                            55949</pre>
+<pre id="statistics-42">Size of BDD cache:                                 5623</pre>
+<pre id="statistics-43">Size of BDD node cleanup queue:                           0 (count: 13, min: 0, max: 0, avg: 0.00)</pre>
+<pre id="statistics-44">Time for BDD node cleanup:                             0.000s</pre>
+<pre id="statistics-45">Time for BDD garbage collection:                       0.000s (in 0 runs)</pre>
+<pre id="statistics-46"></pre>
+<pre id="statistics-47">PrecisionBootstrap statistics</pre>
+<pre id="statistics-48">-----------------------------</pre>
+<pre id="statistics-49">Init. function predicates:                         0</pre>
+<pre id="statistics-50">Init. global predicates:                           0</pre>
+<pre id="statistics-51">Init. location predicates:                         0</pre>
+<pre id="statistics-52"></pre>
+<pre id="statistics-53">Invariant Generation statistics</pre>
+<pre id="statistics-54">-------------------------------</pre>
+<pre id="statistics-55"></pre>
+<pre id="statistics-56">AutomatonAnalysis (AssertionAutomaton) statistics</pre>
+<pre id="statistics-57">-------------------------------------------------</pre>
+<pre id="statistics-58">Number of states:                                  1</pre>
+<pre id="statistics-59">Total time for successor computation:                  0.008s</pre>
+<pre id="statistics-60">Automaton transfers with branching:                0</pre>
+<pre id="statistics-61">Automaton transfer successors:                          496 (count: 496, min: 1, max: 1, avg: 1.00) [1 x 496]</pre>
+<pre id="statistics-62"></pre>
+<pre id="statistics-63">AutomatonAnalysis (ErrorLabelAutomaton) statistics</pre>
+<pre id="statistics-64">--------------------------------------------------</pre>
+<pre id="statistics-65">Number of states:                                  1</pre>
+<pre id="statistics-66">Total time for successor computation:                  0.006s</pre>
+<pre id="statistics-67">Automaton transfers with branching:                0</pre>
+<pre id="statistics-68">Automaton transfer successors:                          496 (count: 496, min: 1, max: 1, avg: 1.00) [1 x 496]</pre>
+<pre id="statistics-69"></pre>
+<pre id="statistics-70">AutomatonAnalysis (TerminatingFunctions) statistics</pre>
+<pre id="statistics-71">---------------------------------------------------</pre>
+<pre id="statistics-72">Number of states:                                  1</pre>
+<pre id="statistics-73">Total time for successor computation:                  0.003s</pre>
+<pre id="statistics-74">Automaton transfers with branching:                0</pre>
+<pre id="statistics-75">Automaton transfer successors:                          496 (count: 496, min: 1, max: 1, avg: 1.00) [1 x 496]</pre>
+<pre id="statistics-76"></pre>
+<pre id="statistics-77">CPA algorithm statistics</pre>
+<pre id="statistics-78">------------------------</pre>
+<pre id="statistics-79">Number of iterations:            189</pre>
+<pre id="statistics-80">Max size of waitlist:            5</pre>
+<pre id="statistics-81">Average size of waitlist:        2</pre>
+<pre id="statistics-82">Number of computed successors:   239</pre>
+<pre id="statistics-83">Max successors for one state:    2</pre>
+<pre id="statistics-84">Number of times merged:          49</pre>
+<pre id="statistics-85">Number of times stopped:         49</pre>
+<pre id="statistics-86">Number of times breaked:         1</pre>
+<pre id="statistics-87"></pre>
+<pre id="statistics-88">Total time for CPA algorithm:         0.292s (Max:     0.292s)</pre>
+<pre id="statistics-89">  Time for choose from waitlist:      0.002s</pre>
+<pre id="statistics-90">  Time for precision adjustment:      0.012s</pre>
+<pre id="statistics-91">  Time for transfer relation:         0.244s</pre>
+<pre id="statistics-92">  Time for merge operator:            0.020s</pre>
+<pre id="statistics-93">  Time for stop operator:             0.001s</pre>
+<pre id="statistics-94">  Time for adding to reached set:     0.005s</pre>
+<pre id="statistics-95"></pre>
+<pre id="statistics-96">Static Predicate Refiner statistics</pre>
+<pre id="statistics-97">-----------------------------------</pre>
+<pre id="statistics-98">Number of predicates found statically:                    0 (count: 0, min: 0, max: 0, avg: 0.00)</pre>
+<pre id="statistics-99"></pre>
+<pre id="statistics-100">Total time for static refinement:                      0.527s</pre>
+<pre id="statistics-101">  Time for path feasibility check:                     0.354s</pre>
+<pre id="statistics-102"></pre>
+<pre id="statistics-103">Predicate-Abstraction Refiner statistics</pre>
+<pre id="statistics-104">----------------------------------------</pre>
+<pre id="statistics-105">Number of predicate refinements:                   0</pre>
+<pre id="statistics-106"></pre>
+<pre id="statistics-107">CEGAR algorithm statistics</pre>
+<pre id="statistics-108">--------------------------</pre>
+<pre id="statistics-109">Number of refinements:                1</pre>
+<pre id="statistics-110">Number of successful refinements:     0</pre>
+<pre id="statistics-111">Number of failed refinements:         0</pre>
+<pre id="statistics-112">Max. size of reached set before ref.: 191</pre>
+<pre id="statistics-113">Max. size of reached set after ref.:  0</pre>
+<pre id="statistics-114">Avg. size of reached set before ref.: 191.00</pre>
+<pre id="statistics-115">Avg. size of reached set after ref.:  NaN</pre>
+<pre id="statistics-116"></pre>
+<pre id="statistics-117">Total time for CEGAR algorithm:       0.827s</pre>
+<pre id="statistics-118">Time for refinements:                 0.535s</pre>
+<pre id="statistics-119">Average time for refinement:          0.535s</pre>
+<pre id="statistics-120">Max time for refinement:              0.535s</pre>
+<pre id="statistics-121"></pre>
+<pre id="statistics-122">Code Coverage</pre>
+<pre id="statistics-123">-----------------------------</pre>
+<pre id="statistics-124">  Visited lines:          158</pre>
+<pre id="statistics-125">  Total lines:            2</pre>
+<pre id="statistics-126">  Line coverage:          79.000</pre>
+<pre id="statistics-127"></pre>
+<pre id="statistics-128">CPAchecker general statistics</pre>
+<pre id="statistics-129">-----------------------------</pre>
+<pre id="statistics-130">Number of program locations:     341</pre>
+<pre id="statistics-131">Number of CFA edges:             371</pre>
+<pre id="statistics-132">Number of relevant variables:    31</pre>
+<pre id="statistics-133">Number of functions:             7</pre>
+<pre id="statistics-134">Number of loops:                 1</pre>
+<pre id="statistics-135">Size of reached set:             191</pre>
+<pre id="statistics-136">  Number of reached locations:   103 (30%)</pre>
+<pre id="statistics-137">    Avg states per location:     1</pre>
+<pre id="statistics-138">    Max states per location:     3 (at node N6)</pre>
+<pre id="statistics-139">  Number of reached functions:   7 (100%)</pre>
+<pre id="statistics-140">  Number of partitions:          191</pre>
+<pre id="statistics-141">    Avg size of partitions:      1</pre>
+<pre id="statistics-142">    Max size of partitions:      1</pre>
+<pre id="statistics-143">  Number of target states:       1</pre>
+<pre id="statistics-144">  Size of final wait list        2</pre>
+<pre id="statistics-145"></pre>
+<pre id="statistics-146">Time for analysis setup:          1.253s</pre>
+<pre id="statistics-147">  Time for loading CPAs:          0.415s</pre>
+<pre id="statistics-148">  Time for loading parser:        0.258s</pre>
+<pre id="statistics-149">  Time for CFA construction:      0.527s</pre>
+<pre id="statistics-150">    Time for parsing file(s):     0.179s</pre>
+<pre id="statistics-151">    Time for AST to CFA:          0.137s</pre>
+<pre id="statistics-152">    Time for CFA sanity check:    0.012s</pre>
+<pre id="statistics-153">    Time for post-processing:     0.087s</pre>
+<pre id="statistics-154">      Time for var class.:        0.041s</pre>
+<pre id="statistics-155">    Time for CFA export:          0.113s</pre>
+<pre id="statistics-156">Time for Analysis:                0.829s</pre>
+<pre id="statistics-157">CPU time for analysis:            1.660s</pre>
+<pre id="statistics-158">Time for analyzing result:        0.001s</pre>
+<pre id="statistics-159">Total time for CPAchecker:        2.085s</pre>
+<pre id="statistics-160">Total CPU time for CPAchecker:    4.930s</pre>
+<pre id="statistics-161">Time for statistics:              0.542s</pre>
+<pre id="statistics-162"></pre>
+<pre id="statistics-163">Time for Garbage Collector:       0.056s (in 2 runs)</pre>
+<pre id="statistics-164">Garbage Collector(s) used:    PS MarkSweep, PS Scavenge</pre>
+<pre id="statistics-165">Used heap memory:                160MB (   152 MiB) max;     81MB (    77 MiB) avg;    214MB (   204 MiB) peak</pre>
+<pre id="statistics-166">Used non-heap memory:             30MB (    29 MiB) max;     24MB (    23 MiB) avg;     34MB (    33 MiB) peak</pre>
+<pre id="statistics-167">Used in PS Old Gen pool:          24MB (    23 MiB) max;      8MB (     7 MiB) avg;     24MB (    23 MiB) peak</pre>
+<pre id="statistics-168">Allocated heap memory:           759MB (   724 MiB) max;    704MB (   671 MiB) avg</pre>
+<pre id="statistics-169">Allocated non-heap memory:        33MB (    32 MiB) max;     25MB (    24 MiB) avg</pre>
+<pre id="statistics-170">Total process virtual memory:   4588MB (  4375 MiB) max;   4520MB (  4310 MiB) avg</pre>
+<pre id="statistics-171"></pre>
+            </div>
+            <div class="fileContent" ng-show="tabIsSet(6)">
+<pre id="config-0">analysis.algorithm.CEGAR = true</pre>
+<pre id="config-1">analysis.checkCounterexamples = false</pre>
+<pre id="config-2">analysis.programNames = cpa.c</pre>
+<pre id="config-3">analysis.traversal.order = bfs</pre>
+<pre id="config-4">analysis.traversal.useCallstack = true</pre>
+<pre id="config-5">analysis.traversal.useReversePostorder = true</pre>
+<pre id="config-6">ARGCPA.cpa = cpa.composite.CompositeCPA</pre>
+<pre id="config-7">cegar.refiner = cpa.predicate.PredicateRefiner</pre>
+<pre id="config-8">CompositeCPA.cpas = cpa.location.LocationCPA, cpa.callstack.CallstackCPA, cpa.functionpointer.FunctionPointerCPA, cpa.predicate.PredicateCPA</pre>
+<pre id="config-9">counterexample.checker = CPACHECKER</pre>
+<pre id="config-10">counterexample.checker.config = ../cex-checks/valueAnalysis-as-cex-check.properties</pre>
+<pre id="config-11">cpa = cpa.arg.ARGCPA</pre>
+<pre id="config-12">cpa.composite.aggregateBasicBlocks = true</pre>
+<pre id="config-13">cpa.predicate.blk.alwaysAtFunctions = false</pre>
+<pre id="config-14">cpa.predicate.blk.alwaysAtLoops = true</pre>
+<pre id="config-15">cpa.predicate.encodeBitvectorAs = BITVECTOR</pre>
+<pre id="config-16">cpa.predicate.encodeFloatAs = FLOAT</pre>
+<pre id="config-17">cpa.predicate.handleFieldAccess = true</pre>
+<pre id="config-18">cpa.predicate.refinement.performInitialStaticRefinement = true</pre>
+<pre id="config-19">limits.time.cpu = 900s</pre>
+<pre id="config-20">log.level = INFO</pre>
+<pre id="config-21">parser.usePreprocessor = true</pre>
+<pre id="config-22">solver.solver = MathSAT5</pre>
+<pre id="config-23">specification = ../specification/default.spc</pre>
+<pre id="config-24"></pre>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

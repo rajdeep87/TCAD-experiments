@@ -1,0 +1,15 @@
+IntBool
+
+[main::clock, four_by_four::clock, sys_nerr]
+
+IntEq
+
+[four_by_four::__CPAchecker_TMP_1, four_by_four::permutation, four_by_four::valid, four_by_four::__CPAchecker_TMP_0]
+
+IntAdd
+
+[four_by_four::__CPAchecker_TMP_20, four_by_four::__CPAchecker_TMP_27, four_by_four::__CPAchecker_TMP_2, four_by_four::__CPAchecker_TMP_28, four_by_four::__CPAchecker_TMP_3, four_by_four::__CPAchecker_TMP_25, four_by_four::__CPAchecker_TMP_4, four_by_four::__CPAchecker_TMP_26, four_by_four::__CPAchecker_TMP_5, four_by_four::__CPAchecker_TMP_23, four_by_four::__CPAchecker_TMP_6, four_by_four::__CPAchecker_TMP_24, four_by_four::__CPAchecker_TMP_7, four_by_four::__CPAchecker_TMP_21, four_by_four::__CPAchecker_TMP_8, four_by_four::__CPAchecker_TMP_22, four_by_four::__CPAchecker_TMP_9, four_by_four::__CPAchecker_TMP_29, four_by_four::__CPAchecker_TMP_30, four_by_four::__CPAchecker_TMP_16, four_by_four::__CPAchecker_TMP_17, four_by_four::__CPAchecker_TMP_14, four_by_four::__CPAchecker_TMP_15, four_by_four::__CPAchecker_TMP_12, four_by_four::__CPAchecker_TMP_13, four_by_four::__CPAchecker_TMP_10, four_by_four::__CPAchecker_TMP_11, four_by_four::oddInversions, four_by_four::__CPAchecker_TMP_18, four_by_four::__CPAchecker_TMP_19]
+
+ALL
+
+[stdin, stdout, initial_main::smain.freg, main::to, sys_errlist, four_by_four::clock, four_by_four::to, four_by_four::__CPAchecker_TMP_1, four_by_four::__CPAchecker_TMP_2, four_by_four::__CPAchecker_TMP_3, four_by_four::__CPAchecker_TMP_4, four_by_four::__CPAchecker_TMP_5, four_by_four::__CPAchecker_TMP_6, four_by_four::__CPAchecker_TMP_7, four_by_four::__CPAchecker_TMP_8, four_by_four::__CPAchecker_TMP_9, four_by_four::valid, four_by_four::smain.treg, smain, stderr, four_by_four::(smain.b)[smain.freg], four_by_four::__CPAchecker_TMP_16, _IO_2_1_stdout_, four_by_four::__CPAchecker_TMP_17, four_by_four::__CPAchecker_TMP_14, four_by_four::from, four_by_four::__CPAchecker_TMP_15, four_by_four::__CPAchecker_TMP_12, four_by_four::__CPAchecker_TMP_13, main::from, four_by_four::parity, four_by_four::permutation, four_by_four::__CPAchecker_TMP_10, four_by_four::__CPAchecker_TMP_11, main::clock, _IO_2_1_stdin_, four_by_four::__CPAchecker_TMP_18, four_by_four::__CPAchecker_TMP_19, initial_main::smain.treg, _IO_2_1_stderr_, four_by_four::__CPAchecker_TMP_20, sys_nerr, four_by_four::__CPAchecker_TMP_27, four_by_four::__CPAchecker_TMP_28, four_by_four::smain.freg, four_by_four::__CPAchecker_TMP_25, four_by_four::__CPAchecker_TMP_26, four_by_four::__CPAchecker_TMP_23, four_by_four::__CPAchecker_TMP_24, four_by_four::__CPAchecker_TMP_21, four_by_four::__CPAchecker_TMP_22, four_by_four::__CPAchecker_TMP_29, four_by_four::__CPAchecker_TMP_30, four_by_four::__CPAchecker_TMP_0, four_by_four::(smain.b)[smain.treg], four_by_four::__CPAchecker_TMP_32, four_by_four::oddInversions]

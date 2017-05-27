@@ -1,0 +1,27 @@
+CPAchecker general statistics
+-----------------------------
+
+Time for analysis setup:          0.380s
+  Time for loading CPAs:          0.000s
+  Time for loading parser:        0.266s
+  Time for CFA construction:      0.091s
+    Time for parsing file(s):     0.000s
+    Time for AST to CFA:          0.000s
+    Time for CFA sanity check:    0.000s
+    Time for post-processing:     0.000s
+Time for Analysis:                0.000s
+CPU time for analysis:            0.000s
+Total time for CPAchecker:        0.384s
+Total CPU time for CPAchecker:    0.860s
+Time for statistics:              0.003s
+
+Time for Garbage Collector:       0.000s (in 0 runs)
+Garbage Collector(s) used:    PS MarkSweep, PS Scavenge
+Used heap memory:                 78MB (    75 MiB) max;     64MB (    61 MiB) avg;     98MB (    94 MiB) peak
+Used non-heap memory:             15MB (    14 MiB) max;     13MB (    13 MiB) avg;     16MB (    15 MiB) peak
+Used in PS Old Gen pool:           0MB (     0 MiB) max;      0MB (     0 MiB) avg;      0MB (     0 MiB) peak
+Allocated heap memory:           759MB (   724 MiB) max;    759MB (   724 MiB) avg
+Allocated non-heap memory:        15MB (    14 MiB) max;     14MB (    13 MiB) avg
+Total process virtual memory:  34367MB ( 32774 MiB) max;  34365MB ( 32773 MiB) avg
+
+More details about the verification run can be found in the directory "./output".

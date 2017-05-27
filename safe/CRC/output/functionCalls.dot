@@ -1,0 +1,12 @@
+digraph functioncalls {
+rankdir=LR;
+
+main [shape="box", color=blue];
+crc_main -> parallel_crces;
+main -> initial;
+nondet_bool [shape="box", color=grey];
+main -> nondet_bool;
+main -> crc_main;
+__assert_fail [shape="box", color=grey];
+main -> __assert_fail;
+}

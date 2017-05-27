@@ -1,0 +1,4131 @@
+Starting experiments at Fri 19 May 12:22:38 BST 2017 on dkr10.cs.ox.ac.uk
+Starting to processing DAIO/main.c at Fri 19 May 12:22:38 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/git-2ls/2ls/src/2ls/2ls --inline --k-induction --competition-mode main.c 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+
+[startup+0 s]
+/proc/loadavg: 0.08 0.02 0.01 2/267 32186
+/proc/meminfo: memFree=13178564/49448956 swapFree=0/5978804
+[pid=32186] ppid=32184 vsize=23740 CPUtime=0 cores=0-7
+/proc/32186/stat : 32186 (runsolver) D 32184 32186 31727 34818 32178 1077952576 34 0 0 0 0 0 0 0 20 0 1 0 243148627 24309760 53 18446744073709551615 4194304 4291491 140736779153792 0 0 0 24578 0 0 1 0 0 17 0 0 0 0 0 0 6389208 6394512 12296192 140736779154535 140736779154663 140736779154663 140736779157467 0
+/proc/32186/statm: 5935 53 0 24 0 2162 0
+Stop Solver Thread: Started
+[AEATK] No environment variable "AEATK_PORT" detected not sending updates
+
+
+[startup+0.027583 s]
+/proc/loadavg: 0.08 0.02 0.01 2/267 32186
+/proc/meminfo: memFree=13178564/49448956 swapFree=0/5978804
+[pid=32186] ppid=32184 vsize=23740 CPUtime=0 cores=0-7
+/proc/32186/stat : 32186 (runsolver) D 32184 32186 31727 34818 32178 1077952576 34 0 0 0 0 0 0 0 20 0 1 0 243148627 24309760 53 18446744073709551615 4194304 4291491 140736779153792 0 0 0 24578 0 0 1 0 0 17 0 0 0 0 0 0 6389208 6394512 12296192 140736779154535 140736779154663 140736779154663 140736779157467 0
+/proc/32186/statm: 5935 53 0 24 0 2162 0
+Current children cumulated CPU time (s) 0
+Current children cumulated vsize (KiB) 23740
+2LS version 0.5.1 (based on CBMC 5.6)
+Parsing main.c
+Converting
+Type-checking main
+
+[startup+0.100269 s]
+/proc/loadavg: 0.08 0.02 0.01 2/267 32186
+/proc/meminfo: memFree=13178564/49448956 swapFree=0/5978804
+[pid=32186] ppid=32184 vsize=39212 CPUtime=0.06 cores=0-7
+/proc/32186/stat : 32186 (2ls) R 32184 32186 31727 34818 32178 4210688 5735 855 0 0 5 1 0 0 20 0 1 0 243148627 40153088 6722 18446744073709551615 4194304 8624320 140728965546496 0 0 0 24578 0 16384 0 0 0 17 0 0 0 0 0 0 10722168 10736660 25989120 140728965555333 140728965555421 140728965555421 140728965558225 0
+/proc/32186/statm: 9803 6722 1330 1082 0 5510 0
+Current children cumulated CPU time (s) 0.06
+Current children cumulated vsize (KiB) 39212
+Generating GOTO Program
+Adding CPROVER library
+Function Pointer Removal
+Performing full inlining
+Generic Property Instrumentation
+Constant Propagation
+Using intervals domain with binary search solver
+Computing SSA of _start
+Simplifying
+Max-unwind is 4294967295
+Unwinding (k=0)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+Summarizing function _start
+Analyzing function _start
+Computing summary
+
+[startup+0.300182 s]
+/proc/loadavg: 0.08 0.02 0.01 2/267 32186
+/proc/meminfo: memFree=13178564/49448956 swapFree=0/5978804
+[pid=32186] ppid=32184 vsize=45504 CPUtime=0.25 cores=0-7
+/proc/32186/stat : 32186 (2ls) R 32184 32186 31727 34818 32178 4210688 7309 855 0 0 24 1 0 0 20 0 1 0 243148627 46596096 8513 18446744073709551615 4194304 8624320 140728965546496 0 0 0 24578 0 16384 0 0 0 17 0 0 0 0 0 0 10722168 10736660 25989120 140728965555333 140728965555421 140728965555421 140728965558225 0
+/proc/32186/statm: 11376 8513 1697 1082 0 7083 0
+Current children cumulated CPU time (s) 0.25
+Current children cumulated vsize (KiB) 45504
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=1)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+Summarizing function _start
+Analyzing function _start
+Computing summary
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=2)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+Summarizing function _start
+Analyzing function _start
+Computing summary
+
+[startup+0.700163 s]
+/proc/loadavg: 0.08 0.02 0.01 2/267 32186
+/proc/meminfo: memFree=13178564/49448956 swapFree=0/5978804
+[pid=32186] ppid=32184 vsize=49748 CPUtime=0.65 cores=0-7
+/proc/32186/stat : 32186 (2ls) R 32184 32186 31727 34818 32178 4210688 8609 855 0 0 64 1 0 0 20 0 1 0 243148627 50941952 9567 18446744073709551615 4194304 8624320 140728965546496 0 0 0 24578 0 16384 0 0 0 17 0 0 0 0 0 0 10722168 10736660 25989120 140728965555333 140728965555421 140728965555421 140728965558225 0
+/proc/32186/statm: 12437 9567 1697 1082 0 8144 0
+Current children cumulated CPU time (s) 0.65
+Current children cumulated vsize (KiB) 49748
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=3)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+Summarizing function _start
+Analyzing function _start
+Computing summary
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=4)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=5)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=6)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=7)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+1.50019 s]
+/proc/loadavg: 0.08 0.02 0.01 2/269 32191
+/proc/meminfo: memFree=13139644/49448956 swapFree=0/5978804
+[pid=32186] ppid=32184 vsize=73008 CPUtime=1.45 cores=0-7
+/proc/32186/stat : 32186 (2ls) R 32184 32186 31727 34818 32178 4210688 14338 855 0 0 143 2 0 0 20 0 1 0 243148627 74760192 15201 18446744073709551615 4194304 8624320 140728965546496 0 0 0 24578 0 16384 0 0 0 17 0 0 0 0 0 0 10722168 10736660 25989120 140728965555333 140728965555421 140728965555421 140728965558225 0
+/proc/32186/statm: 18252 15201 1697 1082 0 13959 0
+Current children cumulated CPU time (s) 1.45
+Current children cumulated vsize (KiB) 73008
+Unwinding (k=8)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=9)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=10)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=11)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=12)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=13)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=14)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=15)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=16)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=17)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=18)
+Checking properties of _start
+
+[startup+3.10019 s]
+/proc/loadavg: 0.08 0.02 0.01 2/269 32191
+/proc/meminfo: memFree=13104304/49448956 swapFree=0/5978804
+[pid=32186] ppid=32184 vsize=114352 CPUtime=3.04 cores=0-7
+/proc/32186/stat : 32186 (2ls) R 32184 32186 31727 34818 32178 4210688 24432 855 0 0 302 2 0 0 20 0 1 0 243148627 117096448 25164 18446744073709551615 4194304 8624320 140728965546496 0 0 0 24578 0 16384 0 0 0 17 0 0 0 0 0 0 10722168 10736660 25989120 140728965555333 140728965555421 140728965555421 140728965558225 0
+/proc/32186/statm: 28588 25164 1697 1082 0 24295 0
+Current children cumulated CPU time (s) 3.04
+Current children cumulated vsize (KiB) 114352
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=19)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=20)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=21)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=22)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=23)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=24)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=25)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=26)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=27)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=28)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=29)
+Checking properties of _start
+
+[startup+6.30019 s]
+/proc/loadavg: 0.15 0.03 0.01 2/269 32191
+/proc/meminfo: memFree=13043544/49448956 swapFree=0/5978812
+[pid=32186] ppid=32184 vsize=172392 CPUtime=6.23 cores=0-7
+/proc/32186/stat : 32186 (2ls) R 32184 32186 31727 34818 32178 4210688 38095 855 0 0 620 3 0 0 20 0 1 0 243148627 176529408 38700 18446744073709551615 4194304 8624320 140728965546496 0 0 0 24578 0 16384 0 0 0 17 0 0 0 0 0 0 10722168 10736660 25989120 140728965555333 140728965555421 140728965555421 140728965558225 0
+/proc/32186/statm: 43098 38700 1728 1082 0 38805 0
+Current children cumulated CPU time (s) 6.23
+Current children cumulated vsize (KiB) 172392
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=30)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=31)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=32)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=33)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=34)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=35)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=36)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=37)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=38)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=39)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=40)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=41)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=42)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=43)
+Checking properties of _start
+
+[startup+12.7002 s]
+/proc/loadavg: 0.22 0.05 0.02 2/269 32215
+/proc/meminfo: memFree=12965872/49448956 swapFree=0/5978816
+[pid=32186] ppid=32184 vsize=244336 CPUtime=12.61 cores=0-7
+/proc/32186/stat : 32186 (2ls) R 32184 32186 31727 34818 32178 4210688 56471 855 0 0 1256 5 0 0 20 0 1 0 243148627 250200064 56807 18446744073709551615 4194304 8624320 140728965546496 0 0 0 24578 0 16384 0 0 0 17 0 0 0 0 0 0 10722168 10736660 25989120 140728965555333 140728965555421 140728965555421 140728965558225 0
+/proc/32186/statm: 61084 56807 1728 1082 0 56791 0
+Current children cumulated CPU time (s) 12.61
+Current children cumulated vsize (KiB) 244336
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=44)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=45)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=46)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=47)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=48)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=49)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=50)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=51)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=52)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=53)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=54)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=55)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=56)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=57)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=58)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=59)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=60)
+Checking properties of _start
+
+[startup+25.5002 s]
+/proc/loadavg: 0.54 0.13 0.04 2/270 32224
+/proc/meminfo: memFree=12856656/49448956 swapFree=0/5978788
+[pid=32186] ppid=32184 vsize=348556 CPUtime=25.36 cores=0-7
+/proc/32186/stat : 32186 (2ls) R 32184 32186 31727 34818 32178 4210688 95126 855 0 0 2527 9 0 0 20 0 1 0 243148627 356921344 80979 18446744073709551615 4194304 8624320 140728965546496 0 0 0 24578 0 16384 0 0 0 17 0 0 0 0 0 0 10722168 10736660 25989120 140728965555333 140728965555421 140728965555421 140728965558225 0
+/proc/32186/statm: 87139 80979 1728 1082 0 82846 0
+Current children cumulated CPU time (s) 25.36
+Current children cumulated vsize (KiB) 348556
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=61)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=62)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=63)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+k-induction counterexample found after 63 unwinding(s)
+** statistics: 
+  number of solver instances: 1
+  number of solver calls: 786
+  number of summaries used: 0
+  number of termination arguments computed: 0
+
+[main.assertion.2] assertion (load_A==1 || load_B==0): FAILURE
+
+** 1 of 2 unknown
+** 1 of 2 failed
+VERIFICATION FAILED
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downStop Solver Thread: Timer Thread Stopped
+
+[startup+29.3002 s]
+/proc/loadavg: 0.54 0.13 0.04 2/270 32224
+/proc/meminfo: memFree=12834108/49448956 swapFree=0/5978788
+[pid=32186] ppid=32184 vsize=320548 CPUtime=29.15 cores=0-7
+/proc/32186/stat : 32186 (2ls) R 32184 32186 31727 34818 32178 4210688 107666 855 0 0 2904 11 0 0 20 0 1 0 243148627 328241152 76700 18446744073709551615 4194304 8624320 140728965546496 0 0 0 24578 0 16384 0 0 0 17 0 0 0 0 0 0 10722168 10736660 25989120 140728965555333 140728965555421 140728965555421 140728965558225 0
+/proc/32186/statm: 80137 76700 1728 1082 0 75844 0
+Current children cumulated CPU time (s) 29.15
+Current children cumulated vsize (KiB) 320548
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Timer Thread Done
+Waiting for stop solver thread
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 10
+Real time (s): 29.3483
+runsolver_walltime: 29.3483
+CPU time (s): 29.2003
+runsolver_cputime: 29.2003
+CPU user time (s): 29.069
+CPU system time (s): 0.131302
+CPU usage (%): 99.4957
+Max. virtual memory (cumulated for all children) (KiB): 375304
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 29.069
+system time used= 0.131302
+maximum resident set size= 352476
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 108527
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 32
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 27
+involuntary context switches= 37
+
+runsolver used 0.059373 second user time and 0.083027 second system time
+
+The end
+done at Fri 19 May 12:23:08 BST 2017
+Starting to processing FIFO/main.c at Fri 19 May 12:23:08 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/git-2ls/2ls/src/2ls/2ls --inline --k-induction --competition-mode main.c 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+2LS version 0.5.1 (based on CBMC 5.6)
+Parsing main.c
+
+[startup+0 s]
+/proc/loadavg: 0.54 0.13 0.04 2/268 32229
+/proc/meminfo: memFree=13174772/49448956 swapFree=0/5978792
+[pid=32229] ppid=32227 vsize=17776 CPUtime=0 cores=0-7
+/proc/32229/stat : 32229 (2ls) S 32227 32229 31727 34818 32178 4210688 219 0 0 0 0 0 0 0 20 0 1 0 243151576 18202624 908 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 1 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 4444 908 838 1082 0 151 0
+Stop Solver Thread: Started
+[AEATK] No environment variable "AEATK_PORT" detected not sending updates
+
+
+[startup+0.00847989 s]
+/proc/loadavg: 0.54 0.13 0.04 2/268 32229
+/proc/meminfo: memFree=13174772/49448956 swapFree=0/5978792
+[pid=32229] ppid=32227 vsize=17776 CPUtime=0 cores=0-7
+/proc/32229/stat : 32229 (2ls) S 32227 32229 31727 34818 32178 4210688 219 0 0 0 0 0 0 0 20 0 1 0 243151576 18202624 908 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 1 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 4444 908 838 1082 0 151 0
+Current children cumulated CPU time (s) 0
+Current children cumulated vsize (KiB) 17776
+Converting
+Type-checking main
+Generating GOTO Program
+Adding CPROVER library
+Function Pointer Removal
+
+[startup+0.10019 s]
+/proc/loadavg: 0.54 0.13 0.04 2/268 32229
+/proc/meminfo: memFree=13174772/49448956 swapFree=0/5978792
+[pid=32229] ppid=32227 vsize=41320 CPUtime=0.08 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 6236 851 0 0 8 0 0 0 20 0 1 0 243151576 42311680 7294 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 10330 7294 1376 1082 0 6037 0
+Current children cumulated CPU time (s) 0.08
+Current children cumulated vsize (KiB) 41320
+Performing full inlining
+Generic Property Instrumentation
+Constant Propagation
+Using intervals domain with binary search solver
+Computing SSA of _start
+Simplifying
+Max-unwind is 4294967295
+Unwinding (k=0)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+Summarizing function _start
+Analyzing function _start
+Computing summary
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=1)
+Checking properties of _start
+
+[startup+0.300184 s]
+/proc/loadavg: 0.54 0.13 0.04 2/268 32229
+/proc/meminfo: memFree=13174772/49448956 swapFree=0/5978792
+[pid=32229] ppid=32227 vsize=46512 CPUtime=0.27 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 7772 851 0 0 27 0 0 0 20 0 1 0 243151576 47628288 8785 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 11628 8785 1726 1082 0 7335 0
+Current children cumulated CPU time (s) 0.27
+Current children cumulated vsize (KiB) 46512
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+Summarizing function _start
+Analyzing function _start
+Computing summary
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=2)
+Checking properties of _start
+Loops not fully unwound
+
+[startup+0.700179 s]
+/proc/loadavg: 0.54 0.13 0.04 2/268 32229
+/proc/meminfo: memFree=13174772/49448956 swapFree=0/5978792
+[pid=32229] ppid=32227 vsize=55192 CPUtime=0.68 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 10087 851 0 0 67 1 0 0 20 0 1 0 243151576 56516608 10351 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 13798 10351 1726 1082 0 9505 0
+Current children cumulated CPU time (s) 0.68
+Current children cumulated vsize (KiB) 55192
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+Summarizing function _start
+Analyzing function _start
+Computing summary
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=3)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+Summarizing function _start
+Analyzing function _start
+Computing summary
+
+[startup+1.5002 s]
+/proc/loadavg: 0.58 0.14 0.05 2/270 32234
+/proc/meminfo: memFree=13138776/49448956 swapFree=0/5978808
+[pid=32229] ppid=32227 vsize=65004 CPUtime=1.47 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 12843 851 0 0 146 1 0 0 20 0 1 0 243151576 66564096 12995 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 16251 12995 1726 1082 0 11958 0
+Current children cumulated CPU time (s) 1.47
+Current children cumulated vsize (KiB) 65004
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=4)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=5)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=6)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=7)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=8)
+Checking properties of _start
+
+[startup+3.1002 s]
+/proc/loadavg: 0.58 0.14 0.05 2/270 32234
+/proc/meminfo: memFree=13124764/49448956 swapFree=0/5978812
+[pid=32229] ppid=32227 vsize=126036 CPUtime=3.06 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 30221 851 0 0 303 3 0 0 20 0 1 0 243151576 129060864 26966 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 31509 26966 1726 1082 0 27216 0
+Current children cumulated CPU time (s) 3.06
+Current children cumulated vsize (KiB) 126036
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=9)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=10)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=11)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=12)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=13)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=14)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=15)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=16)
+Checking properties of _start
+
+[startup+6.30019 s]
+/proc/loadavg: 0.58 0.14 0.05 2/271 32235
+/proc/meminfo: memFree=12965920/49448956 swapFree=0/5978812
+[pid=32229] ppid=32227 vsize=270260 CPUtime=6.26 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 64345 851 0 0 619 7 0 0 20 0 1 0 243151576 276746240 60019 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 67565 60019 1726 1082 0 63272 0
+Current children cumulated CPU time (s) 6.26
+Current children cumulated vsize (KiB) 270260
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+12.7002 s]
+/proc/loadavg: 0.64 0.17 0.06 2/269 32235
+/proc/meminfo: memFree=12910492/49448956 swapFree=0/5978816
+[pid=32229] ppid=32227 vsize=297928 CPUtime=12.62 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 71917 851 0 0 1255 7 0 0 20 0 1 0 243151576 305078272 67340 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 74482 67340 1726 1082 0 70189 0
+Current children cumulated CPU time (s) 12.62
+Current children cumulated vsize (KiB) 297928
+
+[startup+25.5002 s]
+/proc/loadavg: 0.70 0.20 0.07 2/269 32235
+/proc/meminfo: memFree=12898092/49448956 swapFree=0/5978816
+[pid=32229] ppid=32227 vsize=328748 CPUtime=25.38 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 75023 851 0 0 2530 8 0 0 20 0 1 0 243151576 336637952 70424 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 82187 70424 1726 1082 0 77894 0
+Current children cumulated CPU time (s) 25.38
+Current children cumulated vsize (KiB) 328748
+Unwinding (k=17)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+51.1002 s]
+/proc/loadavg: 0.88 0.29 0.11 2/269 32235
+/proc/meminfo: memFree=12851980/49448956 swapFree=0/5978816
+[pid=32229] ppid=32227 vsize=357440 CPUtime=50.88 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 86791 851 0 0 5075 13 0 0 20 0 1 0 243151576 366018560 82010 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 89360 82010 1726 1082 0 85067 0
+Current children cumulated CPU time (s) 50.88
+Current children cumulated vsize (KiB) 357440
+Unwinding (k=18)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=19)
+Checking properties of _start
+
+[startup+102.304 s]
+/proc/loadavg: 0.95 0.41 0.15 2/269 32235
+/proc/meminfo: memFree=12756472/49448956 swapFree=0/5978816
+[pid=32229] ppid=32227 vsize=449380 CPUtime=101.89 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 110861 851 0 0 10169 20 0 0 20 0 1 0 243151576 460165120 105611 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 112345 105611 1726 1082 0 108052 0
+Current children cumulated CPU time (s) 101.89
+Current children cumulated vsize (KiB) 449380
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=20)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+162.3 s]
+/proc/loadavg: 0.98 0.52 0.21 2/269 32235
+/proc/meminfo: memFree=12667068/49448956 swapFree=0/5978816
+[pid=32229] ppid=32227 vsize=581092 CPUtime=161.68 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 133570 851 0 0 16142 26 0 0 20 0 1 0 243151576 595038208 128002 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 145273 128002 1726 1082 0 140980 0
+Current children cumulated CPU time (s) 161.68
+Current children cumulated vsize (KiB) 581092
+
+[startup+222.3 s]
+/proc/loadavg: 1.00 0.61 0.26 2/269 32236
+/proc/meminfo: memFree=12622956/49448956 swapFree=0/5978816
+[pid=32229] ppid=32227 vsize=713352 CPUtime=221.46 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 144440 851 0 0 22114 32 0 0 20 0 1 0 243151576 730472448 138859 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 178338 138859 1726 1082 0 174045 0
+Current children cumulated CPU time (s) 221.46
+Current children cumulated vsize (KiB) 713352
+Unwinding (k=21)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+282.3 s]
+/proc/loadavg: 1.00 0.68 0.31 2/269 32236
+/proc/meminfo: memFree=12558104/49448956 swapFree=0/5978820
+[pid=32229] ppid=32227 vsize=731840 CPUtime=281.21 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 161040 851 0 0 28080 41 0 0 20 0 1 0 243151576 749404160 155126 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 182960 155126 1726 1082 0 178667 0
+Current children cumulated CPU time (s) 281.21
+Current children cumulated vsize (KiB) 731840
+Unwinding (k=22)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+342.3 s]
+/proc/loadavg: 1.00 0.74 0.36 3/268 32237
+/proc/meminfo: memFree=12484140/49448956 swapFree=0/5978820
+[pid=32229] ppid=32227 vsize=775824 CPUtime=340.98 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 179850 851 0 0 34049 49 0 0 20 0 1 0 243151576 794443776 173594 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 193956 173594 1726 1082 0 189663 0
+Current children cumulated CPU time (s) 340.98
+Current children cumulated vsize (KiB) 775824
+
+[startup+402.3 s]
+/proc/loadavg: 1.06 0.81 0.41 2/268 32237
+/proc/meminfo: memFree=12445668/49448956 swapFree=0/5978820
+[pid=32229] ppid=32227 vsize=775824 CPUtime=400.76 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 189653 851 0 0 40021 55 0 0 20 0 1 0 243151576 794443776 183387 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 193956 183387 1726 1082 0 189663 0
+Current children cumulated CPU time (s) 400.76
+Current children cumulated vsize (KiB) 775824
+
+[startup+462.3 s]
+/proc/loadavg: 1.08 0.86 0.45 2/268 32237
+/proc/meminfo: memFree=12396440/49448956 swapFree=0/5978820
+[pid=32229] ppid=32227 vsize=990748 CPUtime=460.52 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 201734 851 0 0 45990 62 0 0 20 0 1 0 243151576 1014525952 195442 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 247687 195442 1726 1082 0 243394 0
+Current children cumulated CPU time (s) 460.52
+Current children cumulated vsize (KiB) 990748
+Unwinding (k=23)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+522.3 s]
+/proc/loadavg: 1.03 0.89 0.49 2/269 32238
+/proc/meminfo: memFree=12318848/49448956 swapFree=0/5978868
+[pid=32229] ppid=32227 vsize=1024888 CPUtime=520.3 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 221487 851 0 0 51961 69 0 0 20 0 1 0 243151576 1049485312 214877 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 256222 214877 1726 1082 0 251929 0
+Current children cumulated CPU time (s) 520.3
+Current children cumulated vsize (KiB) 1024888
+
+[startup+582.3 s]
+/proc/loadavg: 1.01 0.91 0.52 2/269 32239
+/proc/meminfo: memFree=12285956/49448956 swapFree=0/5978876
+[pid=32229] ppid=32227 vsize=1024888 CPUtime=580.09 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 229646 851 0 0 57933 76 0 0 20 0 1 0 243151576 1049485312 222962 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 256222 222962 1726 1082 0 251929 0
+Current children cumulated CPU time (s) 580.09
+Current children cumulated vsize (KiB) 1024888
+
+[startup+642.3 s]
+/proc/loadavg: 1.00 0.93 0.56 2/269 32240
+/proc/meminfo: memFree=12244788/49448956 swapFree=0/5978876
+[pid=32229] ppid=32227 vsize=1024888 CPUtime=639.85 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 239944 851 0 0 63901 84 0 0 20 0 1 0 243151576 1049485312 233216 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 256222 233216 1726 1082 0 251929 0
+Current children cumulated CPU time (s) 639.85
+Current children cumulated vsize (KiB) 1024888
+
+[startup+702.3 s]
+/proc/loadavg: 1.00 0.95 0.59 2/269 32240
+/proc/meminfo: memFree=12203124/49448956 swapFree=0/5978876
+[pid=32229] ppid=32227 vsize=1024888 CPUtime=699.64 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 250480 851 0 0 69874 90 0 0 20 0 1 0 243151576 1049485312 243744 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 256222 243744 1726 1082 0 251929 0
+Current children cumulated CPU time (s) 699.64
+Current children cumulated vsize (KiB) 1024888
+Unwinding (k=24)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+762.304 s]
+/proc/loadavg: 1.00 0.96 0.61 2/269 32240
+/proc/meminfo: memFree=12134924/49448956 swapFree=0/5978876
+[pid=32229] ppid=32227 vsize=1414924 CPUtime=759.43 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 267702 851 0 0 75848 95 0 0 20 0 1 0 243151576 1448882176 260670 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 353731 260670 1726 1082 0 349438 0
+Current children cumulated CPU time (s) 759.43
+Current children cumulated vsize (KiB) 1414924
+
+[startup+822.3 s]
+/proc/loadavg: 1.04 0.98 0.65 2/269 32240
+/proc/meminfo: memFree=12106652/49448956 swapFree=0/5978880
+[pid=32229] ppid=32227 vsize=1414924 CPUtime=819.17 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 274910 851 0 0 81815 102 0 0 20 0 1 0 243151576 1448882176 267831 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 353731 267831 1726 1082 0 349438 0
+Current children cumulated CPU time (s) 819.17
+Current children cumulated vsize (KiB) 1414924
+
+[startup+882.3 s]
+/proc/loadavg: 1.01 0.99 0.67 2/268 32241
+/proc/meminfo: memFree=12070832/49448956 swapFree=0/5978880
+[pid=32229] ppid=32227 vsize=1414924 CPUtime=878.81 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 283801 851 0 0 87760 121 0 0 20 0 1 0 243151576 1448882176 276703 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 353731 276703 1726 1082 0 349438 0
+Current children cumulated CPU time (s) 878.81
+Current children cumulated vsize (KiB) 1414924
+
+[startup+942.3 s]
+/proc/loadavg: 1.00 0.99 0.69 2/268 32241
+/proc/meminfo: memFree=12027308/49448956 swapFree=0/5978884
+[pid=32229] ppid=32227 vsize=1417628 CPUtime=938.6 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 294815 851 0 0 93733 127 0 0 20 0 1 0 243151576 1451651072 287693 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 354407 287693 1726 1082 0 350114 0
+Current children cumulated CPU time (s) 938.6
+Current children cumulated vsize (KiB) 1417628
+
+[startup+1002.3 s]
+/proc/loadavg: 1.00 1.00 0.72 2/268 32241
+/proc/meminfo: memFree=11987008/49448956 swapFree=0/5978884
+[pid=32229] ppid=32227 vsize=1417628 CPUtime=998.39 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 304789 851 0 0 99706 133 0 0 20 0 1 0 243151576 1451651072 297633 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 354407 297633 1726 1082 0 350114 0
+Current children cumulated CPU time (s) 998.39
+Current children cumulated vsize (KiB) 1417628
+Unwinding (k=25)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+1062.3 s]
+/proc/loadavg: 1.00 1.00 0.74 2/268 32241
+/proc/meminfo: memFree=11924388/49448956 swapFree=0/5978884
+[pid=32229] ppid=32227 vsize=1446640 CPUtime=1058.17 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 320833 851 0 0 105678 139 0 0 20 0 1 0 243151576 1481359360 313345 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 361660 313345 1726 1082 0 357367 0
+Current children cumulated CPU time (s) 1058.17
+Current children cumulated vsize (KiB) 1446640
+
+[startup+1122.3 s]
+/proc/loadavg: 1.00 1.00 0.76 2/268 32241
+/proc/meminfo: memFree=11895620/49448956 swapFree=0/5978884
+[pid=32229] ppid=32227 vsize=1450688 CPUtime=1117.96 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 328042 851 0 0 111652 144 0 0 20 0 1 0 243151576 1485504512 320511 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 362672 320511 1726 1082 0 358379 0
+Current children cumulated CPU time (s) 1117.96
+Current children cumulated vsize (KiB) 1450688
+
+[startup+1182.3 s]
+/proc/loadavg: 1.00 1.00 0.77 2/269 32242
+/proc/meminfo: memFree=11868928/49448956 swapFree=0/5978884
+[pid=32229] ppid=32227 vsize=1450688 CPUtime=1177.74 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 334723 851 0 0 117626 148 0 0 20 0 1 0 243151576 1485504512 327224 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 362672 327224 1726 1082 0 358379 0
+Current children cumulated CPU time (s) 1177.74
+Current children cumulated vsize (KiB) 1450688
+
+[startup+1242.3 s]
+/proc/loadavg: 1.00 1.00 0.79 2/269 32244
+/proc/meminfo: memFree=11835852/49448956 swapFree=0/5978884
+[pid=32229] ppid=32227 vsize=1450688 CPUtime=1237.54 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 342856 851 0 0 123600 154 0 0 20 0 1 0 243151576 1485504512 335313 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 362672 335313 1726 1082 0 358379 0
+Current children cumulated CPU time (s) 1237.54
+Current children cumulated vsize (KiB) 1450688
+
+[startup+1302.3 s]
+/proc/loadavg: 1.07 1.02 0.81 2/269 32244
+/proc/meminfo: memFree=11802264/49448956 swapFree=0/5978888
+[pid=32229] ppid=32227 vsize=1452428 CPUtime=1297.27 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 351156 851 0 0 129564 163 0 0 20 0 1 0 243151576 1487286272 343551 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 363107 343551 1726 1082 0 358814 0
+Current children cumulated CPU time (s) 1297.27
+Current children cumulated vsize (KiB) 1452428
+
+[startup+1362.3 s]
+/proc/loadavg: 1.02 1.01 0.83 2/269 32244
+/proc/meminfo: memFree=11761840/49448956 swapFree=0/5978888
+[pid=32229] ppid=32227 vsize=1454348 CPUtime=1357.05 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 361383 851 0 0 135537 168 0 0 20 0 1 0 243151576 1489252352 353761 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 363587 353761 1726 1082 0 359294 0
+Current children cumulated CPU time (s) 1357.05
+Current children cumulated vsize (KiB) 1454348
+Unwinding (k=26)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+1422.3 s]
+/proc/loadavg: 1.05 1.02 0.84 2/269 32244
+/proc/meminfo: memFree=11667136/49448956 swapFree=0/5978888
+[pid=32229] ppid=32227 vsize=2085564 CPUtime=1416.84 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 385155 851 0 0 141508 176 0 0 20 0 1 0 243151576 2135617536 377268 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 521391 377268 1726 1082 0 517098 0
+Current children cumulated CPU time (s) 1416.84
+Current children cumulated vsize (KiB) 2085564
+
+[startup+1482.3 s]
+/proc/loadavg: 1.02 1.02 0.86 2/268 32244
+/proc/meminfo: memFree=11649156/49448956 swapFree=0/5978888
+[pid=32229] ppid=32227 vsize=2085564 CPUtime=1476.62 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 389780 851 0 0 147482 180 0 0 20 0 1 0 243151576 2135617536 381860 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 521391 381860 1726 1082 0 517098 0
+Current children cumulated CPU time (s) 1476.62
+Current children cumulated vsize (KiB) 2085564
+
+[startup+1542.3 s]
+/proc/loadavg: 1.00 1.01 0.87 2/268 32246
+/proc/meminfo: memFree=11614808/49448956 swapFree=0/5978888
+[pid=32229] ppid=32227 vsize=2089616 CPUtime=1536.41 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 398280 851 0 0 153456 185 0 0 20 0 1 0 243151576 2139766784 390348 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 522404 390348 1726 1082 0 518111 0
+Current children cumulated CPU time (s) 1536.41
+Current children cumulated vsize (KiB) 2089616
+
+[startup+1602.3 s]
+/proc/loadavg: 1.00 1.00 0.88 2/268 32246
+/proc/meminfo: memFree=11584800/49448956 swapFree=0/5978888
+[pid=32229] ppid=32227 vsize=2089616 CPUtime=1596.19 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 405906 851 0 0 159429 190 0 0 20 0 1 0 243151576 2139766784 397916 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 522404 397916 1726 1082 0 518111 0
+Current children cumulated CPU time (s) 1596.19
+Current children cumulated vsize (KiB) 2089616
+
+[startup+1662.3 s]
+/proc/loadavg: 1.00 1.00 0.89 2/268 32246
+/proc/meminfo: memFree=11541648/49448956 swapFree=0/5978892
+[pid=32229] ppid=32227 vsize=2093380 CPUtime=1655.98 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 416631 851 0 0 165401 197 0 0 20 0 1 0 243151576 2143621120 408651 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 523345 408651 1726 1082 0 519052 0
+Current children cumulated CPU time (s) 1655.98
+Current children cumulated vsize (KiB) 2093380
+
+[startup+1722.3 s]
+/proc/loadavg: 1.00 1.00 0.90 2/268 32246
+/proc/meminfo: memFree=11511268/49448956 swapFree=0/5978892
+[pid=32229] ppid=32227 vsize=2093380 CPUtime=1715.77 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 424394 851 0 0 171374 203 0 0 20 0 1 0 243151576 2143621120 416355 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 523345 416355 1726 1082 0 519052 0
+Current children cumulated CPU time (s) 1715.77
+Current children cumulated vsize (KiB) 2093380
+
+[startup+1782.3 s]
+/proc/loadavg: 1.15 1.03 0.92 2/268 32246
+/proc/meminfo: memFree=11475060/49448956 swapFree=0/5978892
+[pid=32229] ppid=32227 vsize=2093380 CPUtime=1775.57 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 433315 851 0 0 177348 209 0 0 20 0 1 0 243151576 2143621120 425311 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 523345 425311 1726 1082 0 519052 0
+Current children cumulated CPU time (s) 1775.57
+Current children cumulated vsize (KiB) 2093380
+
+[startup+1842.3 s]
+/proc/loadavg: 1.05 1.03 0.93 2/268 32247
+/proc/meminfo: memFree=11438852/49448956 swapFree=0/5978892
+[pid=32229] ppid=32227 vsize=2093380 CPUtime=1835.34 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 442530 851 0 0 183320 214 0 0 20 0 1 0 243151576 2143621120 434464 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 523345 434464 1726 1082 0 519052 0
+Current children cumulated CPU time (s) 1835.34
+Current children cumulated vsize (KiB) 2093380
+
+[startup+1902.3 s]
+/proc/loadavg: 1.02 1.02 0.93 2/268 32247
+/proc/meminfo: memFree=11404752/49448956 swapFree=0/5978892
+[pid=32229] ppid=32227 vsize=2093380 CPUtime=1895.14 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 450999 851 0 0 189294 220 0 0 20 0 1 0 243151576 2143621120 442956 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 523345 442956 1726 1082 0 519052 0
+Current children cumulated CPU time (s) 1895.14
+Current children cumulated vsize (KiB) 2093380
+Unwinding (k=27)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+1962.3 s]
+/proc/loadavg: 1.04 1.03 0.95 2/269 32248
+/proc/meminfo: memFree=11331996/49448956 swapFree=0/5978892
+[pid=32229] ppid=32227 vsize=2148444 CPUtime=1954.9 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 469342 851 0 0 195262 228 0 0 20 0 1 0 243151576 2200006656 460984 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 537111 460984 1726 1082 0 532818 0
+Current children cumulated CPU time (s) 1954.9
+Current children cumulated vsize (KiB) 2148444
+
+[startup+2022.3 s]
+/proc/loadavg: 1.01 1.02 0.95 2/269 32248
+/proc/meminfo: memFree=11313148/49448956 swapFree=0/5978896
+[pid=32229] ppid=32227 vsize=2153340 CPUtime=2014.68 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 474160 851 0 0 201236 232 0 0 20 0 1 0 243151576 2205020160 465779 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 538335 465779 1726 1082 0 534042 0
+Current children cumulated CPU time (s) 2014.68
+Current children cumulated vsize (KiB) 2153340
+
+[startup+2082.3 s]
+/proc/loadavg: 1.00 1.02 0.96 2/269 32248
+/proc/meminfo: memFree=11284132/49448956 swapFree=0/5978896
+[pid=32229] ppid=32227 vsize=2158032 CPUtime=2074.47 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 481356 851 0 0 207211 236 0 0 20 0 1 0 243151576 2209824768 472945 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 539508 472945 1726 1082 0 535215 0
+Current children cumulated CPU time (s) 2074.47
+Current children cumulated vsize (KiB) 2158032
+
+[startup+2142.3 s]
+/proc/loadavg: 1.00 1.01 0.96 2/269 32252
+/proc/meminfo: memFree=11260200/49448956 swapFree=0/5978896
+[pid=32229] ppid=32227 vsize=2158032 CPUtime=2134.23 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 487590 851 0 0 213182 241 0 0 20 0 1 0 243151576 2209824768 479129 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 539508 479129 1726 1082 0 535215 0
+Current children cumulated CPU time (s) 2134.23
+Current children cumulated vsize (KiB) 2158032
+
+[startup+2202.3 s]
+/proc/loadavg: 1.04 1.02 0.97 2/269 32253
+/proc/meminfo: memFree=11215684/49448956 swapFree=0/5978896
+[pid=32229] ppid=32227 vsize=2158032 CPUtime=2194.03 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 498623 851 0 0 219156 247 0 0 20 0 1 0 243151576 2209824768 490116 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 539508 490116 1726 1082 0 535215 0
+Current children cumulated CPU time (s) 2194.03
+Current children cumulated vsize (KiB) 2158032
+
+[startup+2262.3 s]
+/proc/loadavg: 1.01 1.02 0.98 2/268 32253
+/proc/meminfo: memFree=11186544/49448956 swapFree=0/5978896
+[pid=32229] ppid=32227 vsize=2158032 CPUtime=2253.81 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 505948 851 0 0 225130 251 0 0 20 0 1 0 243151576 2209824768 497417 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 539508 497417 1726 1082 0 535215 0
+Current children cumulated CPU time (s) 2253.81
+Current children cumulated vsize (KiB) 2158032
+
+[startup+2322.3 s]
+/proc/loadavg: 1.07 1.03 0.99 2/268 32277
+/proc/meminfo: memFree=11154208/49448956 swapFree=0/5978896
+[pid=32229] ppid=32227 vsize=2158032 CPUtime=2313.6 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 513820 851 0 0 231104 256 0 0 20 0 1 0 243151576 2209824768 505323 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 539508 505323 1726 1082 0 535215 0
+Current children cumulated CPU time (s) 2313.6
+Current children cumulated vsize (KiB) 2158032
+
+[startup+2382.3 s]
+/proc/loadavg: 1.02 1.02 1.00 2/268 32277
+/proc/meminfo: memFree=11121844/49448956 swapFree=0/5978900
+[pid=32229] ppid=32227 vsize=2158924 CPUtime=2373.39 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 522019 851 0 0 237079 260 0 0 20 0 1 0 243151576 2210738176 513490 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 539731 513490 1726 1082 0 535438 0
+Current children cumulated CPU time (s) 2373.39
+Current children cumulated vsize (KiB) 2158924
+
+[startup+2442.3 s]
+/proc/loadavg: 1.01 1.01 1.00 2/269 32279
+/proc/meminfo: memFree=11089480/49448956 swapFree=0/5978904
+[pid=32229] ppid=32227 vsize=2158924 CPUtime=2433.17 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 529878 851 0 0 243051 266 0 0 20 0 1 0 243151576 2210738176 521336 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 539731 521336 1726 1082 0 535438 0
+Current children cumulated CPU time (s) 2433.17
+Current children cumulated vsize (KiB) 2158924
+
+[startup+2502.3 s]
+/proc/loadavg: 1.00 1.01 1.00 2/269 32280
+/proc/meminfo: memFree=11052900/49448956 swapFree=0/5978904
+[pid=32229] ppid=32227 vsize=3082120 CPUtime=2492.97 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 539205 851 0 0 249026 271 0 0 20 0 1 0 243151576 3156090880 530624 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 770530 530624 1726 1082 0 766237 0
+Current children cumulated CPU time (s) 2492.97
+Current children cumulated vsize (KiB) 3082120
+
+[startup+2562.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/270 32284
+/proc/meminfo: memFree=11017632/49448956 swapFree=0/5978896
+[pid=32229] ppid=32227 vsize=3084708 CPUtime=2552.75 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 547440 851 0 0 255000 275 0 0 20 0 1 0 243151576 3158740992 538851 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 771177 538851 1726 1082 0 766884 0
+Current children cumulated CPU time (s) 2552.75
+Current children cumulated vsize (KiB) 3084708
+
+[startup+2622.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/268 32290
+/proc/meminfo: memFree=10976392/49448956 swapFree=0/5978868
+[pid=32229] ppid=32227 vsize=3087108 CPUtime=2612.56 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 558327 851 0 0 260976 280 0 0 20 0 1 0 243151576 3161198592 549726 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 771777 549726 1726 1082 0 767484 0
+Current children cumulated CPU time (s) 2612.56
+Current children cumulated vsize (KiB) 3087108
+Unwinding (k=28)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+2682.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/268 32290
+/proc/meminfo: memFree=10899636/49448956 swapFree=0/5978868
+[pid=32229] ppid=32227 vsize=3120384 CPUtime=2672.35 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 577979 851 0 0 266950 285 0 0 20 0 1 0 243151576 3195273216 569036 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 780096 569036 1726 1082 0 775803 0
+Current children cumulated CPU time (s) 2672.35
+Current children cumulated vsize (KiB) 3120384
+
+[startup+2742.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/267 32290
+/proc/meminfo: memFree=10878556/49448956 swapFree=0/5978868
+[pid=32229] ppid=32227 vsize=3131000 CPUtime=2732.16 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 583114 851 0 0 272928 288 0 0 20 0 1 0 243151576 3206144000 574161 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 782750 574161 1726 1082 0 778457 0
+Current children cumulated CPU time (s) 2732.16
+Current children cumulated vsize (KiB) 3131000
+
+[startup+2802.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/267 32290
+/proc/meminfo: memFree=10860452/49448956 swapFree=0/5978872
+[pid=32229] ppid=32227 vsize=3133136 CPUtime=2791.96 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 587733 851 0 0 278905 291 0 0 20 0 1 0 243151576 3208331264 578758 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 783284 578758 1726 1082 0 778991 0
+Current children cumulated CPU time (s) 2791.96
+Current children cumulated vsize (KiB) 3133136
+
+[startup+2862.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/267 32291
+/proc/meminfo: memFree=10837760/49448956 swapFree=0/5978872
+[pid=32229] ppid=32227 vsize=3142888 CPUtime=2851.76 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 593340 851 0 0 284883 293 0 0 20 0 1 0 243151576 3218317312 584354 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 785722 584354 1726 1082 0 781429 0
+Current children cumulated CPU time (s) 2851.76
+Current children cumulated vsize (KiB) 3142888
+
+[startup+2922.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/268 32292
+/proc/meminfo: memFree=10820772/49448956 swapFree=0/5978872
+[pid=32229] ppid=32227 vsize=3142888 CPUtime=2911.57 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 597817 851 0 0 290861 296 0 0 20 0 1 0 243151576 3218317312 588753 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 785722 588753 1726 1082 0 781429 0
+Current children cumulated CPU time (s) 2911.57
+Current children cumulated vsize (KiB) 3142888
+
+[startup+2982.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/268 32292
+/proc/meminfo: memFree=10790764/49448956 swapFree=0/5978872
+[pid=32229] ppid=32227 vsize=3142888 CPUtime=2971.38 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 605099 851 0 0 296838 300 0 0 20 0 1 0 243151576 3218317312 596059 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 785722 596059 1726 1082 0 781429 0
+Current children cumulated CPU time (s) 2971.38
+Current children cumulated vsize (KiB) 3142888
+
+[startup+3042.3 s]
+/proc/loadavg: 1.10 1.03 1.01 2/268 32293
+/proc/meminfo: memFree=10765592/49448956 swapFree=0/5978872
+[pid=32229] ppid=32227 vsize=3143256 CPUtime=3031.18 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 611489 851 0 0 302814 304 0 0 20 0 1 0 243151576 3218694144 602448 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 785814 602448 1726 1082 0 781521 0
+Current children cumulated CPU time (s) 3031.18
+Current children cumulated vsize (KiB) 3143256
+
+[startup+3102.3 s]
+/proc/loadavg: 1.04 1.02 1.00 2/268 32293
+/proc/meminfo: memFree=10741412/49448956 swapFree=0/5978872
+[pid=32229] ppid=32227 vsize=3143256 CPUtime=3090.99 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 617499 851 0 0 308793 306 0 0 20 0 1 0 243151576 3218694144 608428 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 785814 608428 1726 1082 0 781521 0
+Current children cumulated CPU time (s) 3090.99
+Current children cumulated vsize (KiB) 3143256
+
+[startup+3162.3 s]
+/proc/loadavg: 1.01 1.02 1.00 2/268 32294
+/proc/meminfo: memFree=10705204/49448956 swapFree=0/5978876
+[pid=32229] ppid=32227 vsize=3143256 CPUtime=3150.8 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 626602 851 0 0 314771 309 0 0 20 0 1 0 243151576 3218694144 617519 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 785814 617519 1726 1082 0 781521 0
+Current children cumulated CPU time (s) 3150.8
+Current children cumulated vsize (KiB) 3143256
+
+[startup+3222.3 s]
+/proc/loadavg: 1.00 1.01 1.00 2/267 32294
+/proc/meminfo: memFree=10676684/49448956 swapFree=0/5978876
+[pid=32229] ppid=32227 vsize=3143256 CPUtime=3210.61 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 633605 851 0 0 320749 312 0 0 20 0 1 0 243151576 3218694144 624498 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 785814 624498 1726 1082 0 781521 0
+Current children cumulated CPU time (s) 3210.61
+Current children cumulated vsize (KiB) 3143256
+
+[startup+3282.3 s]
+/proc/loadavg: 1.00 1.01 1.00 2/267 32294
+/proc/meminfo: memFree=10646800/49448956 swapFree=0/5978876
+[pid=32229] ppid=32227 vsize=3143256 CPUtime=3270.41 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 641090 851 0 0 326727 314 0 0 20 0 1 0 243151576 3218694144 631934 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 785814 631934 1726 1082 0 781521 0
+Current children cumulated CPU time (s) 3270.41
+Current children cumulated vsize (KiB) 3143256
+
+[startup+3342.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/267 32295
+/proc/meminfo: memFree=10617784/49448956 swapFree=0/5978876
+[pid=32229] ppid=32227 vsize=3144696 CPUtime=3330.22 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 648447 851 0 0 332705 317 0 0 20 0 1 0 243151576 3220168704 639302 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 786174 639302 1726 1082 0 781881 0
+Current children cumulated CPU time (s) 3330.22
+Current children cumulated vsize (KiB) 3144696
+
+[startup+3402.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/268 32311
+/proc/meminfo: memFree=10590596/49448956 swapFree=0/5978892
+[pid=32229] ppid=32227 vsize=3144696 CPUtime=3390.04 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 655052 851 0 0 338683 321 0 0 20 0 1 0 243151576 3220168704 645885 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 786174 645885 1726 1082 0 781881 0
+Current children cumulated CPU time (s) 3390.04
+Current children cumulated vsize (KiB) 3144696
+
+[startup+3462.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/269 32312
+/proc/meminfo: memFree=10559720/49448956 swapFree=0/5978892
+[pid=32229] ppid=32227 vsize=3145336 CPUtime=3449.83 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 662807 851 0 0 344660 323 0 0 20 0 1 0 243151576 3220824064 653590 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 786334 653590 1726 1082 0 782041 0
+Current children cumulated CPU time (s) 3449.83
+Current children cumulated vsize (KiB) 3145336
+
+[startup+3522.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/269 32313
+/proc/meminfo: memFree=10524008/49448956 swapFree=0/5978896
+[pid=32229] ppid=32227 vsize=3147496 CPUtime=3509.64 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 671733 851 0 0 350637 327 0 0 20 0 1 0 243151576 3223035904 662482 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 786874 662482 1726 1082 0 782581 0
+Current children cumulated CPU time (s) 3509.64
+Current children cumulated vsize (KiB) 3147496
+
+[startup+3582.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/269 32313
+/proc/meminfo: memFree=10490280/49448956 swapFree=0/5978896
+[pid=32229] ppid=32227 vsize=3149416 CPUtime=3569.45 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 680168 851 0 0 356614 331 0 0 20 0 1 0 243151576 3225001984 670921 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 787354 670921 1726 1082 0 783061 0
+Current children cumulated CPU time (s) 3569.45
+Current children cumulated vsize (KiB) 3149416
+
+
+
+Shutdown Reason:
+Maximum wall clock time exceeded: sending SIGTERM then SIGKILL
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downStop Solver Thread: Timer Thread Stopped
+
+[startup+3600 s]
+/proc/loadavg: 1.00 1.00 1.00 3/269 32313
+/proc/meminfo: memFree=10480856/49448956 swapFree=0/5978896
+[pid=32229] ppid=32227 vsize=3149416 CPUtime=3587.2 cores=0-7
+/proc/32229/stat : 32229 (2ls) R 32227 32229 31727 34818 32178 4210688 682417 851 0 0 358388 332 0 0 20 0 1 0 243151576 3225001984 673159 18446744073709551615 4194304 8624320 140724443187456 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 10722168 10736660 27783168 140724443190405 140724443190493 140724443190493 140724443193297 0
+/proc/32229/statm: 787354 673159 1726 1082 0 783061 0
+Current children cumulated CPU time (s) 3587.2
+Current children cumulated vsize (KiB) 3149416
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+
+Sending SIGKILL to process tree (bottom up)
+
+Sending SIGKILL to -32229
+Stop Solver Thread: DONE
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Timer Thread Done
+Waiting for stop solver thread
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child ended because it received signal 9 (SIGKILL)
+Real time (s): 3601.24
+runsolver_walltime: 3601.24
+CPU time (s): 3588.34
+runsolver_cputime: 3588.34
+CPU user time (s): 3584.89
+CPU system time (s): 3.44756
+CPU usage (%): 99.6417
+Max. virtual memory (cumulated for all children) (KiB): 3149416
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 3584.89
+system time used= 3.44756
+maximum resident set size= 2693324
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 683391
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 88
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 27
+involuntary context switches= 4516
+
+runsolver used 5.82039 second user time and 10.7649 second system time
+
+The end
+done at Fri 19 May 13:23:09 BST 2017
+Starting to processing FourbyFour/main.c at Fri 19 May 13:23:09 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/git-2ls/2ls/src/2ls/2ls --inline --k-induction --competition-mode main.c 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+2LS version 0.5.1 (based on CBMC 5.6)
+Parsing main.c
+
+[startup+0 s]
+/proc/loadavg: 1.00 1.00 1.00 1/267 32318
+/proc/meminfo: memFree=13173696/49448956 swapFree=0/5978896
+[pid=32318] ppid=32316 vsize=17776 CPUtime=0 cores=0-7
+/proc/32318/stat : 32318 (2ls) S 32316 32318 31727 34818 32178 4210688 221 0 0 0 0 0 0 0 20 0 1 0 243511701 18202624 957 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 1 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 4444 957 890 1082 0 151 0
+Converting
+Type-checking main
+Stop Solver Thread: Started
+[AEATK] No environment variable "AEATK_PORT" detected not sending updates
+
+
+[startup+0.0627019 s]
+/proc/loadavg: 1.00 1.00 1.00 1/267 32318
+/proc/meminfo: memFree=13173696/49448956 swapFree=0/5978896
+[pid=32318] ppid=32316 vsize=36964 CPUtime=0.04 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 5163 847 0 0 4 0 0 0 20 0 1 0 243511701 37851136 6151 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 9241 6151 1304 1082 0 4948 0
+Current children cumulated CPU time (s) 0.04
+Current children cumulated vsize (KiB) 36964
+Generating GOTO Program
+
+[startup+0.100266 s]
+/proc/loadavg: 1.00 1.00 1.00 1/267 32318
+/proc/meminfo: memFree=13173696/49448956 swapFree=0/5978896
+[pid=32318] ppid=32316 vsize=41980 CPUtime=0.08 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 6420 847 0 0 8 0 0 0 20 0 1 0 243511701 42987520 7430 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 10495 7430 1336 1082 0 6202 0
+Current children cumulated CPU time (s) 0.08
+Current children cumulated vsize (KiB) 41980
+Adding CPROVER library
+Function Pointer Removal
+Performing full inlining
+Generic Property Instrumentation
+Constant Propagation
+Using intervals domain with binary search solver
+Computing SSA of _start
+Simplifying
+Max-unwind is 4294967295
+Unwinding (k=0)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+Summarizing function _start
+Analyzing function _start
+Computing summary
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=1)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+Summarizing function _start
+Analyzing function _start
+Computing summary
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=2)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+Summarizing function _start
+Analyzing function _start
+Computing summary
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=3)
+Checking properties of _start
+
+[startup+0.300188 s]
+/proc/loadavg: 1.00 1.00 1.00 1/267 32318
+/proc/meminfo: memFree=13173696/49448956 swapFree=0/5978896
+[pid=32318] ppid=32316 vsize=44984 CPUtime=0.28 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 7161 847 0 0 28 0 0 0 20 0 1 0 243511701 46063616 8420 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 11246 8420 1703 1082 0 6953 0
+Current children cumulated CPU time (s) 0.28
+Current children cumulated vsize (KiB) 44984
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+Summarizing function _start
+Analyzing function _start
+Computing summary
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=4)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=5)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=6)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+0.700161 s]
+/proc/loadavg: 1.00 1.00 1.00 1/267 32318
+/proc/meminfo: memFree=13173696/49448956 swapFree=0/5978896
+[pid=32318] ppid=32316 vsize=49608 CPUtime=0.67 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 8326 847 0 0 67 0 0 0 20 0 1 0 243511701 50798592 9580 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 12402 9580 1719 1082 0 8109 0
+Current children cumulated CPU time (s) 0.67
+Current children cumulated vsize (KiB) 49608
+Unwinding (k=7)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=8)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=9)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=10)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=11)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=12)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=13)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=14)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=15)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+1.5002 s]
+/proc/loadavg: 1.00 1.00 1.00 2/269 32323
+/proc/meminfo: memFree=13137564/49448956 swapFree=0/5978896
+[pid=32318] ppid=32316 vsize=66364 CPUtime=1.48 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 12419 847 0 0 147 1 0 0 20 0 1 0 243511701 67956736 13574 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 16591 13574 1719 1082 0 12298 0
+Current children cumulated CPU time (s) 1.48
+Current children cumulated vsize (KiB) 66364
+Unwinding (k=16)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=17)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=18)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=19)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=20)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=21)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=22)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=23)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=24)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+3.10018 s]
+/proc/loadavg: 1.00 1.00 1.00 2/269 32323
+/proc/meminfo: memFree=13112136/49448956 swapFree=0/5978904
+[pid=32318] ppid=32316 vsize=89780 CPUtime=3.07 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 18013 847 0 0 306 1 0 0 20 0 1 0 243511701 91934720 19032 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 22445 19032 1719 1082 0 18152 0
+Current children cumulated CPU time (s) 3.07
+Current children cumulated vsize (KiB) 89780
+Unwinding (k=25)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=26)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=27)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=28)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=29)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=30)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=31)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=32)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=33)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=34)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=35)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=36)
+Checking properties of _start
+
+[startup+6.30019 s]
+/proc/loadavg: 1.00 1.00 1.00 2/269 32323
+/proc/meminfo: memFree=13083120/49448956 swapFree=0/5978908
+[pid=32318] ppid=32316 vsize=115792 CPUtime=6.25 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 26881 847 0 0 623 2 0 0 20 0 1 0 243511701 118571008 25743 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 28948 25743 1719 1082 0 24655 0
+Current children cumulated CPU time (s) 6.25
+Current children cumulated vsize (KiB) 115792
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=37)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=38)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=39)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=40)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=41)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=42)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=43)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=44)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=45)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=46)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=47)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=48)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=49)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=50)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=51)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=52)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+12.7002 s]
+/proc/loadavg: 1.00 1.00 1.00 2/269 32323
+/proc/meminfo: memFree=13034264/49448956 swapFree=0/5978912
+[pid=32318] ppid=32316 vsize=163696 CPUtime=12.62 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 38551 847 0 0 1258 4 0 0 20 0 1 0 243511701 167624704 37271 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 40924 37271 1719 1082 0 36631 0
+Current children cumulated CPU time (s) 12.62
+Current children cumulated vsize (KiB) 163696
+Unwinding (k=53)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=54)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=55)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=56)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=57)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=58)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=59)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=60)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=61)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=62)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=63)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=64)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=65)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=66)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=67)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=68)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=69)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=70)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=71)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=72)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=73)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=74)
+Checking properties of _start
+
+[startup+25.5002 s]
+/proc/loadavg: 1.00 1.00 1.00 2/269 32323
+/proc/meminfo: memFree=12970528/49448956 swapFree=0/5978916
+[pid=32318] ppid=32316 vsize=237628 CPUtime=25.38 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 55664 847 0 0 2533 5 0 0 20 0 1 0 243511701 243331072 54172 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 59407 54172 1719 1082 0 55114 0
+Current children cumulated CPU time (s) 25.38
+Current children cumulated vsize (KiB) 237628
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=75)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=76)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=77)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=78)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=79)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=80)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=81)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=82)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=83)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=84)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=85)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=86)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=87)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=88)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=89)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=90)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=91)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=92)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=93)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=94)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=95)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=96)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=97)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=98)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=99)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=100)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=101)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=102)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=103)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=104)
+Checking properties of _start
+
+[startup+51.1002 s]
+/proc/loadavg: 1.00 1.00 1.00 2/268 32324
+/proc/meminfo: memFree=12876536/49448956 swapFree=0/5978920
+[pid=32318] ppid=32316 vsize=325876 CPUtime=50.89 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 77634 847 0 0 5082 7 0 0 20 0 1 0 243511701 333697024 75891 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 81469 75891 1719 1082 0 77176 0
+Current children cumulated CPU time (s) 50.89
+Current children cumulated vsize (KiB) 325876
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=105)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=106)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=107)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=108)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=109)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=110)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=111)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=112)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=113)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=114)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=115)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=116)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=117)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=118)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=119)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=120)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=121)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=122)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=123)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=124)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=125)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=126)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=127)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=128)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=129)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=130)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=131)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=132)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=133)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=134)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=135)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=136)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=137)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=138)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=139)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=140)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=141)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=142)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=143)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=144)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=145)
+Checking properties of _start
+
+[startup+102.304 s]
+/proc/loadavg: 1.00 1.00 1.00 2/268 32324
+/proc/meminfo: memFree=12726992/49448956 swapFree=0/5978924
+[pid=32318] ppid=32316 vsize=490588 CPUtime=101.9 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 115234 847 0 0 10180 10 0 0 20 0 1 0 243511701 502362112 113056 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 122647 113056 1719 1082 0 118354 0
+Current children cumulated CPU time (s) 101.9
+Current children cumulated vsize (KiB) 490588
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=146)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=147)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=148)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=149)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=150)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=151)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=152)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=153)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=154)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=155)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=156)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=157)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=158)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=159)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=160)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=161)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=162)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=163)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=164)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=165)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=166)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=167)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=168)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=169)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=170)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=171)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=172)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=173)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=174)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=175)
+Checking properties of _start
+
+[startup+162.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/267 32324
+/proc/meminfo: memFree=12630204/49448956 swapFree=0/5978928
+[pid=32318] ppid=32316 vsize=582532 CPUtime=161.64 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 154944 847 0 0 16149 15 0 0 20 0 1 0 243511701 596512768 137815 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 145633 137815 1719 1082 0 141340 0
+Current children cumulated CPU time (s) 161.64
+Current children cumulated vsize (KiB) 582532
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=176)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=177)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=178)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=179)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=180)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=181)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=182)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=183)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=184)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=185)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=186)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=187)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=188)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=189)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=190)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=191)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=192)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=193)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=194)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=195)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=196)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=197)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=198)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=199)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=200)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=201)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=202)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+
+[startup+222.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/267 32325
+/proc/meminfo: memFree=12530948/49448956 swapFree=0/5978932
+[pid=32318] ppid=32316 vsize=679512 CPUtime=221.42 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 281626 847 0 0 22114 28 0 0 20 0 1 0 243511701 695820288 161930 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 169878 161930 1719 1082 0 165585 0
+Current children cumulated CPU time (s) 221.42
+Current children cumulated vsize (KiB) 679512
+Unwinding (k=203)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=204)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=205)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=206)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=207)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=208)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=209)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=210)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=211)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=212)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=213)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=214)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=215)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=216)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=217)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=218)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=219)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=220)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=221)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=222)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=223)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=224)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=225)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=226)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=227)
+Checking properties of _start
+
+[startup+282.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/267 32325
+/proc/meminfo: memFree=12426000/49448956 swapFree=0/5978936
+[pid=32318] ppid=32316 vsize=794364 CPUtime=281.21 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 411165 847 0 0 28080 41 0 0 20 0 1 0 243511701 813428736 188124 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 198591 188124 1719 1082 0 194298 0
+Current children cumulated CPU time (s) 281.21
+Current children cumulated vsize (KiB) 794364
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=228)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=229)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=230)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=231)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=232)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=233)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=234)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=235)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=236)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=237)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=238)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=239)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=240)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=241)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=242)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=243)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=244)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=245)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=246)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=247)
+Checking properties of _start
+
+[startup+342.3 s]
+/proc/loadavg: 1.04 1.01 1.00 2/267 32326
+/proc/meminfo: memFree=12340236/49448956 swapFree=0/5978944
+[pid=32318] ppid=32316 vsize=879484 CPUtime=341 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 523851 847 0 0 34047 53 0 0 20 0 1 0 243511701 900591616 209585 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 219871 209585 1719 1082 0 215578 0
+Current children cumulated CPU time (s) 341
+Current children cumulated vsize (KiB) 879484
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=248)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=249)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=250)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=251)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=252)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=253)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=254)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=255)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=256)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=257)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=258)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=259)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=260)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=261)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=262)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=263)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=264)
+Checking properties of _start
+
+[startup+402.3 s]
+/proc/loadavg: 1.01 1.01 1.00 2/267 32326
+/proc/meminfo: memFree=12260252/49448956 swapFree=0/5978948
+[pid=32318] ppid=32316 vsize=987860 CPUtime=400.79 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 630009 847 0 0 40016 63 0 0 20 0 1 0 243511701 1011568640 229548 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 246965 229548 1719 1082 0 242672 0
+Current children cumulated CPU time (s) 400.79
+Current children cumulated vsize (KiB) 987860
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=265)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=266)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=267)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=268)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=269)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=270)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=271)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=272)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=273)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=274)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=275)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=276)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=277)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=278)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=279)
+Checking properties of _start
+
+[startup+462.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/267 32326
+/proc/meminfo: memFree=12192176/49448956 swapFree=0/5978952
+[pid=32318] ppid=32316 vsize=1046376 CPUtime=460.55 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 729919 847 0 0 45981 74 0 0 20 0 1 0 243511701 1071489024 246568 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 261594 246568 1719 1082 0 257301 0
+Current children cumulated CPU time (s) 460.55
+Current children cumulated vsize (KiB) 1046376
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=280)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=281)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=282)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=283)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=284)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=285)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=286)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=287)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=288)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=289)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=290)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=291)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=292)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=293)
+Checking properties of _start
+
+[startup+522.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/267 32326
+/proc/meminfo: memFree=12126084/49448956 swapFree=0/5978952
+[pid=32318] ppid=32316 vsize=1105156 CPUtime=520.32 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 823645 847 0 0 51948 84 0 0 20 0 1 0 243511701 1131679744 263074 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 276289 263074 1719 1082 0 271996 0
+Current children cumulated CPU time (s) 520.32
+Current children cumulated vsize (KiB) 1105156
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=294)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=295)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=296)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=297)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=298)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=299)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=300)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=301)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=302)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=303)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=304)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=305)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=306)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=307)
+Checking properties of _start
+
+[startup+582.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/267 32327
+/proc/meminfo: memFree=12057264/49448956 swapFree=0/5978956
+[pid=32318] ppid=32316 vsize=1170104 CPUtime=580.12 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 929734 847 0 0 57917 95 0 0 20 0 1 0 243511701 1198186496 280198 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 292526 280198 1719 1082 0 288233 0
+Current children cumulated CPU time (s) 580.12
+Current children cumulated vsize (KiB) 1170104
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=308)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=309)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=310)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=311)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=312)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=313)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=314)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=315)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=316)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=317)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=318)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=319)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=320)
+Checking properties of _start
+
+[startup+642.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/268 32329
+/proc/meminfo: memFree=11985468/49448956 swapFree=0/5978956
+[pid=32318] ppid=32316 vsize=1244304 CPUtime=639.87 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 1035717 847 0 0 63882 105 0 0 20 0 1 0 243511701 1274167296 298122 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 311076 298122 1719 1082 0 306783 0
+Current children cumulated CPU time (s) 639.87
+Current children cumulated vsize (KiB) 1244304
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=321)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=322)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=323)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=324)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=325)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=326)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=327)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=328)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=329)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=330)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=331)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=332)
+Checking properties of _start
+
+[startup+702.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/268 32329
+/proc/meminfo: memFree=11923220/49448956 swapFree=0/5978960
+[pid=32318] ppid=32316 vsize=1299416 CPUtime=699.62 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 1137318 847 0 0 69847 115 0 0 20 0 1 0 243511701 1330601984 313499 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 324854 313499 1719 1082 0 320561 0
+Current children cumulated CPU time (s) 699.62
+Current children cumulated vsize (KiB) 1299416
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=333)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=334)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=335)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=336)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=337)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=338)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=339)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=340)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=341)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=342)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=343)
+Checking properties of _start
+
+[startup+762.304 s]
+/proc/loadavg: 1.00 1.00 1.00 2/268 32329
+/proc/meminfo: memFree=11864568/49448956 swapFree=0/5978960
+[pid=32318] ppid=32316 vsize=1351056 CPUtime=759.41 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 1242859 847 0 0 75813 128 0 0 20 0 1 0 243511701 1383481344 328150 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 337764 328150 1719 1082 0 333471 0
+Current children cumulated CPU time (s) 759.41
+Current children cumulated vsize (KiB) 1351056
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=344)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=345)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=346)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=347)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=348)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=349)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=350)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=351)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=352)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=353)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=354)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=355)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=356)
+Checking properties of _start
+
+[startup+822.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/268 32329
+/proc/meminfo: memFree=11794632/49448956 swapFree=0/5978964
+[pid=32318] ppid=32316 vsize=1428944 CPUtime=819.2 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 1356201 847 0 0 81781 139 0 0 20 0 1 0 243511701 1463238656 345639 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 357236 345639 1719 1082 0 352943 0
+Current children cumulated CPU time (s) 819.2
+Current children cumulated vsize (KiB) 1428944
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=357)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=358)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=359)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=360)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=361)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=362)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=363)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=364)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=365)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=366)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=367)
+Checking properties of _start
+
+[startup+882.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/268 32330
+/proc/meminfo: memFree=11735700/49448956 swapFree=0/5978964
+[pid=32318] ppid=32316 vsize=1513692 CPUtime=878.99 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 1479878 847 0 0 87747 152 0 0 20 0 1 0 243511701 1550020608 360389 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 378423 360389 1719 1082 0 374130 0
+Current children cumulated CPU time (s) 878.99
+Current children cumulated vsize (KiB) 1513692
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=368)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=369)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=370)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=371)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=372)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=373)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=374)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=375)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=376)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=377)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=378)
+Checking properties of _start
+
+[startup+942.3 s]
+/proc/loadavg: 1.00 1.00 1.00 2/267 32330
+/proc/meminfo: memFree=11676336/49448956 swapFree=0/5978968
+[pid=32318] ppid=32316 vsize=1567652 CPUtime=938.79 cores=0-7
+/proc/32318/stat : 32318 (2ls) R 32316 32318 31727 34818 32178 4210688 1582664 847 0 0 93717 162 0 0 20 0 1 0 243511701 1605275648 375242 18446744073709551615 4194304 8624320 140732204170592 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 10722168 10736660 27504640 140732204176511 140732204176599 140732204176599 140732204179409 0
+/proc/32318/statm: 391913 375242 1719 1082 0 387620 0
+Current children cumulated CPU time (s) 938.79
+Current children cumulated vsize (KiB) 1567652
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=379)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=380)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=381)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=382)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=383)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=384)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=385)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=386)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=387)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=388)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=389)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=390)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=391)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=392)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=393)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=394)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=395)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=396)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=397)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=398)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=399)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=400)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=401)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=402)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=403)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=404)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=405)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=406)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=407)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=408)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=409)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=410)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=411)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=412)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=413)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=414)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=415)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=416)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=417)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=418)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=419)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=420)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=421)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=422)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=423)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=424)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=425)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=426)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=427)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=428)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=429)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=430)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=431)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=432)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=433)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=434)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=435)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=436)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=437)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=438)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=439)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=440)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=441)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=442)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=443)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=444)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=445)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=446)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=447)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=448)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=449)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=450)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=451)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=452)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=453)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=454)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=455)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=456)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=457)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=458)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=459)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=460)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=461)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=462)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=463)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=464)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=465)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=466)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=467)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=468)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=469)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=470)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=471)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=472)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=473)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=474)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=475)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=476)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=477)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=478)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=479)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=480)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=481)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=482)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=483)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=484)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=485)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=486)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=487)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=488)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=489)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=490)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=491)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=492)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=493)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=494)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=495)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=496)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=497)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=498)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=499)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=500)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=501)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=502)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=503)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=504)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=505)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=506)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=507)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=508)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=509)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=510)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=511)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=512)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=513)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=514)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=515)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=516)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=517)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=518)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=519)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=520)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=521)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=522)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=523)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=524)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=525)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=526)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=527)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=528)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=529)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=530)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=531)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=532)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=533)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=534)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=535)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=536)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=537)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=538)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=539)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=540)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=541)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=542)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=543)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=544)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=545)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=546)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=547)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=548)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=549)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=550)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=551)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=552)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=553)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=554)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=555)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=556)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=557)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=558)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=559)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=560)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=561)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=562)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=563)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=564)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=565)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=566)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=567)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=568)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=569)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=570)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=571)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=572)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=573)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=574)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=575)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=576)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=577)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=578)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=579)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=580)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=581)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=582)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=583)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=584)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=585)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=586)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=587)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=588)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=589)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=590)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=591)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=592)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=593)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=594)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=595)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=596)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=597)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=598)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=599)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=600)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=601)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=602)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=603)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=604)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=605)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=606)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=607)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=608)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=609)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=610)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=611)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=612)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=613)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=614)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=615)
+Checking properties of _start
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+Unwinding (k=616)
+Checking properties of _start

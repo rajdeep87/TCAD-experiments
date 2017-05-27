@@ -1,0 +1,45 @@
+digraph ARG {
+node [style="filled" shape="box" color="white"]
+subgraph cluster_0 {
+label="Refinement 0"
+1 [label="1 @ N232\nmain\n" id="1"]
+3 [label="3 @ N1\ninitial_main entry\n" id="3"]
+5 [label="5 @ N0\ninitial_main exit\n" id="5"]
+8 [fillcolor="cornflowerblue" label="8 @ N228\nmain\nAbstractionState: ABS1: true\n" id="8"]
+10 [label="10 @ N6\nfour_by_four entry\n" id="10"]
+387 [fillcolor="orange" label="387 @ N216\nfour_by_four\n" id="387"]
+389 [fillcolor="red" label="389 @ N219\nfour_by_four\nAbstractionState: ABS2: true\n AutomatonState: AssertionAutomaton: _predefinedState_ERROR\n" id="389"]
+1 -> 3 []
+3 -> 5 []
+5 -> 8 []
+8 -> 10 []
+10 -> 389 []
+10 -> 387 []
+}
+0 -> 1
+subgraph cluster_1 {
+label="Refinement 1"
+397 [fillcolor="cornflowerblue" label="397 @ N228\nmain\nAbstractionState: ABS3: true\n" id="397"]
+399 [label="399 @ N6\nfour_by_four entry\n" id="399"]
+778 [fillcolor="red" label="778 @ N219\nfour_by_four\nAbstractionState: ABS4\n AutomatonState: AssertionAutomaton: _predefinedState_ERROR\n" id="778"]
+776 [fillcolor="orange" label="776 @ N216\nfour_by_four\n" id="776"]
+397 -> 399 []
+399 -> 776 []
+399 -> 778 []
+}
+394 -> 397
+0 [fillcolor="cornflowerblue" label="0 @ N222\nmain entry\nAbstractionState: ABS0: true\n" id="0"]
+392 [label="392 @ N1\ninitial_main entry\n" id="392"]
+394 [label="394 @ N0\ninitial_main exit\n" id="394"]
+780 [fillcolor="cornflowerblue" label="780 @ N228\nmain\nAbstractionState: ABS5\n" id="780"]
+782 [label="782 @ N6\nfour_by_four entry\n" id="782"]
+1163 [label="1163 @ N5\nfour_by_four exit\n" id="1163"]
+1166 [fillcolor="green" label="1166 @ N228\nmain\nAbstractionState: ABS7\n" id="1166"]
+0 -> 392 []
+392 -> 394 []
+394 -> 780 []
+1166 -> 780 [style="dashed" weight="0" label="covered by"]
+780 -> 782 []
+782 -> 1163 []
+1163 -> 1166 []
+}

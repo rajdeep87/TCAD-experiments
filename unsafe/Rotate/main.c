@@ -47,9 +47,9 @@ void main() {
   unsigned int din;
   unsigned int dout;
   initial_main();
-  //while(1) {
+  while(1) {
     rotate(clock, amount, din, &dout);
     // # FAIL:
     assert(dout != 0xAAAAAAAA);
-  //}
+  }
 }

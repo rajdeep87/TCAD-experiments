@@ -87,7 +87,7 @@ struct state_elements_main  smain;
   (!(((smain.valid>>1)&1)==1 && ((smain.valid>>2)&1)==0) || ((smain.qAge>>2)&1)==1));
   */
 
-  //while(1) {
+  while(1) {
     iqLoads = nondet_uchar() & 3;
     exeReady = nondet_uchar() & 3;
     opsReady = nondet_uchar() & 7;
@@ -103,5 +103,5 @@ struct state_elements_main  smain;
   (!((smain.valid&1)==1 && ((smain.valid>>1)&1)==0) || (smain.qAge&1)==1) &&
   (!((smain.valid&1)==1 && ((smain.valid>>2)&1)==0) || ((smain.qAge>>1)&1)==1) &&
   (!(((smain.valid>>1)&1)==1 && ((smain.valid>>2)&1)==0) || ((smain.qAge>>2)&1)==1)));
-  //}
+  }
 }

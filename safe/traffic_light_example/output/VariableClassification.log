@@ -1,0 +1,15 @@
+IntBool
+
+[main::reset, main::clk, Traffic_Light::clk]
+
+IntEq
+
+[Traffic_Light::reset]
+
+IntAdd
+
+[]
+
+ALL
+
+[Traffic_Light::sTraffic_Light.Counter, YELLOW_LIGHT, YELLOW_count, main::time_left, RED_count, sTraffic_Light, Traffic_Light::reset, Traffic_Light::time_left, main::temp, Traffic_Light::__CPAchecker_TMP_2, Traffic_Light::__CPAchecker_TMP_3, RED_LIGHT, Traffic_Light::__CPAchecker_TMP_4, Traffic_Light::__CPAchecker_TMP_5, main::sTraffic_Light.Light_Sign, Traffic_Light::*time_left, Traffic_Light::__CPAchecker_TMP_0, Traffic_Light::__CPAchecker_TMP_1, Traffic_Light::Counter_old, main::reset, main::clk, Traffic_Light::sTraffic_Light.Light_Sign, Traffic_Light::clk, GREEN_LIGHT, Traffic_Light::Light_Sign_old, GREEN_count]

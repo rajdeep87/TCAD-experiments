@@ -143,11 +143,11 @@ void main() {
   initial_rbFIFO();
   initial_srFIFO();
   
-  //while(1) {
+  while(1) {
     push = nondet_bool();
     pop = nondet_bool();
     dataIn = nondet_uchar();
     design(clock, dataIn, push, pop, &equal);
     //assert(equal == 1);
-  //}
+  }
 }

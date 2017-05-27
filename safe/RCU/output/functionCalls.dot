@@ -1,0 +1,11 @@
+digraph functioncalls {
+rankdir=LR;
+
+main [shape="box", color=blue];
+main -> initial;
+nondet_uchar [shape="box", color=grey];
+main -> nondet_uchar;
+main -> rcu;
+__assert_fail [shape="box", color=grey];
+main -> __assert_fail;
+}

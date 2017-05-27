@@ -311,7 +311,7 @@ void main() {
   daio(xtal, rx_control, reset, bit_in, preamble_1, preamble_2, preamble_3, carrier_loss, biphase_violation, &clock_out, &rx_status, &parity, &load_A, &load_B, &load_buff, &shift_reg, &frame_ofs);
 
   reset = 0;
-  //while(1) {
+  while(1) {
    xtal = nondet_uchar();
    rx_control = nondet_uchar();
    bit_in = nondet_bool();
@@ -324,6 +324,6 @@ void main() {
    daio(xtal, rx_control, reset, bit_in, preamble_1, preamble_2, preamble_3, carrier_loss, biphase_violation, &clock_out, &rx_status, &parity, &load_A, &load_B, &load_buff, &shift_reg, &frame_ofs);
 
    assert(((rx_status >> 3) & 1) != 0);
-   //assert((load_A==1 || load_B==0));
-  //}
+   assert((load_A==1 || load_B==0));
+  }
 }

@@ -1,0 +1,17 @@
+(set-info :source |printed by MathSAT|)
+(declare-fun smain$dout () (_ BitVec 32))
+(declare-fun smain$spl () (_ BitVec 8))
+(declare-fun smain$inr () (_ BitVec 32))
+
+0 (3) @85:
+(assert true)
+
+6 (9) @92:
+(assert true)
+
+9 () @92:
+(assert true)
+
+3 (6) @92:
+(assert (let ((.def_393 (bvand (_ bv1 32) smain$inr)))(let ((.def_394 (= .def_393 (_ bv0 32))))(let ((.def_385 (= smain$spl (_ bv0 8))))(let ((.def_408 (and .def_385 .def_394)))(let ((.def_376 (bvand (_ bv1 32) smain$dout)))(let ((.def_377 (= .def_376 (_ bv0 32))))(let ((.def_409 (and .def_377 .def_408))).def_409))))))))
+

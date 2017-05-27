@@ -1,0 +1,11 @@
+digraph functioncalls {
+rankdir=LR;
+
+main [shape="box", color=blue];
+__assert_fail [shape="box", color=grey];
+alu16 -> __assert_fail;
+main -> initial_alu16;
+nondet_sint [shape="box", color=grey];
+main -> nondet_sint;
+main -> alu16;
+}

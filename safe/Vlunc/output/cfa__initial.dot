@@ -1,0 +1,7 @@
+digraph initial {
+132 [shape="circle" label="N132\n4"]
+133 [shape="circle" label="N133\n3"]
+133 [style="filled,bold" penwidth="1" fillcolor="white" fontname="Courier New" shape="Mrecord" label=<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr><td align="right">133</td><td align="left">smain.regIn = 0;</td></tr><tr><td align="right">134</td><td align="left">smain.dataOut = 0;</td></tr><tr><td align="right">135</td><td align="left">default return</td></tr></table>>]
+133 -> 131[label=""]
+132 -> 133 [label="Function start dummy edge" fontname="Courier New"]
+}

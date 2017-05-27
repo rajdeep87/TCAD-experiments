@@ -1,0 +1,15 @@
+IntBool
+
+[b06::CONT_EQL, main::EQL, main::CONT_EQL, b06::EQL, main::clock, sys_nerr, b06::clock]
+
+IntEq
+
+[cc_nop]
+
+IntAdd
+
+[]
+
+ALL
+
+[b06::CONT_EQL, stdin, initial::sb.ACKOUT, stdout, cc_intr, s_intr, sys_errlist, b06::sb.ACKOUT, b06::*CC_MUX, b06::ENABLE_COUNT, main::__CPAchecker_TMP_1, main::__CPAchecker_TMP_0, b06::*USCITE, main::ACKOUT, b06::sb.ENABLE_COUNT, main::EQL, b06::EQL, s_intr_1, b06::*ENABLE_COUNT, stderr, _IO_2_1_stdout_, out_norm, b06::USCITE, initial::sb.ENABLE_COUNT, main::clock, _IO_2_1_stdin_, b06::sb.USCITE, _IO_2_1_stderr_, b06::*ACKOUT, sys_nerr, b06::sb.CC_MUX, sb, main::USCITE, initial::sb.USCITE, main::ENABLE_COUNT, initial::sb.CC_MUX, b06::clock, b06::ACKOUT, s_enin_w, b06::CC_MUX, s_wait, initial::sb.state, cc_enin, s_intr_w, cc_ackin, s_init, b06::sb.state, main::CONT_EQL, main::CC_MUX, s_enin, cc_nop]

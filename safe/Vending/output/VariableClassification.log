@@ -1,0 +1,15 @@
+IntBool
+
+[monitor::clock, main::clock, initial_monitor::clock, initial_vending::clock, sys_nerr, vending::clock]
+
+IntEq
+
+[BITS, vending::__CPAchecker_TMP_4]
+
+IntAdd
+
+[]
+
+ALL
+
+[initial_vending::*change, stdin, initial_vending::change, stdout, initial_vending::svending.t10, initial_monitor::beverage, vending::*change, initial_vending::svending.change, sys_errlist, vending::svending.state, vending::__CPAchecker_TMP_0, vending::__CPAchecker_TMP_1, initial_monitor::balance, vending::__CPAchecker_TMP_2, vending::__CPAchecker_TMP_3, vending::__CPAchecker_TMP_4, QUARTER, main::__CPAchecker_TMP_0, vending::svending.l10, monitor::deposit, vending::*beverage, svending, BITS, monitor::valB, NONE, vending::enable, monitor::valD, initial_vending::svending.l10, monitor::valC, vending::svending.t10, initial_vending::svending.t25, vending::svending.t25, REFUND, vending::*enable, initial_vending::enable, initial_monitor::deposit, stderr, _IO_2_1_stdout_, BEVERAGE, vending::change, vending::total, initial_vending::svending.l25, deposit, vending::svending.l25, main::clock, main::beverage, vending::beverage, initial_monitor::clock, _IO_2_1_stdin_, initial_monitor::*balance, initial_vending::clock, initial_vending::deposit, main::balance, _IO_2_1_stderr_, vending::deposit, initial_monitor::change, monitor::beverage, initial_vending::svending.t5, initial_vending::beverage, monitor::change__1, monitor::smonitor.balance, initial_vending::svending.l5, sys_nerr, initial_vending::svending.state, initial_monitor::smonitor.balance, smonitor, monitor::deposit__1, monitor::clock, vending::svending.change, CHANGE, main::nd, monitor::__CPAchecker_TMP_1, monitor::__CPAchecker_TMP_0, monitor::*balance, monitor::__CPAchecker_TMP_3, monitor::__CPAchecker_TMP_2, vending::svending.l5, ACCEPTING, main::enable, monitor::__CPAchecker_TMP_5, monitor::__CPAchecker_TMP_4, vending::clock, monitor::__CPAchecker_TMP_6, monitor::balance, NICKEL, vending::svending.t5, monitor::change, DIME, main::change]

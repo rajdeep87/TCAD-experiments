@@ -1,0 +1,14 @@
+(set-info :source |printed by MathSAT|)
+(declare-fun smain$OVERFLW () (_ BitVec 8))
+(declare-fun smain$stato () (_ BitVec 8))
+(declare-fun f () (_ BitVec 32))
+(declare-fun b () (_ BitVec 32))
+(declare-fun g () (_ BitVec 32))
+(declare-fun c () (_ BitVec 32))
+(declare-fun wf0 () (_ BitVec 32))
+(declare-fun wf1 () (_ BitVec 32))
+(declare-fun a () (_ BitVec 32))
+
+main N103:
+(assert (let ((.def_3715 (= a (_ bv0 32))))(let ((.def_3712 (= wf1 (_ bv7 32))))(let ((.def_3732 (and .def_3712 .def_3715)))(let ((.def_3709 (= wf0 (_ bv6 32))))(let ((.def_3733 (and .def_3709 .def_3732)))(let ((.def_3706 (= c (_ bv2 32))))(let ((.def_3734 (and .def_3706 .def_3733)))(let ((.def_3703 (= g (_ bv5 32))))(let ((.def_3735 (and .def_3703 .def_3734)))(let ((.def_2095 ((_ zero_extend 24) smain$OVERFLW)))(let ((.def_2096 (= .def_2095 (_ bv1 32))))(let ((.def_2125 (not .def_2096)))(let ((.def_3736 (and .def_2125 .def_3735)))(let ((.def_2093 (= smain$OVERFLW (_ bv1 8))))(let ((.def_2126 (not .def_2093)))(let ((.def_3737 (and .def_2126 .def_3736)))(let ((.def_2089 (= smain$stato (_ bv1 8))))(let ((.def_4440 (or .def_2089 .def_3737)))(let ((.def_2091 (= smain$stato (_ bv4 8))))(let ((.def_2128 (not .def_2091)))(let ((.def_3738 (and .def_2128 .def_3737)))(let ((.def_2130 (not .def_2089)))(let ((.def_3964 (or .def_2130 .def_3738)))(let ((.def_4441 (and .def_3964 .def_4440)))(let ((.def_2087 (= b (_ bv1 32))))(let ((.def_4442 (and .def_2087 .def_4441)))(let ((.def_2084 (= f (_ bv4 32))))(let ((.def_4443 (and .def_2084 .def_4442)))(let ((.def_940 (= smain$stato (_ bv0 8))))(let ((.def_4445 (or .def_940 .def_4443)))(let ((.def_3739 (and .def_2130 .def_3738)))(let ((.def_3740 (and .def_2087 .def_3739)))(let ((.def_3741 (and .def_2084 .def_3740)))(let ((.def_2414 (not .def_940)))(let ((.def_4444 (or .def_2414 .def_3741)))(let ((.def_4446 (and .def_4444 .def_4445)))(let ((.def_711 (= smain$OVERFLW (_ bv0 8))))(let ((.def_4447 (and .def_711 .def_4446))).def_4447)))))))))))))))))))))))))))))))))))))))
+

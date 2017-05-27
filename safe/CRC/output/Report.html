@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html ng-app='report'>
+<head>
+    <meta charset="UTF-8">
+    <title>CPAchecker Report for
+main.c    </title>
+
+<style type="text/css">
+<!--
+html{
+    position: relative;
+    height: 100%;
+}
+body {
+    padding-top: 50px;
+    height: 100%;
+    min-height: 300px;
+    min-width: 750px;
+    background-color: white;
+}
+.header {
+    position: absolute;
+    top:0;
+    width: 100%;
+    min-width: 750px;
+    height: 50px;
+    background-color: whitesmoke;
+    border-bottom: solid 2px;
+    border-bottom-color: lightgrey;
+    padding: 7px;
+}
+
+.sections{
+    position: relative;
+    height: 100%;
+    padding: 0;
+}
+
+.btn{
+    cursor: pointer;
+}
+#err_table td{
+    cursor: pointer;
+}
+#err_table td:hover{
+    font-weight: bold;
+}
+.edge{
+    cursor: pointer;
+}
+.edge:hover{
+    font-weight: bold;
+    stroke-width: 2;
+}
+.argContent .node{
+    cursor: pointer;
+}
+.argContent .node:hover{
+    font-weight: bold;
+}
+.functionNode{
+    cursor: pointer;
+}
+.functionNode:hover{
+    font-weight: bold;
+    stroke-width: 2;
+}
+.functionNode polygon{
+    fill: transparent;
+}
+
+.header img.logo {
+    float: left;
+    height: 30px;
+    margin-right: 5px;
+}
+.header h1 {
+    display: inline;
+    font-size: 20px;
+}
+.header .generated {
+    float: right;
+    margin-left: 2em;
+    font-size: 80%;
+}
+
+
+#errorpath_section{
+    position:relative;
+    float: left;
+    width: 25%;
+    min-width: 70px;
+    height: inherit;
+    background-color: white;
+    border: solid 4px;
+    border-color: lightgrey;
+    padding: 5px;
+}
+
+#errorpath_section header .input-group{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#middleLine{
+    cursor: col-resize;
+    position: absolute;
+    top:0;
+    right: -8px;
+    height:inherit;
+    width: 8px;
+    z-index: 100;
+    background-color: darkgrey;
+}
+#middleLine:hover{
+    background-color: grey;
+}
+#externalFiles_section{
+    float: right;
+    width: 75%;
+    height: inherit;
+    background-color: white;
+    padding: 5px;
+    border: solid 4px;
+    border-color: lightgrey;
+}
+
+.popover{
+    min-width: 500px;
+    max-height: 500px;
+    white-space: pre-line !important;
+    overflow: auto;
+    background-color: #f5fff8;
+    border: solid 2px;
+    border-color: #00d415;
+    font-family: monospace
+}
+#externalFiles_section .popover{
+    overflow: hidden;
+}
+
+#errorpath_section .fileContent {
+    height: calc(100% - 110px);
+    margin: 5px;
+    overflow: auto;
+}
+#externalFiles_section .fileContent {
+    height: calc(100% - 50px);
+    margin: 5px;
+    overflow: auto;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+td:first-child {
+    background-color: #ccc;
+}
+#err_table td:first-child{
+    border-radius: 6px;
+}
+#err_table td pre {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+#err_table tr:nth-child(odd) td pre.prettyprint {
+    background-color: #f3f3f3;
+}
+.sourceContent td pre {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+.sourceContent tr:nth-child(odd) td pre.prettyprint {
+    background-color: #f3f3f3;
+}
+.markedSourceLine{
+    background-color: #df80ff;
+}
+.markedCFAEdge path{
+    stroke: #df80ff;
+}
+.markedCFAEdge polygon{
+    fill: #df80ff;
+    stroke: #df80ff;
+}
+.markedCFAEdge text{
+    fill: #df80ff;
+}
+
+.markedCFANode text{
+    fill: #df80ff;
+}
+.markedCFANode ellipse{
+    stroke: #df80ff;
+}
+.markedCFANode polygon{
+    stroke: #df80ff;
+}
+
+.markedARGNode polygon{
+    fill: #df80ff;
+}
+.markedTableElement{
+    border: solid 2px;
+    border-color: #00d415;
+}
+.markedValueElement pre{
+    background-color: #83d480 !important;
+}
+.markedDescElement pre{
+    background-color: #71afff !important;
+}
+.markedValueDescElement pre{
+    background: linear-gradient(#83d480, #71afff) !important;
+}
+#searchOptions label{
+    font-weight: normal;
+}
+#matches{
+    display: none;
+}
+.markedValues{
+    background-color: #83d480;
+    border-radius: 25px;
+    margin-bottom: 2px;
+    padding: 2px;
+    padding-left: 8px;
+    max-width: 270px;
+}
+.markedDescriptions{
+    background-color: #71afff;
+    border-radius: 20px;
+    padding: 2px;
+    padding-left: 8px;
+    margin-bottom: 2px;
+    max-width: 270px;
+}
+.cfaContent{
+    margin: 20px;
+    margin-top: 45px;
+    /* This is very important - otherwise right margin is not shown (and nodes cannot be centered) */
+    display: inline-block;
+}
+.argContent{
+    margin: 20px;
+    margin-top: 45px;
+    /* This is very important - otherwise right margin is not shown (and nodes cannot be centered) */
+    display: inline-block;
+}
+.sourceContent{
+    margin-top: 45px;
+}
+.edit-line{
+    position: fixed;
+    background-color: white;
+    padding: 5px;
+}
+.edit-line div{
+    display: inline-block;
+}
+.edit-line label{
+    margin-right: 100px;
+    display: inline-block;
+}
+.edit-line p{
+    display: inline-block;
+}
+#cfa-scalingField{
+    margin-left: 5px;
+    width: 50px;
+    display: inline-block;
+}
+#arg-scalingField{
+    margin-left: 5px;
+    width: 50px;
+    display: inline-block;
+}
+
+div pre{
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+.help_button{
+    padding: 0px;
+    border: 0px;
+    margin:0px;
+    display: inline-block;
+    float: right;
+}
+#externalFiles_section .help_button{
+    margin-left: 10px;
+    float: left;
+}
+	    -->
+	</style>
+	
+	<link rel="stylesheet" type="text/css" href="https://www.sosy-lab.org/lib/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://www.sosy-lab.org/lib/google-code-prettify/2015-12-08-c67d802/prettify.css" integrity="sha384-Idd9oLcdDqxPfUuMARR/TPo7z2VE5qgbFk6j2RHdfzB88HFW5Ecm8qSe0KjhtZ2S" crossorigin="anonymous">
+    
+    <!--the jquery-script is necessary for bootstrap, it has to be added BEFORE the bootstrap-script-->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="https://www.sosy-lab.org/lib/jquery/1.12.0/jquery.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script type="text/javascript" src="https://www.sosy-lab.org/lib/jquery/2.2.0/jquery.min.js" integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk" crossorigin="anonymous"></script>
+    <!--<![endif]-->
+    
+    <script type="text/javascript" src="https://www.sosy-lab.org/lib/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.sosy-lab.org/lib/angularjs/1.5.5/angular.min.js" integrity="sha384-JhiEhwQjPEF1WJVY0yQaYOdN73Ml70AQwr+sq+zhSomAf4Fh0ImVDR8G9Ry0QokZ" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.sosy-lab.org/lib/google-code-prettify/2015-12-08-c67d802/prettify.js" integrity="sha384-uvP0LdNXVGNnAFf48ha9Ze5oJX136a8YERZm6nDnr/jAocGDVsfIj/N6I3h1wSj8" crossorigin="anonymous"></script>
+   
+	
+	<script type="text/javascript">
+/**
+* Created by Magdalena Murr on 06.07.15.
+*/
+//(function(){})() --> this notation makes a function in JS "self-invoking"
+(function() {
+    var app = angular.module('report', []);
+
+    app.controller('ReportController', ['$rootScope', '$scope', function($rootScope, $scope){
+        $scope.logo = "https://cpachecker.sosy-lab.org/logo.svg";
+        $scope.help_externalFiles = "<p><b>CFA</b> (control flow automaton) shows the control flow of the program (one CFA for one function in the source-code)</p>" +
+            "<p>- the errorpath is highlighted in red</p>" +
+            "<p>- click on the function-nodes to jump to CFA of this function</p>" +
+            "<p>- click on edges to jump to the relating line in the source-code</p>" +
+            "<p> ○ normal element   ▢ more normal elements</p>" +
+            "<p> ◇ condition</p>" +
+            "<p> ▭ function</p>" +
+            "<p> ◎ loop head (graph-based)  ⬡ loop head (syntactic)</p> " +
+            "<p><b>ARG</b> shows the errorpath as a graph</p>" +
+            "<p>- the errorpath is highlighted in red</p>" +
+            "<p>- click on nodes to jump to the relating node in the CFA</p>" +
+            "<p>- click on edges to jump to the relating line in the source-code</p>" +
+            "<p><font color=\"green\">■</font> covered state</p>" +
+            "<p><font color=\"orange\">■</font> not yet processed state</p>" +
+            "<p><font color=\"cornflowerblue\">■</font> important state (depending on used analysis)</p>" +
+            "<p><font color=\"red\">■</font> target state</p>";
+        $scope.help_errorpath = "<p>The errorpath leads to the error 'line by line' (Source) or 'edge by edge' (CFA)</p>\n" +
+            "<p><b>-V-</b> Click to show all initialized variables and their values at that point</p>\n" +
+            "<p><b>Edge-Description (Source-Code-View)</b> Click to jump to the relating edge in the CFA / node in the ARG / line in Source (depending on active tab)</p>\n" +
+            "<p><b>Buttons (Prev, Start, Next)</b> Click to navigate through the errorpath and jump to the relating position in the active tab</p>\n" +
+            "<p><b>Search</b>\n - You can search for words or numbers in the edge-descriptions (matches appear blue)\n" +
+            "- You can search for value-assignments (variable names or their value) - it will highlight only where a variable has been initialized or where it has changed its value (matches appear green)</p>";
+        //the tab that is shown
+        $scope.tab = 1;
+
+        $scope.$on("FirstTimeErrorpathElementIsSelected", function(event){
+            $scope.setMarginForGraphs();
+        });
+        $scope.$on("ChangeTab", function(event, tab){
+            $scope.setTab(tab);
+        });
+
+        $scope.setTab = function(tab){
+            $scope.tab = tab;
+        };
+        $scope.tabIsSet = function(tab){
+            return $scope.tab === tab;
+        };
+
+        $scope.setWidth = function(event) {
+            if (mouseDown) {
+                var wholeWidth = document.getElementById("externalFiles_section").offsetWidth + document.getElementById("errorpath_section").offsetWidth;
+                document.getElementById("errorpath_section").style.width = (Math.round(event.clientX/wholeWidth*100) + "%");
+                document.getElementById("externalFiles_section").style.width = (Math.round((wholeWidth - event.clientX)/wholeWidth*100) + "%");
+            }
+        };
+
+        $scope.setMouseUp = function(){
+            mouseDown = false;
+            document.onselectstart = null;
+            document.onmousedown = null;
+            if($rootScope.selected_ErrLine != null) {
+                $scope.setMarginForGraphs();
+            }
+        };
+
+        $scope.setMouseDown = function(){
+            mouseDown = true;
+            //we need this so that no text gets marked when moving middleline
+            document.onselectstart = function(){return false;};
+            document.onmousedown = function(){return false;};
+        };
+
+        $scope.setMarginForGraphs = function(){
+            var width = (Math.round((document.getElementById("externalFiles_section").offsetWidth/ 2)-10) + "px");
+            var height = (Math.round(document.getElementById("externalFiles_section").offsetHeight/ 2) + "px");
+            var cfaContent = document.getElementsByClassName("cfaContent")[0];
+            var argContent = document.getElementsByClassName("argContent")[0];
+            cfaContent.style.marginLeft = (width);
+            cfaContent.style.marginRight = (width);
+            cfaContent.style.marginTop = (height);
+            cfaContent.style.marginBottom = (height);
+            argContent.style.marginLeft = (width);
+            argContent.style.marginRight = (width);
+            argContent.style.marginTop = (height);
+            argContent.style.marginBottom = (height);
+        };
+
+    }]);
+
+
+    app.controller("SearchController", ['$rootScope', '$scope', function($rootScope, $scope){
+        $scope.numOfValueMatches = 0;
+        $scope.numOfDescriptionMatches = 0;
+
+        $scope.checkIfEnter = function($event){
+            if($event.keyCode == 13){
+                $scope.searchFor();
+            }
+        };
+
+        $scope.searchFor = function(){
+            //you have to get the matches-element this way, because display:none does not allow direct search
+            var matchesDiv = document.getElementsByClassName("markedValues")[0].parentNode;
+            if(matchesDiv.style.display != "inline"){
+                matchesDiv.style.display = "inline";
+                document.getElementById("err_table").parentNode.style.height = "calc(100% - 160px)";
+            }
+            $scope.numOfValueMatches = 0;
+            $scope.numOfDescriptionMatches = 0;
+            var allMarkedValueElements = document.getElementsByClassName("markedValueElement");
+            while(allMarkedValueElements.length != 0){
+                allMarkedValueElements[0].classList.remove("markedValueElement");
+            }
+            var allMarkedDescElements = document.getElementsByClassName("markedDescElement");
+            while(allMarkedDescElements.length != 0){
+                allMarkedDescElements[0].classList.remove("markedDescElement");
+            }
+            var allMarkedValueDescElements = document.getElementsByClassName("markedValueDescElement");
+            while(allMarkedValueDescElements.length != 0){
+                allMarkedValueDescElements[0].classList.remove("markedValueDescElement");
+            }
+            var searchedString = document.getElementsByClassName("search-input")[0].value;
+
+            if (searchedString.trim() != "" && !document.getElementById("optionExactMatch").checked) {
+                for (var l = 0; l < $rootScope.errorPathData.length; l++) {
+                    var errorPathElem = $rootScope.errorPathData[l];
+                    if (errorPathElem.val.contains(searchedString) && errorPathElem.desc.contains(searchedString)) {
+                        $scope.numOfValueMatches = $scope.numOfValueMatches + 1;
+                        $scope.numOfDescriptionMatches = $scope.numOfDescriptionMatches + 1;
+                        document.getElementById("errpath-" + l).getElementsByTagName("td")[1].classList.add("markedValueDescElement");
+                    } else if (errorPathElem.val.contains(searchedString)) {
+                        $scope.numOfValueMatches = $scope.numOfValueMatches + 1;
+                        document.getElementById("errpath-" + l).getElementsByTagName("td")[1].classList.add("markedValueElement");
+                    } else if (errorPathElem.desc.contains(searchedString)) {
+                        $scope.numOfDescriptionMatches = $scope.numOfDescriptionMatches + 1;
+                        document.getElementById("errpath-" + l).getElementsByTagName("td")[1].classList.add("markedDescElement");
+                    }
+                }
+            } else if (searchedString.trim() != "" && document.getElementById("optionExactMatch").checked) {
+                for (var l = 0; l < $rootScope.errorPathData.length; l++) {
+                    var errorPathElem = $rootScope.errorPathData[l];
+                    if (searchedString in errorPathElem.newValDict && errorPathElem.desc == searchedString) {
+                        $scope.numOfValueMatches = $scope.numOfValueMatches + 1;
+                        $scope.numOfDescriptionMatches = $scope.numOfDescriptionMatches + 1;
+                        document.getElementById("errpath-" + l).getElementsByTagName("td")[1].classList.add("markedValueDescElement");
+                    } else if (searchedString in errorPathElem.newValDict) {
+                        $scope.numOfValueMatches = $scope.numOfValueMatches + 1;
+                        document.getElementById("errpath-" + l).getElementsByTagName("td")[1].classList.add("markedValueElement");
+                    } else if (errorPathElem.desc == searchedString) {
+                        $scope.numOfDescriptionMatches = $scope.numOfDescriptionMatches + 1;
+                        document.getElementById("errpath-" + l).getElementsByTagName("td")[1].classList.add("markedDescElement");
+                    }
+                }
+            }
+        };
+    }]);
+
+
+    app.controller("ValueAssignmentsController", ['$rootScope', '$scope', function($rootScope, $scope){
+        //gets called when '-V-'button in errorpath is clicked
+        $scope.showValues = function($event){
+            var element = $event.currentTarget;
+            if (element.classList.contains("markedTableElement")) {
+                element.classList.remove("markedTableElement");
+            } else {
+                element.classList.add("markedTableElement");
+            }
+        };
+    }]);
+
+
+    app.controller("ErrorpathController", ['$rootScope', '$scope', function($rootScope, $scope){
+        $rootScope.errorPathData = [];
+        //the line (errorpath) that is selected
+        $rootScope.selected_ErrLine = null;
+
+        $scope.getValues = function(val){
+            var values = {};
+            if(val != "") {
+                var singleStatements = val.split("\n");
+                for (var i = 0; i < singleStatements.length-1; i++) {
+                    values[singleStatements[i].split("==")[0].trim()] = singleStatements[i].split("==")[1].trim().slice(0,-1);
+                }
+            }
+            return values;
+        };
+
+        var indentationlevel = 0;
+        for(var a = 0; a<errorPathData.length; a++) {
+            var errPathElem = errorPathData[a];
+            //do not show start, return and blank edges
+            if (errPathElem.desc.substring(0, "Return edge from".length) != "Return edge from" && errPathElem.desc != "Function start dummy edge" && errPathElem.desc != "") {
+                if (errPathElem.source in fCallEdges) {
+                    errPathElem.target = fCallEdges[errPathElem.source][0];
+                }
+                var newValues = $scope.getValues(errPathElem.val);
+                errPathElem["newValDict"] = newValues;
+                errPathElem["valDict"] = {};
+                errPathElem["valString"] = "";
+                if (a > 0) {
+                    for (key in $rootScope.errorPathData[$rootScope.errorPathData.length - 1].valDict) {
+                        errPathElem.valDict[key] = $rootScope.errorPathData[$rootScope.errorPathData.length - 1].valDict[key];
+                    }
+                }
+                if (newValues != {}) {
+                    for (key in newValues) {
+                        errPathElem.valDict[key] = newValues[key];
+                    }
+                }
+                // if I do it in one of the for-loops before, I get the new values doubled
+                for (key in errPathElem.valDict){
+                    errPathElem.valString = errPathElem.valString + key + ":  " + errPathElem.valDict[key] + "\n";
+                }
+                //add indentation
+                for(var b = 1; b <= indentationlevel; b++) {
+                    errPathElem.desc = "   " + errPathElem.desc;
+                }
+                $rootScope.errorPathData.push(errPathElem);
+            } else if(errPathElem.desc.substring(0, "Return edge from".length) == "Return edge from"){
+                indentationlevel -= 1;
+            } else if(errPathElem.desc == "Function start dummy edge"){
+                indentationlevel += 1;
+            }
+        }
+
+        $scope.clickedErrpathElement = function($event){
+            var lineNumber = $event.currentTarget.parentElement.id;
+            $scope.setLine(lineNumber);
+            $rootScope.$broadcast('clickedErrorpathElement', lineNumber.substring("errpath-".length));
+        };
+
+        $scope.clickedErrpathButton = function($event){
+            var button = $event.currentTarget.innerHTML;
+            var line;
+            if (button == "Prev" && ($rootScope.selected_ErrLine.substring("errpath-".length) == 0 || $rootScope.selected_ErrLine == null)) {
+            } else if (button == "Prev") {
+                line = parseInt($rootScope.selected_ErrLine.substring("errpath-".length)) - 1;
+                $scope.setLine("errpath-" + line);
+                $rootScope.$broadcast("clickedErrorpathButton", line);
+            } else if (button == "Start" || button == "Next" && $rootScope.selected_ErrLine == null) {
+                document.getElementById("err_table").parentNode.scrollTop = 0;
+                $scope.setLine("errpath-" + 0);
+                $rootScope.$broadcast("clickedErrorpathButton", 0);
+            } else if (button == "Next" && ($rootScope.selected_ErrLine.substring("errpath-".length) == $rootScope.errorPathData.length -1)) {
+            } else if (button == "Next") {
+                line = parseInt($rootScope.selected_ErrLine.substring("errpath-".length)) + 1;
+                $scope.setLine("errpath-" + line);
+                $rootScope.$broadcast("clickedErrorpathButton", line);
+            }
+        };
+
+        $scope.setLine = function(id){
+            if ($rootScope.selected_ErrLine != null) {
+                document.getElementById($rootScope.selected_ErrLine).style.outline = "none";
+            } else {
+                //The first time a line is selected
+                $rootScope.$broadcast("FirstTimeErrorpathElementIsSelected");
+            }
+            document.getElementById(id).style.outline = "#df80ff solid 1px";
+            $rootScope.selected_ErrLine = id;
+        };
+    }]);
+
+
+    app.controller('ARGController', ['$rootScope', '$scope', function($rootScope, $scope){
+        $scope.argNodeMarked = false;
+
+        $scope.$on('clickedErrorpathElement', function(event, index){
+            $scope.markARGNode(index);
+        });
+        $scope.$on("clickedErrorpathButton", function(event, index){
+            $scope.markARGNode(index);
+        });
+
+        $scope.clickedARGElement = function($event){
+            var y = $event.currentTarget.id;
+            if (document.getElementById(y).classList.contains("edge")){
+                $rootScope.$broadcast("ChangeTab", 3);
+                var line = document.getElementById(y).getElementsByTagName("text")[0].innerHTML.split(":")[0].substring("Line ".length);
+                $rootScope.$broadcast("clickedARGEdge", line);
+            } else if (document.getElementById(y).classList.contains("node")){
+                var cfaNodeNumber = document.getElementById(y).getElementsByTagName("text")[0].innerHTML.split("N")[1];
+                $rootScope.$broadcast("ChangeTab", 1);
+                $rootScope.$broadcast("clickedARGNode", cfaNodeNumber);
+            }
+        };
+
+        $scope.markARGNode = function(index){
+            var argElement = $rootScope.errorPathData[index].argelem;
+            if($scope.argNodeMarked){
+                document.getElementsByClassName("markedARGNode")[0].classList.remove("markedARGNode");
+            }
+            document.getElementById("arg-" + argElement).classList.add("markedARGNode");
+            $scope.argNodeMarked = true;
+            $scope.scrollToARGElement("arg-" + argElement);
+        };
+
+        $scope.scrollToARGElement = function(id){
+            var element = document.getElementById(id);
+            var argContent = document.getElementsByClassName("argContent")[0];
+            var box = argContent.parentNode.getBoundingClientRect();
+            var xScroll = argContent.parentNode.scrollLeft;
+            var yScroll = argContent.parentNode.scrollTop;
+            var bcr = element.getBoundingClientRect();
+            var xMargin = (argContent.style.marginLeft).split("px")[0];
+            var yMargin = (argContent.style.marginTop).split("px")[0];
+            argContent.parentNode.scrollLeft = bcr.left + xScroll - box.left - xMargin + 20;
+            argContent.parentNode.scrollTop =  bcr.top + yScroll - box.top - yMargin + 20;
+        };
+    }]);
+
+
+    app.controller('CFAController', ["$rootScope", "$scope", function($rootScope, $scope){
+        //available functions (cfa-graphs)
+        $rootScope.functions = functions;
+        //selected cfa-graph (index = -1 means the function does not exist)
+        if (functions.indexOf("main" != -1)) {
+            $rootScope.selectedCFAFunction = functions.indexOf("main");
+        } else {
+            $rootScope.selectedCFAFunction = 0;
+        }
+        $scope.cfaEdgeMarked = false;
+        $scope.cfaNodeMarked = false;
+
+        $scope.$on('clickedErrorpathElement', function(event, nodeNumber){
+            $scope.markCFAedge(nodeNumber);
+        });
+        $scope.$on("clickedErrorpathButton", function(event, nodeNumber){
+            $scope.markCFAedge(nodeNumber);
+        });
+        $scope.$on("clickedARGNode", function(event, nodeNumber){
+            $scope.markCFANode(nodeNumber);
+        });
+
+        $scope.setCFAFunction = function(value){
+            document.getElementsByClassName("cfaContent")[0].parentNode.scrollTop = 0;
+            document.getElementsByClassName("cfaContent")[0].parentNode.scrollLeft = 0;
+            $rootScope.$broadcast("clearCFAZoom");
+            $rootScope.selectedCFAFunction = value;
+        };
+        $scope.cfaFunctionIsSet = function(value){
+            return value === $rootScope.selectedCFAFunction;
+        };
+
+        //Behaviour for Click-Elements in CFA
+        $scope.clickedCFAElement = function($event){
+            var element = $event.currentTarget.id;
+            if (document.getElementById(element).classList.contains("edge")){
+                $rootScope.$broadcast("ChangeTab", 3);
+                var line;
+                var source;
+                if (element.split("->")[1] > 100000 || element.split("->")[0].substring("cfa-".length) > 100000){
+                    source = element.split("->")[0].substring("cfa-".length);
+                    line = cfaInfo["edges"][source + "->" + fCallEdges[source][1]]["line"];
+                } else if (element.split("->")[0].substring("cfa-".length) in combinedNodes){
+                    var textfields = document.getElementById("cfa-" + element.split("->")[0].substring("cfa-".length)).getElementsByTagName("text");
+                    source = textfields[textfields.length - 2].innerHTML;
+                    line = cfaInfo["edges"][source + "->" + element.split("->")[1]]["line"];
+                } else {
+                    line = cfaInfo["edges"][element.substring("cfa-".length)]["line"];
+                }
+                $rootScope.$broadcast("clickedCFAEdge", line);
+            } else if (document.getElementById(element).classList.contains("node") && (element.substring("cfa-".length) > 100000)) {
+                var func = document.getElementById(element).getElementsByTagName("text")[0].innerHTML;
+                $scope.setCFAFunction(functions.indexOf(func));
+            }
+        };
+
+        $scope.markCFAedge = function(index){
+            var source = $rootScope.errorPathData[index].source;
+            var target = $rootScope.errorPathData[index].target;
+            var funcIndex = $rootScope.functions.indexOf(cfaInfo["nodes"][source]["func"]);
+            if(funcIndex != $rootScope.selectedCFAFunction) {
+                $scope.setCFAFunction(funcIndex);
+            }
+            if(!(source in combinedNodes && target in combinedNodes)) {
+                if(source in combinedNodes){
+                    source = combinedNodes[source];
+                }
+                if ($scope.cfaEdgeMarked) {
+                    document.getElementsByClassName("markedCFAEdge")[0].classList.remove("markedCFAEdge");
+                }
+                if ($scope.cfaNodeMarked) {
+                    document.getElementsByClassName("markedCFANode")[0].classList.remove("markedCFANode");
+                    $scope.cfaNodeMarked = false;
+                }
+                document.getElementById("cfa-" + source + "->" + target).classList.add("markedCFAEdge");
+                $scope.scrollToCFAElement("cfa-" + source + "->" + target);
+                $scope.cfaEdgeMarked = true;
+            } else {
+                $scope.markCFANode(combinedNodes[source]);
+            }
+        };
+
+        $scope.markCFANode = function(nodenumber){
+            if($scope.cfaNodeMarked){
+                document.getElementsByClassName("markedCFANode")[0].classList.remove("markedCFANode");
+            }
+            if($scope.cfaEdgeMarked){
+                document.getElementsByClassName("markedCFAEdge")[0].classList.remove("markedCFAEdge");
+                $scope.cfaEdgeMarked = false;
+            }
+            $scope.setCFAFunction($rootScope.functions.indexOf(cfaInfo["nodes"][nodenumber]["func"]));
+            if(!(nodenumber in combinedNodes)) {
+                document.getElementById("cfa-" + nodenumber).classList.add("markedCFANode");
+                $scope.scrollToCFAElement("cfa-" + nodenumber);
+            } else {
+                document.getElementById("cfa-" + combinedNodes[nodenumber]).classList.add("markedCFANode");
+                $scope.scrollToCFAElement("cfa-" + combinedNodes[nodenumber]);
+            }
+            $scope.cfaNodeMarked = true;
+        };
+
+        $scope.scrollToCFAElement = function(id){
+            var element = document.getElementById(id);
+            var box = document.getElementsByClassName("cfaContent")[0].parentNode.getBoundingClientRect();
+            var bcr = element.getBoundingClientRect();
+            var cfaContent = document.getElementsByClassName("cfaContent")[0];
+            var xScroll = cfaContent.parentNode.scrollLeft;
+            var yScroll =  cfaContent.parentNode.scrollTop;
+            var xMargin = (cfaContent.style.marginLeft).split("px")[0];
+            var yMargin = (cfaContent.style.marginTop).split("px")[0];
+            cfaContent.parentNode.scrollLeft = bcr.left + xScroll - box.left - xMargin + 20;
+            cfaContent.parentNode.scrollTop = bcr.top + yScroll - box.top - yMargin + 20;
+        };
+
+    }]);
+
+
+    app.controller('SourceController', ['$rootScope', '$scope', function($rootScope, $scope){
+        //available sourcefiles
+        $scope.sourceFiles = sourceFiles;
+        $scope.selectedSourceFile = 0;
+        $scope.lineMarked = false;
+
+        $scope.$on('clickedErrorpathElement', function(event, lineNumber){
+            $scope.markSource($rootScope.errorPathData[lineNumber].line);
+        });
+        $scope.$on('clickedErrorpathButton', function(event, lineNumber){
+            $scope.markSource($rootScope.errorPathData[lineNumber].line);
+        });
+        $scope.$on('clickedCFAEdge', function(event, line){
+            $scope.markSource(line);
+        });
+        $scope.$on('clickedARGEdge', function(event, line){
+            $scope.markSource(line);
+        });
+
+        $scope.setSourceFile = function(value){
+            $scope.selectedSourceFile = value;
+        };
+        $scope.sourceFileIsSet = function(value){
+            return value === $scope.selectedSourceFile;
+        };
+
+        $scope.markSource = function(line){
+            if ($scope.lineMarked) {
+                document.getElementsByClassName("markedSourceLine")[0].className = "prettyprint";
+            }
+            document.getElementById("source-" + line).getElementsByTagName("pre")[1].className = "markedSourceLine";
+            var element = document.getElementById("source-" + line);
+            var box = document.getElementsByClassName("sourceContent")[0].parentNode.getBoundingClientRect();
+            var bcr = element.getBoundingClientRect();
+            var sourceContent = document.getElementsByClassName("sourceContent")[0];
+            var yScroll =  sourceContent.parentNode.scrollTop;
+            var yMargin = Math.round((document.getElementById("externalFiles_section").offsetHeight/ 2)-50);
+            sourceContent.parentNode.scrollTop = bcr.top + yScroll - box.top - yMargin;
+            $scope.lineMarked = true;
+        };
+    }]);
+
+
+    app.controller('ZoomController', ['$rootScope', '$scope', function($rootScope, $scope){
+        $scope.zoomFactorCFA = 100;
+        $scope.zoomFactorARG = 100;
+
+        $scope.$on("clearCFAZoom", function(){$scope.clearZoomCFA();});
+
+        $scope.setZoom = function(id){
+            if (id.contains("cfa")) {
+                document.getElementById("cfaGraph-" + $rootScope.selectedCFAFunction).transform.baseVal.getItem(0).setScale($scope.zoomFactorCFA / 100, $scope.zoomFactorCFA / 100);
+            } else if (id.contains("arg")){
+                document.getElementById("argGraph-" + $rootScope.functions.length).transform.baseVal.getItem(0).setScale($scope.zoomFactorARG / 100, $scope.zoomFactorARG / 100);
+            }
+        };
+
+        $scope.clearZoomCFA = function(){
+            $scope.zoomFactorCFA = 100;
+            document.getElementById("cfaGraph-" + $rootScope.selectedCFAFunction).transform.baseVal.getItem(0).setScale($scope.zoomFactorCFA/100, $scope.zoomFactorCFA/100);
+        };
+    }]);
+})();
+
+
+var mouseDown = false;
+var functions = ["crc_main","initial","main","parallel_crces"];
+var fCallEdges = {"101":[100001,102],"108":[100002,109],"79":[100003,81]};
+var cfaInfo = {"nodes":{"0":{"no":0,"func":"parallel_crces"},"1":{"no":1,"func":"parallel_crces"},"2":{"no":2,"func":"parallel_crces"},"3":{"no":3,"func":"parallel_crces"},"4":{"no":4,"func":"parallel_crces"},"5":{"no":5,"func":"parallel_crces"},"6":{"no":6,"func":"parallel_crces"},"7":{"no":7,"func":"parallel_crces"},"8":{"no":8,"func":"parallel_crces"},"9":{"no":9,"func":"parallel_crces"},"10":{"no":10,"func":"parallel_crces"},"11":{"no":11,"func":"parallel_crces"},"12":{"no":12,"func":"parallel_crces"},"13":{"no":13,"func":"parallel_crces"},"14":{"no":14,"func":"parallel_crces"},"15":{"no":15,"func":"parallel_crces"},"16":{"no":16,"func":"parallel_crces"},"17":{"no":17,"func":"parallel_crces"},"18":{"no":18,"func":"parallel_crces"},"19":{"no":19,"func":"parallel_crces"},"20":{"no":20,"func":"parallel_crces"},"21":{"no":21,"func":"parallel_crces"},"22":{"no":22,"func":"parallel_crces"},"23":{"no":23,"func":"parallel_crces"},"24":{"no":24,"func":"parallel_crces"},"25":{"no":25,"func":"parallel_crces"},"26":{"no":26,"func":"parallel_crces"},"27":{"no":27,"func":"parallel_crces"},"28":{"no":28,"func":"parallel_crces"},"29":{"no":29,"func":"parallel_crces"},"30":{"no":30,"func":"parallel_crces"},"31":{"no":31,"func":"parallel_crces"},"32":{"no":32,"func":"parallel_crces"},"33":{"no":33,"func":"parallel_crces"},"34":{"no":34,"func":"parallel_crces"},"35":{"no":35,"func":"parallel_crces"},"36":{"no":36,"func":"parallel_crces"},"37":{"no":37,"func":"parallel_crces"},"38":{"no":38,"func":"parallel_crces"},"39":{"no":39,"func":"parallel_crces"},"40":{"no":40,"func":"parallel_crces"},"41":{"no":41,"func":"parallel_crces"},"42":{"no":42,"func":"parallel_crces"},"43":{"no":43,"func":"parallel_crces"},"44":{"no":44,"func":"parallel_crces"},"45":{"no":45,"func":"parallel_crces"},"46":{"no":46,"func":"parallel_crces"},"47":{"no":47,"func":"parallel_crces"},"48":{"no":48,"func":"parallel_crces"},"49":{"no":49,"func":"parallel_crces"},"50":{"no":50,"func":"parallel_crces"},"51":{"no":51,"func":"parallel_crces"},"52":{"no":52,"func":"parallel_crces"},"53":{"no":53,"func":"parallel_crces"},"54":{"no":54,"func":"parallel_crces"},"55":{"no":55,"func":"parallel_crces"},"56":{"no":56,"func":"parallel_crces"},"57":{"no":57,"func":"parallel_crces"},"58":{"no":58,"func":"parallel_crces"},"59":{"no":59,"func":"parallel_crces"},"60":{"no":60,"func":"parallel_crces"},"62":{"no":62,"func":"initial"},"63":{"no":63,"func":"initial"},"64":{"no":64,"func":"initial"},"65":{"no":65,"func":"initial"},"66":{"no":66,"func":"crc_main"},"67":{"no":67,"func":"crc_main"},"68":{"no":68,"func":"crc_main"},"69":{"no":69,"func":"crc_main"},"70":{"no":70,"func":"crc_main"},"71":{"no":71,"func":"crc_main"},"72":{"no":72,"func":"crc_main"},"73":{"no":73,"func":"crc_main"},"74":{"no":74,"func":"crc_main"},"75":{"no":75,"func":"crc_main"},"76":{"no":76,"func":"crc_main"},"77":{"no":77,"func":"crc_main"},"78":{"no":78,"func":"crc_main"},"79":{"no":79,"func":"crc_main"},"80":{"no":80,"func":"crc_main"},"81":{"no":81,"func":"crc_main"},"82":{"no":82,"func":"crc_main"},"83":{"no":83,"func":"crc_main"},"84":{"no":84,"func":"crc_main"},"85":{"no":85,"func":"crc_main"},"86":{"no":86,"func":"crc_main"},"87":{"no":87,"func":"crc_main"},"88":{"no":88,"func":"crc_main"},"90":{"no":90,"func":"main"},"91":{"no":91,"func":"main"},"92":{"no":92,"func":"main"},"93":{"no":93,"func":"main"},"94":{"no":94,"func":"main"},"95":{"no":95,"func":"main"},"96":{"no":96,"func":"main"},"97":{"no":97,"func":"main"},"98":{"no":98,"func":"main"},"99":{"no":99,"func":"main"},"100":{"no":100,"func":"main"},"101":{"no":101,"func":"main"},"102":{"no":102,"func":"main"},"103":{"no":103,"func":"main"},"104":{"no":104,"func":"main"},"106":{"no":106,"func":"main"},"107":{"no":107,"func":"main"},"108":{"no":108,"func":"main"},"109":{"no":109,"func":"main"},"110":{"no":110,"func":"main"},"111":{"no":111,"func":"main"},"112":{"no":112,"func":"main"},"113":{"no":113,"func":"main"},"114":{"no":114,"func":"main"},"115":{"no":115,"func":"main"},"116":{"no":116,"func":"main"},"117":{"no":117,"func":"main"},"118":{"no":118,"func":"main"},"119":{"no":119,"func":"main"},"120":{"no":120,"func":"main"},"121":{"no":121,"func":"main"},"122":{"no":122,"func":"main"},"123":{"no":123,"func":"main"},"124":{"no":124,"func":"main"},"125":{"no":125,"func":"main"},"126":{"no":126,"func":"main"},"127":{"no":127,"func":"main"},"128":{"no":128,"func":"main"},"129":{"no":129,"func":"main"},"130":{"no":130,"func":"main"},"131":{"no":131,"func":"main"},"132":{"no":132,"func":"main"},"133":{"no":133,"func":"main"},"134":{"no":134,"func":"main"},"135":{"no":135,"func":"main"},"136":{"no":136,"func":"main"},"137":{"no":137,"func":"main"},"138":{"no":138,"func":"main"},"139":{"no":139,"func":"main"},"140":{"no":140,"func":"main"},"141":{"no":141,"func":"main"},"142":{"no":142,"func":"main"},"143":{"no":143,"func":"main"},"144":{"no":144,"func":"main"},"145":{"no":145,"func":"main"},"146":{"no":146,"func":"main"},"147":{"no":147,"func":"main"},"148":{"no":148,"func":"main"},"149":{"no":149,"func":"main"},"150":{"no":150,"func":"main"},"151":{"no":151,"func":"main"},"152":{"no":152,"func":"main"},"153":{"no":153,"func":"main"},"154":{"no":154,"func":"main"},"155":{"no":155,"func":"main"},"156":{"no":156,"func":"main"},"157":{"no":157,"func":"main"},"158":{"no":158,"func":"main"},"159":{"no":159,"func":"main"},"160":{"no":160,"func":"main"},"161":{"no":161,"func":"main"},"162":{"no":162,"func":"main"},"163":{"no":163,"func":"main"},"164":{"no":164,"func":"main"},"165":{"no":165,"func":"main"},"166":{"no":166,"func":"main"},"167":{"no":167,"func":"main"},"168":{"no":168,"func":"main"},"169":{"no":169,"func":"main"},"170":{"no":170,"func":"main"},"171":{"no":171,"func":"main"},"172":{"no":172,"func":"main"},"173":{"no":173,"func":"main"},"174":{"no":174,"func":"main"},"175":{"no":175,"func":"main"},"176":{"no":176,"func":"main"},"177":{"no":177,"func":"main"},"178":{"no":178,"func":"main"},"179":{"no":179,"func":"main"},"180":{"no":180,"func":"main"},"181":{"no":181,"func":"main"},"182":{"no":182,"func":"main"},"183":{"no":183,"func":"main"},"184":{"no":184,"func":"main"},"185":{"no":185,"func":"main"},"186":{"no":186,"func":"main"},"187":{"no":187,"func":"main"},"188":{"no":188,"func":"main"},"189":{"no":189,"func":"main"},"190":{"no":190,"func":"main"},"191":{"no":191,"func":"main"},"192":{"no":192,"func":"main"},"193":{"no":193,"func":"main"},"194":{"no":194,"func":"main"},"195":{"no":195,"func":"main"},"196":{"no":196,"func":"main"},"197":{"no":197,"func":"main"},"198":{"no":198,"func":"main"},"199":{"no":199,"func":"main"},"200":{"no":200,"func":"main"},"201":{"no":201,"func":"main"},"202":{"no":202,"func":"main"},"203":{"no":203,"func":"main"},"204":{"no":204,"func":"main"},"205":{"no":205,"func":"main"},"206":{"no":206,"func":"main"},"207":{"no":207,"func":"main"},"208":{"no":208,"func":"main"},"209":{"no":209,"func":"main"},"210":{"no":210,"func":"main"},"211":{"no":211,"func":"main"},"212":{"no":212,"func":"main"},"213":{"no":213,"func":"main"},"214":{"no":214,"func":"main"},"215":{"no":215,"func":"main"},"216":{"no":216,"func":"main"},"217":{"no":217,"func":"main"},"218":{"no":218,"func":"main"},"219":{"no":219,"func":"main"},"220":{"no":220,"func":"main"},"221":{"no":221,"func":"main"},"222":{"no":222,"func":"main"},"223":{"no":223,"func":"main"},"224":{"no":224,"func":"main"},"225":{"no":225,"func":"main"},"226":{"no":226,"func":"main"},"227":{"no":227,"func":"main"},"228":{"no":228,"func":"main"},"229":{"no":229,"func":"main"},"230":{"no":230,"func":"main"},"231":{"no":231,"func":"main"},"232":{"no":232,"func":"main"},"233":{"no":233,"func":"main"},"234":{"no":234,"func":"main"},"235":{"no":235,"func":"main"},"236":{"no":236,"func":"main"},"237":{"no":237,"func":"main"},"238":{"no":238,"func":"main"},"239":{"no":239,"func":"main"},"240":{"no":240,"func":"main"},"241":{"no":241,"func":"main"},"242":{"no":242,"func":"main"},"243":{"no":243,"func":"main"},"244":{"no":244,"func":"main"},"245":{"no":245,"func":"main"},"246":{"no":246,"func":"main"},"247":{"no":247,"func":"main"},"248":{"no":248,"func":"main"},"249":{"no":249,"func":"main"},"250":{"no":250,"func":"main"},"251":{"no":251,"func":"main"},"252":{"no":252,"func":"main"},"253":{"no":253,"func":"main"},"254":{"no":254,"func":"main"},"255":{"no":255,"func":"main"},"256":{"no":256,"func":"main"},"257":{"no":257,"func":"main"},"258":{"no":258,"func":"main"},"259":{"no":259,"func":"main"},"260":{"no":260,"func":"main"},"261":{"no":261,"func":"main"},"262":{"no":262,"func":"main"},"263":{"no":263,"func":"main"},"264":{"no":264,"func":"main"},"265":{"no":265,"func":"main"},"266":{"no":266,"func":"main"},"267":{"no":267,"func":"main"},"268":{"no":268,"func":"main"},"269":{"no":269,"func":"main"},"270":{"no":270,"func":"main"},"271":{"no":271,"func":"main"},"272":{"no":272,"func":"main"},"273":{"no":273,"func":"main"},"274":{"no":274,"func":"main"},"275":{"no":275,"func":"main"},"276":{"no":276,"func":"main"},"277":{"no":277,"func":"main"},"278":{"no":278,"func":"main"},"279":{"no":279,"func":"main"},"280":{"no":280,"func":"main"},"281":{"no":281,"func":"main"},"282":{"no":282,"func":"main"},"283":{"no":283,"func":"main"},"284":{"no":284,"func":"main"},"285":{"no":285,"func":"main"},"286":{"no":286,"func":"main"},"287":{"no":287,"func":"main"},"288":{"no":288,"func":"main"},"289":{"no":289,"func":"main"},"290":{"no":290,"func":"main"},"291":{"no":291,"func":"main"},"292":{"no":292,"func":"main"},"293":{"no":293,"func":"main"},"294":{"no":294,"func":"main"},"295":{"no":295,"func":"main"},"296":{"no":296,"func":"main"},"297":{"no":297,"func":"main"},"298":{"no":298,"func":"main"},"299":{"no":299,"func":"main"},"300":{"no":300,"func":"main"},"301":{"no":301,"func":"main"},"302":{"no":302,"func":"main"},"303":{"no":303,"func":"main"},"304":{"no":304,"func":"main"},"305":{"no":305,"func":"main"},"306":{"no":306,"func":"main"},"307":{"no":307,"func":"main"},"308":{"no":308,"func":"main"},"309":{"no":309,"func":"main"},"310":{"no":310,"func":"main"},"311":{"no":311,"func":"main"},"312":{"no":312,"func":"main"},"313":{"no":313,"func":"main"}},"edges":{"223->224":{"file":"\/usr\/include\/stdio.h","line":412,"source":223,"type":"DeclarationEdge","stmt":"char * tmpnam(char *__s);","target":224},"50->51":{"file":"main.c","line":955,"source":50,"type":"StatementEdge","stmt":"parallel_crc[2] = ((((x[30]) ^ (x[24])) ^ (x[31])) ^ (x[25])) ^ (x[26]);","target":51},"82->83":{"file":"main.c","line":991,"source":82,"type":"StatementEdge","stmt":"data_out = ~(((smain.crc) >> 24) & 255);","target":83},"107->108":{"file":"main.c","line":1028,"source":107,"type":"StatementEdge","stmt":"data_in = nondet_bool();","target":108},"17->18":{"file":"main.c","line":918,"source":17,"type":"StatementEdge","stmt":"x[29] = x1 & 32;","target":18},"204->205":{"file":"\/usr\/include\/libio.h","line":342,"source":204,"type":"DeclarationEdge","stmt":"int _IO_ftrylockfile(_IO_FILE *);","target":205},"279->280":{"file":"\/usr\/include\/stdio.h","line":750,"source":279,"type":"DeclarationEdge","stmt":"int fseek(FILE *__stream, long int __off, int __whence);","target":280},"301->302":{"file":"\/usr\/include\/stdio.h","line":848,"source":301,"type":"DeclarationEdge","stmt":"int ftrylockfile(FILE *__stream);","target":302},"185->186":{"file":"\/usr\/include\/libio.h","line":294,"source":185,"type":"DeclarationEdge","stmt":"typedef struct _IO_FILE _IO_FILE;","target":186},"277->278":{"file":"\/usr\/include\/stdio.h","line":738,"source":277,"type":"DeclarationEdge","stmt":"size_t fread_unlocked(void *__ptr, size_t __size, size_t __n, FILE *__stream);","target":278},"145->146":{"file":"\/usr\/include\/bits\/types.h","line":91,"source":145,"type":"DeclarationEdge","stmt":"typedef unsigned int __id_t;","target":146},"242->243":{"file":"\/usr\/include\/stdio.h","line":518,"source":242,"type":"DeclarationEdge","stmt":"int vprintf(const char *__format, __gnuc_va_list __arg);","target":243},"37->38":{"file":"main.c","line":942,"source":37,"type":"StatementEdge","stmt":"parallel_crc[15] = ((((x[27]) ^ (x[28])) ^ (x[29])) ^ (x[31])) ^ (c[7]);","target":38},"109->110":{"file":"main.c","line":1034,"source":109,"type":"DeclarationEdge","stmt":"void __CPAchecker_TMP_0;","target":110},"110->111":{"file":"main.c","line":1034,"source":110,"type":"AssumeEdge","stmt":"[crc != 2863311530LL]","target":111},"258->259":{"file":"\/usr\/include\/stdio.h","line":627,"source":258,"type":"DeclarationEdge","stmt":"int getchar_unlocked();","target":259},"110->112":{"file":"main.c","line":1034,"source":110,"type":"AssumeEdge","stmt":"[!(crc != 2863311530LL)]","target":112},"126->127":{"file":"\/usr\/include\/bits\/types.h","line":61,"source":126,"type":"DeclarationEdge","stmt":"typedef signed long int __int64_t;","target":127},"94->95":{"file":"main.c","line":1014,"source":94,"type":"DeclarationEdge","stmt":"_Bool load;","target":95},"29->30":{"file":"main.c","line":934,"source":29,"type":"StatementEdge","stmt":"parallel_crc[23] = (((x[30]) ^ (x[24])) ^ (x[25])) ^ (c[15]);","target":30},"183->184":{"file":"\/usr\/include\/libio.h","line":224,"source":183,"type":"DeclarationEdge","stmt":"enum __codecvt_result { __codecvt_ok = 0, __codecvt_partial = 1, __codecvt_error = 2, __codecvt_noconv = 3 };","target":184},"128->129":{"file":"\/usr\/include\/bits\/types.h","line":70,"source":128,"type":"DeclarationEdge","stmt":"typedef long int __quad_t;","target":129},"280->281":{"file":"\/usr\/include\/stdio.h","line":755,"source":280,"type":"DeclarationEdge","stmt":"long int ftell(FILE *__stream);","target":281},"225->226":{"file":"\/usr\/include\/stdio.h","line":420,"source":225,"type":"DeclarationEdge","stmt":"char * tempnam(const char *__dir, const char *__pfx);","target":226},"25->26":{"file":"main.c","line":930,"source":25,"type":"StatementEdge","stmt":"parallel_crc[27] = ((((x[31]) ^ (x[25])) ^ (x[28])) ^ (x[29])) ^ (c[19]);","target":26},"70->71":{"file":"main.c","line":986,"source":70,"type":"AssumeEdge","stmt":"[!(reset == 0)]","target":71},"70->72":{"file":"main.c","line":986,"source":70,"type":"AssumeEdge","stmt":"[reset == 0]","target":72},"298->299":{"file":"\/usr\/include\/stdio.h","line":836,"source":298,"type":"DeclarationEdge","stmt":"int pclose(FILE *__stream);","target":299},"166->167":{"file":"\/usr\/include\/bits\/types.h","line":136,"source":166,"type":"DeclarationEdge","stmt":"typedef char *__caddr_t;","target":167},"13->14":{"file":"main.c","line":914,"source":13,"type":"StatementEdge","stmt":"x[25] = x1 & 2;","target":14},"263->264":{"file":"\/usr\/include\/stdio.h","line":651,"source":263,"type":"DeclarationEdge","stmt":"int fputc_unlocked(int __c, FILE *__stream);","target":264},"57->56":{"file":"main.c","line":961,"source":57,"type":"StatementEdge","stmt":"i__1 = i__1 + 1;","target":56},"237->238":{"file":"\/usr\/include\/stdio.h","line":488,"source":237,"type":"DeclarationEdge","stmt":"void setlinebuf(FILE *__stream);","target":238},"131->132":{"file":"\/usr\/include\/bits\/types.h","line":78,"source":131,"type":"DeclarationEdge","stmt":"typedef unsigned int __uid_t;","target":132},"149->150":{"file":"\/usr\/include\/bits\/types.h","line":96,"source":149,"type":"DeclarationEdge","stmt":"typedef int __daddr_t;","target":150},"202->203":{"file":"\/usr\/include\/libio.h","line":340,"source":202,"type":"DeclarationEdge","stmt":"void _IO_flockfile(_IO_FILE *);","target":203},"168->169":{"file":"\/usr\/include\/bits\/types.h","line":142,"source":168,"type":"DeclarationEdge","stmt":"typedef unsigned int __socklen_t;","target":169},"294->295":{"file":"\/usr\/include\/bits\/sys_errlist.h","line":817,"source":294,"type":"DeclarationEdge","stmt":"extern const const char *sys_errlist[];","target":295},"162->163":{"file":"\/usr\/include\/bits\/types.h","line":128,"source":162,"type":"DeclarationEdge","stmt":"typedef long int __syscall_slong_t;","target":163},"178->179":{"file":"\/usr\/include\/_G_config.h","line":189,"source":178,"type":"DeclarationEdge","stmt":"typedef struct __anon_type__G_fpos_t _G_fpos64_t;","target":179},"230->231":{"file":"\/usr\/include\/stdio.h","line":452,"source":230,"type":"DeclarationEdge","stmt":"FILE * freopen(const char *__filename, const char *__modes, FILE *__stream);","target":231},"5->6":{"file":"main.c","line":908,"source":5,"type":"BlankEdge","stmt":"for","target":6},"45->46":{"file":"main.c","line":950,"source":45,"type":"StatementEdge","stmt":"parallel_crc[7] = ((((x[24]) ^ (x[26])) ^ (x[27])) ^ (x[29])) ^ (x[31]);","target":46},"65->62":{"file":"<none>","line":0,"source":65,"type":"BlankEdge","stmt":"default return","target":62},"246->247":{"file":"\/usr\/include\/stdio.h","line":536,"source":246,"type":"DeclarationEdge","stmt":"int vdprintf(int __fd, const char *__fmt, __gnuc_va_list __arg);","target":247},"34->35":{"file":"main.c","line":939,"source":34,"type":"StatementEdge","stmt":"parallel_crc[18] = (((x[26]) ^ (x[30])) ^ (x[31])) ^ (c[10]);","target":35},"240->241":{"file":"\/usr\/include\/stdio.h","line":505,"source":240,"type":"DeclarationEdge","stmt":"int sprintf(char *__s, const char *__format, ...);","target":241},"11->8":{"file":"<none>","line":0,"source":11,"type":"BlankEdge","stmt":"","target":8},"206->207":{"file":"\/usr\/include\/libio.h","line":346,"source":206,"type":"DeclarationEdge","stmt":"int _IO_vfprintf(_IO_FILE *, const char *, __gnuc_va_list );","target":207},"54->55":{"file":"main.c","line":961,"source":54,"type":"BlankEdge","stmt":"for","target":55},"171->172":{"file":"\/usr\/include\/stdio.h","line":156,"source":171,"type":"DeclarationEdge","stmt":"typedef struct _IO_FILE __FILE;","target":172},"189->190":{"file":"\/usr\/include\/libio.h","line":301,"source":189,"type":"DeclarationEdge","stmt":"extern struct _IO_FILE_plus _IO_2_1_stderr_;","target":190},"200->201":{"file":"\/usr\/include\/libio.h","line":332,"source":200,"type":"DeclarationEdge","stmt":"int _IO_ferror(_IO_FILE *__fp);","target":201},"187->188":{"file":"\/usr\/include\/libio.h","line":299,"source":187,"type":"DeclarationEdge","stmt":"extern struct _IO_FILE_plus _IO_2_1_stdin_;","target":188},"181->182":{"file":"\/usr\/include\/libio.h","line":207,"source":181,"type":"DeclarationEdge","stmt":"typedef void _IO_lock_t;","target":182},"98->99":{"file":"main.c","line":1018,"source":98,"type":"DeclarationEdge","stmt":"_Bool crc_ok;","target":99},"74->75":{"file":"main.c","line":987,"source":74,"type":"AssumeEdge","stmt":"[!(load == 0)]","target":75},"74->76":{"file":"main.c","line":987,"source":74,"type":"AssumeEdge","stmt":"[load == 0]","target":76},"270->271":{"file":"\/usr\/include\/stdio.h","line":687,"source":270,"type":"DeclarationEdge","stmt":"__ssize_t getdelim(char **__lineptr, size_t *__n, int __delimiter, FILE *__stream);","target":271},"141->142":{"file":"\/usr\/include\/bits\/types.h","line":87,"source":141,"type":"DeclarationEdge","stmt":"typedef struct __anon_type___fsid_t __fsid_t;","target":142},"218->219":{"file":"\/usr\/include\/stdio.h","line":385,"source":218,"type":"DeclarationEdge","stmt":"extern struct _IO_FILE *stderr;","target":219},"85->86":{"file":"main.c","line":997,"source":85,"type":"StatementEdge","stmt":"smain.crc = new_crc;","target":86},"119->120":{"file":"\/usr\/include\/bits\/types.h","line":51,"source":119,"type":"DeclarationEdge","stmt":"typedef unsigned long int __u_long;","target":120},"10->12":{"file":"main.c","line":911,"source":10,"type":"DeclarationEdge","stmt":"_Bool x[32];","target":12},"21->22":{"file":"main.c","line":926,"source":21,"type":"StatementEdge","stmt":"parallel_crc[31] = (x[29]) ^ (c[23]);","target":22},"190->191":{"file":"\/usr\/include\/libio.h","line":303,"source":190,"type":"DeclarationEdge","stmt":"typedef __ssize_t __io_read_fn(void *__cookie, char *__buf, size_t __nbytes);","target":191},"267->268":{"file":"\/usr\/include\/stdio.h","line":670,"source":267,"type":"DeclarationEdge","stmt":"int putw(int __w, FILE *__stream);","target":268},"30->31":{"file":"main.c","line":935,"source":30,"type":"StatementEdge","stmt":"parallel_crc[22] = (x[24]) ^ (c[14]);","target":31},"138->139":{"file":"\/usr\/include\/bits\/types.h","line":85,"source":138,"type":"DeclarationEdge","stmt":"typedef long int __off64_t;","target":139},"135->136":{"file":"\/usr\/include\/bits\/types.h","line":82,"source":135,"type":"DeclarationEdge","stmt":"typedef unsigned int __mode_t;","target":136},"261->262":{"file":"\/usr\/include\/stdio.h","line":642,"source":261,"type":"DeclarationEdge","stmt":"int putc(int __c, FILE *__stream);","target":262},"41->42":{"file":"main.c","line":946,"source":41,"type":"StatementEdge","stmt":"parallel_crc[11] = ((((x[24]) ^ (x[25])) ^ (x[27])) ^ (x[28])) ^ (c[3]);","target":42},"282->283":{"file":"\/usr\/include\/stdio.h","line":763,"source":282,"type":"DeclarationEdge","stmt":"int fseeko(FILE *__stream, __off_t __off, int __whence);","target":283},"114->103":{"file":"<none>","line":0,"source":114,"type":"BlankEdge","stmt":"","target":103},"9->11":{"file":"main.c","line":909,"source":9,"type":"StatementEdge","stmt":"c[i] = (c1 >> i) & 1;","target":11},"150->151":{"file":"\/usr\/include\/bits\/types.h","line":97,"source":150,"type":"DeclarationEdge","stmt":"typedef int __key_t;","target":151},"227->228":{"file":"\/usr\/include\/stdio.h","line":435,"source":227,"type":"DeclarationEdge","stmt":"int fflush(FILE *__stream);","target":228},"221->222":{"file":"\/usr\/include\/stdio.h","line":400,"source":221,"type":"DeclarationEdge","stmt":"int renameat(int __oldfd, const char *__old, int __newfd, const char *__new);","target":222},"239->240":{"file":"\/usr\/include\/stdio.h","line":503,"source":239,"type":"DeclarationEdge","stmt":"int printf(const char *__format, ...);","target":240},"159->160":{"file":"\/usr\/include\/bits\/types.h","line":120,"source":159,"type":"DeclarationEdge","stmt":"typedef unsigned long int __fsfilcnt64_t;","target":160},"59->0":{"file":"main.c","line":964,"source":59,"type":"ReturnStatementEdge","stmt":"return n;","target":0},"147->148":{"file":"\/usr\/include\/bits\/types.h","line":93,"source":147,"type":"DeclarationEdge","stmt":"typedef unsigned int __useconds_t;","target":148},"273->274":{"file":"\/usr\/include\/stdio.h","line":714,"source":273,"type":"DeclarationEdge","stmt":"int puts(const char *__s);","target":274},"28->29":{"file":"main.c","line":933,"source":28,"type":"StatementEdge","stmt":"parallel_crc[24] = (((x[31]) ^ (x[25])) ^ (x[26])) ^ (c[16]);","target":29},"71->73":{"file":"main.c","line":986,"source":71,"type":"StatementEdge","stmt":"__CPAchecker_TMP_0 = 4294967295LL;","target":73},"233->234":{"file":"\/usr\/include\/stdio.h","line":466,"source":233,"type":"DeclarationEdge","stmt":"FILE * open_memstream(char **__bufloc, size_t *__sizeloc);","target":234},"18->19":{"file":"main.c","line":919,"source":18,"type":"StatementEdge","stmt":"x[30] = x1 & 64;","target":19},"175->176":{"file":"\/usr\/include\/_G_config.h","line":184,"source":175,"type":"DeclarationEdge","stmt":"struct __anon_type__G_fpos_t { __off_t __pos; __mbstate_t __state; };","target":176},"101->102":{"file":"main.c","line":1024,"source":101,"type":"CallToReturnEdge","stmt":"initial();","target":102},"93->94":{"file":"main.c","line":1013,"source":93,"type":"DeclarationEdge","stmt":"_Bool reset;","target":94},"214->215":{"file":"\/usr\/include\/stdio.h","line":364,"source":214,"type":"DeclarationEdge","stmt":"typedef __ssize_t ssize_t;","target":215},"232->233":{"file":"\/usr\/include\/stdio.h","line":460,"source":232,"type":"DeclarationEdge","stmt":"FILE * fmemopen(void *__s, size_t __len, const char *__modes);","target":233},"100->101":{"file":"main.c","line":1022,"source":100,"type":"DeclarationEdge","stmt":"unsigned int new_crc;","target":101},"248->249":{"file":"\/usr\/include\/stdio.h","line":549,"source":248,"type":"DeclarationEdge","stmt":"int fscanf(FILE *__stream, const char *__format, ...);","target":249},"289->290":{"file":"\/usr\/include\/stdio.h","line":796,"source":289,"type":"DeclarationEdge","stmt":"void clearerr_unlocked(FILE *__stream);","target":290},"116->117":{"file":"\/usr\/include\/bits\/types.h","line":48,"source":116,"type":"DeclarationEdge","stmt":"typedef unsigned char __u_char;","target":117},"213->214":{"file":"\/usr\/include\/stdio.h","line":362,"source":213,"type":"DeclarationEdge","stmt":"typedef __off_t off_t;","target":214},"81->77":{"file":"main.c","line":987,"source":81,"type":"StatementEdge","stmt":"__CPAchecker_TMP_1 = __CPAchecker_TMP_2;","target":77},"99->100":{"file":"main.c","line":1019,"source":99,"type":"DeclarationEdge","stmt":"unsigned int crc;","target":100},"194->195":{"file":"\/usr\/include\/libio.h","line":325,"source":194,"type":"DeclarationEdge","stmt":"int __underflow(_IO_FILE *);","target":195},"209->210":{"file":"\/usr\/include\/libio.h","line":351,"source":209,"type":"DeclarationEdge","stmt":"__off64_t _IO_seekoff(_IO_FILE *, __off64_t , int, int);","target":210},"157->158":{"file":"\/usr\/include\/bits\/types.h","line":116,"source":157,"type":"DeclarationEdge","stmt":"typedef unsigned long int __fsblkcnt64_t;","target":158},"68->69":{"file":"main.c","line":983,"source":68,"type":"DeclarationEdge","stmt":"unsigned int new_crc;","target":69},"180->181":{"file":"\/usr\/include\/libio.h","line":201,"source":180,"type":"DeclarationEdge","stmt":"struct _IO_jump_t;","target":181},"309->310":{"file":"main.c","line":892,"source":309,"type":"DeclarationEdge","stmt":"unsigned int parallel_crces(unsigned int c1, unsigned char d);","target":310},"228->229":{"file":"\/usr\/include\/stdio.h","line":438,"source":228,"type":"DeclarationEdge","stmt":"int fflush_unlocked(FILE *__stream);","target":229},"229->230":{"file":"\/usr\/include\/stdio.h","line":446,"source":229,"type":"DeclarationEdge","stmt":"FILE * fopen(const char *__filename, const char *__modes);","target":230},"251->252":{"file":"\/usr\/include\/stdio.h","line":577,"source":251,"type":"DeclarationEdge","stmt":"int vfscanf(FILE *__s, const char *__format, __gnuc_va_list __arg);","target":252},"6->7":{"file":"main.c","line":908,"source":6,"type":"DeclarationEdge","stmt":"unsigned i = 0;","target":7},"36->37":{"file":"main.c","line":941,"source":36,"type":"StatementEdge","stmt":"parallel_crc[16] = (((x[24]) ^ (x[28])) ^ (x[29])) ^ (c[8]);","target":37},"311->312":{"file":"main.c","line":971,"source":311,"type":"DeclarationEdge","stmt":"void crc_main(_Bool clk, _Bool clken, _Bool reset, _Bool load, _Bool compute, unsigned char data_in, unsigned char data_out, _Bool *crc_ok, unsigned int *crc);","target":312},"24->25":{"file":"main.c","line":929,"source":24,"type":"StatementEdge","stmt":"parallel_crc[28] = (((x[26]) ^ (x[29])) ^ (x[30])) ^ (c[20]);","target":25},"195->196":{"file":"\/usr\/include\/libio.h","line":326,"source":195,"type":"DeclarationEdge","stmt":"int __uflow(_IO_FILE *);","target":196},"292->293":{"file":"\/usr\/include\/stdio.h","line":807,"source":292,"type":"DeclarationEdge","stmt":"void perror(const char *__s);","target":293},"14->15":{"file":"main.c","line":915,"source":14,"type":"StatementEdge","stmt":"x[26] = x1 & 4;","target":15},"266->267":{"file":"\/usr\/include\/stdio.h","line":667,"source":266,"type":"DeclarationEdge","stmt":"int getw(FILE *__stream);","target":267},"160->161":{"file":"\/usr\/include\/bits\/types.h","line":123,"source":160,"type":"DeclarationEdge","stmt":"typedef long int __fsword_t;","target":161},"134->135":{"file":"\/usr\/include\/bits\/types.h","line":81,"source":134,"type":"DeclarationEdge","stmt":"typedef unsigned long int __ino64_t;","target":135},"46->47":{"file":"main.c","line":951,"source":46,"type":"StatementEdge","stmt":"parallel_crc[6] = (((((x[25]) ^ (x[26])) ^ (x[28])) ^ (x[29])) ^ (x[30])) ^ (x[31]);","target":47},"231->232":{"file":"\/usr\/include\/stdio.h","line":458,"source":231,"type":"DeclarationEdge","stmt":"FILE * fdopen(int __fd, const char *__modes);","target":232},"308->309":{"file":"main.c","line":890,"source":308,"type":"DeclarationEdge","stmt":"struct state_elements_main smain = { };","target":309},"265->266":{"file":"\/usr\/include\/stdio.h","line":660,"source":265,"type":"DeclarationEdge","stmt":"int putchar_unlocked(int __c);","target":266},"133->134":{"file":"\/usr\/include\/bits\/types.h","line":80,"source":133,"type":"DeclarationEdge","stmt":"typedef unsigned long int __ino_t;","target":134},"1->2":{"file":"<none>","line":0,"source":1,"type":"BlankEdge","stmt":"Function start dummy edge","target":2},"199->200":{"file":"\/usr\/include\/libio.h","line":331,"source":199,"type":"DeclarationEdge","stmt":"int _IO_feof(_IO_FILE *__fp);","target":200},"275->276":{"file":"\/usr\/include\/stdio.h","line":728,"source":275,"type":"DeclarationEdge","stmt":"size_t fread(void *__ptr, size_t __size, size_t __n, FILE *__stream);","target":276},"143->144":{"file":"\/usr\/include\/bits\/types.h","line":89,"source":143,"type":"DeclarationEdge","stmt":"typedef unsigned long int __rlim_t;","target":144},"97->98":{"file":"main.c","line":1017,"source":97,"type":"DeclarationEdge","stmt":"unsigned char data_out;","target":98},"69->70":{"file":"main.c","line":986,"source":69,"type":"DeclarationEdge","stmt":"unsigned int __CPAchecker_TMP_0;","target":70},"148->149":{"file":"\/usr\/include\/bits\/types.h","line":94,"source":148,"type":"DeclarationEdge","stmt":"typedef long int __suseconds_t;","target":149},"274->275":{"file":"\/usr\/include\/stdio.h","line":721,"source":274,"type":"DeclarationEdge","stmt":"int ungetc(int __c, FILE *__stream);","target":275},"303->304":{"file":"\/usr\/include\/assert.h","line":860,"source":303,"type":"DeclarationEdge","stmt":"void __assert_fail(const char *__assertion, const char *__file, unsigned int __line, const char *__function);","target":304},"58->60":{"file":"main.c","line":962,"source":58,"type":"StatementEdge","stmt":"n = (n + 2) ^ (i__1 * (parallel_crc[i__1]));","target":60},"142->143":{"file":"\/usr\/include\/bits\/types.h","line":88,"source":142,"type":"DeclarationEdge","stmt":"typedef long int __clock_t;","target":143},"158->159":{"file":"\/usr\/include\/bits\/types.h","line":119,"source":158,"type":"DeclarationEdge","stmt":"typedef unsigned long int __fsfilcnt_t;","target":159},"284->285":{"file":"\/usr\/include\/stdio.h","line":776,"source":284,"type":"DeclarationEdge","stmt":"int fgetpos(FILE *__stream, fpos_t *__pos);","target":285},"152->153":{"file":"\/usr\/include\/bits\/types.h","line":103,"source":152,"type":"DeclarationEdge","stmt":"typedef void *__timer_t;","target":153},"247->248":{"file":"\/usr\/include\/stdio.h","line":539,"source":247,"type":"DeclarationEdge","stmt":"int dprintf(int __fd, const char *__fmt, ...);","target":248},"31->32":{"file":"main.c","line":936,"source":31,"type":"StatementEdge","stmt":"parallel_crc[21] = (x[29]) ^ (c[13]);","target":32},"115->116":{"file":"\/usr\/lib\/gcc\/x86_64-redhat-linux\/6.3.1\/include\/stddef.h","line":39,"source":115,"type":"DeclarationEdge","stmt":"typedef unsigned long int size_t;","target":116},"219->220":{"file":"\/usr\/include\/stdio.h","line":393,"source":219,"type":"DeclarationEdge","stmt":"int remove(const char *__filename);","target":220},"20->21":{"file":"main.c","line":922,"source":20,"type":"DeclarationEdge","stmt":"_Bool parallel_crc[32];","target":21},"241->242":{"file":"\/usr\/include\/stdio.h","line":512,"source":241,"type":"DeclarationEdge","stmt":"int vfprintf(FILE *__s, const char *__format, __gnuc_va_list __arg);","target":242},"312->313":{"file":"main.c","line":1009,"source":312,"type":"DeclarationEdge","stmt":"int main();","target":313},"167->168":{"file":"\/usr\/include\/bits\/types.h","line":139,"source":167,"type":"DeclarationEdge","stmt":"typedef long int __intptr_t;","target":168},"293->294":{"file":"\/usr\/include\/bits\/sys_errlist.h","line":816,"source":293,"type":"DeclarationEdge","stmt":"extern int sys_nerr;","target":294},"161->162":{"file":"\/usr\/include\/bits\/types.h","line":125,"source":161,"type":"DeclarationEdge","stmt":"typedef long int __ssize_t;","target":162},"238->239":{"file":"\/usr\/include\/stdio.h","line":497,"source":238,"type":"DeclarationEdge","stmt":"int fprintf(FILE *__stream, const char *__format, ...);","target":239},"256->257":{"file":"\/usr\/include\/stdio.h","line":623,"source":256,"type":"DeclarationEdge","stmt":"int getchar();","target":257},"124->125":{"file":"\/usr\/include\/bits\/types.h","line":58,"source":124,"type":"DeclarationEdge","stmt":"typedef signed int __int32_t;","target":125},"250->251":{"file":"\/usr\/include\/stdio.h","line":557,"source":250,"type":"DeclarationEdge","stmt":"int sscanf(const char *__s, const char *__format, ...);","target":251},"75->77":{"file":"main.c","line":987,"source":75,"type":"StatementEdge","stmt":"__CPAchecker_TMP_1 = (((smain.crc) & 16777215) << 7) | data_in;","target":77},"86->84":{"file":"<none>","line":0,"source":86,"type":"BlankEdge","stmt":"","target":84},"139->140":{"file":"\/usr\/include\/bits\/types.h","line":86,"source":139,"type":"DeclarationEdge","stmt":"typedef int __pid_t;","target":140},"64->65":{"file":"main.c","line":968,"source":64,"type":"StatementEdge","stmt":"smain.crc = 4294967295LL;","target":65},"53->54":{"file":"main.c","line":960,"source":53,"type":"DeclarationEdge","stmt":"unsigned int n = 0;","target":54},"176->177":{"file":"\/usr\/include\/_G_config.h","line":184,"source":176,"type":"DeclarationEdge","stmt":"typedef struct __anon_type__G_fpos_t _G_fpos_t;","target":177},"170->171":{"file":"\/usr\/include\/stdio.h","line":149,"source":170,"type":"DeclarationEdge","stmt":"typedef struct _IO_FILE FILE;","target":171},"42->43":{"file":"main.c","line":947,"source":42,"type":"StatementEdge","stmt":"parallel_crc[10] = ((((x[24]) ^ (x[26])) ^ (x[27])) ^ (x[29])) ^ (c[2]);","target":43},"165->166":{"file":"\/usr\/include\/bits\/types.h","line":135,"source":165,"type":"DeclarationEdge","stmt":"typedef __quad_t *__qaddr_t;","target":166},"19->20":{"file":"main.c","line":920,"source":19,"type":"StatementEdge","stmt":"x[31] = x1 & 128;","target":20},"262->263":{"file":"\/usr\/include\/stdio.h","line":648,"source":262,"type":"DeclarationEdge","stmt":"int putchar(int __c);","target":263},"259->260":{"file":"\/usr\/include\/stdio.h","line":629,"source":259,"type":"DeclarationEdge","stmt":"int fgetc_unlocked(FILE *__stream);","target":260},"130->131":{"file":"\/usr\/include\/bits\/types.h","line":77,"source":130,"type":"DeclarationEdge","stmt":"typedef unsigned long int __dev_t;","target":131},"278->279":{"file":"\/usr\/include\/stdio.h","line":740,"source":278,"type":"DeclarationEdge","stmt":"size_t fwrite_unlocked(const void *__ptr, size_t __size, size_t __n, FILE *__stream);","target":279},"7->9":{"file":"main.c","line":908,"source":7,"type":"AssumeEdge","stmt":"[i <= 31]","target":9},"146->147":{"file":"\/usr\/include\/bits\/types.h","line":92,"source":146,"type":"DeclarationEdge","stmt":"typedef long int __time_t;","target":147},"243->244":{"file":"\/usr\/include\/stdio.h","line":520,"source":243,"type":"DeclarationEdge","stmt":"int vsprintf(char *__s, const char *__format, __gnuc_va_list __arg);","target":244},"111->113":{"file":"main.c","line":1034,"source":111,"type":"StatementEdge","stmt":"0;","target":113},"106->107":{"file":"main.c","line":1027,"source":106,"type":"StatementEdge","stmt":"compute = nondet_bool();","target":107},"27->28":{"file":"main.c","line":932,"source":27,"type":"StatementEdge","stmt":"parallel_crc[25] = ((x[26]) ^ (x[27])) ^ (c[17]);","target":28},"60->57":{"file":"<none>","line":0,"source":60,"type":"BlankEdge","stmt":"","target":57},"203->204":{"file":"\/usr\/include\/libio.h","line":341,"source":203,"type":"DeclarationEdge","stmt":"void _IO_funlockfile(_IO_FILE *);","target":204},"300->301":{"file":"\/usr\/include\/stdio.h","line":844,"source":300,"type":"DeclarationEdge","stmt":"void flockfile(FILE *__stream);","target":301},"72->74":{"file":"main.c","line":986,"source":72,"type":"DeclarationEdge","stmt":"unsigned int __CPAchecker_TMP_1;","target":74},"184->185":{"file":"\/usr\/include\/libio.h","line":232,"source":184,"type":"DeclarationEdge","stmt":"struct _IO_FILE { int _flags; char *_IO_read_ptr; char *_IO_read_end; char *_IO_read_base; char *_IO_write_base; char *_IO_write_ptr; char *_IO_write_end; char *_IO_buf_base; char *_IO_buf_end; char *_IO_save_base; char *_IO_backup_base; char *_IO_save_end; struct _IO_marker *_markers; struct _IO_FILE *_chain; int _fileno; int _flags2; __off_t _old_offset; unsigned short _cur_column; signed char _vtable_offset; char _shortbuf[1]; _IO_lock_t *_lock; __off64_t _offset; void *__pad1; void *__pad2; void *__pad3; void *__pad4; size_t __pad5; int _mode; char _unused2[40]; };","target":185},"281->282":{"file":"\/usr\/include\/stdio.h","line":760,"source":281,"type":"DeclarationEdge","stmt":"void rewind(FILE *__stream);","target":282},"297->298":{"file":"\/usr\/include\/stdio.h","line":830,"source":297,"type":"DeclarationEdge","stmt":"FILE * popen(const char *__command, const char *__modes);","target":298},"40->41":{"file":"main.c","line":945,"source":40,"type":"StatementEdge","stmt":"parallel_crc[12] = ((((((x[30]) ^ (x[24])) ^ (x[25])) ^ (x[26])) ^ (x[28])) ^ (x[29])) ^ (c[4]);","target":41},"302->303":{"file":"\/usr\/include\/stdio.h","line":851,"source":302,"type":"DeclarationEdge","stmt":"void funlockfile(FILE *__stream);","target":303},"47->48":{"file":"main.c","line":952,"source":47,"type":"StatementEdge","stmt":"parallel_crc[5] = ((((((x[31]) ^ (x[30])) ^ (x[29])) ^ (x[28])) ^ (x[27])) ^ (x[25])) ^ (x[24]);","target":48},"186->187":{"file":"\/usr\/include\/libio.h","line":297,"source":186,"type":"DeclarationEdge","stmt":"struct _IO_FILE_plus;","target":187},"283->284":{"file":"\/usr\/include\/stdio.h","line":768,"source":283,"type":"DeclarationEdge","stmt":"__off_t ftello(FILE *__stream);","target":284},"257->258":{"file":"\/usr\/include\/stdio.h","line":626,"source":257,"type":"DeclarationEdge","stmt":"int getc_unlocked(FILE *__stream);","target":258},"2->3":{"file":"main.c","line":898,"source":2,"type":"DeclarationEdge","stmt":"unsigned char x1;","target":3},"15->16":{"file":"main.c","line":916,"source":15,"type":"StatementEdge","stmt":"x[27] = x1 & 8;","target":16},"151->152":{"file":"\/usr\/include\/bits\/types.h","line":100,"source":151,"type":"DeclarationEdge","stmt":"typedef int __clockid_t;","target":152},"125->126":{"file":"\/usr\/include\/bits\/types.h","line":59,"source":125,"type":"DeclarationEdge","stmt":"typedef unsigned int __uint32_t;","target":126},"129->130":{"file":"\/usr\/include\/bits\/types.h","line":71,"source":129,"type":"DeclarationEdge","stmt":"typedef unsigned long int __u_quad_t;","target":130},"80->81":{"file":"main.c","line":988,"source":80,"type":"StatementEdge","stmt":"__CPAchecker_TMP_2 = smain.crc;","target":81},"222->223":{"file":"\/usr\/include\/stdio.h","line":410,"source":222,"type":"DeclarationEdge","stmt":"FILE * tmpfile();","target":223},"35->36":{"file":"main.c","line":940,"source":35,"type":"StatementEdge","stmt":"parallel_crc[17] = (((x[25]) ^ (x[29])) ^ (x[30])) ^ (c[9]);","target":36},"198->199":{"file":"\/usr\/include\/libio.h","line":330,"source":198,"type":"DeclarationEdge","stmt":"int _IO_putc(int __c, _IO_FILE *__fp);","target":199},"295->296":{"file":"\/usr\/include\/stdio.h","line":823,"source":295,"type":"DeclarationEdge","stmt":"int fileno(FILE *__stream);","target":296},"67->68":{"file":"<none>","line":0,"source":67,"type":"BlankEdge","stmt":"Function start dummy edge","target":68},"163->164":{"file":"\/usr\/include\/bits\/types.h","line":130,"source":163,"type":"DeclarationEdge","stmt":"typedef unsigned long int __syscall_ulong_t;","target":164},"260->261":{"file":"\/usr\/include\/stdio.h","line":641,"source":260,"type":"DeclarationEdge","stmt":"int fputc(int __c, FILE *__stream);","target":261},"108->109":{"file":"main.c","line":1029,"source":108,"type":"CallToReturnEdge","stmt":"crc_main(clk, clken, reset, load, compute, data_in, data_out, &crc_ok, &crc);","target":109},"205->206":{"file":"\/usr\/include\/libio.h","line":344,"source":205,"type":"DeclarationEdge","stmt":"int _IO_vfscanf(_IO_FILE *, const char *, __gnuc_va_list , int *);","target":206},"92->93":{"file":"main.c","line":1012,"source":92,"type":"DeclarationEdge","stmt":"_Bool clken;","target":93},"23->24":{"file":"main.c","line":928,"source":23,"type":"StatementEdge","stmt":"parallel_crc[29] = (((x[27]) ^ (x[30])) ^ (x[31])) ^ (c[21]);","target":24},"236->237":{"file":"\/usr\/include\/stdio.h","line":484,"source":236,"type":"DeclarationEdge","stmt":"void setbuffer(FILE *__stream, char *__buf, size_t __size);","target":237},"104->106":{"file":"main.c","line":1026,"source":104,"type":"StatementEdge","stmt":"load = nondet_bool();","target":106},"12->13":{"file":"main.c","line":913,"source":12,"type":"StatementEdge","stmt":"x[24] = x1 & 1;","target":13},"172->173":{"file":"\/usr\/include\/wchar.h","line":173,"source":172,"type":"DeclarationEdge","stmt":"union __anon_type_0 { unsigned int __wch; char __wchb[4]; };","target":173},"56->59":{"file":"main.c","line":961,"source":56,"type":"AssumeEdge","stmt":"[!(i__1 <= 31)]","target":59},"304->305":{"file":"\/usr\/include\/assert.h","line":865,"source":304,"type":"DeclarationEdge","stmt":"void __assert_perror_fail(int __errnum, const char *__file, unsigned int __line, const char *__function);","target":305},"56->58":{"file":"main.c","line":961,"source":56,"type":"AssumeEdge","stmt":"[i__1 <= 31]","target":58},"285->286":{"file":"\/usr\/include\/stdio.h","line":781,"source":285,"type":"DeclarationEdge","stmt":"int fsetpos(FILE *__stream, fpos_t *__pos);","target":286},"132->133":{"file":"\/usr\/include\/bits\/types.h","line":79,"source":132,"type":"DeclarationEdge","stmt":"typedef unsigned int __gid_t;","target":133},"43->44":{"file":"main.c","line":948,"source":43,"type":"StatementEdge","stmt":"parallel_crc[9] = ((((x[25]) ^ (x[26])) ^ (x[28])) ^ (x[29])) ^ (c[1]);","target":44},"177->178":{"file":"\/usr\/include\/_G_config.h","line":189,"source":177,"type":"DeclarationEdge","stmt":"struct __anon_type__G_fpos64_t { __off64_t __pos; __mbstate_t __state; };","target":178},"245->246":{"file":"\/usr\/include\/stdio.h","line":531,"source":245,"type":"DeclarationEdge","stmt":"int vsnprintf(char *__s, size_t __maxlen, const char *__format, __gnuc_va_list __arg);","target":246},"76->78":{"file":"main.c","line":987,"source":76,"type":"DeclarationEdge","stmt":"unsigned int __CPAchecker_TMP_2;","target":78},"113->114":{"file":"main.c","line":1034,"source":113,"type":"StatementEdge","stmt":"0;","target":114},"87->88":{"file":"main.c","line":1002,"source":87,"type":"StatementEdge","stmt":"*crc_ok = (smain.crc) == 3338984827LL;","target":88},"7->10":{"file":"main.c","line":908,"source":7,"type":"AssumeEdge","stmt":"[!(i <= 31)]","target":10},"255->256":{"file":"\/usr\/include\/stdio.h","line":617,"source":255,"type":"DeclarationEdge","stmt":"int getc(FILE *__stream);","target":256},"79->81":{"file":"main.c","line":988,"source":79,"type":"CallToReturnEdge","stmt":"__CPAchecker_TMP_2 = parallel_crces(smain.crc, data_in);","target":81},"123->124":{"file":"\/usr\/include\/bits\/types.h","line":57,"source":123,"type":"DeclarationEdge","stmt":"typedef unsigned short int __uint16_t;","target":124},"144->145":{"file":"\/usr\/include\/bits\/types.h","line":90,"source":144,"type":"DeclarationEdge","stmt":"typedef unsigned long int __rlim64_t;","target":145},"215->216":{"file":"\/usr\/include\/stdio.h","line":372,"source":215,"type":"DeclarationEdge","stmt":"typedef _G_fpos_t fpos_t;","target":216},"63->64":{"file":"<none>","line":0,"source":63,"type":"BlankEdge","stmt":"Function start dummy edge","target":64},"212->213":{"file":"\/usr\/include\/stdio.h","line":360,"source":212,"type":"DeclarationEdge","stmt":"typedef __gnuc_va_list va_list;","target":213},"196->197":{"file":"\/usr\/include\/libio.h","line":327,"source":196,"type":"DeclarationEdge","stmt":"int __overflow(_IO_FILE *, int);","target":197},"193->194":{"file":"\/usr\/include\/libio.h","line":323,"source":193,"type":"DeclarationEdge","stmt":"typedef int __io_close_fn(void *__cookie);","target":194},"52->53":{"file":"main.c","line":957,"source":52,"type":"StatementEdge","stmt":"parallel_crc[0] = (x[30]) ^ (x[24]);","target":53},"39->40":{"file":"main.c","line":944,"source":39,"type":"StatementEdge","stmt":"parallel_crc[13] = ((((((x[31]) ^ (x[25])) ^ (x[26])) ^ (x[27])) ^ (x[29])) ^ (x[30])) ^ (c[5]);","target":40},"32->33":{"file":"main.c","line":937,"source":32,"type":"StatementEdge","stmt":"parallel_crc[20] = (x[28]) ^ (c[12]);","target":33},"264->265":{"file":"\/usr\/include\/stdio.h","line":659,"source":264,"type":"DeclarationEdge","stmt":"int putc_unlocked(int __c, FILE *__stream);","target":265},"156->157":{"file":"\/usr\/include\/bits\/types.h","line":115,"source":156,"type":"DeclarationEdge","stmt":"typedef unsigned long int __fsblkcnt_t;","target":157},"153->154":{"file":"\/usr\/include\/bits\/types.h","line":106,"source":153,"type":"DeclarationEdge","stmt":"typedef long int __blksize_t;","target":154},"8->7":{"file":"main.c","line":908,"source":8,"type":"StatementEdge","stmt":"i = i + 1;","target":7},"224->225":{"file":"\/usr\/include\/stdio.h","line":418,"source":224,"type":"DeclarationEdge","stmt":"char * tmpnam_r(char *__s);","target":225},"276->277":{"file":"\/usr\/include\/stdio.h","line":734,"source":276,"type":"DeclarationEdge","stmt":"size_t fwrite(const void *__ptr, size_t __size, size_t __n, FILE *__s);","target":277},"96->97":{"file":"main.c","line":1016,"source":96,"type":"DeclarationEdge","stmt":"unsigned char data_in;","target":97},"120->121":{"file":"\/usr\/include\/bits\/types.h","line":54,"source":120,"type":"DeclarationEdge","stmt":"typedef signed char __int8_t;","target":121},"268->269":{"file":"\/usr\/include\/stdio.h","line":679,"source":268,"type":"DeclarationEdge","stmt":"char * fgets(char *__s, int __n, FILE *__stream);","target":269},"291->292":{"file":"\/usr\/include\/stdio.h","line":798,"source":291,"type":"DeclarationEdge","stmt":"int ferror_unlocked(FILE *__stream);","target":292},"269->270":{"file":"\/usr\/include\/stdio.h","line":684,"source":269,"type":"DeclarationEdge","stmt":"__ssize_t __getdelim(char **__lineptr, size_t *__n, int __delimiter, FILE *__stream);","target":270},"136->137":{"file":"\/usr\/include\/bits\/types.h","line":83,"source":136,"type":"DeclarationEdge","stmt":"typedef unsigned long int __nlink_t;","target":137},"3->4":{"file":"main.c","line":904,"source":3,"type":"StatementEdge","stmt":"x1 = ((c1 >> 24) & 255) ^ d;","target":4},"88->66":{"file":"<none>","line":0,"source":88,"type":"BlankEdge","stmt":"default return","target":66},"307->308":{"file":"main.c","line":887,"source":307,"type":"DeclarationEdge","stmt":"struct state_elements_main { unsigned int crc; };","target":308},"299->300":{"file":"\/usr\/include\/stdio.h","line":842,"source":299,"type":"DeclarationEdge","stmt":"char * ctermid(char *__s);","target":300},"272->273":{"file":"\/usr\/include\/stdio.h","line":708,"source":272,"type":"DeclarationEdge","stmt":"int fputs(const char *__s, FILE *__stream);","target":273},"117->118":{"file":"\/usr\/include\/bits\/types.h","line":49,"source":117,"type":"DeclarationEdge","stmt":"typedef unsigned short int __u_short;","target":118},"140->141":{"file":"\/usr\/include\/bits\/types.h","line":87,"source":140,"type":"DeclarationEdge","stmt":"struct __anon_type___fsid_t { int __val[2]; };","target":141},"38->39":{"file":"main.c","line":943,"source":38,"type":"StatementEdge","stmt":"parallel_crc[14] = (((((x[26]) ^ (x[27])) ^ (x[28])) ^ (x[30])) ^ (x[31])) ^ (c[6]);","target":39},"288->289":{"file":"\/usr\/include\/stdio.h","line":791,"source":288,"type":"DeclarationEdge","stmt":"int ferror(FILE *__stream);","target":289},"51->52":{"file":"main.c","line":956,"source":51,"type":"StatementEdge","stmt":"parallel_crc[1] = (((x[30]) ^ (x[24])) ^ (x[31])) ^ (x[25]);","target":52},"174->175":{"file":"\/usr\/include\/wchar.h","line":170,"source":174,"type":"DeclarationEdge","stmt":"typedef struct __anon_type___mbstate_t __mbstate_t;","target":175},"306->307":{"file":"main.c","line":882,"source":306,"type":"DeclarationEdge","stmt":"_Bool nondet_bool();","target":307},"271->272":{"file":"\/usr\/include\/stdio.h","line":697,"source":271,"type":"DeclarationEdge","stmt":"__ssize_t getline(char **__lineptr, size_t *__n, FILE *__stream);","target":272},"16->17":{"file":"main.c","line":917,"source":16,"type":"StatementEdge","stmt":"x[28] = x1 & 16;","target":17},"287->288":{"file":"\/usr\/include\/stdio.h","line":789,"source":287,"type":"DeclarationEdge","stmt":"int feof(FILE *__stream);","target":288},"83->85":{"file":"main.c","line":996,"source":83,"type":"AssumeEdge","stmt":"[!(clken == 0)]","target":85},"26->27":{"file":"main.c","line":931,"source":26,"type":"StatementEdge","stmt":"parallel_crc[26] = ((((x[30]) ^ (x[24])) ^ (x[27])) ^ (x[28])) ^ (c[18]);","target":27},"83->84":{"file":"main.c","line":996,"source":83,"type":"AssumeEdge","stmt":"[clken == 0]","target":84},"155->156":{"file":"\/usr\/include\/bits\/types.h","line":112,"source":155,"type":"DeclarationEdge","stmt":"typedef long int __blkcnt64_t;","target":156},"310->311":{"file":"main.c","line":967,"source":310,"type":"DeclarationEdge","stmt":"void initial();","target":311},"48->49":{"file":"main.c","line":953,"source":48,"type":"StatementEdge","stmt":"parallel_crc[4] = ((((x[30]) ^ (x[28])) ^ (x[27])) ^ (x[26])) ^ (x[24]);","target":49},"252->253":{"file":"\/usr\/include\/stdio.h","line":585,"source":252,"type":"DeclarationEdge","stmt":"int vscanf(const char *__format, __gnuc_va_list __arg);","target":253},"286->287":{"file":"\/usr\/include\/stdio.h","line":787,"source":286,"type":"DeclarationEdge","stmt":"void clearerr(FILE *__stream);","target":287},"154->155":{"file":"\/usr\/include\/bits\/types.h","line":111,"source":154,"type":"DeclarationEdge","stmt":"typedef long int __blkcnt_t;","target":155},"254->255":{"file":"\/usr\/include\/stdio.h","line":616,"source":254,"type":"DeclarationEdge","stmt":"int fgetc(FILE *__stream);","target":255},"122->123":{"file":"\/usr\/include\/bits\/types.h","line":56,"source":122,"type":"DeclarationEdge","stmt":"typedef signed short int __int16_t;","target":123},"91->92":{"file":"main.c","line":1011,"source":91,"type":"DeclarationEdge","stmt":"_Bool clk;","target":92},"211->212":{"file":"\/usr\/include\/libio.h","line":354,"source":211,"type":"DeclarationEdge","stmt":"void _IO_free_backup_area(_IO_FILE *);","target":212},"78->79":{"file":"main.c","line":988,"source":78,"type":"AssumeEdge","stmt":"[!(compute == 0)]","target":79},"192->193":{"file":"\/usr\/include\/libio.h","line":320,"source":192,"type":"DeclarationEdge","stmt":"typedef int __io_seek_fn(void *__cookie, __off64_t *__pos, int __w);","target":193},"137->138":{"file":"\/usr\/include\/bits\/types.h","line":84,"source":137,"type":"DeclarationEdge","stmt":"typedef long int __off_t;","target":138},"234->235":{"file":"\/usr\/include\/stdio.h","line":473,"source":234,"type":"DeclarationEdge","stmt":"void setbuf(FILE *__stream, char *__buf);","target":235},"208->209":{"file":"\/usr\/include\/libio.h","line":349,"source":208,"type":"DeclarationEdge","stmt":"size_t _IO_sgetn(_IO_FILE *, void *, size_t );","target":209},"305->306":{"file":"\/usr\/include\/assert.h","line":872,"source":305,"type":"DeclarationEdge","stmt":"void __assert(const char *__assertion, const char *__file, int __line);","target":306},"102->103":{"file":"main.c","line":1025,"source":102,"type":"BlankEdge","stmt":"while","target":103},"249->250":{"file":"\/usr\/include\/stdio.h","line":555,"source":249,"type":"DeclarationEdge","stmt":"int scanf(const char *__format, ...);","target":250},"169->170":{"file":"\/usr\/include\/stdio.h","line":145,"source":169,"type":"DeclarationEdge","stmt":"struct _IO_FILE;","target":170},"191->192":{"file":"\/usr\/include\/libio.h","line":311,"source":191,"type":"DeclarationEdge","stmt":"typedef __ssize_t __io_write_fn(void *__cookie, const char *__buf, size_t __n);","target":192},"313->91":{"file":"<none>","line":0,"source":313,"type":"BlankEdge","stmt":"Function start dummy edge","target":91},"220->221":{"file":"\/usr\/include\/stdio.h","line":395,"source":220,"type":"DeclarationEdge","stmt":"int rename(const char *__old, const char *__new);","target":221},"55->56":{"file":"main.c","line":961,"source":55,"type":"DeclarationEdge","stmt":"unsigned int i__1 = 0;","target":56},"207->208":{"file":"\/usr\/include\/libio.h","line":348,"source":207,"type":"DeclarationEdge","stmt":"__ssize_t _IO_padn(_IO_FILE *, int, __ssize_t );","target":208},"201->202":{"file":"\/usr\/include\/libio.h","line":334,"source":201,"type":"DeclarationEdge","stmt":"int _IO_peekc_locked(_IO_FILE *__fp);","target":202},"188->189":{"file":"\/usr\/include\/libio.h","line":300,"source":188,"type":"DeclarationEdge","stmt":"extern struct _IO_FILE_plus _IO_2_1_stdout_;","target":189},"217->218":{"file":"\/usr\/include\/stdio.h","line":384,"source":217,"type":"DeclarationEdge","stmt":"extern struct _IO_FILE *stdout;","target":218},"179->180":{"file":"\/usr\/lib\/gcc\/x86_64-redhat-linux\/6.3.1\/include\/stdarg.h","line":198,"source":179,"type":"DeclarationEdge","stmt":"typedef __builtin_va_list __gnuc_va_list;","target":180},"78->80":{"file":"main.c","line":988,"source":78,"type":"AssumeEdge","stmt":"[compute == 0]","target":80},"90->115":{"file":"<none>","line":0,"source":90,"type":"BlankEdge","stmt":"INIT GLOBAL VARS","target":115},"182->183":{"file":"\/usr\/include\/libio.h","line":213,"source":182,"type":"DeclarationEdge","stmt":"struct _IO_marker { struct _IO_marker *_next; struct _IO_FILE *_sbuf; int _pos; };","target":183},"235->236":{"file":"\/usr\/include\/stdio.h","line":477,"source":235,"type":"DeclarationEdge","stmt":"int setvbuf(FILE *__stream, char *__buf, int __modes, size_t __n);","target":236},"103->104":{"file":"main.c","line":1025,"source":103,"type":"BlankEdge","stmt":"","target":104},"216->217":{"file":"\/usr\/include\/stdio.h","line":383,"source":216,"type":"DeclarationEdge","stmt":"extern struct _IO_FILE *stdin;","target":217},"33->34":{"file":"main.c","line":938,"source":33,"type":"StatementEdge","stmt":"parallel_crc[19] = ((x[27]) ^ (x[31])) ^ (c[11]);","target":34},"22->23":{"file":"main.c","line":927,"source":22,"type":"StatementEdge","stmt":"parallel_crc[30] = ((x[28]) ^ (x[31])) ^ (c[22]);","target":23},"77->73":{"file":"main.c","line":986,"source":77,"type":"StatementEdge","stmt":"__CPAchecker_TMP_0 = __CPAchecker_TMP_1;","target":73},"210->211":{"file":"\/usr\/include\/libio.h","line":352,"source":210,"type":"DeclarationEdge","stmt":"__off64_t _IO_seekpos(_IO_FILE *, __off64_t , int);","target":211},"44->45":{"file":"main.c","line":949,"source":44,"type":"StatementEdge","stmt":"parallel_crc[8] = ((((x[24]) ^ (x[25])) ^ (x[27])) ^ (x[28])) ^ (c[0]);","target":45},"197->198":{"file":"\/usr\/include\/libio.h","line":329,"source":197,"type":"DeclarationEdge","stmt":"int _IO_getc(_IO_FILE *__fp);","target":198},"226->227":{"file":"\/usr\/include\/stdio.h","line":430,"source":226,"type":"DeclarationEdge","stmt":"int fclose(FILE *__stream);","target":227},"118->119":{"file":"\/usr\/include\/bits\/types.h","line":50,"source":118,"type":"DeclarationEdge","stmt":"typedef unsigned int __u_int;","target":119},"244->245":{"file":"\/usr\/include\/stdio.h","line":527,"source":244,"type":"DeclarationEdge","stmt":"int snprintf(char *__s, size_t __maxlen, const char *__format, ...);","target":245},"112->113":{"file":"main.c","line":1034,"source":112,"type":"StatementEdge","stmt":"__assert_fail(\\\"crc != 0xAAAAAAAA\\\", \\\"main.c\\\", 161, \\\"__PRETTY_FUNCTION__\\\");","target":113},"49->50":{"file":"main.c","line":954,"source":49,"type":"StatementEdge","stmt":"parallel_crc[3] = (((x[31]) ^ (x[25])) ^ (x[26])) ^ (x[27]);","target":50},"4->5":{"file":"main.c","line":907,"source":4,"type":"DeclarationEdge","stmt":"_Bool c[32];","target":5},"296->297":{"file":"\/usr\/include\/stdio.h","line":828,"source":296,"type":"DeclarationEdge","stmt":"int fileno_unlocked(FILE *__stream);","target":297},"84->87":{"file":"main.c","line":1000,"source":84,"type":"StatementEdge","stmt":"*crc = smain.crc;","target":87},"164->165":{"file":"\/usr\/include\/bits\/types.h","line":134,"source":164,"type":"DeclarationEdge","stmt":"typedef __off64_t __loff_t;","target":165},"290->291":{"file":"\/usr\/include\/stdio.h","line":797,"source":290,"type":"DeclarationEdge","stmt":"int feof_unlocked(FILE *__stream);","target":291},"95->96":{"file":"main.c","line":1015,"source":95,"type":"DeclarationEdge","stmt":"_Bool compute;","target":96},"127->128":{"file":"\/usr\/include\/bits\/types.h","line":62,"source":127,"type":"DeclarationEdge","stmt":"typedef unsigned long int __uint64_t;","target":128},"253->254":{"file":"\/usr\/include\/stdio.h","line":589,"source":253,"type":"DeclarationEdge","stmt":"int vsscanf(const char *__s, const char *__format, __gnuc_va_list __arg);","target":254},"121->122":{"file":"\/usr\/include\/bits\/types.h","line":55,"source":121,"type":"DeclarationEdge","stmt":"typedef unsigned char __uint8_t;","target":122},"73->82":{"file":"main.c","line":986,"source":73,"type":"StatementEdge","stmt":"new_crc = __CPAchecker_TMP_0;","target":82},"173->174":{"file":"\/usr\/include\/wchar.h","line":170,"source":173,"type":"DeclarationEdge","stmt":"struct __anon_type___mbstate_t { int __count; union __anon_type_0 __value; };","target":174}}};
+var errorPathData = {}; //ERRORPATH
+var combinedNodes = {"1":1,"2":1,"3":1,"4":1,"5":1,"6":1,"8":11,"10":10,"11":11,"12":10,"13":10,"14":10,"15":10,"16":10,"17":10,"18":10,"19":10,"20":10,"21":10,"22":10,"23":10,"24":10,"25":10,"26":10,"27":10,"28":10,"29":10,"30":10,"31":10,"32":10,"33":10,"34":10,"35":10,"36":10,"37":10,"38":10,"39":10,"40":10,"41":10,"42":10,"43":10,"44":10,"45":10,"46":10,"47":10,"48":10,"49":10,"50":10,"51":10,"52":10,"53":10,"54":10,"55":10,"57":60,"60":60,"64":64,"65":64,"67":67,"68":67,"69":67,"85":85,"86":85,"87":87,"88":87,"91":115,"92":115,"93":115,"94":115,"95":115,"96":115,"97":115,"98":115,"99":115,"100":115,"104":104,"106":104,"107":104,"115":115,"116":115,"117":115,"118":115,"119":115,"120":115,"121":115,"122":115,"123":115,"124":115,"125":115,"126":115,"127":115,"128":115,"129":115,"130":115,"131":115,"132":115,"133":115,"134":115,"135":115,"136":115,"137":115,"138":115,"139":115,"140":115,"141":115,"142":115,"143":115,"144":115,"145":115,"146":115,"147":115,"148":115,"149":115,"150":115,"151":115,"152":115,"153":115,"154":115,"155":115,"156":115,"157":115,"158":115,"159":115,"160":115,"161":115,"162":115,"163":115,"164":115,"165":115,"166":115,"167":115,"168":115,"169":115,"170":115,"171":115,"172":115,"173":115,"174":115,"175":115,"176":115,"177":115,"178":115,"179":115,"180":115,"181":115,"182":115,"183":115,"184":115,"185":115,"186":115,"187":115,"188":115,"189":115,"190":115,"191":115,"192":115,"193":115,"194":115,"195":115,"196":115,"197":115,"198":115,"199":115,"200":115,"201":115,"202":115,"203":115,"204":115,"205":115,"206":115,"207":115,"208":115,"209":115,"210":115,"211":115,"212":115,"213":115,"214":115,"215":115,"216":115,"217":115,"218":115,"219":115,"220":115,"221":115,"222":115,"223":115,"224":115,"225":115,"226":115,"227":115,"228":115,"229":115,"230":115,"231":115,"232":115,"233":115,"234":115,"235":115,"236":115,"237":115,"238":115,"239":115,"240":115,"241":115,"242":115,"243":115,"244":115,"245":115,"246":115,"247":115,"248":115,"249":115,"250":115,"251":115,"252":115,"253":115,"254":115,"255":115,"256":115,"257":115,"258":115,"259":115,"260":115,"261":115,"262":115,"263":115,"264":115,"265":115,"266":115,"267":115,"268":115,"269":115,"270":115,"271":115,"272":115,"273":115,"274":115,"275":115,"276":115,"277":115,"278":115,"279":115,"280":115,"281":115,"282":115,"283":115,"284":115,"285":115,"286":115,"287":115,"288":115,"289":115,"290":115,"291":115,"292":115,"293":115,"294":115,"295":115,"296":115,"297":115,"298":115,"299":115,"300":115,"301":115,"302":115,"303":115,"304":115,"305":115,"306":115,"307":115,"308":115,"309":115,"310":115,"311":115,"312":115,"313":115};
+var sourceFiles = ["main.c"];
+
+$(function () {
+  $('[data-toggle="popover"]').popover({ html : true })
+})
+
+function init(){
+  var svgElements = document.getElementsByTagName("svg");
+  //set IDs for all CFA-SVGs
+  for(var r = 0; r<svgElements.length-1; r++){
+    var graph = svgElements[r].getElementsByTagName("g")[0];
+    graph.id = "cfaGraph-" + r.toString();
+    var nodes = graph.getElementsByClassName("node");
+    for(var s = 0; s < nodes.length; s++){
+      nodes[s].id = "cfa-" + nodes[s].getElementsByTagName("title")[0].innerHTML;
+      if(nodes[s].getElementsByTagName("title")[0].innerHTML > 100000){
+        nodes[s].classList.add("functionNode");
+      }
+    }
+    var edges = graph.getElementsByClassName("edge");
+    for(var t=0; t<edges.length; t++){
+      var edge = edges[t];
+      var fromto = [];
+      if(edge.getElementsByTagName("title")[0].innerHTML.split("&#45;&gt;")[1] != null){
+        fromto = edge.getElementsByTagName("title")[0].innerHTML.split("&#45;&gt;");
+      } else if (edge.getElementsByTagName("title")[0].innerHTML.split("&#45;>")[1] != null) {
+        fromto = edge.getElementsByTagName("title")[0].innerHTML.split("&#45;>");
+      } else if (edge.getElementsByTagName("title")[0].innerHTML.split("-&gt;")[1] != null) {
+        fromto = edge.getElementsByTagName("title")[0].innerHTML.split("-&gt;");
+      } else {
+        fromto = edge.getElementsByTagName("title")[0].innerHTML.split("->");
+      }
+      edge.id = "cfa-" + fromto[0] + "->" + fromto[1];
+    }
+  }
+  //set IDs for the ARG-SVG
+  graph = svgElements[svgElements.length-1].getElementsByTagName("g")[0];
+  graph.id = "argGraph-" + (svgElements.length-1).toString();
+  nodes = graph.getElementsByClassName("node");
+  for(var u = 0; u < nodes.length; u++){
+    nodes[u].id = "arg-" + nodes[u].getElementsByTagName("title")[0].innerHTML;
+  }
+  edges = graph.getElementsByClassName("edge");
+  for(var v=0; v<edges.length; v++){
+    edge = edges[v];
+    fromto = [];
+    if(edge.getElementsByTagName("title")[0].innerHTML.split("&#45;&gt;")[1] != null){
+      fromto = edge.getElementsByTagName("title")[0].innerHTML.split("&#45;&gt;");
+    } else if (edge.getElementsByTagName("title")[0].innerHTML.split("&#45;>")[1] != null) {
+      fromto = edge.getElementsByTagName("title")[0].innerHTML.split("&#45;>");
+    } else if (edge.getElementsByTagName("title")[0].innerHTML.split("-&gt;")[1] != null) {
+      fromto = edge.getElementsByTagName("title")[0].innerHTML.split("-&gt;");
+    } else {
+      fromto = edge.getElementsByTagName("title")[0].innerHTML.split("->");
+    }
+    edge.id = "arg-" + fromto[0] + "->" + fromto[1];
+  }
+
+  //If we do not have an Errorpath
+  if(errorPathData.length == undefined){
+    document.getElementById("errorpath_section").style.display = "none";
+    document.getElementById("externalFiles_section").style.width = "100%";
+  }
+
+  //prepare Errorpath-Data for marking in the cfa
+  var returnedges = {};
+  for(key in fCallEdges){
+    var fcalledge = fCallEdges[key];
+    returnedges[fcalledge[1]] = fcalledge[0];
+  }
+  var errPathDataForCFA = [];
+  for(var w = 0; w < errorPathData.length; w++){
+    var source = errorPathData[w].source;
+    var target = errorPathData[w].target;
+    if(source in combinedNodes && target in combinedNodes){
+    } else if(source in combinedNodes){
+      errPathDataForCFA.push(combinedNodes[source] + "->" + target);
+    } else if (source in fCallEdges){
+      errPathDataForCFA.push(source + "->" + fCallEdges[source][0]);
+    } else if (target in returnedges){
+      errPathDataForCFA.push(returnedges[target] + "->" + target);
+    } else {
+      errPathDataForCFA.push(source + "->" + target);
+    }
+  }
+  for(var x = 0; x < errPathDataForCFA.length; x++){
+    var cfaEdge = document.getElementById("cfa-" + errPathDataForCFA[x]);
+    if (cfaEdge != null) {
+	  var path = cfaEdge.getElementsByTagName("path")[0];
+	  var poly = cfaEdge.getElementsByTagName("polygon")[0];
+	  var text = cfaEdge.getElementsByTagName("text")[0];
+	  path.setAttribute("stroke", "red");
+	  poly.setAttribute("stroke", "red");
+	  poly.setAttribute("fill", "red");
+	  if(text != undefined) {
+	    text.setAttribute("fill", "red");
+	  }
+    }
+  }
+};
+	</script>
+	
+</head>
+
+<body ng-controller="ReportController" onload="prettyPrint(); init()">
+<header class="header">
+
+    <a href="https://cpachecker.sosy-lab.org/"><img class="logo" ng-src="{{logo}}"/></a>
+    <h1>Report for
+main.c    </h1>
+
+    <span class="generated">
+Generated on 2017-05-17 23:12:23 by CPAchecker 1.6.1    </span>
+</header>
+
+<div class="sections" ng-mousemove="setWidth($event)" ng-mouseup="setMouseUp()">
+    <section id="errorpath_section" ng-controller="ErrorpathController">
+        <div id="middleLine" ng-mousedown="setMouseDown()"></div>
+        <header ng-controller="SearchController">
+            <div class="btn-group">
+                <button class="btn btn-success" ng-click="clickedErrpathButton($event)">Prev</button>
+                <button class="btn btn-warning" ng-click="clickedErrpathButton($event)">Start</button>
+                <button class="btn btn-success" ng-click="clickedErrpathButton($event)">Next</button>
+            </div>
+            <button data-toggle="popover" data-placement="right" data-trigger="click" data-content="{{help_errorpath}}" class="btn btn-default btn-lg help_button" type="button">
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </button>
+            <div class="input-group input-group-sm">
+                <input type="text" ng-keydown="checkIfEnter($event)" class="form-control search-input" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button ng-click="searchFor()" class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </button>
+                    </span>
+            </div>
+            <div id="searchOptions">
+                <label for="optionExactMatch">
+                    <input id="optionExactMatch" type="checkbox" name="searchOption">
+                    Find only exact matches</label>
+            </div>
+            <div id="matches">
+                <p class="markedValues">Matches in value-assignements (V): {{numOfValueMatches}}</p>
+                <p class="markedDescriptions">Matches in edge-description: {{numOfDescriptionMatches}}</p>
+            </div>
+        </header>
+        <div class="fileContent" ng-controller="ValueAssignmentsController">
+            <table id="err_table">
+                <tr id="errpath-{{$index}}" ng-repeat="line in errorPathData">
+                    <td ng-click="showValues($event)" data-toggle="popover" data-placement="right" data-trigger="click" data-content="{{line.valString}}"><pre>-V-</pre></td>
+                    <td ng-click="clickedErrpathElement($event)"><pre class="prettyprint">{{line.desc}}</pre></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section id="externalFiles_section">
+        <ul class="nav nav-pills">
+            <li ng-class="{active: tabIsSet(1)}">
+                <a href ng-click="setTab(1)">CFA</a>
+            </li>
+            <li ng-class="{active: tabIsSet(2)}">
+                <a href ng-click="setTab(2)">ARG</a>
+            </li>
+            <li ng-class="{active: tabIsSet(3)}">
+                <a href ng-click="setTab(3)">Source</a>
+            </li>
+            <li ng-class="{active: tabIsSet(4)}">
+                <a href ng-click="setTab(4)">Log</a>
+            </li>
+            <li ng-class="{active: tabIsSet(5)}">
+                <a href ng-click="setTab(5)">Statistics</a>
+            </li>
+            <li ng-class="{active: tabIsSet(6)}">
+                <a href ng-click="setTab(6)">Configurations</a>
+            </li>
+            <button data-toggle="popover" data-placement="right" data-trigger="click" data-content="{{help_externalFiles}}" class="btn btn-default btn-lg help_button" type="button">
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </button>
+        </ul>
+        <div class="fileContent" ng-show="tabIsSet(1)" ng-controller="CFAController">
+            <div class="edit-line">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Displayed CFA
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="func in functions"><a ng-click="setCFAFunction($index)">{{func}}</a></li>
+                    </ul>
+                </div>
+                <label>{{functions[selectedCFAFunction]}}</label>
+                <div ng-controller="ZoomController">
+                    <p>Zoom Factor (%)</p>
+                    <input id="cfa-scalingField" type="number" min="0" max="200" ng-model="zoomFactorCFA" ng-change="setZoom('cfa-scalingField')"/>
+                </div>
+            </div>
+            <div class="cfaContent">
+                    <p>Run scripts/report-generator.py to display CFAs.</p><!--CFAFUNCTIONGRAPHS-->
+                </div>
+            </div>
+            <div class="fileContent" ng-show="tabIsSet(2)" ng-controller="ARGController">
+                <div class="edit-line">
+                    <div ng-controller="ZoomController">
+                        <p>Zoom Factor (%)</p>
+                        <input id="arg-scalingField" type="number" min="0" max="200" ng-model="zoomFactorARG" ng-change="setZoom('arg-scalingField')"/>
+                    </div>
+                </div>
+                <div class="argContent">
+                    <p>Run scripts/report-generator.py to display ARG.</p><!--ARGGRAPHS-->
+                </div>
+            </div>
+            <div class="fileContent" ng-show="tabIsSet(3)" ng-controller="SourceController">
+                <div class="edit-line">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Displayed Sourcefile
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="file in sourceFiles"><a ng-click="setSourceFile($index)">{{file}}</a></li>
+                        </ul>
+                    </div>
+                    <label>{{sourceFiles[selectedSourceFile]}}</label>
+                </div>
+<table class="sourceContent" ng-show = "sourceFileIsSet(0)">
+<tr id="source-0"><td><pre>0</pre></td><td><pre class="prettyprint">/*###############################  </pre></td></tr>
+<tr id="source-1"><td><pre>1</pre></td><td><pre class="prettyprint">## Author:  Rajdeep Mukherjee ##  </pre></td></tr>
+<tr id="source-2"><td><pre>2</pre></td><td><pre class="prettyprint">## Date:    8/3/2017          ##  </pre></td></tr>
+<tr id="source-3"><td><pre>3</pre></td><td><pre class="prettyprint">## Task:    CRC Generator     ##  </pre></td></tr>
+<tr id="source-4"><td><pre>4</pre></td><td><pre class="prettyprint">###############################*/  </pre></td></tr>
+<tr id="source-5"><td><pre>5</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-6"><td><pre>6</pre></td><td><pre class="prettyprint">#include <stdio.h>  </pre></td></tr>
+<tr id="source-7"><td><pre>7</pre></td><td><pre class="prettyprint">#include <assert.h>  </pre></td></tr>
+<tr id="source-8"><td><pre>8</pre></td><td><pre class="prettyprint">#define TRUE 1  </pre></td></tr>
+<tr id="source-9"><td><pre>9</pre></td><td><pre class="prettyprint">#define FALSE 0  </pre></td></tr>
+<tr id="source-10"><td><pre>10</pre></td><td><pre class="prettyprint">_Bool nondet_bool();  </pre></td></tr>
+<tr id="source-11"><td><pre>11</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-12"><td><pre>12</pre></td><td><pre class="prettyprint">#define CRC_INITIAL_VALUE 0xFFFFFFFF;  </pre></td></tr>
+<tr id="source-13"><td><pre>13</pre></td><td><pre class="prettyprint">#define CRC_REMAINDER 0xC704DD7B;  </pre></td></tr>
+<tr id="source-14"><td><pre>14</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-15"><td><pre>15</pre></td><td><pre class="prettyprint">struct state_elements_main {  </pre></td></tr>
+<tr id="source-16"><td><pre>16</pre></td><td><pre class="prettyprint">  unsigned int crc;  </pre></td></tr>
+<tr id="source-17"><td><pre>17</pre></td><td><pre class="prettyprint">};  </pre></td></tr>
+<tr id="source-18"><td><pre>18</pre></td><td><pre class="prettyprint">struct state_elements_main smain;   </pre></td></tr>
+<tr id="source-19"><td><pre>19</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-20"><td><pre>20</pre></td><td><pre class="prettyprint">unsigned int parallel_crces(  </pre></td></tr>
+<tr id="source-21"><td><pre>21</pre></td><td><pre class="prettyprint">// Because the equations are long I am keeping the name of  </pre></td></tr>
+<tr id="source-22"><td><pre>22</pre></td><td><pre class="prettyprint">// the incoming CRC and the XOR vector short.  </pre></td></tr>
+<tr id="source-23"><td><pre>23</pre></td><td><pre class="prettyprint">unsigned int c1,		// crc_in  </pre></td></tr>
+<tr id="source-24"><td><pre>24</pre></td><td><pre class="prettyprint">unsigned char d)		// data_in  </pre></td></tr>
+<tr id="source-25"><td><pre>25</pre></td><td><pre class="prettyprint">{  </pre></td></tr>
+<tr id="source-26"><td><pre>26</pre></td><td><pre class="prettyprint">unsigned char x1;  </pre></td></tr>
+<tr id="source-27"><td><pre>27</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-28"><td><pre>28</pre></td><td><pre class="prettyprint">// The first thing that a parallel CRC needs to do is to develop  </pre></td></tr>
+<tr id="source-29"><td><pre>29</pre></td><td><pre class="prettyprint">// the vector formed by XORing the input vector by the current CRC.  </pre></td></tr>
+<tr id="source-30"><td><pre>30</pre></td><td><pre class="prettyprint">// This vector is then used during the CRC calculation.  </pre></td></tr>
+<tr id="source-31"><td><pre>31</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-32"><td><pre>32</pre></td><td><pre class="prettyprint">x1 = ((c1>>24)&0xFF) ^ d;  </pre></td></tr>
+<tr id="source-33"><td><pre>33</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-34"><td><pre>34</pre></td><td><pre class="prettyprint">// decompose c1 into c array  </pre></td></tr>
+<tr id="source-35"><td><pre>35</pre></td><td><pre class="prettyprint">_Bool c[32];  </pre></td></tr>
+<tr id="source-36"><td><pre>36</pre></td><td><pre class="prettyprint">for(unsigned i=0;i<=31;i++)  </pre></td></tr>
+<tr id="source-37"><td><pre>37</pre></td><td><pre class="prettyprint">  c[i]=((c1>>i)&0x1);  </pre></td></tr>
+<tr id="source-38"><td><pre>38</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-39"><td><pre>39</pre></td><td><pre class="prettyprint">_Bool x[32];  </pre></td></tr>
+<tr id="source-40"><td><pre>40</pre></td><td><pre class="prettyprint">// fill x from index 24 to 31  </pre></td></tr>
+<tr id="source-41"><td><pre>41</pre></td><td><pre class="prettyprint">x[24] = x1&0x1;  </pre></td></tr>
+<tr id="source-42"><td><pre>42</pre></td><td><pre class="prettyprint">x[25] = x1&0x2;  </pre></td></tr>
+<tr id="source-43"><td><pre>43</pre></td><td><pre class="prettyprint">x[26] = x1&0x4;  </pre></td></tr>
+<tr id="source-44"><td><pre>44</pre></td><td><pre class="prettyprint">x[27] = x1&0x8;  </pre></td></tr>
+<tr id="source-45"><td><pre>45</pre></td><td><pre class="prettyprint">x[28] = x1&0x10;  </pre></td></tr>
+<tr id="source-46"><td><pre>46</pre></td><td><pre class="prettyprint">x[29] = x1&0x20;  </pre></td></tr>
+<tr id="source-47"><td><pre>47</pre></td><td><pre class="prettyprint">x[30] = x1&0x40;  </pre></td></tr>
+<tr id="source-48"><td><pre>48</pre></td><td><pre class="prettyprint">x[31] = x1&0x80;  </pre></td></tr>
+<tr id="source-49"><td><pre>49</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-50"><td><pre>50</pre></td><td><pre class="prettyprint">_Bool parallel_crc[32];  </pre></td></tr>
+<tr id="source-51"><td><pre>51</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-52"><td><pre>52</pre></td><td><pre class="prettyprint">// The parellel CRC is a function of the X vector and the current CRC.  </pre></td></tr>
+<tr id="source-53"><td><pre>53</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-54"><td><pre>54</pre></td><td><pre class="prettyprint">parallel_crc[31] = x[29] ^ c[23];  </pre></td></tr>
+<tr id="source-55"><td><pre>55</pre></td><td><pre class="prettyprint">parallel_crc[30] = x[28] ^ x[31] ^ c[22];  </pre></td></tr>
+<tr id="source-56"><td><pre>56</pre></td><td><pre class="prettyprint">parallel_crc[29] = x[27] ^ x[30] ^ x[31] ^ c[21];  </pre></td></tr>
+<tr id="source-57"><td><pre>57</pre></td><td><pre class="prettyprint">parallel_crc[28] = x[26] ^ x[29] ^ x[30] ^ c[20];  </pre></td></tr>
+<tr id="source-58"><td><pre>58</pre></td><td><pre class="prettyprint">parallel_crc[27] = x[31] ^ x[25] ^ x[28] ^ x[29] ^ c[19];  </pre></td></tr>
+<tr id="source-59"><td><pre>59</pre></td><td><pre class="prettyprint">parallel_crc[26] = x[30] ^ x[24] ^ x[27] ^ x[28] ^ c[18];  </pre></td></tr>
+<tr id="source-60"><td><pre>60</pre></td><td><pre class="prettyprint">parallel_crc[25] = x[26] ^ x[27] ^ c[17];  </pre></td></tr>
+<tr id="source-61"><td><pre>61</pre></td><td><pre class="prettyprint">parallel_crc[24] = x[31] ^ x[25] ^ x[26] ^ c[16];  </pre></td></tr>
+<tr id="source-62"><td><pre>62</pre></td><td><pre class="prettyprint">parallel_crc[23] = x[30] ^ x[24] ^ x[25] ^ c[15];  </pre></td></tr>
+<tr id="source-63"><td><pre>63</pre></td><td><pre class="prettyprint">parallel_crc[22] = x[24] ^ c[14];  </pre></td></tr>
+<tr id="source-64"><td><pre>64</pre></td><td><pre class="prettyprint">parallel_crc[21] = x[29] ^ c[13];  </pre></td></tr>
+<tr id="source-65"><td><pre>65</pre></td><td><pre class="prettyprint">parallel_crc[20] = x[28] ^ c[12];  </pre></td></tr>
+<tr id="source-66"><td><pre>66</pre></td><td><pre class="prettyprint">parallel_crc[19] = x[27] ^ x[31] ^ c[11];  </pre></td></tr>
+<tr id="source-67"><td><pre>67</pre></td><td><pre class="prettyprint">parallel_crc[18] = x[26] ^ x[30] ^ x[31] ^ c[10];  </pre></td></tr>
+<tr id="source-68"><td><pre>68</pre></td><td><pre class="prettyprint">parallel_crc[17] = x[25] ^ x[29] ^ x[30] ^ c[9];  </pre></td></tr>
+<tr id="source-69"><td><pre>69</pre></td><td><pre class="prettyprint">parallel_crc[16] = x[24] ^ x[28] ^ x[29] ^ c[8];  </pre></td></tr>
+<tr id="source-70"><td><pre>70</pre></td><td><pre class="prettyprint">parallel_crc[15] = x[27] ^ x[28] ^ x[29] ^ x[31] ^ c[7];  </pre></td></tr>
+<tr id="source-71"><td><pre>71</pre></td><td><pre class="prettyprint">parallel_crc[14] = x[26] ^ x[27] ^ x[28] ^ x[30] ^ x[31] ^ c[6];  </pre></td></tr>
+<tr id="source-72"><td><pre>72</pre></td><td><pre class="prettyprint">parallel_crc[13] = x[31] ^ x[25] ^ x[26] ^ x[27] ^ x[29] ^ x[30] ^ c[5];  </pre></td></tr>
+<tr id="source-73"><td><pre>73</pre></td><td><pre class="prettyprint">parallel_crc[12] = x[30] ^ x[24] ^ x[25] ^ x[26] ^ x[28] ^ x[29] ^ c[4];  </pre></td></tr>
+<tr id="source-74"><td><pre>74</pre></td><td><pre class="prettyprint">parallel_crc[11] = x[24] ^ x[25] ^ x[27] ^ x[28] ^ c[3];  </pre></td></tr>
+<tr id="source-75"><td><pre>75</pre></td><td><pre class="prettyprint">parallel_crc[10] = x[24] ^ x[26] ^ x[27] ^ x[29] ^ c[2];  </pre></td></tr>
+<tr id="source-76"><td><pre>76</pre></td><td><pre class="prettyprint">parallel_crc[9] = x[25] ^ x[26] ^ x[28] ^ x[29] ^ c[1];  </pre></td></tr>
+<tr id="source-77"><td><pre>77</pre></td><td><pre class="prettyprint">parallel_crc[8] = x[24] ^ x[25] ^ x[27] ^ x[28] ^ c[0];  </pre></td></tr>
+<tr id="source-78"><td><pre>78</pre></td><td><pre class="prettyprint">parallel_crc[7] = x[24] ^ x[26] ^ x[27] ^ x[29] ^ x[31];  </pre></td></tr>
+<tr id="source-79"><td><pre>79</pre></td><td><pre class="prettyprint">parallel_crc[6] = x[25] ^ x[26] ^ x[28] ^ x[29] ^ x[30] ^ x[31];  </pre></td></tr>
+<tr id="source-80"><td><pre>80</pre></td><td><pre class="prettyprint">parallel_crc[5] = x[31] ^ x[30] ^ x[29] ^ x[28] ^ x[27] ^ x[25] ^ x[24];  </pre></td></tr>
+<tr id="source-81"><td><pre>81</pre></td><td><pre class="prettyprint">parallel_crc[4] = x[30] ^ x[28] ^ x[27] ^ x[26] ^ x[24];  </pre></td></tr>
+<tr id="source-82"><td><pre>82</pre></td><td><pre class="prettyprint">parallel_crc[3] = x[31] ^ x[25] ^ x[26] ^ x[27];  </pre></td></tr>
+<tr id="source-83"><td><pre>83</pre></td><td><pre class="prettyprint">parallel_crc[2] = x[30] ^ x[24] ^ x[31] ^ x[25] ^ x[26];  </pre></td></tr>
+<tr id="source-84"><td><pre>84</pre></td><td><pre class="prettyprint">parallel_crc[1] = x[30] ^ x[24] ^ x[31] ^ x[25];  </pre></td></tr>
+<tr id="source-85"><td><pre>85</pre></td><td><pre class="prettyprint">parallel_crc[0] = x[30] ^ x[24];  </pre></td></tr>
+<tr id="source-86"><td><pre>86</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-87"><td><pre>87</pre></td><td><pre class="prettyprint">// conver the value in the array to a number   </pre></td></tr>
+<tr id="source-88"><td><pre>88</pre></td><td><pre class="prettyprint">unsigned int n=0;  </pre></td></tr>
+<tr id="source-89"><td><pre>89</pre></td><td><pre class="prettyprint">for(unsigned int i=0;i<=31;i++)  </pre></td></tr>
+<tr id="source-90"><td><pre>90</pre></td><td><pre class="prettyprint"> n=n+2^i*parallel_crc[i];    </pre></td></tr>
+<tr id="source-91"><td><pre>91</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-92"><td><pre>92</pre></td><td><pre class="prettyprint"> return n;  </pre></td></tr>
+<tr id="source-93"><td><pre>93</pre></td><td><pre class="prettyprint">} // endfunction parallel_crc  </pre></td></tr>
+<tr id="source-94"><td><pre>94</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-95"><td><pre>95</pre></td><td><pre class="prettyprint">void initial() {  </pre></td></tr>
+<tr id="source-96"><td><pre>96</pre></td><td><pre class="prettyprint">  smain.crc = CRC_INITIAL_VALUE;  </pre></td></tr>
+<tr id="source-97"><td><pre>97</pre></td><td><pre class="prettyprint">}  </pre></td></tr>
+<tr id="source-98"><td><pre>98</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-99"><td><pre>99</pre></td><td><pre class="prettyprint">void crc_main(  </pre></td></tr>
+<tr id="source-100"><td><pre>100</pre></td><td><pre class="prettyprint">    _Bool         clk,		// everything clocks on rising edge  </pre></td></tr>
+<tr id="source-101"><td><pre>101</pre></td><td><pre class="prettyprint">    _Bool         clken, 	// Clock enable  </pre></td></tr>
+<tr id="source-102"><td><pre>102</pre></td><td><pre class="prettyprint">    _Bool         reset, 	// RESET  </pre></td></tr>
+<tr id="source-103"><td><pre>103</pre></td><td><pre class="prettyprint">    _Bool         load, 	// Load the CRC register  </pre></td></tr>
+<tr id="source-104"><td><pre>104</pre></td><td><pre class="prettyprint">    _Bool         compute,	// compute the next 8-bits of CRC  </pre></td></tr>
+<tr id="source-105"><td><pre>105</pre></td><td><pre class="prettyprint">    unsigned char data_in,	// data in  </pre></td></tr>
+<tr id="source-106"><td><pre>106</pre></td><td><pre class="prettyprint">    unsigned char  data_out,  </pre></td></tr>
+<tr id="source-107"><td><pre>107</pre></td><td><pre class="prettyprint">    _Bool 	  *crc_ok,	// the last CRC check cycle was OK  </pre></td></tr>
+<tr id="source-108"><td><pre>108</pre></td><td><pre class="prettyprint">    unsigned int *crc		// direct acces to the CRC value   </pre></td></tr>
+<tr id="source-109"><td><pre>109</pre></td><td><pre class="prettyprint">    )  </pre></td></tr>
+<tr id="source-110"><td><pre>110</pre></td><td><pre class="prettyprint">{  </pre></td></tr>
+<tr id="source-111"><td><pre>111</pre></td><td><pre class="prettyprint">  unsigned int new_crc;  </pre></td></tr>
+<tr id="source-112"><td><pre>112</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-113"><td><pre>113</pre></td><td><pre class="prettyprint">  // Concurrent signal assignment for the crc generation.  </pre></td></tr>
+<tr id="source-114"><td><pre>114</pre></td><td><pre class="prettyprint">  new_crc = reset ? 0xFFFFFFFF :  </pre></td></tr>
+<tr id="source-115"><td><pre>115</pre></td><td><pre class="prettyprint">    load ? (((smain.crc&0xFFFFFF) << 7) | data_in) :  </pre></td></tr>
+<tr id="source-116"><td><pre>116</pre></td><td><pre class="prettyprint">    compute ? parallel_crces(smain.crc,data_in) :  </pre></td></tr>
+<tr id="source-117"><td><pre>117</pre></td><td><pre class="prettyprint">    smain.crc;  </pre></td></tr>
+<tr id="source-118"><td><pre>118</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-119"><td><pre>119</pre></td><td><pre class="prettyprint">  data_out = ~((smain.crc>>24) & 0xFF);  </pre></td></tr>
+<tr id="source-120"><td><pre>120</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-121"><td><pre>121</pre></td><td><pre class="prettyprint">    </pre></td></tr>
+<tr id="source-122"><td><pre>122</pre></td><td><pre class="prettyprint">  // clocked block  </pre></td></tr>
+<tr id="source-123"><td><pre>123</pre></td><td><pre class="prettyprint">  // Create the 32 Flip flops (with clock enable flops)  </pre></td></tr>
+<tr id="source-124"><td><pre>124</pre></td><td><pre class="prettyprint">  if (clken)  </pre></td></tr>
+<tr id="source-125"><td><pre>125</pre></td><td><pre class="prettyprint">   smain.crc = new_crc;  </pre></td></tr>
+<tr id="source-126"><td><pre>126</pre></td><td><pre class="prettyprint">    </pre></td></tr>
+<tr id="source-127"><td><pre>127</pre></td><td><pre class="prettyprint">  // update the output  </pre></td></tr>
+<tr id="source-128"><td><pre>128</pre></td><td><pre class="prettyprint">  *crc = smain.crc;  </pre></td></tr>
+<tr id="source-129"><td><pre>129</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-130"><td><pre>130</pre></td><td><pre class="prettyprint">  *crc_ok = (smain.crc == 0xC704DD7B);  </pre></td></tr>
+<tr id="source-131"><td><pre>131</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-132"><td><pre>132</pre></td><td><pre class="prettyprint">  // This is a 32-bit wide AND function, so proper attention should be paid  </pre></td></tr>
+<tr id="source-133"><td><pre>133</pre></td><td><pre class="prettyprint">  // when synthesizing to achieve good results.  If there are cycles  </pre></td></tr>
+<tr id="source-134"><td><pre>134</pre></td><td><pre class="prettyprint">  // available pipeling this gate would be appropriate.  </pre></td></tr>
+<tr id="source-135"><td><pre>135</pre></td><td><pre class="prettyprint">}  </pre></td></tr>
+<tr id="source-136"><td><pre>136</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-137"><td><pre>137</pre></td><td><pre class="prettyprint">int main()  </pre></td></tr>
+<tr id="source-138"><td><pre>138</pre></td><td><pre class="prettyprint">{  </pre></td></tr>
+<tr id="source-139"><td><pre>139</pre></td><td><pre class="prettyprint">  _Bool         clk;		// everything clocks on rising edge  </pre></td></tr>
+<tr id="source-140"><td><pre>140</pre></td><td><pre class="prettyprint">  _Bool         clken; 	// Clock enable  </pre></td></tr>
+<tr id="source-141"><td><pre>141</pre></td><td><pre class="prettyprint">  _Bool         reset; 	// RESET  </pre></td></tr>
+<tr id="source-142"><td><pre>142</pre></td><td><pre class="prettyprint">  _Bool         load; 	// Load the CRC register  </pre></td></tr>
+<tr id="source-143"><td><pre>143</pre></td><td><pre class="prettyprint">  _Bool         compute;	// compute the next 8-bits of CRC  </pre></td></tr>
+<tr id="source-144"><td><pre>144</pre></td><td><pre class="prettyprint">  unsigned char data_in;	// data in  </pre></td></tr>
+<tr id="source-145"><td><pre>145</pre></td><td><pre class="prettyprint">  unsigned char  data_out;  </pre></td></tr>
+<tr id="source-146"><td><pre>146</pre></td><td><pre class="prettyprint">  _Bool 	  crc_ok;	// the last CRC check cycle was OK  </pre></td></tr>
+<tr id="source-147"><td><pre>147</pre></td><td><pre class="prettyprint">  unsigned int crc;		// direct acces to the CRC value   </pre></td></tr>
+<tr id="source-148"><td><pre>148</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-149"><td><pre>149</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-150"><td><pre>150</pre></td><td><pre class="prettyprint">  unsigned int  new_crc;	// D inputs to the flops  </pre></td></tr>
+<tr id="source-151"><td><pre>151</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-152"><td><pre>152</pre></td><td><pre class="prettyprint">  initial();  </pre></td></tr>
+<tr id="source-153"><td><pre>153</pre></td><td><pre class="prettyprint">  while(1) {  </pre></td></tr>
+<tr id="source-154"><td><pre>154</pre></td><td><pre class="prettyprint">    load = nondet_bool();  </pre></td></tr>
+<tr id="source-155"><td><pre>155</pre></td><td><pre class="prettyprint">    compute = nondet_bool();  </pre></td></tr>
+<tr id="source-156"><td><pre>156</pre></td><td><pre class="prettyprint">    data_in = nondet_bool();  </pre></td></tr>
+<tr id="source-157"><td><pre>157</pre></td><td><pre class="prettyprint">    crc_main(clk,clken,reset,load,compute,data_in,data_out,&crc_ok,&crc);  </pre></td></tr>
+<tr id="source-158"><td><pre>158</pre></td><td><pre class="prettyprint">  </pre></td></tr>
+<tr id="source-159"><td><pre>159</pre></td><td><pre class="prettyprint">    // property  </pre></td></tr>
+<tr id="source-160"><td><pre>160</pre></td><td><pre class="prettyprint">    assert(crc != 0xAAAAAAAA);  </pre></td></tr>
+<tr id="source-161"><td><pre>161</pre></td><td><pre class="prettyprint">  }  </pre></td></tr>
+<tr id="source-162"><td><pre>162</pre></td><td><pre class="prettyprint">}  </pre></td></tr>
+</table>
+            </div>
+            <div class="fileContent" ng-show="tabIsSet(4)">
+<pre id="log-0">2017-05-17 22:12:31:476	INFO	ResourceLimitChecker.fromConfiguration	Using the following resource limits: CPU-time limit of 3600s</pre>
+<pre id="log-1"></pre>
+<pre id="log-2">2017-05-17 22:12:31:516	INFO	CPAchecker.run	CPAchecker 1.6.1 (Java HotSpot(TM) 64-Bit Server VM 1.8.0_77) started</pre>
+<pre id="log-3"></pre>
+<pre id="log-4">2017-05-17 22:12:32:767	INFO	PredicateCPA:PredicateCPA.<init>	Using predicate analysis with MathSAT5 version 5.3.11 (103797dbdca7) (May  3 2016 09:27:52, gmp 5.1.3, gcc 4.8.5, 64-bit) and JFactory 1.21.</pre>
+<pre id="log-5"></pre>
+<pre id="log-6">2017-05-17 22:12:32:815	INFO	PredicateCPA:InvariantsManager.<init>	No invariants are computed</pre>
+<pre id="log-7"></pre>
+<pre id="log-8">2017-05-17 22:12:32:878	INFO	PredicateCPA:PredicateCPARefiner.<init>	Using refinement for predicate analysis with PredicateAbstractionRefinementStrategy strategy.</pre>
+<pre id="log-9"></pre>
+<pre id="log-10">2017-05-17 22:12:32:889	WARNING	CPAchecker.printConfigurationWarnings	The following configuration options were specified but are not used:</pre>
+<pre id="log-11"> counterexample.checker.config</pre>
+<pre id="log-12"> counterexample.checker </pre>
+<pre id="log-13"></pre>
+<pre id="log-14"></pre>
+<pre id="log-15">2017-05-17 22:12:32:890	INFO	CPAchecker.runAlgorithm	Starting analysis ...</pre>
+<pre id="log-16"></pre>
+<pre id="log-17">2017-05-17 23:12:22:949	WARNING	ForceTerminationOnShutdown$1.shutdownRequested	Shutdown requested (The CPU-time limit of 3600s has elapsed.), waiting for termination.</pre>
+<pre id="log-18"></pre>
+<pre id="log-19">2017-05-17 23:12:23:039	WARNING	ShutdownNotifier.shutdownIfNecessary	Warning: Analysis interrupted (The CPU-time limit of 3600s has elapsed.)</pre>
+<pre id="log-20"></pre>
+            </div>
+            <div class="fileContent"  ng-show="tabIsSet(5)">
+<pre id="statistics-0">PredicateCPA statistics</pre>
+<pre id="statistics-1">-----------------------</pre>
+<pre id="statistics-2">Number of abstractions:            2461 (6% of all post computations)</pre>
+<pre id="statistics-3">  Times abstraction was reused:    0</pre>
+<pre id="statistics-4">  Because of function entry/exit:  0 (0%)</pre>
+<pre id="statistics-5">  Because of loop head:            1864 (76%)</pre>
+<pre id="statistics-6">  Because of join nodes:           0 (0%)</pre>
+<pre id="statistics-7">  Because of threshold:            0 (0%)</pre>
+<pre id="statistics-8">  Because of target state:         597 (24%)</pre>
+<pre id="statistics-9">  Times precision was empty:       14 (1%)</pre>
+<pre id="statistics-10">  Times precision was {false}:     1188 (48%)</pre>
+<pre id="statistics-11">  Times result was cached:         7 (0%)</pre>
+<pre id="statistics-12">  Times cartesian abs was used:    0 (0%)</pre>
+<pre id="statistics-13">  Times boolean abs was used:      1252 (51%)</pre>
+<pre id="statistics-14">  Times result was 'false':        1092 (44%)</pre>
+<pre id="statistics-15">Number of strengthen sat checks:   0</pre>
+<pre id="statistics-16">Number of coverage checks:         14802</pre>
+<pre id="statistics-17">  BDD entailment checks:           13592</pre>
+<pre id="statistics-18">Number of SMT sat checks:          0</pre>
+<pre id="statistics-19">  trivial:                         0</pre>
+<pre id="statistics-20">  cached:                          0</pre>
+<pre id="statistics-21"></pre>
+<pre id="statistics-22">Max ABE block size:                       45</pre>
+<pre id="statistics-23">Number of predicates discovered:          101</pre>
+<pre id="statistics-24">Number of abstraction locations:          4</pre>
+<pre id="statistics-25">Max number of predicates per location:    68</pre>
+<pre id="statistics-26">Avg number of predicates per location:    26</pre>
+<pre id="statistics-27">Total predicates per abstraction:         30734</pre>
+<pre id="statistics-28">Max number of predicates per abstraction: 68</pre>
+<pre id="statistics-29">Avg number of predicates per abstraction: 12.60</pre>
+<pre id="statistics-30">Number of irrelevant predicates:          2407 (8%)</pre>
+<pre id="statistics-31">Number of preds handled by boolean abs:   28327 (92%)</pre>
+<pre id="statistics-32">  Total number of models for allsat:      1217</pre>
+<pre id="statistics-33">  Max number of models for allsat:        1</pre>
+<pre id="statistics-34">  Avg number of models for allsat:        0.97</pre>
+<pre id="statistics-35"></pre>
+<pre id="statistics-36">Number of path formula cache hits:   42558 (93%)</pre>
+<pre id="statistics-37"></pre>
+<pre id="statistics-38">Time for post operator:                  6.685s</pre>
+<pre id="statistics-39">  Time for path formula creation:        6.668s</pre>
+<pre id="statistics-40">    Actual computation:                  6.607s</pre>
+<pre id="statistics-41">Time for strengthen operator:            0.033s</pre>
+<pre id="statistics-42">Time for prec operator:               3526.050s</pre>
+<pre id="statistics-43">  Time for abstraction:               3525.918s (Max:  3471.440s, Count: 2461)</pre>
+<pre id="statistics-44">    Boolean abstraction:              3490.818s</pre>
+<pre id="statistics-45">    Solving time:                       36.517s (Max:     0.458s)</pre>
+<pre id="statistics-46">    Model enumeration time:           3460.215s</pre>
+<pre id="statistics-47">    Time for BDD construction:          11.413s (Max:     0.039s)</pre>
+<pre id="statistics-48">Time for merge operator:                 0.022s</pre>
+<pre id="statistics-49">Time for coverage check:                 0.055s</pre>
+<pre id="statistics-50">  Time for BDD entailment checks:        0.053s</pre>
+<pre id="statistics-51">Total time for SMT solver (w/o itp):  3496.733s</pre>
+<pre id="statistics-52"></pre>
+<pre id="statistics-53">Number of BDD nodes:                               639415</pre>
+<pre id="statistics-54">Size of BDD node table:                            1351523</pre>
+<pre id="statistics-55">Size of BDD cache:                                 135151</pre>
+<pre id="statistics-56">Size of BDD node cleanup queue:                       66999 (count: 49633, min: 0, max: 14701, avg: 1.35)</pre>
+<pre id="statistics-57">Time for BDD node cleanup:                             0.016s</pre>
+<pre id="statistics-58">Time for BDD garbage collection:                       0.138s (in 9 runs)</pre>
+<pre id="statistics-59"></pre>
+<pre id="statistics-60">PrecisionBootstrap statistics</pre>
+<pre id="statistics-61">-----------------------------</pre>
+<pre id="statistics-62">Init. function predicates:                         0</pre>
+<pre id="statistics-63">Init. global predicates:                           0</pre>
+<pre id="statistics-64">Init. location predicates:                         0</pre>
+<pre id="statistics-65"></pre>
+<pre id="statistics-66">Invariant Generation statistics</pre>
+<pre id="statistics-67">-------------------------------</pre>
+<pre id="statistics-68"></pre>
+<pre id="statistics-69">AutomatonAnalysis (AssertionAutomaton) statistics</pre>
+<pre id="statistics-70">-------------------------------------------------</pre>
+<pre id="statistics-71">Number of states:                                  1</pre>
+<pre id="statistics-72">Total time for successor computation:                  0.075s</pre>
+<pre id="statistics-73">Automaton transfers with branching:                0</pre>
+<pre id="statistics-74">Automaton transfer successors:                        44253 (count: 44253, min: 1, max: 1, avg: 1.00) [1 x 44253]</pre>
+<pre id="statistics-75"></pre>
+<pre id="statistics-76">AutomatonAnalysis (ErrorLabelAutomaton) statistics</pre>
+<pre id="statistics-77">--------------------------------------------------</pre>
+<pre id="statistics-78">Number of states:                                  1</pre>
+<pre id="statistics-79">Total time for successor computation:                  0.022s</pre>
+<pre id="statistics-80">Automaton transfers with branching:                0</pre>
+<pre id="statistics-81">Automaton transfer successors:                        44253 (count: 44253, min: 1, max: 1, avg: 1.00) [1 x 44253]</pre>
+<pre id="statistics-82"></pre>
+<pre id="statistics-83">AutomatonAnalysis (TerminatingFunctions) statistics</pre>
+<pre id="statistics-84">---------------------------------------------------</pre>
+<pre id="statistics-85">Number of states:                                  1</pre>
+<pre id="statistics-86">Total time for successor computation:                  0.018s</pre>
+<pre id="statistics-87">Automaton transfers with branching:                0</pre>
+<pre id="statistics-88">Automaton transfer successors:                        44253 (count: 44253, min: 1, max: 1, avg: 1.00) [1 x 44253]</pre>
+<pre id="statistics-89"></pre>
+<pre id="statistics-90">CPA algorithm statistics</pre>
+<pre id="statistics-91">------------------------</pre>
+<pre id="statistics-92">Number of iterations:            13290</pre>
+<pre id="statistics-93">Max size of waitlist:            67</pre>
+<pre id="statistics-94">Average size of waitlist:        18</pre>
+<pre id="statistics-95">Number of computed successors:   15694</pre>
+<pre id="statistics-96">Max successors for one state:    2</pre>
+<pre id="statistics-97">Number of times merged:          605</pre>
+<pre id="statistics-98">Number of times stopped:         707</pre>
+<pre id="statistics-99">Number of times breaked:         68</pre>
+<pre id="statistics-100"></pre>
+<pre id="statistics-101">Total time for CPA algorithm:      3533.677s (Max:  3474.599s)</pre>
+<pre id="statistics-102">  Time for choose from waitlist:      0.025s</pre>
+<pre id="statistics-103">  Time for precision adjustment:   3526.107s</pre>
+<pre id="statistics-104">  Time for transfer relation:         7.202s</pre>
+<pre id="statistics-105">  Time for merge operator:            0.053s</pre>
+<pre id="statistics-106">  Time for stop operator:             0.090s</pre>
+<pre id="statistics-107">  Time for adding to reached set:     0.075s</pre>
+<pre id="statistics-108"></pre>
+<pre id="statistics-109">Static Predicate Refiner statistics</pre>
+<pre id="statistics-110">-----------------------------------</pre>
+<pre id="statistics-111">Number of predicates found statically:                    1 (count: 1, min: 1, max: 1, avg: 1.00)</pre>
+<pre id="statistics-112"></pre>
+<pre id="statistics-113">Total time for static refinement:                      0.396s</pre>
+<pre id="statistics-114">  Time for path feasibility check:                     0.384s</pre>
+<pre id="statistics-115">  Time for predicate extraction from CFA:              0.006s</pre>
+<pre id="statistics-116">  Time for ARG update:                                 0.004s</pre>
+<pre id="statistics-117"></pre>
+<pre id="statistics-118">Predicate-Abstraction Refiner statistics</pre>
+<pre id="statistics-119">----------------------------------------</pre>
+<pre id="statistics-120">Number of predicate refinements:                   67</pre>
+<pre id="statistics-121">Avg. length of target path (in blocks):                2346 (count: 67, min: 2, max: 68, avg: 35.01)</pre>
+<pre id="statistics-122">Number of infeasible sliced prefixes:                     0 (count: 0, min: 0, max: 0, avg: 0.00)</pre>
+<pre id="statistics-123"></pre>
+<pre id="statistics-124">Time for refinement:                                  56.025s</pre>
+<pre id="statistics-125">  Counterexample analysis:                            56.184s (Max:    13.687s, Calls: 68)</pre>
+<pre id="statistics-126">    Refinement sat check:                             44.233s</pre>
+<pre id="statistics-127">    Interpolant computation:                           0.000s</pre>
+<pre id="statistics-128">  Path-formulas extraction:                            0.001s</pre>
+<pre id="statistics-129">  Error path post-processing:                          0.000s</pre>
+<pre id="statistics-130">  Predicate creation:                                  0.053s</pre>
+<pre id="statistics-131">  Precision update:                                    0.018s</pre>
+<pre id="statistics-132">  ARG update:                                          0.119s</pre>
+<pre id="statistics-133"></pre>
+<pre id="statistics-134">Length of refined path (in blocks):                    2313 (count: 67, min: 2, max: 68, avg: 34.52)</pre>
+<pre id="statistics-135">Number of affected states:                             1125 (count: 67, min: 1, max: 67, avg: 16.79)</pre>
+<pre id="statistics-136">Length (states) of path with itp 'true':               1121 (count: 67, min: 0, max: 34, avg: 16.73)</pre>
+<pre id="statistics-137">Length (states) of path with itp non-trivial itp:      1125 (count: 67, min: 1, max: 67, avg: 16.79)</pre>
+<pre id="statistics-138">Length (states) of path with itp 'false':                33 (count: 67, min: 0, max: 1, avg: 0.49)</pre>
+<pre id="statistics-139">Different non-trivial interpolants along paths:        1026 (count: 67, min: 0, max: 34, avg: 15.31)</pre>
+<pre id="statistics-140">Equal non-trivial interpolants along paths:              32 (count: 67, min: 0, max: 32, avg: 0.48)</pre>
+<pre id="statistics-141">Number of refs with location-based cutoff:                0</pre>
+<pre id="statistics-142"></pre>
+<pre id="statistics-143">CEGAR algorithm statistics</pre>
+<pre id="statistics-144">--------------------------</pre>
+<pre id="statistics-145">Number of refinements:                68</pre>
+<pre id="statistics-146">Number of successful refinements:     68</pre>
+<pre id="statistics-147">Number of failed refinements:         0</pre>
+<pre id="statistics-148">Max. size of reached set before ref.: 794</pre>
+<pre id="statistics-149">Max. size of reached set after ref.:  199</pre>
+<pre id="statistics-150">Avg. size of reached set before ref.: 311.96</pre>
+<pre id="statistics-151">Avg. size of reached set after ref.:  110.37</pre>
+<pre id="statistics-152"></pre>
+<pre id="statistics-153">Total time for CEGAR algorithm:    3590.147s</pre>
+<pre id="statistics-154">Time for refinements:                56.465s</pre>
+<pre id="statistics-155">Average time for refinement:          0.830s</pre>
+<pre id="statistics-156">Max time for refinement:             13.701s</pre>
+<pre id="statistics-157"></pre>
+<pre id="statistics-158">Code Coverage</pre>
+<pre id="statistics-159">-----------------------------</pre>
+<pre id="statistics-160">  Visited lines:          156</pre>
+<pre id="statistics-161">  Total lines:            2</pre>
+<pre id="statistics-162">  Line coverage:          78.000</pre>
+<pre id="statistics-163"></pre>
+<pre id="statistics-164">CPAchecker general statistics</pre>
+<pre id="statistics-165">-----------------------------</pre>
+<pre id="statistics-166">Number of program locations:     311</pre>
+<pre id="statistics-167">Number of CFA edges:             318</pre>
+<pre id="statistics-168">Number of relevant variables:    29</pre>
+<pre id="statistics-169">Number of functions:             4</pre>
+<pre id="statistics-170">Number of loops:                 3</pre>
+<pre id="statistics-171">Size of reached set:             187</pre>
+<pre id="statistics-172">  Number of reached locations:   28 (9%)</pre>
+<pre id="statistics-173">    Avg states per location:     6</pre>
+<pre id="statistics-174">    Max states per location:     33 (at node N7)</pre>
+<pre id="statistics-175">  Number of reached functions:   4 (100%)</pre>
+<pre id="statistics-176">  Number of partitions:          155</pre>
+<pre id="statistics-177">    Avg size of partitions:      1</pre>
+<pre id="statistics-178">    Max size of partitions:      33 (with key [N7 (before main.c, line 37), Function parallel_crces called from node N79, stack depth 3 [5a2481da], stack [main, crc_main, parallel_crces]])</pre>
+<pre id="statistics-179">  Number of target states:       0</pre>
+<pre id="statistics-180">  Size of final wait list        5</pre>
+<pre id="statistics-181"></pre>
+<pre id="statistics-182">Time for analysis setup:          1.363s</pre>
+<pre id="statistics-183">  Time for loading CPAs:          0.429s</pre>
+<pre id="statistics-184">  Time for loading parser:        0.263s</pre>
+<pre id="statistics-185">  Time for CFA construction:      0.619s</pre>
+<pre id="statistics-186">    Time for parsing file(s):     0.196s</pre>
+<pre id="statistics-187">    Time for AST to CFA:          0.181s</pre>
+<pre id="statistics-188">    Time for CFA sanity check:    0.014s</pre>
+<pre id="statistics-189">    Time for post-processing:     0.099s</pre>
+<pre id="statistics-190">      Time for var class.:        0.050s</pre>
+<pre id="statistics-191">    Time for CFA export:          0.090s</pre>
+<pre id="statistics-192">Time for Analysis:             3590.147s</pre>
+<pre id="statistics-193">CPU time for analysis:         3596.850s</pre>
+<pre id="statistics-194">Total time for CPAchecker:     3591.516s</pre>
+<pre id="statistics-195">Total CPU time for CPAchecker: 3600.450s</pre>
+<pre id="statistics-196">Time for statistics:              0.093s</pre>
+<pre id="statistics-197"></pre>
+<pre id="statistics-198">Time for Garbage Collector:       0.241s (in 23 runs)</pre>
+<pre id="statistics-199">Garbage Collector(s) used:    PS MarkSweep, PS Scavenge</pre>
+<pre id="statistics-200">Used heap memory:                447MB (   426 MiB) max;    236MB (   225 MiB) avg;    478MB (   456 MiB) peak</pre>
+<pre id="statistics-201">Used non-heap memory:             35MB (    34 MiB) max;     35MB (    34 MiB) avg;     37MB (    36 MiB) peak</pre>
+<pre id="statistics-202">Used in PS Old Gen pool:          56MB (    53 MiB) max;     55MB (    52 MiB) avg;     56MB (    53 MiB) peak</pre>
+<pre id="statistics-203">Allocated heap memory:           828MB (   790 MiB) max;    748MB (   713 MiB) avg</pre>
+<pre id="statistics-204">Allocated non-heap memory:        38MB (    36 MiB) max;     38MB (    36 MiB) avg</pre>
+<pre id="statistics-205">Total process virtual memory:  35080MB ( 33455 MiB) max;  35075MB ( 33450 MiB) avg</pre>
+<pre id="statistics-206"></pre>
+            </div>
+            <div class="fileContent" ng-show="tabIsSet(6)">
+<pre id="config-0">analysis.algorithm.CEGAR = true</pre>
+<pre id="config-1">analysis.checkCounterexamples = false</pre>
+<pre id="config-2">analysis.programNames = main.c</pre>
+<pre id="config-3">analysis.traversal.order = bfs</pre>
+<pre id="config-4">analysis.traversal.useCallstack = true</pre>
+<pre id="config-5">analysis.traversal.useReversePostorder = true</pre>
+<pre id="config-6">ARGCPA.cpa = cpa.composite.CompositeCPA</pre>
+<pre id="config-7">cegar.refiner = cpa.predicate.PredicateRefiner</pre>
+<pre id="config-8">CompositeCPA.cpas = cpa.location.LocationCPA, cpa.callstack.CallstackCPA, cpa.functionpointer.FunctionPointerCPA, cpa.predicate.PredicateCPA</pre>
+<pre id="config-9">counterexample.checker = CPACHECKER</pre>
+<pre id="config-10">counterexample.checker.config = ../cex-checks/valueAnalysis-as-cex-check.properties</pre>
+<pre id="config-11">cpa = cpa.arg.ARGCPA</pre>
+<pre id="config-12">cpa.composite.aggregateBasicBlocks = true</pre>
+<pre id="config-13">cpa.predicate.blk.alwaysAtFunctions = false</pre>
+<pre id="config-14">cpa.predicate.blk.alwaysAtLoops = true</pre>
+<pre id="config-15">cpa.predicate.encodeBitvectorAs = BITVECTOR</pre>
+<pre id="config-16">cpa.predicate.encodeFloatAs = FLOAT</pre>
+<pre id="config-17">cpa.predicate.handleFieldAccess = true</pre>
+<pre id="config-18">cpa.predicate.refinement.performInitialStaticRefinement = true</pre>
+<pre id="config-19">limits.time.cpu = 3600s</pre>
+<pre id="config-20">log.level = INFO</pre>
+<pre id="config-21">parser.usePreprocessor = true</pre>
+<pre id="config-22">solver.solver = MathSAT5</pre>
+<pre id="config-23">specification = ../specification/default.spc</pre>
+<pre id="config-24"></pre>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

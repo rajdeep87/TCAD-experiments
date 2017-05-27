@@ -114,14 +114,14 @@ void main()
   _Bool OUTP; _Bool OVERFLW; 
   _Bool  clock;
  initial();
- //while(1) {
+ while(1) {
    b01(LINE1,LINE2,&OUTP,&OVERFLW,clock);
    if(smain.OVERFLW==1) {
      b01(LINE1,LINE2,&OUTP,&OVERFLW,clock);
      b01(LINE1,LINE2,&OUTP,&OVERFLW,clock);
      assert(smain.OVERFLW!=0);
    }
- //}
+ }
 }
 
 

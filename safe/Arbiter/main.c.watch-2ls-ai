@@ -1,0 +1,107 @@
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -w main.c.watch-2ls-ai -v main.c.time-2ls-ai -o main.c.out-2ls-ai -C 18000 -W 18000 -d 1 -M 32768 /users/rajdeep/acdlp/2ls/src/2ls/2ls --inline --competition-mode main.c 
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 18000 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 18030 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 18000 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/274 19781
+/proc/meminfo: memFree=9722992/49448956 swapFree=0/9157492
+[pid=19781] ppid=19779 vsize=18116 CPUtime=0 cores=0-7
+/proc/19781/stat : 19781 (2ls) S 19779 19781 17281 34816 19773 4210688 220 0 0 0 0 0 0 0 20 0 1 0 228842089 18550784 933 18446744073709551615 4194304 8970252 140734812032352 0 0 0 24578 0 16384 1 0 0 17 1 0 0 0 0 0 11070184 11084852 25612288 140734812038292 140734812038364 140734812038364 140734812041171 0
+/proc/19781/statm: 4529 933 865 1167 0 151 0
+Stop Solver Thread: Started
+
+[startup+0.044371 s]
+/proc/loadavg: 0.00 0.00 0.00 2/274 19781
+/proc/meminfo: memFree=9722992/49448956 swapFree=0/9157492
+[pid=19781] ppid=19779 vsize=36800 CPUtime=0.03 cores=0-7
+/proc/19781/stat : 19781 (2ls) R 19779 19781 17281 34816 19773 4210688 4989 850 0 0 3 0 0 0 20 0 1 0 228842089 37683200 5953 18446744073709551615 4194304 8970252 140734812032352 0 0 0 24578 0 16384 0 0 0 17 1 0 0 0 0 0 11070184 11084852 25612288 140734812038292 140734812038364 140734812038364 140734812041171 0
+/proc/19781/statm: 9200 5953 1264 1167 0 4822 0
+Current children cumulated CPU time (s) 0.03
+Current children cumulated vsize (KiB) 36800
+
+[startup+0.100269 s]
+/proc/loadavg: 0.00 0.00 0.00 2/274 19781
+/proc/meminfo: memFree=9722992/49448956 swapFree=0/9157492
+[pid=19781] ppid=19779 vsize=41276 CPUtime=0.08 cores=0-7
+/proc/19781/stat : 19781 (2ls) R 19779 19781 17281 34816 19773 4210688 6163 850 0 0 8 0 0 0 20 0 1 0 228842089 42266624 7109 18446744073709551615 4194304 8970252 140734812032352 0 0 0 24578 0 16384 0 0 0 17 1 0 0 0 0 0 11070184 11084852 25612288 140734812038292 140734812038364 140734812038364 140734812041171 0
+/proc/19781/statm: 10319 7109 1312 1167 0 5941 0
+Current children cumulated CPU time (s) 0.08
+Current children cumulated vsize (KiB) 41276
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downStop Solver Thread: Timer Thread Stopped
+
+[startup+0.100269 s]
+/proc/loadavg: 0.00 0.00 0.00 2/274 19781
+/proc/meminfo: memFree=9722992/49448956 swapFree=0/9157492
+[pid=19781] ppid=19779 vsize=41276 CPUtime=0.08 cores=0-7
+/proc/19781/stat : 19781 (2ls) R 19779 19781 17281 34816 19773 4210688 6163 850 0 0 8 0 0 0 20 0 1 0 228842089 42266624 7109 18446744073709551615 4194304 8970252 140734812032352 0 0 0 24578 0 16384 0 0 0 17 1 0 0 0 0 0 11070184 11084852 25612288 140734812038292 140734812038364 140734812038364 140734812041171 0
+/proc/19781/statm: 10319 7109 1312 1167 0 5941 0
+Current children cumulated CPU time (s) 0.08
+Current children cumulated vsize (KiB) 41276
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Timer Thread Done
+Waiting for stop solver thread
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 5
+Real time (s): 0.168627
+runsolver_walltime: 0.168627
+CPU time (s): 0.140196
+runsolver_cputime: 0.140196
+CPU user time (s): 0.131225
+CPU system time (s): 0.008971
+CPU usage (%): 83.1398
+Max. virtual memory (cumulated for all children) (KiB): 41276
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.131225
+system time used= 0.008971
+maximum resident set size= 30768
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 7210
+page faults= 1
+swaps= 0
+block input operations= 136
+block output operations= 32
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 31
+involuntary context switches= 3
+
+runsolver used 0.005678 second user time and 0.005693 second system time
+
+The end

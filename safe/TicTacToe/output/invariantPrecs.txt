@@ -1,0 +1,8 @@
+(set-info :source |printed by MathSAT|)
+
+initial N5:
+(assert true)
+
+main N99:
+(assert true)
+

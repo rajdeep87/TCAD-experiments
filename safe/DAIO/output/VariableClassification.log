@@ -1,0 +1,15 @@
+IntBool
+
+[main::preamble_3, main::preamble_2, daio::carrier_loss, initial::biphase_violation, daio::biphase_violation, main::biphase_violation, sys_nerr, initial::carrier_loss, main::preamble_1, main::i, main::carrier_loss, initial::preamble_1, daio::preamble_3, initial::preamble_2, daio::preamble_2, daio::preamble_1, initial::preamble_3]
+
+IntEq
+
+[main::reset, daio::reset, initial::reset]
+
+IntAdd
+
+[]
+
+ALL
+
+[daio::*rx_status, stdin, daio::bit_in, initial::biphase_violation, initial::smain.rx_status_2, initial::smain.rx_status_3, initial::smain.rx_status_0, daio::smain.load_B, initial::smain.rx_status_1, initial::shift_reg, daio::smain.load_A, initial::parity, initial::*load_A, initial::*load_B, initial::*load_buff, initial::rx_control, smain, initial::reset, main::rx_status, daio::reset, initial::*clock_out, initial::frame_ofs, main::clock_out, _IO_2_1_stderr_, initial::smain.bit_count_A, initial::smain.bit_count_B, daio::load_buff, daio::smain.parity, daio::load_A, initial::smain.load_A, initial::smain.load_B, daio::load_B, main::i, daio::clock_out, daio::smain.frame_counter, daio::frame_ofs, initial::rx_status, L0, L1, L2, initial::load_A, L3, daio::*frame_ofs, initial::load_B, L4, L5, L6, L10, L7, L8, L9, main::frame_ofs, initial::bit_in, main::carrier_loss, daio::smain.pc, main::rx_control, daio::rx_control, daio::carrier_loss, stdout, daio::smain.load_buff, sys_errlist, daio::*load_buff, daio::*load_A, main::biphase_violation, main::__CPAchecker_TMP_2, daio::*load_B, main::__CPAchecker_TMP_0, daio::smain.clock_out, daio::*clock_out, daio::parity, initial::smain.load_buff, daio::smain.rx_status_1, daio::smain.rx_status_2, initial::xtal, daio::smain.rx_status_3, daio::biphase_violation, main::bit_in, daio::smain.shift_reg, main::reset, daio::smain.rx_status_0, stderr, _IO_2_1_stdout_, daio::rx_status, daio::smain.bit_count_A, initial::smain.clock_out, main::load_A, main::load_buff, daio::smain.bit_count_B, main::load_B, daio::xtal, _IO_2_1_stdin_, main::xtal, main::preamble_3, main::preamble_2, initial::smain.frame_counter, initial::smain.pc, initial::smain.shift_reg, main::parity, daio::*parity, sys_nerr, main::preamble_1, daio::*shift_reg, initial::preamble_1, initial::preamble_2, initial::preamble_3, initial::smain.parity, initial::load_buff, initial::carrier_loss, daio::shift_reg, initial::*shift_reg, daio::preamble_3, daio::preamble_2, initial::clock_out, daio::preamble_1, initial::*parity, main::shift_reg]

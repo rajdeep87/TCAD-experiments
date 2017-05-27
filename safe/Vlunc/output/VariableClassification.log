@@ -1,0 +1,15 @@
+IntBool
+
+[control::reset, control::clock, vlunc::reset, vlunc::clock, main::reset, main::clock, sys_nerr]
+
+IntEq
+
+[]
+
+IntAdd
+
+[]
+
+ALL
+
+[isUpper::in, toUpper::toupper, stdin, control::Lcmd, stdout, transform::Ucmd, control::scontrol.Ccmd, sys_errlist, toLower::in, transform::out, vlunc::transformed, control::scontrol.prev, vlunc::Ccmd, control::reset, isUpper::__retval__, control::scontrol.Ncmd, main::dataOut, control::*Ncmd, vlunc::reset, initial::smain.regIn, control::load, initial_control::scontrol.Ucmd, vlunc::Ncmd, control::scontrol.Ucmd, main::reset, control::scontrol.Lcmd, transform::Ncmd, smain, stderr, initial_control::scontrol.Lcmd, transform::Ccmd, _IO_2_1_stdout_, vlunc::Ucmd, control::Ccmd, toUpper::__retval__, control::*Ucmd, isUpper::isupper, main::clock, _IO_2_1_stdin_, _IO_2_1_stderr_, initial_control::scontrol.Ccmd, control::Ncmd, transform::__CPAchecker_TMP_1, transform::__CPAchecker_TMP_0, transform::__CPAchecker_TMP_3, transform::__CPAchecker_TMP_2, toLower::__retval__, changeCase::__retval__, sys_nerr, transform::in, scontrol, changeCase::in, vlunc::smain.regIn, main::dataIn, initial_control::scontrol.prev, control::*Lcmd, changeCase::changecase, toUpper::__CPAchecker_TMP_0, vlunc::dataIn, control::clock, vlunc::smain.dataOut, toUpper::in, toLower::__CPAchecker_TMP_0, vlunc::Lcmd, vlunc::clock, transform::Lcmd, toLower::tolower, control::Ucmd, initial_control::scontrol.Ncmd, transform::*out, control::in, control::*Ccmd, vlunc::dataOut, vlunc::*dataOut, vlunc::__CPAchecker_TMP_1, initial::smain.dataOut]

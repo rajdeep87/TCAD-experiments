@@ -1,0 +1,15 @@
+IntBool
+
+[b07::START, main::clock, main::START, sys_nerr, b07::clock]
+
+IntEq
+
+[S_INCREMENTA]
+
+IntAdd
+
+[]
+
+ALL
+
+[b07::sb.y, _IO_2_1_stderr_, stdin, b07::sb.mar, b07::sb.x, stdout, sys_errlist, b07::PUNTI_RETTA, main::START, sys_nerr, main::sb.x, sb, initial::sb.t, main::__CPAchecker_TMP_0, initial::sb.y, initial::sb.x, b07::mem_mar, b07::START, initial::sb.stato, initial::sb.PUNTI_RETTA, b07::*PUNTI_RETTA, S_CALC_RETTA, mems::mem, b07::sb.PUNTI_RETTA, b07::clock, S_UPDATE_MAR, b07::sb.cont, main::PUNTI_RETTA, S_RESET, S_START, stderr, initial::sb.mar, _IO_2_1_stdout_, S_LOAD_X, S_LOAD_Y, S_INCREMENTA, mems::a, b07::sb.stato, mems::__retval__, main::clock, initial::sb.cont, _IO_2_1_stdin_, b07::sb.t]

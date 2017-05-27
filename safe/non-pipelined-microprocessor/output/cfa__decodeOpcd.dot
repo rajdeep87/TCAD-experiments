@@ -1,0 +1,7 @@
+digraph decodeOpcd {
+144 [shape="circle" label="N144\n3"]
+145 [shape="circle" label="N145\n2"]
+145 [style="filled,bold" penwidth="1" fillcolor="white" fontname="Courier New" shape="Mrecord" label=<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr><td align="right">145</td><td align="left">*opcode = instruction &amp; 7;</td></tr><tr><td align="right">146</td><td align="left">default return</td></tr></table>>]
+145 -> 143[label=""]
+144 -> 145 [label="Function start dummy edge" fontname="Courier New"]
+}

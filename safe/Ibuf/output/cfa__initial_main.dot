@@ -1,0 +1,7 @@
+digraph initial_main {
+183 [shape="circle" label="N183\n4"]
+184 [shape="circle" label="N184\n3"]
+184 [style="filled,bold" penwidth="1" fillcolor="white" fontname="Courier New" shape="Mrecord" label=<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr><td align="right">184</td><td align="left">smain-&gt;qAge = 0;</td></tr><tr><td align="right">185</td><td align="left">smain-&gt;valid = 0;</td></tr><tr><td align="right">186</td><td align="left">default return</td></tr></table>>]
+184 -> 182[label=""]
+183 -> 184 [label="Function start dummy edge" fontname="Courier New"]
+}

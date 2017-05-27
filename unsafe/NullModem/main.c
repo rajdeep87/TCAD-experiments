@@ -197,11 +197,13 @@ void main()
   initial_control();
   initial_tx();
   initial_rx();
-  
-  control(clock,snullModem.rst,snullModem.ld,dataIn,&enable,&parallelOut,parallelIn,shiftLoad,txEmpty,dataRdy,bitClock,&ok);
-  UartXmt(shiftLoad,enable,clock,parallelOut,snullModem.rst,&serialOut,&txEmpty);
-  UartRx(clock,snullModem.rst,serialIn,&dataRdy,&parallelIn,&bitClock);
+ 
+  while(1) {
+    control(clock,snullModem.rst,snullModem.ld,dataIn,&enable,&parallelOut,parallelIn,shiftLoad,txEmpty,dataRdy,bitClock,&ok);
+    UartXmt(shiftLoad,enable,clock,parallelOut,snullModem.rst,&serialOut,&txEmpty);
+    UartRx(clock,snullModem.rst,serialIn,&dataRdy,&parallelIn,&bitClock);
 
-  assert(snullModem.rst == 0 || snullModem.ld == 1);
+    assert(snullModem.rst == 0 || snullModem.ld == 1);
+  }
 }
 

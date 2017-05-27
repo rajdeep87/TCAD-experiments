@@ -1,0 +1,26 @@
+(set-info :source |printed by MathSAT|)
+(declare-fun |four_by_four::permutation| () (_ BitVec 8))
+(declare-fun |four_by_four::parity| () (_ BitVec 8))
+(declare-fun __ADDRESS_OF_smain () (_ BitVec 32))
+(declare-fun *unsigned_char ((_ BitVec 32)) (_ BitVec 8))
+
+four_by_four:
+(assert (let ((.def_1227 (= |four_by_four::permutation| (_ bv0 8))))(let ((.def_1228 (ite .def_1227 (_ bv1 32) (_ bv0 32))))(let ((.def_1229 (= .def_1228 (_ bv1 32)))).def_1229))))
+(assert (let ((.def_1237 (= |four_by_four::parity| (_ bv0 8)))).def_1237))
+
+four_by_four N219:
+(assert false)
+(assert (let ((.def_1227 (= |four_by_four::permutation| (_ bv0 8))))(let ((.def_1228 (ite .def_1227 (_ bv1 32) (_ bv0 32))))(let ((.def_1229 (= .def_1228 (_ bv1 32)))).def_1229))))
+(assert (let ((.def_1237 (= |four_by_four::parity| (_ bv0 8)))).def_1237))
+
+main N228:
+(assert (let ((.def_17 (bvadd (_ bv1 32) __ADDRESS_OF_smain)))(let ((.def_1488 (*unsigned_char .def_17)))(let ((.def_1489 (= .def_1488 (_ bv0 8)))).def_1489))))
+(assert (let ((.def_23 (bvadd (_ bv2 32) __ADDRESS_OF_smain)))(let ((.def_1491 (*unsigned_char .def_23)))(let ((.def_1492 (= .def_1491 (_ bv0 8)))).def_1492))))
+(assert (let ((.def_29 (bvadd (_ bv3 32) __ADDRESS_OF_smain)))(let ((.def_1494 (*unsigned_char .def_29)))(let ((.def_1495 (= .def_1494 (_ bv0 8)))).def_1495))))
+(assert (let ((.def_35 (bvadd (_ bv4 32) __ADDRESS_OF_smain)))(let ((.def_1497 (*unsigned_char .def_35)))(let ((.def_1498 (= .def_1497 (_ bv0 8)))).def_1498))))
+(assert (let ((.def_41 (bvadd (_ bv5 32) __ADDRESS_OF_smain)))(let ((.def_1500 (*unsigned_char .def_41)))(let ((.def_1501 (= .def_1500 (_ bv0 8)))).def_1501))))
+(assert (let ((.def_47 (bvadd (_ bv6 32) __ADDRESS_OF_smain)))(let ((.def_1503 (*unsigned_char .def_47)))(let ((.def_1504 (= .def_1503 (_ bv0 8)))).def_1504))))
+(assert (let ((.def_1506 (*unsigned_char __ADDRESS_OF_smain)))(let ((.def_17 (bvadd (_ bv1 32) __ADDRESS_OF_smain)))(let ((.def_1488 (*unsigned_char .def_17)))(let ((.def_1507 (= .def_1488 .def_1506))).def_1507)))))
+(assert (let ((.def_53 (bvadd (_ bv7 32) __ADDRESS_OF_smain)))(let ((.def_1509 (*unsigned_char .def_53)))(let ((.def_1510 (= .def_1509 (_ bv0 8)))).def_1510))))
+(assert (let ((.def_29 (bvadd (_ bv3 32) __ADDRESS_OF_smain)))(let ((.def_1494 (*unsigned_char .def_29)))(let ((.def_23 (bvadd (_ bv2 32) __ADDRESS_OF_smain)))(let ((.def_1491 (*unsigned_char .def_23)))(let ((.def_1512 (= .def_1491 .def_1494))).def_1512))))))
+

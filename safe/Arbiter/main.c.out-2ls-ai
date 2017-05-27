@@ -1,0 +1,238 @@
+2LS version 0.5.1 (based on CBMC 5.6)
+Parsing main.c
+file <command-line> line 0: <command-line>:0:0: warning: "__STDC_VERSION__" redefined
+<built-in>: note: this is the location of the previous definition
+Converting
+Type-checking main
+file main.c line 155 function main: function `assert' is not declared
+Generating GOTO Program
+Adding CPROVER library
+Function Pointer Removal
+Performing full inlining
+Generic Property Instrumentation
+Constant Propagation
+Using intervals domain with binary search solver
+Computing SSA of _start
+Simplifying
+
+Summarizing function _start
+Analyzing function _start
+Computing summary
+restarts              : 1
+conflicts             : 0           
+decisions             : 234         (0.00 % random)
+propagations          : 982         
+conflict literals     : 0           -nan
+restarts              : 2
+conflicts             : 2           
+decisions             : 236         (0.00 % random)
+propagations          : 1649        
+conflict literals     : 5           16.67
+restarts              : 3
+conflicts             : 3           
+decisions             : 464         (0.00 % random)
+propagations          : 2715        
+conflict literals     : 17          26.09
+restarts              : 4
+conflicts             : 3           
+decisions             : 464         (0.00 % random)
+propagations          : 3345        
+conflict literals     : 17          26.09
+restarts              : 5
+conflicts             : 3           
+decisions             : 692         (0.00 % random)
+propagations          : 4373        
+conflict literals     : 17          26.09
+restarts              : 6
+conflicts             : 7           
+decisions             : 697         (0.00 % random)
+propagations          : 5193        
+conflict literals     : 30          16.67
+restarts              : 7
+conflicts             : 8           
+decisions             : 697         (0.00 % random)
+propagations          : 5833        
+conflict literals     : 32          15.79
+restarts              : 8
+conflicts             : 10          
+decisions             : 993         (0.00 % random)
+propagations          : 7102        
+conflict literals     : 39          13.33
+restarts              : 9
+conflicts             : 12          
+decisions             : 1241        (0.00 % random)
+propagations          : 8334        
+conflict literals     : 52          11.86
+restarts              : 10
+conflicts             : 12          
+decisions             : 1241        (0.00 % random)
+propagations          : 8984        
+conflict literals     : 52          11.86
+restarts              : 11
+conflicts             : 15          
+decisions             : 1256        (0.00 % random)
+propagations          : 9799        
+conflict literals     : 81          14.74
+restarts              : 12
+conflicts             : 15          
+decisions             : 1256        (0.00 % random)
+propagations          : 10457       
+conflict literals     : 81          14.74
+restarts              : 13
+conflicts             : 15          
+decisions             : 1504        (0.00 % random)
+propagations          : 11613       
+conflict literals     : 81          14.74
+restarts              : 14
+conflicts             : 17          
+decisions             : 1505        (0.00 % random)
+propagations          : 12372       
+conflict literals     : 89          13.59
+restarts              : 15
+conflicts             : 19          
+decisions             : 1506        (0.00 % random)
+propagations          : 13184       
+conflict literals     : 112         11.81
+restarts              : 16
+conflicts             : 19          
+decisions             : 1506        (0.00 % random)
+propagations          : 13839       
+conflict literals     : 112         11.81
+restarts              : 17
+conflicts             : 20          
+decisions             : 1800        (0.00 % random)
+propagations          : 15170       
+conflict literals     : 115         11.54
+restarts              : 18
+conflicts             : 20          
+decisions             : 1800        (0.00 % random)
+propagations          : 15832       
+conflict literals     : 115         11.54
+restarts              : 19
+conflicts             : 20          
+decisions             : 1800        (0.00 % random)
+propagations          : 16494       
+conflict literals     : 115         11.54
+restarts              : 20
+conflicts             : 20          
+decisions             : 2062        (0.00 % random)
+propagations          : 17738       
+conflict literals     : 115         11.54
+restarts              : 21
+conflicts             : 20          
+decisions             : 2062        (0.00 % random)
+propagations          : 18430       
+conflict literals     : 115         11.54
+restarts              : 22
+conflicts             : 20          
+decisions             : 2062        (0.00 % random)
+propagations          : 19122       
+conflict literals     : 115         11.54
+restarts              : 23
+conflicts             : 20          
+decisions             : 2322        (0.00 % random)
+propagations          : 20412       
+conflict literals     : 115         11.54
+restarts              : 24
+conflicts             : 21          
+decisions             : 2322        (0.00 % random)
+propagations          : 21118       
+conflict literals     : 119         11.19
+restarts              : 25
+conflicts             : 22          
+decisions             : 2322        (0.00 % random)
+propagations          : 21830       
+conflict literals     : 129         11.03
+restarts              : 26
+conflicts             : 22          
+decisions             : 2322        (0.00 % random)
+propagations          : 22530       
+conflict literals     : 129         11.03
+restarts              : 27
+conflicts             : 22          
+decisions             : 2590        (0.00 % random)
+propagations          : 23900       
+conflict literals     : 129         11.03
+restarts              : 28
+conflicts             : 22          
+decisions             : 2590        (0.00 % random)
+propagations          : 24633       
+conflict literals     : 129         11.03
+restarts              : 29
+conflicts             : 22          
+decisions             : 2590        (0.00 % random)
+propagations          : 25366       
+conflict literals     : 129         11.03
+restarts              : 30
+conflicts             : 22          
+decisions             : 2856        (0.00 % random)
+propagations          : 26782       
+conflict literals     : 129         11.03
+restarts              : 31
+conflicts             : 24          
+decisions             : 2897        (0.00 % random)
+propagations          : 28310       
+conflict literals     : 143         10.06
+restarts              : 32
+conflicts             : 28          
+decisions             : 2992        (0.00 % random)
+propagations          : 28871       
+conflict literals     : 154         9.41
+restarts              : 33
+conflicts             : 28          
+decisions             : 2992        (0.00 % random)
+propagations          : 28898       
+conflict literals     : 154         9.41
+restarts              : 34
+conflicts             : 51          
+decisions             : 3305        (0.00 % random)
+propagations          : 33461       
+conflict literals     : 295         12.46
+restarts              : 35
+conflicts             : 52          
+decisions             : 3305        (0.00 % random)
+propagations          : 33610       
+conflict literals     : 297         12.39
+restarts              : 36
+conflicts             : 53          
+decisions             : 3305        (0.00 % random)
+propagations          : 34048       
+conflict literals     : 299         12.32
+restarts              : 37
+conflicts             : 53          
+decisions             : 3305        (0.00 % random)
+propagations          : 34187       
+conflict literals     : 299         12.32
+restarts              : 38
+conflicts             : 62          
+decisions             : 3318        (0.00 % random)
+propagations          : 35363       
+conflict literals     : 375         16.67
+Checking properties of _start
+restarts              : 39
+conflicts             : 62          
+decisions             : 3582        (0.00 % random)
+propagations          : 36867       
+conflict literals     : 375         16.67
+Loops not fully unwound
+Running refinement loop with MiniSAT 2.2.1 with simplifier
+restarts              : 40
+conflicts             : 64          
+decisions             : 3830        (0.00 % random)
+propagations          : 38928       
+conflict literals     : 398         16.03
+restarts              : 41
+conflicts             : 65          
+decisions             : 3830        (0.00 % random)
+propagations          : 40186       
+conflict literals     : 406         16.63
+** statistics: 
+  number of solver instances: 1
+  number of solver calls: 42
+  number of summaries used: 0
+  number of termination arguments computed: 0
+
+
+** 1 of 1 unknown
+** 0 of 1 failed
+VERIFICATION INCONCLUSIVE

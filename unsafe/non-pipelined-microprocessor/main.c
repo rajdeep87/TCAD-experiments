@@ -184,7 +184,7 @@ int main()
   unsigned char progCntr;
   unsigned short int instruction;
   unsigned char opcode;
-  //while(1) {
+  while(1) {
    memory(clk, opcode, readLoc1, readLoc2, writeLoc, aluOut, &memOut1, &memOut2);
    program(clk, progCntr, &instruction);
    decodeOpcd(clk, instruction, &opcode);
@@ -194,5 +194,5 @@ int main()
    alu(clk, opcode, memOut1, memOut2, &aluOut);
    pc(clk, opcode, memOut1, memOut2, &progCntr);
    assert(!((opcode == JMP) && (memOut1 == 0)) && (progCntr == (memOut2 & 7)));
- //}
+ }
 }

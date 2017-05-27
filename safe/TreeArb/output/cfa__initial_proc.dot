@@ -1,0 +1,7 @@
+digraph initial_proc {
+61 [shape="circle" label="N61\n3"]
+62 [shape="circle" label="N62\n2"]
+62 [style="filled,bold" penwidth="1" fillcolor="white" fontname="Courier New" shape="Mrecord" label=<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr><td align="right">62</td><td align="left">sproc-&gt;state = 0;</td></tr><tr><td align="right">63</td><td align="left">default return</td></tr></table>>]
+62 -> 60[label=""]
+61 -> 62 [label="Function start dummy edge" fontname="Courier New"]
+}
