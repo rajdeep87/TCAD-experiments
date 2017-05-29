@@ -5,7 +5,7 @@ _Bool nondet_bool();
 struct state_elements_b06 {
     unsigned char CC_MUX, USCITE;
     _Bool 	 ENABLE_COUNT, ACKOUT;
-    _Bool    state;
+    unsigned char    state;
 };
 struct state_elements_b06 sb;
 

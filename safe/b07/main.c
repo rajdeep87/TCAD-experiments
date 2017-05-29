@@ -13,7 +13,7 @@ int S_INCREMENTA = 6;
 
 struct state_elements_b07 {
     unsigned char 	 PUNTI_RETTA;
-    _Bool    stato;
+    unsigned char    stato;
     unsigned char 	 cont, x;
     unsigned char 	 y, t;
     unsigned char 	 mar;

@@ -11,7 +11,7 @@ int the_end = 3;
 
 struct state_elements_b08 {
     unsigned char 	 O;
-    _Bool    STATO;
+    unsigned char    STATO;
     unsigned char 	 IN_R;
     unsigned char 	 MAR;
     unsigned char 	 OUT_R;
@@ -96,7 +96,7 @@ void b08(
 
 void main()
 {
-    _Bool        CLOCK;
+    _Bool    CLOCK;
     _Bool 	 START;
     unsigned char  I;
     unsigned char O;
