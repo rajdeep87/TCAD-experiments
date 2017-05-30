@@ -58,5 +58,5 @@ module main(clock,alloc_raw,nack,alloc_addr,free_raw,free_addr_raw);
 	if (alloc & ~nack) busy[alloc_addr] = 1;
     end
 
-  p1: assert property ((count[4] == 0 || count[3:0] == 0));
+  assert property ((count[4] == 0 || count[3:0] == 0));
 endmodule // buffer_alloc
