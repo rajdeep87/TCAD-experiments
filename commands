@@ -1,0 +1,9 @@
+Convert .sv to AIGER (.aag) format
+===================================
+ebmc main.sv --ic3 --module main --property main.property.1 --aiger
+
+Convert .aag to .aig format
+===================================
+aigtoaig main.aag > main.aig
+
+
