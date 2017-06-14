@@ -30,7 +30,7 @@
 // Author: Fabio Somenzi <Fabio@Colorado.EDU>
 // The UART is translated from the VHDL of Ben Cohen.
 
-module nullModem(clock,reset,load,dataIn,ok);
+module main(clock,reset,load,dataIn,ok);
     input       clock;		// active edge is positive one
     input       reset;		// active low
     input       load;		// load data into the transmit buffer

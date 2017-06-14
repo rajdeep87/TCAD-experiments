@@ -12,7 +12,7 @@ module main(clock,ir0,ir1,ack0,ack1);
 
     initial begin
 	ack0 = 0; ack1 = 0; robin = 0;
-	req0 = ir0; req1 = ir1;	// nondeterministic initial requests
+	//req0 = ir0; req1 = ir1;	// nondeterministic initial requests
     end
 
     always @ (posedge clock) begin

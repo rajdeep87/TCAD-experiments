@@ -4,6 +4,7 @@ DAIO
 Dekker
 FIFO
 Ibuf
+Elevator
 non-pipelined-microprocessor
 NullModem
 ReqAck

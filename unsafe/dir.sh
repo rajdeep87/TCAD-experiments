@@ -10,9 +10,5 @@ DIRS=`ls -l $MYDIR | egrep '^d' | awk '{print $9}'`
 # and now loop through the directories:
 for DIR in $DIRS
 do
-  #cd ${DIR}
-  #LC=`wc -l main.c`
-  #echo $LC $DIR
   echo  ${DIR}
-  #cd ..
 done
