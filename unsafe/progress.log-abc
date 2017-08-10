@@ -1,0 +1,799 @@
+Starting experiments at Thu 10 Aug 12:08:42 BST 2017 on dkr10.cs.ox.ac.uk
+Starting to processing DAIO/main.aig at Thu 10 Aug 12:08:42 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/bin/abc -c read main.aig;strash;pdr 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18605
+/proc/meminfo: memFree=35544976/49448956 swapFree=0/5141608
+[pid=18605] ppid=18603 vsize=34808 CPUtime=0 cores=0-7
+/proc/18605/stat : 18605 (abc) R 18603 18605 17830 34816 18597 4210688 528 0 0 0 0 0 0 0 20 0 1 0 960184967 35643392 1490 18446744073709551615 4194304 15015596 140721131010496 0 0 0 24578 0 0 0 0 0 17 0 0 0 0 0 0 17116592 17746816 20643840 140721131017774 140721131017825 140721131017825 140721131020257 0
+/proc/18605/statm: 8702 1490 1111 2642 0 1277 0
+Stop Solver Thread: Started
+[AEATK] No environment variable "AEATK_PORT" detected not sending updates
+
+
+[startup+0.02276 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18605
+/proc/meminfo: memFree=35544976/49448956 swapFree=0/5141608
+[pid=18605] ppid=18603 vsize=34808 CPUtime=0.02 cores=0-7
+/proc/18605/stat : 18605 (abc) R 18603 18605 17830 34816 18597 4210688 528 0 0 0 2 0 0 0 20 0 1 0 960184967 35643392 1490 18446744073709551615 4194304 15015596 140721131010496 0 0 0 24578 0 0 0 0 0 17 0 0 0 0 0 0 17116592 17746816 20643840 140721131017774 140721131017825 140721131017825 140721131020257 0
+/proc/18605/statm: 8702 1490 1111 2642 0 1277 0
+Current children cumulated CPU time (s) 0.02
+Current children cumulated vsize (KiB) 34808
+ABC command line: "read main.aig;strash;pdr".
+
+Output 0 of miter "main" was asserted in frame 0.  Time =     0.01 sec
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downStop Solver Thread: Timer Thread Stopped
+
+[startup+0.02276 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18605
+/proc/meminfo: memFree=35544976/49448956 swapFree=0/5141608
+[pid=18605] ppid=18603 vsize=34808 CPUtime=0.02 cores=0-7
+/proc/18605/stat : 18605 (abc) R 18603 18605 17830 34816 18597 4210688 528 0 0 0 2 0 0 0 20 0 1 0 960184967 35643392 1490 18446744073709551615 4194304 15015596 140721131010496 0 0 0 24578 0 0 0 0 0 17 0 0 0 0 0 0 17116592 17746816 20643840 140721131017774 140721131017825 140721131017825 140721131020257 0
+/proc/18605/statm: 8702 1490 1111 2642 0 1277 0
+Current children cumulated CPU time (s) 0.02
+Current children cumulated vsize (KiB) 34808
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Timer Thread Done
+Waiting for stop solver thread
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+[startup+0.02276 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18605
+/proc/meminfo: memFree=35544976/49448956 swapFree=0/5141608
+[pid=18605] ppid=18603 vsize=34808 CPUtime=0.02 cores=0-7
+/proc/18605/stat : 18605 (abc) R 18603 18605 17830 34816 18597 4210688 528 0 0 0 2 0 0 0 20 0 1 0 960184967 35643392 1490 18446744073709551615 4194304 15015596 140721131010496 0 0 0 24578 0 0 0 0 0 17 0 0 0 0 0 0 17116592 17746816 20643840 140721131017774 140721131017825 140721131017825 140721131020257 0
+/proc/18605/statm: 8702 1490 1111 2642 0 1277 0
+Current children cumulated CPU time (s) 0.02
+Current children cumulated vsize (KiB) 34808
+
+Child status: 0
+Real time (s): 0.0561221
+runsolver_walltime: 0.0561221
+CPU time (s): 0.052721
+runsolver_cputime: 0.052721
+CPU user time (s): 0.051704
+CPU system time (s): 0.001017
+CPU usage (%): 93.9399
+Max. virtual memory (cumulated for all children) (KiB): 34808
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.051704
+system time used= 0.001017
+maximum resident set size= 12372
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 1650
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 12
+involuntary context switches= 0
+
+runsolver used 0.003246 second user time and 0.007671 second system time
+
+The end
+done at Thu 10 Aug 12:08:42 BST 2017
+Starting to processing Dekker/main.aig at Thu 10 Aug 12:08:42 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/bin/abc -c read main.aig;strash;pdr 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.01 0.00 3/288 18612
+/proc/meminfo: memFree=35545652/49448956 swapFree=0/5141604
+[pid=18612] ppid=18610 vsize=34808 CPUtime=0 cores=0-7
+/proc/18612/stat : 18612 (abc) R 18610 18612 17830 34816 18597 4210688 523 0 0 0 0 0 0 0 20 0 1 0 960184978 35643392 1485 18446744073709551615 4194304 15015596 140721416626864 0 0 0 24578 0 0 0 0 0 17 5 0 0 0 0 0 17116592 17746816 33505280 140721416631852 140721416631903 140721416631903 140721416634337 0
+/proc/18612/statm: 8702 1485 1107 2642 0 1277 0
+Stop Solver Thread: Started
+[AEATK] No environment variable "AEATK_PORT" detected not sending updates
+
+
+[startup+0.034143 s]
+/proc/loadavg: 0.00 0.01 0.00 3/288 18612
+/proc/meminfo: memFree=35545652/49448956 swapFree=0/5141604
+[pid=18612] ppid=18610 vsize=34808 CPUtime=0.03 cores=0-7
+/proc/18612/stat : 18612 (abc) R 18610 18612 17830 34816 18597 4210688 523 0 0 0 3 0 0 0 20 0 1 0 960184978 35643392 1485 18446744073709551615 4194304 15015596 140721416626864 0 0 0 24578 0 0 0 0 0 17 5 0 0 0 0 0 17116592 17746816 33505280 140721416631852 140721416631903 140721416631903 140721416634337 0
+/proc/18612/statm: 8702 1485 1107 2642 0 1277 0
+Current children cumulated CPU time (s) 0.03
+Current children cumulated vsize (KiB) 34808
+ABC command line: "read main.aig;strash;pdr".
+
+Warning: The last 8 outputs are interpreted as constraints.
+Warning: 2 registers in this network have don't-care init values.
+The don't-care are assumed to be 0. The result may not verify.
+Use command "print_latch" to see the init values of registers.
+Use command "zero" to convert or "init" to change the values.
+Output 0 of miter "main" was asserted in frame 0.  Time =     0.01 sec
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downStop Solver Thread: Timer Thread Stopped
+
+[startup+0.034143 s]
+/proc/loadavg: 0.00 0.01 0.00 3/288 18612
+/proc/meminfo: memFree=35545652/49448956 swapFree=0/5141604
+[pid=18612] ppid=18610 vsize=34808 CPUtime=0.03 cores=0-7
+/proc/18612/stat : 18612 (abc) R 18610 18612 17830 34816 18597 4210688 523 0 0 0 3 0 0 0 20 0 1 0 960184978 35643392 1485 18446744073709551615 4194304 15015596 140721416626864 0 0 0 24578 0 0 0 0 0 17 5 0 0 0 0 0 17116592 17746816 33505280 140721416631852 140721416631903 140721416631903 140721416634337 0
+/proc/18612/statm: 8702 1485 1107 2642 0 1277 0
+Current children cumulated CPU time (s) 0.03
+Current children cumulated vsize (KiB) 34808
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Timer Thread Done
+Waiting for stop solver thread
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+[startup+0.034143 s]
+/proc/loadavg: 0.00 0.01 0.00 3/288 18612
+/proc/meminfo: memFree=35545652/49448956 swapFree=0/5141604
+[pid=18612] ppid=18610 vsize=34808 CPUtime=0.03 cores=0-7
+/proc/18612/stat : 18612 (abc) R 18610 18612 17830 34816 18597 4210688 523 0 0 0 3 0 0 0 20 0 1 0 960184978 35643392 1485 18446744073709551615 4194304 15015596 140721416626864 0 0 0 24578 0 0 0 0 0 17 5 0 0 0 0 0 17116592 17746816 33505280 140721416631852 140721416631903 140721416631903 140721416634337 0
+/proc/18612/statm: 8702 1485 1107 2642 0 1277 0
+Current children cumulated CPU time (s) 0.03
+Current children cumulated vsize (KiB) 34808
+
+Child status: 0
+Real time (s): 0.0623799
+runsolver_walltime: 0.0623799
+CPU time (s): 0.049816
+runsolver_cputime: 0.049816
+CPU user time (s): 0.045835
+CPU system time (s): 0.003981
+CPU usage (%): 79.859
+Max. virtual memory (cumulated for all children) (KiB): 34808
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.045835
+system time used= 0.003981
+maximum resident set size= 11820
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 1519
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 9
+involuntary context switches= 0
+
+runsolver used 0.002907 second user time and 0.007403 second system time
+
+The end
+done at Thu 10 Aug 12:08:42 BST 2017
+Starting to processing FIFO/main.aig at Thu 10 Aug 12:08:42 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/bin/abc -c read main.aig;strash;pdr 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18619
+/proc/meminfo: memFree=35545572/49448956 swapFree=0/5141604
+[pid=18619] ppid=18617 vsize=34808 CPUtime=0 cores=0-7
+/proc/18619/stat : 18619 (abc) R 18617 18619 17830 34816 18597 4210688 533 0 0 0 0 0 0 0 20 0 1 0 960184989 35643392 1532 18446744073709551615 4194304 15015596 140724902313296 0 0 0 24578 0 0 0 0 0 17 5 0 0 0 0 0 17116592 17746816 30519296 140724902319662 140724902319713 140724902319713 140724902322145 0
+/proc/18619/statm: 8702 1532 1155 2642 0 1277 0
+Stop Solver Thread: Started
+[AEATK] No environment variable "AEATK_PORT" detected not sending updates
+
+
+[startup+0.045479 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18619
+/proc/meminfo: memFree=35545572/49448956 swapFree=0/5141604
+[pid=18619] ppid=18617 vsize=37120 CPUtime=0.03 cores=0-7
+/proc/18619/stat : 18619 (abc) R 18617 18619 17830 34816 18597 4210688 1183 0 0 0 3 0 0 0 20 0 1 0 960184989 38010880 2614 18446744073709551615 4194304 15015596 140724902313296 0 0 0 24578 0 0 0 0 0 17 5 0 0 0 0 0 17116592 17746816 30519296 140724902319662 140724902319713 140724902319713 140724902322145 0
+/proc/18619/statm: 9280 2614 1711 2642 0 1855 0
+Current children cumulated CPU time (s) 0.03
+Current children cumulated vsize (KiB) 37120
+ABC command line: "read main.aig;strash;pdr".
+
+Warning: The last 47 outputs are interpreted as constraints.
+Output 0 of miter "main" was asserted in frame 0.  Time =     0.01 sec
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downStop Solver Thread: Timer Thread Stopped
+
+[startup+0.045479 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18619
+/proc/meminfo: memFree=35545572/49448956 swapFree=0/5141604
+[pid=18619] ppid=18617 vsize=37120 CPUtime=0.03 cores=0-7
+/proc/18619/stat : 18619 (abc) R 18617 18619 17830 34816 18597 4210688 1183 0 0 0 3 0 0 0 20 0 1 0 960184989 38010880 2614 18446744073709551615 4194304 15015596 140724902313296 0 0 0 24578 0 0 0 0 0 17 5 0 0 0 0 0 17116592 17746816 30519296 140724902319662 140724902319713 140724902319713 140724902322145 0
+/proc/18619/statm: 9280 2614 1711 2642 0 1855 0
+Current children cumulated CPU time (s) 0.03
+Current children cumulated vsize (KiB) 37120
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Timer Thread Done
+Waiting for stop solver thread
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+[startup+0.045479 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18619
+/proc/meminfo: memFree=35545572/49448956 swapFree=0/5141604
+[pid=18619] ppid=18617 vsize=37120 CPUtime=0.03 cores=0-7
+/proc/18619/stat : 18619 (abc) R 18617 18619 17830 34816 18597 4210688 1183 0 0 0 3 0 0 0 20 0 1 0 960184989 38010880 2614 18446744073709551615 4194304 15015596 140724902313296 0 0 0 24578 0 0 0 0 0 17 5 0 0 0 0 0 17116592 17746816 30519296 140724902319662 140724902319713 140724902319713 140724902322145 0
+/proc/18619/statm: 9280 2614 1711 2642 0 1855 0
+Current children cumulated CPU time (s) 0.03
+Current children cumulated vsize (KiB) 37120
+
+Child status: 0
+Real time (s): 0.0557939
+runsolver_walltime: 0.0557939
+CPU time (s): 0.052975
+runsolver_cputime: 0.052975
+CPU user time (s): 0.049945
+CPU system time (s): 0.00303
+CPU usage (%): 94.9476
+Max. virtual memory (cumulated for all children) (KiB): 37120
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.049945
+system time used= 0.00303
+maximum resident set size= 12628
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 1736
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 0
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 9
+involuntary context switches= 0
+
+runsolver used 0.001355 second user time and 0.008834 second system time
+
+The end
+done at Thu 10 Aug 12:08:42 BST 2017
+Starting to processing Ibuf/main.aig at Thu 10 Aug 12:08:42 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/bin/abc -c read main.aig;strash;pdr 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18626
+/proc/meminfo: memFree=35545684/49448956 swapFree=0/5141604
+[pid=18626] ppid=18624 vsize=34808 CPUtime=0 cores=0-7
+/proc/18626/stat : 18626 (abc) R 18624 18626 17830 34816 18597 4210688 531 0 0 0 0 0 0 0 20 0 1 0 960185000 35643392 1532 18446744073709551615 4194304 15015596 140722634344944 0 0 0 24578 0 0 0 0 0 17 3 0 0 0 0 0 17116592 17746816 32649216 140722634352174 140722634352225 140722634352225 140722634354657 0
+/proc/18626/statm: 8702 1532 1155 2642 0 1277 0
+ABC command line: "read main.aig;strash;pdr".
+
+Output 0 of miter "main" was asserted in frame 0.  Time =     0.01 sec
+Stop Solver Thread: Started
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downTimer Thread Done
+Waiting for stop solver thread
+Stop Solver Thread: Timer Thread Stopped
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18626
+/proc/meminfo: memFree=35545684/49448956 swapFree=0/5141604
+[pid=18626] ppid=18624 vsize=34808 CPUtime=0 cores=0-7
+/proc/18626/stat : 18626 (abc) R 18624 18626 17830 34816 18597 4210688 531 0 0 0 0 0 0 0 20 0 1 0 960185000 35643392 1532 18446744073709551615 4194304 15015596 140722634344944 0 0 0 24578 0 0 0 0 0 17 3 0 0 0 0 0 17116592 17746816 32649216 140722634352174 140722634352225 140722634352225 140722634354657 0
+/proc/18626/statm: 8702 1532 1155 2642 0 1277 0
+Current children cumulated CPU time (s) 0
+Current children cumulated vsize (KiB) 0
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 0
+Real time (s): 0.0534101
+runsolver_walltime: 0.0534101
+CPU time (s): 0.050689
+runsolver_cputime: 0.050689
+CPU user time (s): 0.047833
+CPU system time (s): 0.002856
+CPU usage (%): 94.9053
+Max. virtual memory (cumulated for all children) (KiB): 0
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.047833
+system time used= 0.002856
+maximum resident set size= 11308
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 1442
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 9
+involuntary context switches= 1
+
+runsolver used 0.003182 second user time and 0.008614 second system time
+
+The end
+done at Thu 10 Aug 12:08:42 BST 2017
+Starting to processing non-pipelined-microprocessor/main.aig at Thu 10 Aug 12:08:42 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/bin/abc -c read main.aig;strash;pdr 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18633
+/proc/meminfo: memFree=35544496/49448956 swapFree=0/5141604
+[pid=18633] ppid=18631 vsize=34808 CPUtime=0 cores=0-7
+/proc/18633/stat : 18633 (abc) R 18631 18633 17830 34816 18597 4210688 528 0 0 0 0 0 0 0 20 0 1 0 960185007 35643392 1526 18446744073709551615 4194304 15015596 140721596663856 0 0 0 24578 0 0 0 0 0 17 3 0 0 0 0 0 17116592 17746816 27267072 140721596671510 140721596671561 140721596671561 140721596674017 0
+/proc/18633/statm: 8702 1526 1149 2642 0 1277 0
+Stop Solver Thread: Started
+[AEATK] No environment variable "AEATK_PORT" detected not sending updates
+
+
+[startup+0.028449 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18633
+/proc/meminfo: memFree=35544496/49448956 swapFree=0/5141604
+[pid=18633] ppid=18631 vsize=34808 CPUtime=0.02 cores=0-7
+/proc/18633/stat : 18633 (abc) R 18631 18633 17830 34816 18597 4210688 528 0 0 0 2 0 0 0 20 0 1 0 960185007 35643392 1526 18446744073709551615 4194304 15015596 140721596663856 0 0 0 24578 0 0 0 0 0 17 3 0 0 0 0 0 17116592 17746816 27267072 140721596671510 140721596671561 140721596671561 140721596674017 0
+/proc/18633/statm: 8702 1526 1149 2642 0 1277 0
+Current children cumulated CPU time (s) 0.02
+Current children cumulated vsize (KiB) 34808
+ABC command line: "read main.aig;strash;pdr".
+
+Output 0 of miter "main" was asserted in frame 0.  Time =     0.01 sec
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downStop Solver Thread: Timer Thread Stopped
+
+[startup+0.028449 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18633
+/proc/meminfo: memFree=35544496/49448956 swapFree=0/5141604
+[pid=18633] ppid=18631 vsize=34808 CPUtime=0.02 cores=0-7
+/proc/18633/stat : 18633 (abc) R 18631 18633 17830 34816 18597 4210688 528 0 0 0 2 0 0 0 20 0 1 0 960185007 35643392 1526 18446744073709551615 4194304 15015596 140721596663856 0 0 0 24578 0 0 0 0 0 17 3 0 0 0 0 0 17116592 17746816 27267072 140721596671510 140721596671561 140721596671561 140721596674017 0
+/proc/18633/statm: 8702 1526 1149 2642 0 1277 0
+Current children cumulated CPU time (s) 0.02
+Current children cumulated vsize (KiB) 34808
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Timer Thread Done
+Waiting for stop solver thread
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+[startup+0.028449 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18633
+/proc/meminfo: memFree=35544496/49448956 swapFree=0/5141604
+[pid=18633] ppid=18631 vsize=34808 CPUtime=0.02 cores=0-7
+/proc/18633/stat : 18633 (abc) R 18631 18633 17830 34816 18597 4210688 528 0 0 0 2 0 0 0 20 0 1 0 960185007 35643392 1526 18446744073709551615 4194304 15015596 140721596663856 0 0 0 24578 0 0 0 0 0 17 3 0 0 0 0 0 17116592 17746816 27267072 140721596671510 140721596671561 140721596671561 140721596674017 0
+/proc/18633/statm: 8702 1526 1149 2642 0 1277 0
+Current children cumulated CPU time (s) 0.02
+Current children cumulated vsize (KiB) 34808
+
+Child status: 0
+Real time (s): 0.0537539
+runsolver_walltime: 0.0537539
+CPU time (s): 0.051531
+runsolver_cputime: 0.051531
+CPU user time (s): 0.048495
+CPU system time (s): 0.003036
+CPU usage (%): 95.8646
+Max. virtual memory (cumulated for all children) (KiB): 34808
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.048495
+system time used= 0.003036
+maximum resident set size= 12048
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 1509
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 9
+involuntary context switches= 0
+
+runsolver used 0.006657 second user time and 0.005538 second system time
+
+The end
+done at Thu 10 Aug 12:08:42 BST 2017
+Starting to processing NullModem/main.aig at Thu 10 Aug 12:08:42 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/bin/abc -c read main.aig;strash;pdr 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18640
+/proc/meminfo: memFree=35543708/49448956 swapFree=0/5141604
+[pid=18640] ppid=18638 vsize=34808 CPUtime=0 cores=0-7
+/proc/18640/stat : 18640 (abc) R 18638 18640 17830 34816 18597 4210688 525 0 0 0 0 0 0 0 20 0 1 0 960185018 35643392 1490 18446744073709551615 4194304 15015596 140720826240544 0 0 0 24578 0 0 0 0 0 17 4 0 0 0 0 0 17116592 17746816 52236288 140720826242601 140720826242652 140720826242652 140720826245089 0
+/proc/18640/statm: 8702 1490 1111 2642 0 1277 0
+Stop Solver Thread: Started
+[AEATK] No environment variable "AEATK_PORT" detected not sending updates
+
+
+[startup+0.0376421 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18640
+/proc/meminfo: memFree=35543708/49448956 swapFree=0/5141604
+[pid=18640] ppid=18638 vsize=35472 CPUtime=0.03 cores=0-7
+/proc/18640/stat : 18640 (abc) R 18638 18640 17830 34816 18597 4210688 608 0 0 0 3 0 0 0 20 0 1 0 960185018 36323328 1556 18446744073709551615 4194304 15015596 140720826240544 0 0 0 24578 0 0 0 0 0 17 4 0 0 0 0 0 17116592 17746816 52236288 140720826242601 140720826242652 140720826242652 140720826245089 0
+/proc/18640/statm: 8868 1556 1111 2642 0 1443 0
+Current children cumulated CPU time (s) 0.03
+Current children cumulated vsize (KiB) 35472
+ABC command line: "read main.aig;strash;pdr".
+
+Output 0 of miter "main" was asserted in frame 0.  Time =     0.01 sec
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downStop Solver Thread: Timer Thread Stopped
+
+[startup+0.0376421 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18640
+/proc/meminfo: memFree=35543708/49448956 swapFree=0/5141604
+[pid=18640] ppid=18638 vsize=35472 CPUtime=0.03 cores=0-7
+/proc/18640/stat : 18640 (abc) R 18638 18640 17830 34816 18597 4210688 608 0 0 0 3 0 0 0 20 0 1 0 960185018 36323328 1556 18446744073709551615 4194304 15015596 140720826240544 0 0 0 24578 0 0 0 0 0 17 4 0 0 0 0 0 17116592 17746816 52236288 140720826242601 140720826242652 140720826242652 140720826245089 0
+/proc/18640/statm: 8868 1556 1111 2642 0 1443 0
+Current children cumulated CPU time (s) 0.03
+Current children cumulated vsize (KiB) 35472
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Timer Thread Done
+Waiting for stop solver thread
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+[startup+0.0376421 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18640
+/proc/meminfo: memFree=35543708/49448956 swapFree=0/5141604
+[pid=18640] ppid=18638 vsize=35472 CPUtime=0.03 cores=0-7
+/proc/18640/stat : 18640 (abc) R 18638 18640 17830 34816 18597 4210688 608 0 0 0 3 0 0 0 20 0 1 0 960185018 36323328 1556 18446744073709551615 4194304 15015596 140720826240544 0 0 0 24578 0 0 0 0 0 17 4 0 0 0 0 0 17116592 17746816 52236288 140720826242601 140720826242652 140720826242652 140720826245089 0
+/proc/18640/statm: 8868 1556 1111 2642 0 1443 0
+Current children cumulated CPU time (s) 0.03
+Current children cumulated vsize (KiB) 35472
+
+Child status: 0
+Real time (s): 0.067279
+runsolver_walltime: 0.067279
+CPU time (s): 0.049566
+runsolver_cputime: 0.049566
+CPU user time (s): 0.04754
+CPU system time (s): 0.002026
+CPU usage (%): 73.6724
+Max. virtual memory (cumulated for all children) (KiB): 35472
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.04754
+system time used= 0.002026
+maximum resident set size= 11576
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 1492
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 9
+involuntary context switches= 0
+
+runsolver used 0.005346 second user time and 0.004957 second system time
+
+The end
+done at Thu 10 Aug 12:08:42 BST 2017
+Starting to processing Rotate/main.aig at Thu 10 Aug 12:08:42 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/bin/abc -c read main.aig;strash;pdr 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18647
+/proc/meminfo: memFree=35544668/49448956 swapFree=0/5141604
+[pid=18647] ppid=18645 vsize=34808 CPUtime=0 cores=0-7
+/proc/18647/stat : 18647 (abc) R 18645 18647 17830 34816 18597 4210688 529 0 0 0 0 0 0 0 20 0 1 0 960185030 35643392 1517 18446744073709551615 4194304 15015596 140731561853744 0 0 0 24578 0 0 0 0 0 17 1 0 0 0 0 0 17116592 17746816 51466240 140731561854508 140731561854559 140731561854559 140731561856993 0
+/proc/18647/statm: 8702 1517 1141 2642 0 1277 0
+Stop Solver Thread: Started
+[AEATK] No environment variable "AEATK_PORT" detected not sending updates
+
+
+[startup+0.049515 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18647
+/proc/meminfo: memFree=35544668/49448956 swapFree=0/5141604
+[pid=18647] ppid=18645 vsize=35128 CPUtime=0.03 cores=0-7
+/proc/18647/stat : 18647 (abc) D 18645 18647 17830 34816 18597 1077952512 650 0 0 0 3 0 0 0 20 0 1 0 960185030 35971072 1550 18446744073709551615 4194304 15015596 140731561853744 0 0 0 24578 0 0 1 0 0 17 1 0 0 0 0 0 17116592 17746816 51466240 140731561854508 140731561854559 140731561854559 140731561856993 0
+/proc/18647/statm: 8782 1550 1141 2642 0 1357 0
+Current children cumulated CPU time (s) 0.03
+Current children cumulated vsize (KiB) 35128
+ABC command line: "read main.aig;strash;pdr".
+
+Output 0 of miter "main" was asserted in frame 2.  Time =     0.01 sec
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downStop Solver Thread: Timer Thread Stopped
+
+[startup+0.049515 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18647
+/proc/meminfo: memFree=35544668/49448956 swapFree=0/5141604
+[pid=18647] ppid=18645 vsize=35128 CPUtime=0.03 cores=0-7
+/proc/18647/stat : 18647 (abc) D 18645 18647 17830 34816 18597 1077952512 650 0 0 0 3 0 0 0 20 0 1 0 960185030 35971072 1550 18446744073709551615 4194304 15015596 140731561853744 0 0 0 24578 0 0 1 0 0 17 1 0 0 0 0 0 17116592 17746816 51466240 140731561854508 140731561854559 140731561854559 140731561856993 0
+/proc/18647/statm: 8782 1550 1141 2642 0 1357 0
+Current children cumulated CPU time (s) 0.03
+Current children cumulated vsize (KiB) 35128
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Timer Thread Done
+Waiting for stop solver thread
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+[startup+0.049515 s]
+/proc/loadavg: 0.00 0.01 0.00 2/288 18647
+/proc/meminfo: memFree=35544668/49448956 swapFree=0/5141604
+[pid=18647] ppid=18645 vsize=35128 CPUtime=0.03 cores=0-7
+/proc/18647/stat : 18647 (abc) D 18645 18647 17830 34816 18597 1077952512 650 0 0 0 3 0 0 0 20 0 1 0 960185030 35971072 1550 18446744073709551615 4194304 15015596 140731561853744 0 0 0 24578 0 0 1 0 0 17 1 0 0 0 0 0 17116592 17746816 51466240 140731561854508 140731561854559 140731561854559 140731561856993 0
+/proc/18647/statm: 8782 1550 1141 2642 0 1357 0
+Current children cumulated CPU time (s) 0.03
+Current children cumulated vsize (KiB) 35128
+
+Child status: 0
+Real time (s): 0.0752521
+runsolver_walltime: 0.0752521
+CPU time (s): 0.052164
+runsolver_cputime: 0.052164
+CPU user time (s): 0.047159
+CPU system time (s): 0.005005
+CPU usage (%): 69.319
+Max. virtual memory (cumulated for all children) (KiB): 35128
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.047159
+system time used= 0.005005
+maximum resident set size= 15384
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 2374
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 0
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 9
+involuntary context switches= 0
+
+runsolver used 0.002002 second user time and 0.008419 second system time
+
+The end
+done at Thu 10 Aug 12:08:42 BST 2017

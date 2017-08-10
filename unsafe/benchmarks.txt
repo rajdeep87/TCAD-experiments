@@ -1,13 +1,7 @@
-b01
-b02
 DAIO
 Dekker
 FIFO
 Ibuf
-Elevator
 non-pipelined-microprocessor
 NullModem
-ReqAck
 Rotate
-Unidec
-Vlunc

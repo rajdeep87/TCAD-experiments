@@ -1,0 +1,1601 @@
+Starting experiments at Thu 10 Aug 12:24:47 BST 2017 on dkr10.cs.ox.ac.uk
+Starting to processing  b01/main.sv at Thu 10 Aug 12:24:47 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/temp/hw-cbmc-db/hw-cbmc/src/ebmc/ebmc main.sv --module main --k-induction --bound 10 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+Parsing main.sv
+Converting
+Type-checking Verilog::main
+Induction Base
+General constraints
+Initial state
+Transition relation
+Transition 0->1
+Transition 1->2
+Transition 2->3
+
+[startup+0 s]
+Transition 3->4
+/proc/loadavg: 0.00 0.00 0.00 1/289 19214
+/proc/meminfo: memFree=35546964/49448956 swapFree=0/5141628
+[pid=19214] ppid=19212 vsize=20948 CPUtime=0 cores=0-7
+/proc/19214/stat : 19214 (ebmc) R 19212 19214 17830 34816 19206 4210688 316 0 0 0 0 0 0 0 20 0 1 0 960281530 21450752 1393 18446744073709551615 4194304 7031753 140732113981536 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 9132640 9141980 38830080 140732113982944 140732113983044 140732113983044 140732113985475 0
+/proc/19214/statm: 5237 1393 1212 693 0 1332 0
+Transition 4->5
+Transition 5->6
+Transition 6->7
+Transition 7->8
+Transition 8->9
+Transition 9->10
+Transition 10
+Solving with propositional reduction
+Checking main.property.1
+UNSAT: No counterexample found within bound
+Induction Step
+General constraints
+Transition relation
+Transition 0->1
+Transition 1->2
+Transition 2->3
+Transition 3->4
+Transition 4->5
+Transition 5->6
+Transition 6->7
+Transition 7->8
+Transition 8->9
+Transition 9->10
+Transition 10
+UNSAT: inductive proof successful, property holds
+
+** Results:
+[main.property.1] always main.OVERFLW == 1 |-> ##2 main.OVERFLW == 0: SUCCESS
+Stop Solver Thread: Started
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downTimer Thread Done
+Waiting for stop solver thread
+Stop Solver Thread: Timer Thread Stopped
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 1/289 19214
+/proc/meminfo: memFree=35546964/49448956 swapFree=0/5141628
+[pid=19214] ppid=19212 vsize=20948 CPUtime=0 cores=0-7
+/proc/19214/stat : 19214 (ebmc) R 19212 19214 17830 34816 19206 4210688 316 0 0 0 0 0 0 0 20 0 1 0 960281530 21450752 1393 18446744073709551615 4194304 7031753 140732113981536 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 9132640 9141980 38830080 140732113982944 140732113983044 140732113983044 140732113985475 0
+/proc/19214/statm: 5237 1393 1212 693 0 1332 0
+Current children cumulated CPU time (s) 0
+Current children cumulated vsize (KiB) 0
+heavy processes:
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 0
+Real time (s): 0.013708
+runsolver_walltime: 0.013708
+CPU time (s): 0.012056
+runsolver_cputime: 0.012056
+CPU user time (s): 0.011123
+CPU system time (s): 0.000933
+CPU usage (%): 87.9488
+Max. virtual memory (cumulated for all children) (KiB): 0
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.011123
+system time used= 0.000933
+maximum resident set size= 7216
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 583
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 8
+involuntary context switches= 1
+
+runsolver used 0.002988 second user time and 0.00753 second system time
+
+The end
+done at Thu 10 Aug 12:24:47 BST 2017
+Starting to processing  b02/main.sv at Thu 10 Aug 12:24:47 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/temp/hw-cbmc-db/hw-cbmc/src/ebmc/ebmc main.sv --module main --k-induction --bound 10 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+Parsing main.sv
+Converting
+Type-checking Verilog::main
+Induction Base
+General constraints
+Initial state
+Transition relation
+Transition 0->1
+Transition 1->2
+Transition 2->3
+Transition 3->4
+Transition 4->5
+Transition 5->6
+Transition 6->7
+Transition 7->8
+Transition 8->9
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19221
+/proc/meminfo: memFree=35547096/49448956 swapFree=0/5141628
+[pid=19221] ppid=19219 vsize=20948 CPUtime=0 cores=0-7
+/proc/19221/stat : 19221 (ebmc) R 19219 19221 17830 34816 19206 4210688 319 0 0 0 0 0 0 0 20 0 1 0 960281537 21450752 1451 18446744073709551615 4194304 7031753 140734701350912 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 9132640 9141980 27488256 140734701352416 140734701352516 140734701352516 140734701354947 0
+/proc/19221/statm: 5237 1451 1274 693 0 1332 0
+Transition 9->10
+Transition 10
+Solving with propositional reduction
+Checking main.property.1
+SAT: counterexample found
+Induction Step
+
+** Results:
+[main.property.1] always main.stato == 3 |-> ##2 main.stato != 1: FAILURE
+Stop Solver Thread: Started
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downTimer Thread Done
+Waiting for stop solver thread
+Stop Solver Thread: Timer Thread Stopped
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19221
+/proc/meminfo: memFree=35547096/49448956 swapFree=0/5141628
+[pid=19221] ppid=19219 vsize=20948 CPUtime=0 cores=0-7
+/proc/19221/stat : 19221 (ebmc) R 19219 19221 17830 34816 19206 4210688 319 0 0 0 0 0 0 0 20 0 1 0 960281537 21450752 1451 18446744073709551615 4194304 7031753 140734701350912 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 9132640 9141980 27488256 140734701352416 140734701352516 140734701352516 140734701354947 0
+/proc/19221/statm: 5237 1451 1274 693 0 1332 0
+Current children cumulated CPU time (s) 0
+Current children cumulated vsize (KiB) 0
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 10
+Real time (s): 0.00757193
+runsolver_walltime: 0.00757193
+CPU time (s): 0.006177
+runsolver_cputime: 0.006177
+CPU user time (s): 0.005143
+CPU system time (s): 0.001034
+CPU usage (%): 81.5776
+Max. virtual memory (cumulated for all children) (KiB): 0
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.005143
+system time used= 0.001034
+maximum resident set size= 6756
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 469
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 5
+involuntary context switches= 0
+
+runsolver used 0.000929 second user time and 0.008752 second system time
+
+The end
+done at Thu 10 Aug 12:24:47 BST 2017
+Starting to processing  DAIO/main.sv at Thu 10 Aug 12:24:47 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/temp/hw-cbmc-db/hw-cbmc/src/ebmc/ebmc main.sv --module main --k-induction --bound 10 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+Parsing main.sv
+Converting
+Type-checking Verilog::main
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 3/289 19229
+/proc/meminfo: memFree=35546688/49448956 swapFree=0/5141628
+[pid=19229] ppid=19226 vsize=16724 CPUtime=0 cores=0-7
+/proc/19229/stat : 19229 (ebmc) R 19226 19229 17830 34816 19206 4210688 334 0 0 0 0 0 0 0 20 0 1 0 960281540 17125376 1346 18446744073709551615 4194304 7031753 140725863216400 0 0 0 24578 0 16384 0 0 0 17 1 0 0 0 0 0 9132640 9141980 9814016 140725863220703 140725863220803 140725863220803 140725863223235 0
+/proc/19229/statm: 4181 1346 1162 693 0 276 0
+Induction Base
+General constraints
+Initial state
+Transition relation
+Transition 0->1
+Transition 1->2
+Transition 2->3
+Transition 3->4
+Transition 4->5
+Transition 5->6
+Transition 6->7
+Transition 7->8
+Transition 8->9
+Transition 9->10
+Transition 10
+Solving with propositional reduction
+Checking main.property.1
+SAT: counterexample found
+Induction Step
+
+** Results:
+[main.property.1] always main.rx_status[3] != 0: FAILURE
+Stop Solver Thread: Started
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downTimer Thread Done
+Waiting for stop solver thread
+Stop Solver Thread: Timer Thread Stopped
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 3/289 19229
+/proc/meminfo: memFree=35546688/49448956 swapFree=0/5141628
+[pid=19229] ppid=19226 vsize=16724 CPUtime=0 cores=0-7
+/proc/19229/stat : 19229 (ebmc) R 19226 19229 17830 34816 19206 4210688 334 0 0 0 0 0 0 0 20 0 1 0 960281540 17125376 1346 18446744073709551615 4194304 7031753 140725863216400 0 0 0 24578 0 16384 0 0 0 17 1 0 0 0 0 0 9132640 9141980 9814016 140725863220703 140725863220803 140725863220803 140725863223235 0
+/proc/19229/statm: 4181 1346 1162 693 0 276 0
+Current children cumulated CPU time (s) 0
+Current children cumulated vsize (KiB) 0
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 10
+Real time (s): 0.038011
+runsolver_walltime: 0.038011
+CPU time (s): 0.036483
+runsolver_cputime: 0.036483
+CPU user time (s): 0.033443
+CPU system time (s): 0.00304
+CPU usage (%): 95.9802
+Max. virtual memory (cumulated for all children) (KiB): 0
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.033443
+system time used= 0.00304
+maximum resident set size= 12756
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 2145
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 5
+involuntary context switches= 0
+
+runsolver used 0.00404 second user time and 0.006159 second system time
+
+The end
+done at Thu 10 Aug 12:24:47 BST 2017
+Starting to processing  Dekker/main.sv at Thu 10 Aug 12:24:47 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/temp/hw-cbmc-db/hw-cbmc/src/ebmc/ebmc main.sv --module main --k-induction --bound 10 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+Parsing main.sv
+Converting
+Type-checking Verilog::main
+Induction Base
+General constraints
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19236
+/proc/meminfo: memFree=35546452/49448956 swapFree=0/5141628
+[pid=19236] ppid=19234 vsize=20948 CPUtime=0 cores=0-7
+/proc/19236/stat : 19236 (ebmc) R 19234 19236 17830 34816 19206 4210688 322 0 0 0 0 0 0 0 20 0 1 0 960281547 21450752 1425 18446744073709551615 4194304 7031753 140733244851200 0 0 0 24578 0 16384 0 0 0 17 5 0 0 0 0 0 9132640 9141980 39919616 140733244859869 140733244859969 140733244859969 140733244862403 0
+/proc/19236/statm: 5237 1425 1246 693 0 1332 0
+Initial state
+Transition relation
+Transition 0->1
+Transition 1->2
+Transition 2->3
+Transition 3->4
+Transition 4->5
+Transition 5->6
+Transition 6->7
+Transition 7->8
+Transition 8->9
+Transition 9->10
+Transition 10
+Solving with propositional reduction
+Checking main.property.1
+SAT: counterexample found
+Induction Step
+
+** Results:
+[main.property.1] always main.pc[1'b0] == 5 && main.pc[1'b1] == 5: FAILURE
+Stop Solver Thread: Started
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downTimer Thread Done
+Waiting for stop solver thread
+Stop Solver Thread: Timer Thread Stopped
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19236
+/proc/meminfo: memFree=35546452/49448956 swapFree=0/5141628
+[pid=19236] ppid=19234 vsize=20948 CPUtime=0 cores=0-7
+/proc/19236/stat : 19236 (ebmc) R 19234 19236 17830 34816 19206 4210688 322 0 0 0 0 0 0 0 20 0 1 0 960281547 21450752 1425 18446744073709551615 4194304 7031753 140733244851200 0 0 0 24578 0 16384 0 0 0 17 5 0 0 0 0 0 9132640 9141980 39919616 140733244859869 140733244859969 140733244859969 140733244862403 0
+/proc/19236/statm: 5237 1425 1246 693 0 1332 0
+Current children cumulated CPU time (s) 0
+Current children cumulated vsize (KiB) 0
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 10
+Real time (s): 0.025099
+runsolver_walltime: 0.025099
+CPU time (s): 0.023769
+runsolver_cputime: 0.023769
+CPU user time (s): 0.020806
+CPU system time (s): 0.002963
+CPU usage (%): 94.7008
+Max. virtual memory (cumulated for all children) (KiB): 0
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.020806
+system time used= 0.002963
+maximum resident set size= 8624
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 987
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 5
+involuntary context switches= 0
+
+runsolver used 0.003708 second user time and 0.006191 second system time
+
+The end
+done at Thu 10 Aug 12:24:47 BST 2017
+Starting to processing  Elevator/main.sv at Thu 10 Aug 12:24:47 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/temp/hw-cbmc-db/hw-cbmc/src/ebmc/ebmc main.sv --module main --k-induction --bound 10 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+Parsing main.sv
+Converting
+Type-checking Verilog::elevator
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19243
+/proc/meminfo: memFree=35546572/49448956 swapFree=0/5141628
+[pid=19243] ppid=19241 vsize=16988 CPUtime=0 cores=0-7
+/proc/19243/stat : 19243 (ebmc) R 19241 19243 17830 34816 19206 4210688 399 0 0 0 0 0 0 0 20 0 1 0 960281551 17395712 1391 18446744073709551615 4194304 7031753 140732173098384 0 0 0 24578 0 16384 0 0 0 17 1 0 0 0 0 0 9132640 9141980 31776768 140732173104603 140732173104703 140732173104703 140732173107139 0
+/proc/19243/statm: 4247 1391 1137 693 0 342 0
+Type-checking Verilog::main_control
+Type-checking Verilog::main
+Induction Base
+General constraints
+Initial state
+Transition relation
+Transition 0->1
+Transition 1->2
+Transition 2->3
+Transition 3->4
+Transition 4->5
+Transition 5->6
+Transition 6->7
+Transition 7->8
+Transition 8->9
+Transition 9->10
+Transition 10
+Solving with propositional reduction
+Checking main.property.1
+SAT: counterexample found
+Induction Step
+
+** Results:
+[main.property.1] always main.main_control.up_floor_buttons[2'b1] == 0 |-> ##[1:$] main.e1.location[1:0] == 2 && main.e1.door == 0 && main.e1.direction == 0: FAILURE
+Stop Solver Thread: Started
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downTimer Thread Done
+Waiting for stop solver thread
+Stop Solver Thread: Timer Thread Stopped
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19243
+/proc/meminfo: memFree=35546572/49448956 swapFree=0/5141628
+[pid=19243] ppid=19241 vsize=16988 CPUtime=0 cores=0-7
+/proc/19243/stat : 19243 (ebmc) R 19241 19243 17830 34816 19206 4210688 399 0 0 0 0 0 0 0 20 0 1 0 960281551 17395712 1391 18446744073709551615 4194304 7031753 140732173098384 0 0 0 24578 0 16384 0 0 0 17 1 0 0 0 0 0 9132640 9141980 31776768 140732173104603 140732173104703 140732173104703 140732173107139 0
+/proc/19243/statm: 4247 1391 1137 693 0 342 0
+Current children cumulated CPU time (s) 0
+Current children cumulated vsize (KiB) 0
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 10
+Real time (s): 0.05351
+runsolver_walltime: 0.05351
+CPU time (s): 0.051912
+runsolver_cputime: 0.051912
+CPU user time (s): 0.049911
+CPU system time (s): 0.002001
+CPU usage (%): 97.0137
+Max. virtual memory (cumulated for all children) (KiB): 0
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.049911
+system time used= 0.002001
+maximum resident set size= 17676
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 3348
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 5
+involuntary context switches= 0
+
+runsolver used 0.006947 second user time and 0.003507 second system time
+
+The end
+done at Thu 10 Aug 12:24:48 BST 2017
+Starting to processing  FIFO/main.sv at Thu 10 Aug 12:24:48 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/temp/hw-cbmc-db/hw-cbmc/src/ebmc/ebmc main.sv --module main --k-induction --bound 10 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+Parsing main.sv
+Converting
+Type-checking Verilog::rbFIFO
+Type-checking Verilog::srFIFO
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19250
+/proc/meminfo: memFree=35546772/49448956 swapFree=0/5141628
+[pid=19250] ppid=19248 vsize=16592 CPUtime=0 cores=0-7
+/proc/19250/stat : 19250 (ebmc) R 19248 19250 17830 34816 19206 4210688 321 0 0 0 0 0 0 0 20 0 1 0 960281558 16990208 1335 18446744073709551615 4194304 7031753 140733317901376 0 0 0 24578 0 16384 0 0 0 17 3 0 0 0 0 0 9132640 9141980 35692544 140733317907935 140733317908035 140733317908035 140733317910467 0
+/proc/19250/statm: 4148 1335 1150 693 0 243 0
+Type-checking Verilog::main
+Induction Base
+General constraints
+Stop Solver Thread: Started
+[AEATK] No environment variable "AEATK_PORT" detected not sending updates
+
+
+[startup+0.0343741 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19250
+/proc/meminfo: memFree=35546772/49448956 swapFree=0/5141628
+[pid=19250] ppid=19248 vsize=28444 CPUtime=0.03 cores=0-7
+/proc/19250/stat : 19250 (ebmc) R 19248 19250 17830 34816 19206 4210688 2395 0 0 0 3 0 0 0 20 0 1 0 960281558 29126656 3360 18446744073709551615 4194304 7031753 140733317901376 0 0 0 24578 0 16384 0 0 0 17 3 0 0 0 0 0 9132640 9141980 35692544 140733317907935 140733317908035 140733317908035 140733317910467 0
+/proc/19250/statm: 7111 3360 1214 693 0 3206 0
+Current children cumulated CPU time (s) 0.03
+Current children cumulated vsize (KiB) 28444
+Initial state
+Transition relation
+Transition 0->1
+Transition 1->2
+Transition 2->3
+Transition 3->4
+Transition 4->5
+Transition 5->6
+Transition 6->7
+Transition 7->8
+Transition 8->9
+Transition 9->10
+Transition 10
+Solving with propositional reduction
+Checking main.property.1
+
+[startup+0.100192 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19250
+/proc/meminfo: memFree=35546772/49448956 swapFree=0/5141628
+[pid=19250] ppid=19248 vsize=33960 CPUtime=0.09 cores=0-7
+/proc/19250/stat : 19250 (ebmc) R 19248 19250 17830 34816 19206 4210688 5070 0 0 0 9 0 0 0 20 0 1 0 960281558 34775040 5326 18446744073709551615 4194304 7031753 140733317901376 0 0 0 24578 0 16384 0 0 0 17 3 0 0 0 0 0 9132640 9141980 35692544 140733317907935 140733317908035 140733317908035 140733317910467 0
+/proc/19250/statm: 8490 5326 1230 693 0 4585 0
+Current children cumulated CPU time (s) 0.09
+Current children cumulated vsize (KiB) 33960
+
+[startup+0.300118 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19250
+/proc/meminfo: memFree=35546772/49448956 swapFree=0/5141628
+[pid=19250] ppid=19248 vsize=35980 CPUtime=0.29 cores=0-7
+/proc/19250/stat : 19250 (ebmc) R 19248 19250 17830 34816 19206 4210688 5881 0 0 0 29 0 0 0 20 0 1 0 960281558 36843520 5898 18446744073709551615 4194304 7031753 140733317901376 0 0 0 24578 0 16384 0 0 0 17 3 0 0 0 0 0 9132640 9141980 35692544 140733317907935 140733317908035 140733317908035 140733317910467 0
+/proc/19250/statm: 8995 5898 1278 693 0 5090 0
+Current children cumulated CPU time (s) 0.29
+Current children cumulated vsize (KiB) 35980
+
+[startup+0.700103 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19250
+/proc/meminfo: memFree=35546772/49448956 swapFree=0/5141628
+[pid=19250] ppid=19248 vsize=38656 CPUtime=0.68 cores=0-7
+/proc/19250/stat : 19250 (ebmc) R 19248 19250 17830 34816 19206 4210688 6131 0 0 0 68 0 0 0 20 0 1 0 960281558 39583744 6152 18446744073709551615 4194304 7031753 140733317901376 0 0 0 24578 0 16384 0 0 0 17 3 0 0 0 0 0 9132640 9141980 35692544 140733317907935 140733317908035 140733317908035 140733317910467 0
+/proc/19250/statm: 9664 6152 1278 693 0 5759 0
+Current children cumulated CPU time (s) 0.68
+Current children cumulated vsize (KiB) 38656
+UNSAT: No counterexample found within bound
+Induction Step
+General constraints
+Transition relation
+Transition 0->1
+Transition 1->2
+Transition 2->3
+Transition 3->4
+Transition 4->5
+Transition 5->6
+Transition 6->7
+Transition 7->8
+Transition 8->9
+Transition 9->10
+Transition 10
+SAT: inductive proof failed, k-induction is inconclusive
+
+** Results:
+[main.property.1] always main.equal == 1: UNKNOWN
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downStop Solver Thread: Timer Thread Stopped
+
+[startup+0.900104 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19250
+/proc/meminfo: memFree=35546772/49448956 swapFree=0/5141628
+[pid=19250] ppid=19248 vsize=37320 CPUtime=0.88 cores=0-7
+/proc/19250/stat : 19250 (ebmc) R 19248 19250 17830 34816 19206 4210688 7396 0 0 0 88 0 0 0 20 0 1 0 960281558 38215680 6480 18446744073709551615 4194304 7031753 140733317901376 0 0 0 24578 0 16384 0 0 0 17 3 0 0 0 0 0 9132640 9141980 35692544 140733317907935 140733317908035 140733317908035 140733317910467 0
+/proc/19250/statm: 9330 6480 1310 693 0 5425 0
+Current children cumulated CPU time (s) 0.88
+Current children cumulated vsize (KiB) 37320
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Timer Thread Done
+Waiting for stop solver thread
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 0
+Real time (s): 0.96608
+runsolver_walltime: 0.96608
+CPU time (s): 0.961485
+runsolver_cputime: 0.961485
+CPU user time (s): 0.949519
+CPU system time (s): 0.011966
+CPU usage (%): 99.5244
+Max. virtual memory (cumulated for all children) (KiB): 38656
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.949519
+system time used= 0.011966
+maximum resident set size= 27240
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 7739
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 16
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 5
+involuntary context switches= 18
+
+runsolver used 0.007025 second user time and 0.006563 second system time
+
+The end
+done at Thu 10 Aug 12:24:49 BST 2017
+Starting to processing  Ibuf/main.sv at Thu 10 Aug 12:24:49 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/temp/hw-cbmc-db/hw-cbmc/src/ebmc/ebmc main.sv --module main --k-induction --bound 10 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+Parsing main.sv
+Converting
+Type-checking Verilog::main
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 1/289 19257
+/proc/meminfo: memFree=35546700/49448956 swapFree=0/5141652
+[pid=19257] ppid=19255 vsize=16724 CPUtime=0 cores=0-7
+/proc/19257/stat : 19257 (ebmc) R 19255 19257 17830 34816 19206 4210688 353 0 0 0 0 0 0 0 20 0 1 0 960281659 17125376 1348 18446744073709551615 4194304 7031753 140728267934032 0 0 0 24578 0 16384 0 0 0 17 5 0 0 0 0 0 9132640 9141980 16982016 140728267937247 140728267937347 140728267937347 140728267939779 0
+/proc/19257/statm: 4181 1348 1164 693 0 276 0
+Induction Base
+General constraints
+Initial state
+Transition relation
+Transition 0->1
+Transition 1->2
+Transition 2->3
+Transition 3->4
+Transition 4->5
+Transition 5->6
+Transition 6->7
+Transition 7->8
+Transition 8->9
+Transition 9->10
+Transition 10
+Solving with propositional reduction
+Checking main.property.1
+SAT: counterexample found
+Induction Step
+
+** Results:
+[main.property.1] always !((main.qAge[0] == 0 || main.qAge[1] == 1 || main.qAge[2] == 0) && (main.qAge[0] == 1 || main.qAge[1] == 0 || main.qAge[2] == 1) && (!(main.qAge[0] == 1) || main.valid[0] == 1) && (!(main.qAge[1] == 1) || main.valid[0] == 1) && (!(main.qAge[2] == 1) || main.valid[1] == 1) && (!(main.valid[0] == 1 && main.valid[1] == 0) || main.qAge[0] == 1) && (!(main.valid[0] == 1 && main.valid[2] == 0) || main.qAge[1] == 1) && (!(main.valid[1] == 1 && main.valid[2] == 0) || main.qAge[2] == 1)): FAILURE
+Stop Solver Thread: Started
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downTimer Thread Done
+Waiting for stop solver thread
+Stop Solver Thread: Timer Thread Stopped
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 1/289 19257
+/proc/meminfo: memFree=35546700/49448956 swapFree=0/5141652
+[pid=19257] ppid=19255 vsize=16724 CPUtime=0 cores=0-7
+/proc/19257/stat : 19257 (ebmc) R 19255 19257 17830 34816 19206 4210688 353 0 0 0 0 0 0 0 20 0 1 0 960281659 17125376 1348 18446744073709551615 4194304 7031753 140728267934032 0 0 0 24578 0 16384 0 0 0 17 5 0 0 0 0 0 9132640 9141980 16982016 140728267937247 140728267937347 140728267937347 140728267939779 0
+/proc/19257/statm: 4181 1348 1164 693 0 276 0
+Current children cumulated CPU time (s) 0
+Current children cumulated vsize (KiB) 0
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 10
+Real time (s): 0.0187131
+runsolver_walltime: 0.0187131
+CPU time (s): 0.017375
+runsolver_cputime: 0.017375
+CPU user time (s): 0.014308
+CPU system time (s): 0.003067
+CPU usage (%): 92.8496
+Max. virtual memory (cumulated for all children) (KiB): 0
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.014308
+system time used= 0.003067
+maximum resident set size= 9636
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 1217
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 5
+involuntary context switches= 0
+
+runsolver used 0.00371 second user time and 0.006431 second system time
+
+The end
+done at Thu 10 Aug 12:24:49 BST 2017
+Starting to processing  non-pipelined-microprocessor/main.sv at Thu 10 Aug 12:24:49 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/temp/hw-cbmc-db/hw-cbmc/src/ebmc/ebmc main.sv --module main --k-induction --bound 10 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+Parsing main.sv
+Converting
+Type-checking Verilog::alu
+Type-checking Verilog::decodeLoc1
+Type-checking Verilog::decodeLoc2
+Type-checking Verilog::decodeLoc3
+Type-checking Verilog::decodeOpcd
+Type-checking Verilog::memory
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19264
+/proc/meminfo: memFree=35546076/49448956 swapFree=0/5141652
+[pid=19264] ppid=19262 vsize=16728 CPUtime=0 cores=0-7
+/proc/19264/stat : 19264 (ebmc) R 19262 19264 17830 34816 19206 4210688 341 0 0 0 0 0 0 0 20 0 1 0 960281664 17129472 1346 18446744073709551615 4194304 7031753 140728422867008 0 0 0 24578 0 16384 0 0 0 17 0 0 0 0 0 0 9132640 9141980 14352384 140728422868423 140728422868523 140728422868523 140728422870979 0
+/proc/19264/statm: 4182 1346 1162 693 0 277 0
+Type-checking Verilog::pc
+Type-checking Verilog::programs
+Type-checking Verilog::main
+Induction Base
+General constraints
+Initial state
+Transition relation
+Transition 0->1
+Transition 1->2
+Transition 2->3
+Transition 3->4
+Transition 4->5
+Transition 5->6
+Transition 6->7
+Transition 7->8
+Transition 8->9
+Transition 9->10
+Transition 10
+Solving with propositional reduction
+Checking main.property.1
+SAT: counterexample found
+Induction Step
+
+** Results:
+[main.property.1] always !(main.opcode == 1 && main.memOut1 == 0) && main.progCntr == main.memOut2[2:0]: FAILURE
+Stop Solver Thread: Started
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downTimer Thread Done
+Waiting for stop solver thread
+Stop Solver Thread: Timer Thread Stopped
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19264
+/proc/meminfo: memFree=35546076/49448956 swapFree=0/5141652
+[pid=19264] ppid=19262 vsize=16728 CPUtime=0 cores=0-7
+/proc/19264/stat : 19264 (ebmc) R 19262 19264 17830 34816 19206 4210688 341 0 0 0 0 0 0 0 20 0 1 0 960281664 17129472 1346 18446744073709551615 4194304 7031753 140728422867008 0 0 0 24578 0 16384 0 0 0 17 0 0 0 0 0 0 9132640 9141980 14352384 140728422868423 140728422868523 140728422868523 140728422870979 0
+/proc/19264/statm: 4182 1346 1162 693 0 277 0
+Current children cumulated CPU time (s) 0
+Current children cumulated vsize (KiB) 0
+heavy processes:
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 10
+Real time (s): 0.021839
+runsolver_walltime: 0.021839
+CPU time (s): 0.020344
+runsolver_cputime: 0.020344
+CPU user time (s): 0.017428
+CPU system time (s): 0.002916
+CPU usage (%): 93.1544
+Max. virtual memory (cumulated for all children) (KiB): 0
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.017428
+system time used= 0.002916
+maximum resident set size= 9900
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 1322
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 5
+involuntary context switches= 0
+
+runsolver used 0.005526 second user time and 0.004446 second system time
+
+The end
+done at Thu 10 Aug 12:24:49 BST 2017
+Starting to processing  NullModem/main.sv at Thu 10 Aug 12:24:49 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/temp/hw-cbmc-db/hw-cbmc/src/ebmc/ebmc main.sv --module main --k-induction --bound 10 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+Parsing main.sv
+Converting
+Type-checking Verilog::UartRx
+Type-checking Verilog::UartXmt
+Type-checking Verilog::control
+Type-checking Verilog::main
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19271
+/proc/meminfo: memFree=35546428/49448956 swapFree=0/5141652
+[pid=19271] ppid=19269 vsize=16724 CPUtime=0 cores=0-7
+/proc/19271/stat : 19271 (ebmc) R 19269 19271 17830 34816 19206 4210688 356 0 0 0 0 0 0 0 20 0 1 0 960281675 17125376 1316 18446744073709551615 4194304 7031753 140726325207888 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 9132640 9141980 37867520 140726325216730 140726325216830 140726325216830 140726325219267 0
+/proc/19271/statm: 4181 1316 1130 693 0 276 0
+Induction Base
+General constraints
+Initial state
+Transition relation
+Transition 0->1
+Transition 1->2
+Transition 2->3
+Transition 3->4
+Transition 4->5
+Transition 5->6
+Transition 6->7
+Transition 7->8
+Transition 8->9
+Transition 9->10
+Transition 10
+Solving with propositional reduction
+Checking main.property.1
+SAT: counterexample found
+Induction Step
+
+** Results:
+[main.property.1] always main.rst == 0 || main.ld == 1: FAILURE
+Stop Solver Thread: Started
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downTimer Thread Done
+Waiting for stop solver thread
+Stop Solver Thread: Timer Thread Stopped
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19271
+/proc/meminfo: memFree=35546428/49448956 swapFree=0/5141652
+[pid=19271] ppid=19269 vsize=16724 CPUtime=0 cores=0-7
+/proc/19271/stat : 19271 (ebmc) R 19269 19271 17830 34816 19206 4210688 356 0 0 0 0 0 0 0 20 0 1 0 960281675 17125376 1316 18446744073709551615 4194304 7031753 140726325207888 0 0 0 24578 0 16384 0 0 0 17 6 0 0 0 0 0 9132640 9141980 37867520 140726325216730 140726325216830 140726325216830 140726325219267 0
+/proc/19271/statm: 4181 1316 1130 693 0 276 0
+Current children cumulated CPU time (s) 0
+Current children cumulated vsize (KiB) 0
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 10
+Real time (s): 0.0233389
+runsolver_walltime: 0.0233389
+CPU time (s): 0.021979
+runsolver_cputime: 0.021979
+CPU user time (s): 0.019882
+CPU system time (s): 0.002097
+CPU usage (%): 94.1732
+Max. virtual memory (cumulated for all children) (KiB): 0
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.019882
+system time used= 0.002097
+maximum resident set size= 10488
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 1455
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 5
+involuntary context switches= 0
+
+runsolver used 0.004942 second user time and 0.005082 second system time
+
+The end
+done at Thu 10 Aug 12:24:49 BST 2017
+Starting to processing  ReqAck/main.sv at Thu 10 Aug 12:24:49 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/temp/hw-cbmc-db/hw-cbmc/src/ebmc/ebmc main.sv --module main --k-induction --bound 10 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+Parsing main.sv
+Converting
+Type-checking Verilog::slave
+Type-checking Verilog::reqAck
+Type-checking Verilog::main
+Induction Base
+General constraints
+Initial state
+Transition relation
+Transition 0->1
+Transition 1->2
+Transition 2->3
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19278
+/proc/meminfo: memFree=35546340/49448956 swapFree=0/5141652
+[pid=19278] ppid=19276 vsize=20948 CPUtime=0 cores=0-7
+/proc/19278/stat : 19278 (ebmc) R 19276 19278 17830 34816 19206 4210688 320 0 0 0 0 0 0 0 20 0 1 0 960281687 21450752 1438 18446744073709551615 4194304 7031753 140731056425328 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 9132640 9141980 37408768 140731056428509 140731056428609 140731056428609 140731056431043 0
+/proc/19278/statm: 5237 1438 1260 693 0 1332 0
+Transition 3->4
+Transition 4->5
+Transition 5->6
+Transition 6->7
+Transition 7->8
+Transition 8->9
+Transition 9->10
+Transition 10
+Solving with propositional reduction
+Checking main.property.1
+SAT: counterexample found
+Induction Step
+
+** Results:
+[main.property.1] always main.req == 1 |-> ##[1:10] main.ack == 1: FAILURE
+Stop Solver Thread: Started
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downTimer Thread Done
+Waiting for stop solver thread
+Stop Solver Thread: Timer Thread Stopped
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19278
+/proc/meminfo: memFree=35546340/49448956 swapFree=0/5141652
+[pid=19278] ppid=19276 vsize=20948 CPUtime=0 cores=0-7
+/proc/19278/stat : 19278 (ebmc) R 19276 19278 17830 34816 19206 4210688 320 0 0 0 0 0 0 0 20 0 1 0 960281687 21450752 1438 18446744073709551615 4194304 7031753 140731056425328 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 9132640 9141980 37408768 140731056428509 140731056428609 140731056428609 140731056431043 0
+/proc/19278/statm: 5237 1438 1260 693 0 1332 0
+Current children cumulated CPU time (s) 0
+Current children cumulated vsize (KiB) 0
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 10
+Real time (s): 0.00682694
+runsolver_walltime: 0.00682694
+CPU time (s): 0.005474
+runsolver_cputime: 0.005474
+CPU user time (s): 0.00364
+CPU system time (s): 0.001834
+CPU usage (%): 80.1823
+Max. virtual memory (cumulated for all children) (KiB): 0
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.00364
+system time used= 0.001834
+maximum resident set size= 6828
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 483
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 5
+involuntary context switches= 0
+
+runsolver used 0.00233 second user time and 0.007468 second system time
+
+The end
+done at Thu 10 Aug 12:24:49 BST 2017
+Starting to processing  Rotate/main.sv at Thu 10 Aug 12:24:49 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/temp/hw-cbmc-db/hw-cbmc/src/ebmc/ebmc main.sv --module main --k-induction --bound 10 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+Parsing main.sv
+Converting
+Type-checking Verilog::main
+Induction Base
+General constraints
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19285
+/proc/meminfo: memFree=35546412/49448956 swapFree=0/5141652
+[pid=19285] ppid=19283 vsize=20948 CPUtime=0 cores=0-7
+/proc/19285/stat : 19285 (ebmc) R 19283 19285 17830 34816 19206 4210688 330 0 0 0 0 0 0 0 20 0 1 0 960281689 21450752 1395 18446744073709551615 4194304 7031753 140723730972800 0 0 0 24578 0 16384 0 0 0 17 5 0 0 0 0 0 9132640 9141980 34418688 140723730978269 140723730978369 140723730978369 140723730980803 0
+/proc/19285/statm: 5237 1395 1214 693 0 1332 0
+Initial state
+Transition relation
+Transition 0->1
+Transition 1->2
+Transition 2->3
+Transition 3->4
+Transition 4->5
+Transition 5->6
+Transition 6->7
+Transition 7->8
+Transition 8->9
+Transition 9->10
+Transition 10
+Solving with propositional reduction
+Checking main.property.1
+SAT: counterexample found
+Induction Step
+
+** Results:
+[main.property.1] always main.dout != 'hAAAAAAAA: FAILURE
+Stop Solver Thread: Started
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downTimer Thread Done
+Waiting for stop solver thread
+Stop Solver Thread: Timer Thread Stopped
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19285
+/proc/meminfo: memFree=35546412/49448956 swapFree=0/5141652
+[pid=19285] ppid=19283 vsize=20948 CPUtime=0 cores=0-7
+/proc/19285/stat : 19285 (ebmc) R 19283 19285 17830 34816 19206 4210688 330 0 0 0 0 0 0 0 20 0 1 0 960281689 21450752 1395 18446744073709551615 4194304 7031753 140723730972800 0 0 0 24578 0 16384 0 0 0 17 5 0 0 0 0 0 9132640 9141980 34418688 140723730978269 140723730978369 140723730978369 140723730980803 0
+/proc/19285/statm: 5237 1395 1214 693 0 1332 0
+Current children cumulated CPU time (s) 0
+Current children cumulated vsize (KiB) 0
+heavy processes:
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 10
+Real time (s): 0.011853
+runsolver_walltime: 0.011853
+CPU time (s): 0.010315
+runsolver_cputime: 0.010315
+CPU user time (s): 0.007444
+CPU system time (s): 0.002871
+CPU usage (%): 87.0241
+Max. virtual memory (cumulated for all children) (KiB): 0
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.007444
+system time used= 0.002871
+maximum resident set size= 7276
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 663
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 5
+involuntary context switches= 0
+
+runsolver used 0.003419 second user time and 0.006508 second system time
+
+The end
+done at Thu 10 Aug 12:24:49 BST 2017
+Starting to processing  Unidec/main.sv at Thu 10 Aug 12:24:49 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/temp/hw-cbmc-db/hw-cbmc/src/ebmc/ebmc main.sv --module main --k-induction --bound 10 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+Parsing main.sv
+Converting
+Type-checking Verilog::main
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19292
+/proc/meminfo: memFree=35546672/49448956 swapFree=0/5141652
+[pid=19292] ppid=19290 vsize=16592 CPUtime=0 cores=0-7
+/proc/19292/stat : 19292 (ebmc) R 19290 19292 17830 34816 19206 4210688 315 0 0 0 0 0 0 0 20 0 1 0 960281695 16990208 1384 18446744073709551615 4194304 7031753 140726429626832 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 9132640 9141980 30580736 140726429627869 140726429627969 140726429627969 140726429630403 0
+/proc/19292/statm: 0 0 0 0 0 0 0
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Started
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downTimer Thread Done
+Waiting for stop solver thread
+Stop Solver Thread: Timer Thread Stopped
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19292
+/proc/meminfo: memFree=35546672/49448956 swapFree=0/5141652
+[pid=19292] ppid=19290 vsize=16592 CPUtime=0 cores=0-7
+/proc/19292/stat : 19292 (ebmc) R 19290 19292 17830 34816 19206 4210688 315 0 0 0 0 0 0 0 20 0 1 0 960281695 16990208 1384 18446744073709551615 4194304 7031753 140726429626832 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 9132640 9141980 30580736 140726429627869 140726429627969 140726429627969 140726429630403 0
+/proc/19292/statm: 0 0 0 0 0 0 0
+Current children cumulated CPU time (s) 0
+Current children cumulated vsize (KiB) 0
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 2
+Real time (s): 0.00428508
+runsolver_walltime: 0.00428508
+CPU time (s): 0.003081
+runsolver_cputime: 0.003081
+CPU user time (s): 0.002304
+CPU system time (s): 0.000777
+CPU usage (%): 71.9006
+Max. virtual memory (cumulated for all children) (KiB): 0
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.002304
+system time used= 0.000777
+maximum resident set size= 5728
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 316
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 5
+involuntary context switches= 0
+
+runsolver used 0.005348 second user time and 0.004215 second system time
+
+The end
+done at Thu 10 Aug 12:24:49 BST 2017
+Starting to processing  Vlunc/main.sv at Thu 10 Aug 12:24:49 BST 2017
+runsolver Copyright (C) 2010-2013 Olivier ROUSSEL
+
+This is runsolver version 3.3.4 (svn: 1649) [AEATK2]
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+command line: runsolver -C 3600 -W 3600 -d 1 -M 32768 /users/rajdeep/temp/hw-cbmc-db/hw-cbmc/src/ebmc/ebmc main.sv --module main --k-induction --bound 10 
+
+[AEATK] No environment variable "AEATK_SET_TASK_AFFINITY" detected, cores will be treated normally
+
+running on 8 cores: 0-7
+
+Enforcing CPUTime limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing CPUTime limit (hard limit, will send SIGXCPU): 3630 seconds
+Enforcing wall clock limit (soft limit, will send SIGTERM then SIGKILL): 3600 seconds
+Enforcing VSIZE limit (soft limit, will send SIGTERM then SIGKILL): 33554432 KiB
+Enforcing VSIZE limit (hard limit, stack expansion will fail with SIGSEGV, brk() and mmap() will return ENOMEM): 33605632 KiB
+Current StackSize limit: 8192 KiB
+
+Parsing main.sv
+Converting
+Type-checking Verilog::control
+Type-checking Verilog::transform
+Type-checking Verilog::main
+Induction Base
+General constraints
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19302
+/proc/meminfo: memFree=35546056/49448956 swapFree=0/5141652
+[pid=19302] ppid=19300 vsize=16724 CPUtime=0 cores=0-7
+/proc/19302/stat : 19302 (ebmc) R 19300 19302 17830 34816 19206 4210688 344 0 0 0 0 0 0 0 20 0 1 0 960281697 17125376 1391 18446744073709551615 4194304 7031753 140723783289584 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 9132640 9141980 33058816 140723783296478 140723783296578 140723783296578 140723783299011 0
+/proc/19302/statm: 4181 1391 1210 693 0 276 0
+Initial state
+Transition relation
+Transition 0->1
+Transition 1->2
+Transition 2->3
+Transition 3->4
+Transition 4->5
+Transition 5->6
+Transition 6->7
+Transition 7->8
+Transition 8->9
+Transition 9->10
+Transition 10
+Solving with propositional reduction
+Checking main.property.1
+SAT: counterexample found
+Induction Step
+
+** Results:
+[main.property.1] always main.Lcmd == 1 || main.dataOut[5] == 1 |-> ##1 main.Lcmd != 0: FAILURE
+Stop Solver Thread: Started
+
+
+
+Shutdown Reason:
+Solver termination detected (return from wait4)
+Requesting Timer Thread Should Shutdown 
+Setting solver is running = false 
+Joining on timer Thread 
+Stop Solver Thread: Should Execute
+Timer Thread detected shutdown flag, shutting downTimer Thread Done
+Waiting for stop solver thread
+Stop Solver Thread: Timer Thread Stopped
+
+[startup+0 s]
+/proc/loadavg: 0.00 0.00 0.00 2/289 19302
+/proc/meminfo: memFree=35546056/49448956 swapFree=0/5141652
+[pid=19302] ppid=19300 vsize=16724 CPUtime=0 cores=0-7
+/proc/19302/stat : 19302 (ebmc) R 19300 19302 17830 34816 19206 4210688 344 0 0 0 0 0 0 0 20 0 1 0 960281697 17125376 1391 18446744073709551615 4194304 7031753 140723783289584 0 0 0 24578 0 16384 0 0 0 17 4 0 0 0 0 0 9132640 9141980 33058816 140723783296478 140723783296578 140723783296578 140723783299011 0
+/proc/19302/statm: 4181 1391 1210 693 0 276 0
+Current children cumulated CPU time (s) 0
+Current children cumulated vsize (KiB) 0
+
+Sending SIGTERM to process tree (bottom up)
+Stop Solver Thread: SIGTERM sent, waiting and sending SIGKILL
+Sleeping 1 seconds
+Stop Solver Thread: DONE
+Sending fallback SIGKILL signal to process group
+
+Solver just ended. Dumping a history of the last processes samples
+
+Child status: 10
+Real time (s): 0.018479
+runsolver_walltime: 0.018479
+CPU time (s): 0.017239
+runsolver_cputime: 0.017239
+CPU user time (s): 0.015322
+CPU system time (s): 0.001917
+CPU usage (%): 93.2897
+Max. virtual memory (cumulated for all children) (KiB): 0
+
+getrusage(RUSAGE_CHILDREN,...) data:
+user time used= 0.015322
+system time used= 0.001917
+maximum resident set size= 9072
+integral shared memory size= 0
+integral unshared data size= 0
+integral unshared stack size= 0
+page reclaims= 1074
+page faults= 0
+swaps= 0
+block input operations= 0
+block output operations= 8
+messages sent= 0
+messages received= 0
+signals received= 0
+voluntary context switches= 5
+involuntary context switches= 0
+
+runsolver used 0.007604 second user time and 0.002159 second system time
+
+The end
+done at Thu 10 Aug 12:24:49 BST 2017

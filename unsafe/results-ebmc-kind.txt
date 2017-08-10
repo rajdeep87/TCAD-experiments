@@ -1,0 +1,37 @@
+Starting to processing  b01/main.sv at Thu 10 Aug 12:24:47 BST 2017
+[main.property.1] always main.OVERFLW == 1 |-> ##2 main.OVERFLW == 0: SUCCESS
+runsolver_cputime: 0.012056
+Starting to processing  b02/main.sv at Thu 10 Aug 12:24:47 BST 2017
+[main.property.1] always main.stato == 3 |-> ##2 main.stato != 1: FAILURE
+runsolver_cputime: 0.006177
+Starting to processing  DAIO/main.sv at Thu 10 Aug 12:24:47 BST 2017
+[main.property.1] always main.rx_status[3] != 0: FAILURE
+runsolver_cputime: 0.036483
+Starting to processing  Dekker/main.sv at Thu 10 Aug 12:24:47 BST 2017
+[main.property.1] always main.pc[1'b0] == 5 && main.pc[1'b1] == 5: FAILURE
+runsolver_cputime: 0.023769
+Starting to processing  Elevator/main.sv at Thu 10 Aug 12:24:47 BST 2017
+[main.property.1] always main.main_control.up_floor_buttons[2'b1] == 0 |-> ##[1:$] main.e1.location[1:0] == 2 && main.e1.door == 0 && main.e1.direction == 0: FAILURE
+runsolver_cputime: 0.051912
+Starting to processing  FIFO/main.sv at Thu 10 Aug 12:24:48 BST 2017
+runsolver_cputime: 0.961485
+Starting to processing  Ibuf/main.sv at Thu 10 Aug 12:24:49 BST 2017
+[main.property.1] always !((main.qAge[0] == 0 || main.qAge[1] == 1 || main.qAge[2] == 0) && (main.qAge[0] == 1 || main.qAge[1] == 0 || main.qAge[2] == 1) && (!(main.qAge[0] == 1) || main.valid[0] == 1) && (!(main.qAge[1] == 1) || main.valid[0] == 1) && (!(main.qAge[2] == 1) || main.valid[1] == 1) && (!(main.valid[0] == 1 && main.valid[1] == 0) || main.qAge[0] == 1) && (!(main.valid[0] == 1 && main.valid[2] == 0) || main.qAge[1] == 1) && (!(main.valid[1] == 1 && main.valid[2] == 0) || main.qAge[2] == 1)): FAILURE
+runsolver_cputime: 0.017375
+Starting to processing  non-pipelined-microprocessor/main.sv at Thu 10 Aug 12:24:49 BST 2017
+[main.property.1] always !(main.opcode == 1 && main.memOut1 == 0) && main.progCntr == main.memOut2[2:0]: FAILURE
+runsolver_cputime: 0.020344
+Starting to processing  NullModem/main.sv at Thu 10 Aug 12:24:49 BST 2017
+[main.property.1] always main.rst == 0 || main.ld == 1: FAILURE
+runsolver_cputime: 0.021979
+Starting to processing  ReqAck/main.sv at Thu 10 Aug 12:24:49 BST 2017
+[main.property.1] always main.req == 1 |-> ##[1:10] main.ack == 1: FAILURE
+runsolver_cputime: 0.005474
+Starting to processing  Rotate/main.sv at Thu 10 Aug 12:24:49 BST 2017
+[main.property.1] always main.dout != 'hAAAAAAAA: FAILURE
+runsolver_cputime: 0.010315
+Starting to processing  Unidec/main.sv at Thu 10 Aug 12:24:49 BST 2017
+runsolver_cputime: 0.003081
+Starting to processing  Vlunc/main.sv at Thu 10 Aug 12:24:49 BST 2017
+[main.property.1] always main.Lcmd == 1 || main.dataOut[5] == 1 |-> ##1 main.Lcmd != 0: FAILURE
+runsolver_cputime: 0.017239
