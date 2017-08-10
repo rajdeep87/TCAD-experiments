@@ -1,5 +1,6 @@
+139442p0
+6s33
 Arbiter
-b01
 b02
 b03
 b06
@@ -9,7 +10,6 @@ BufAl
 CRC
 DAIO
 FIFO
-FourbyFour
 Ibuf
 non-pipelined-microprocessor
 RCU
@@ -18,6 +18,5 @@ Spinner
 TicTacToe
 traffic_light_example
 TreeArb
-Vending
 Vlunc
 Vsa16
