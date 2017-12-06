@@ -6,4 +6,27 @@ Convert .aag to .aig format
 ===================================
 aigtoaig main.aag > main.aig
 
+C program to SMT2
+=================
+cbmc main.c --unwind 20 --no-unwinding-assertions --smt2 --outfile out.smt2
 
+C program to CNF
+=================
+cbmc main.c --unwind 50 --no-unwinding-assertions -dimacs -outfile main.cnf
+
+Lingeling on CNF
+================
+/users/rajdeep/boolector-2.4.1-with-lingeling-bbc/lingeling/lingeling main.cnf
+
+Running z3 with solver stats
+============================
+time z3 out.smt2 -v:3 -- for fetching smt stats from z3
+
+Running Boolector with solver stats
+====================================
+time boolector out.smt2 -v 3 -- for fetching smt stats from boolector
+
+Note
+====
+The cnf and smt2 format for safe and unsafe benchmarks are produced from 
+the C design using CBMC for an unwind bound of 10. 
