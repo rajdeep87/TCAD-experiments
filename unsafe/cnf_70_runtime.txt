@@ -1,0 +1,16 @@
+# cnf generated using cbmc for unwind bound = 70
+# checked using lingeling 
+# The rows with 0's gives wrong values of decisions, propagations, conflicts etc.
+
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/unsafe/b01/ 0 0 0 0 0 3.64758
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/unsafe/b02/ 0 0 0 0 0 2.33902
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/unsafe/DAIO/ 0 0 0 0 0 3.13077
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/unsafe/Dekker/ 0 0 0 0 0 0.004142
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/unsafe/FIFO/ 0 0 0 0 0 4.09157
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/unsafe/Ibuf/ 0 0 0 0 0 0.396192
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/unsafe/non-pipelined-microprocessor/ 0 0 0 0 0 2.38983
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/unsafe/NullModem/ 0 0 0 0 0 0.653516
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/unsafe/ReqAck/ 0 0 0 0 0 0.30382
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/unsafe/Rotate/ 0 0 0 0 0 0.821308
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/unsafe/Unidec/ 0 0 0 0 0 0.907991
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/unsafe/Vlunc/ 0 0 0 0 0 0.795344
