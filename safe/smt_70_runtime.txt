@@ -1,0 +1,32 @@
+# smt2 generated using cbmc for unwind bound = 70
+# checked using boolector
+# The rows with 0's gives wrong values of decisions, propagations, conflicts etc.
+# Total benchmarks CRASHED = 3 due to CBMC dumping worng SMT2 output
+
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/139442p0/ 0 0 0 0 0 36.8138
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/6s177/ 0 0 0 0 0 16.9141
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/6s33/ 0 0 0 0 0 33.4529
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Arbiter/ 0 0 0 0 0 0.068927
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b01/ 0 0 0 0 0 71.824
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b02/ 0 0 0 0 0 66.4063
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b03/ 0 0 0 0 0 8.20826
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b06/ 0 0 0 0 0 7.31637
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b07/ 0 0 0 0 0 4.80986
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b08/ 0 0 0 0 0 3.92629
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Barrel/ 0 0 0 0 0 0.001429
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/BufAl/ 0 0 0 0 0 0.592793
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/CRC/ 0 0 0 0 0 0.478576
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/DAIO/ 0 0 0 0 0 3.6282
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/FIFO/ 0 0 0 0 0 1.06806
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/FourbyFour/ 0 0 0 0 0 0.043148
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Ibuf/ 0 0 0 0 0 2.01781
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/non-pipelined-microprocessor/ 0 0 0 0 0 1.178
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/RCU/ 0 0 0 0 0 14.0494
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Rrobin/ 0 0 0 0 0 2.92017
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Spinner/ 0 0 0 0 0 0.001324
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/TicTacToe/ 0 0 0 0 0 0.072355 CRASH
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/traffic_light_example/ 0 0 0 0 0 0.005954
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/TreeArb/ 0 0 0 0 0 9.67749
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Vending/ 0 0 0 0 0 0.676736
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Vlunc/ 0 0 0 0 0 0.093059  CRASH
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Vsa16/ 0 0 0 0 0 4.89849  CRASH
