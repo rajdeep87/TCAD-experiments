@@ -1,0 +1,34 @@
+# cnf generated using cbmc for unwind bound = 70
+# checked using lingeling 
+# The TIMEOUT are marked
+
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Arbiter/ 0.018037
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b01/ 7.88433
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b01/ 7.88958
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b02/ 3.15872
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b02/ 3.1574
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b03/ 0.080882
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b03/ 0.080716
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b06/ 0.949504
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b06/ 0.944347
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b07/ 1.40568
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b07/ 1.39071
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b08/ 1.10799
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/b08/ 1.11238
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Barrel/ 0.000872
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Barrel/ 0.000807
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/BufAl/ 5.32155
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/BufAl/ 5.30481
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/CRC/ 1.61921
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/DAIO/ 2.21996
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/FIFO/ 7168.48 TIMEOUT
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/FourbyFour/ 13.0737 // minisat solves in 0.517077
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Ibuf/ 0.295349
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/RCU/ 44.6019  // minisat solves in 21.6387 s 
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Rrobin/ 142.132  // minisat solves in 0.126179 s
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Spinner/ 0.001026
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/TicTacToe/ 0.088903
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/traffic_light_example/ 0.002092
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Vending/ 0.291702
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Vlunc/ 0.516001
+/users/rajdeep/thesis-tool-webpage/TCAD-experiments/safe/Vsa16/ 4.26054
